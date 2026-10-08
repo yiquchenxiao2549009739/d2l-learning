@@ -2,14 +2,14 @@
 
 从“看懂简单代码”开始，逐步做到自己实现、训练和解释模型。
 
-当前学习 **教材 2.1.1：张量的创建、形状与元素数量**。先看 [本次讲解](docs/ch02/01_tensors.md)。学习率实验已通过修改、实际输出与解释；求导原理在后续数学章节系统展开。
+当前学习 **教材 2.1.1：arange、reshape 与推断形状**。先看 [本次讲解](docs/ch02/02_reshape.md)。张量创建和形状练习已通过实际代码、输出与解释。
 
 ## 在 VS Code 中开始
 
 1. 用 VS Code 打开本目录中的 `d2l-learning.code-workspace`。
-2. 打开 `lessons/ch02/01_tensors.py`。
-3. 按 **F5**，选择“第 2 章：张量入门”，在终端查看输出。也可以点编辑器右上角“运行 Python 文件”。
-4. 在 `exercises/ch02/01_tensors.py` 亲手创建三条样本、每条两个特征的张量，报告 shape、numel 与第一条样本。
+2. 打开 `lessons/ch02/02_reshape.py`。
+3. 按 **F5**，选择“第 2 章：reshape 与转置”，在终端查看输出。也可以点编辑器右上角“运行 Python 文件”。
+4. 在 `exercises/ch02/02_reshape.py` 填写三个表达式，比较重新组织、交换行列与自动推断形状的结果。
 
 解释器已经指定为已有的 `openmmlab` 环境：`D:/Anaconda/envs/openmmlab/python.exe`。第一次打开若提示选择解释器，选择 `openmmlab`。
 
@@ -17,7 +17,7 @@
 
 | 文件或目录 | 用途 |
 | --- | --- |
-| `docs/ch02/01_tensors.md` | 当前教材讲解 |
+| `docs/ch02/02_reshape.md` | 当前教材讲解 |
 | `docs/roadmap.md` | 全书路线和 PDF 页码 |
 | `lessons/` | 讲解示例 |
 | `exercises/` | 自己动手写的练习 |
