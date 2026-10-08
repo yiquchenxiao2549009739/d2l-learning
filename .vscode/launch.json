@@ -2,55 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "第 2 章：reshape 与转置",
+      "name": "2.1 数据操作：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch02/02_reshape.py",
+      "program": "${workspaceFolder}/lessons/ch02/01_data_operations.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "第 2 章：张量入门",
+      "name": "2.1 数据操作：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch02/01_tensors.py",
-      "python": "${command:python.interpreterPath}",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "第 1 章：一次梯度更新",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch01/02_gradient_step.py",
-      "python": "${command:python.interpreterPath}",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "第 1 章：模型与损失",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch01/01_learning_components.py",
-      "python": "${command:python.interpreterPath}",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "第 00 课：Python 入门",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/lessons/00_python_basics.py",
-      "python": "${command:python.interpreterPath}",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "第 00 课：自己做练习",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/exercises/00_python_practice.py",
+      "program": "${workspaceFolder}/exercises/ch02/01_data_operations.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

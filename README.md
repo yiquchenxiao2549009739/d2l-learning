@@ -2,14 +2,18 @@
 
 从“看懂简单代码”开始，逐步做到自己实现、训练和解释模型。
 
-当前学习 **教材 2.1.1：arange、reshape 与推断形状**。先看 [本次讲解](docs/ch02/02_reshape.md)。张量创建和形状练习已通过实际代码、输出与解释。
+当前一次学习 **完整的 2.1 数据操作（2.1.1–2.1.6）**。先看 [整节讲义](docs/ch02/01_data_operations.md)，运行一个完整演示，再完成一个综合练习并集中反馈。
 
 ## 在 VS Code 中开始
 
 1. 用 VS Code 打开本目录中的 `d2l-learning.code-workspace`。
-2. 打开 `lessons/ch02/02_reshape.py`。
-3. 按 **F5**，选择“第 2 章：reshape 与转置”，在终端查看输出。也可以点编辑器右上角“运行 Python 文件”。
-4. 在 `exercises/ch02/02_reshape.py` 填写三个表达式，比较重新组织、交换行列与自动推断形状的结果。
+2. 打开 `lessons/ch02/01_data_operations.py`。
+3. 按 **F5**，选择“2.1 数据操作：完整演示”，一次运行整节。也可以点编辑器右上角“运行 Python 文件”。
+4. 在 `exercises/ch02/01_data_operations.py` 集中填写八个表达式，运行后一次反馈结果和三个概念问题。
+
+这块覆盖创建、形状、运算、比较、汇总、拼接、广播、索引、切片、赋值、内存共享与复制、NumPy/Python 转换，并用形状对损失的影响连接之前的程序。
+
+旧的 tensor、reshape 示例和已完成的用户练习保留为历史材料，不再作为必做的独立小课。默认运行入口已经统一。完整演示中“预期的广播错误”是已捕获的教学例子，程序会继续运行。
 
 解释器已经指定为已有的 `openmmlab` 环境：`D:/Anaconda/envs/openmmlab/python.exe`。第一次打开若提示选择解释器，选择 `openmmlab`。
 
@@ -17,7 +21,9 @@
 
 | 文件或目录 | 用途 |
 | --- | --- |
-| `docs/ch02/02_reshape.md` | 当前教材讲解 |
+| `docs/ch02/01_data_operations.md` | 完整的 2.1 讲义 |
+| `lessons/ch02/01_data_operations.py` | 当前统一演示入口 |
+| `exercises/ch02/01_data_operations.py` | 当前综合练习入口 |
 | `docs/roadmap.md` | 全书路线和 PDF 页码 |
 | `lessons/` | 讲解示例 |
 | `exercises/` | 自己动手写的练习 |
@@ -28,6 +34,8 @@
 | `tools/` | 环境检查与训练验证，暂时不需要读懂 |
 | `scripts/` | 选择已有环境和 Git 同步 |
 | `artifacts/` | 训练生成的曲线、指标、模型，只保存在本地 |
+
+后续每次以完整小节或较大的主题块推进，集中讲原理、整合程序、统一实践和反馈，不再将单个函数拆成多轮。当前综合练习完成并能解释后，下一块为 2.2 数据预处理。
 
 ## 环境和验证
 
