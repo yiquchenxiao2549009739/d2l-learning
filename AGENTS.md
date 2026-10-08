@@ -15,7 +15,7 @@
 - Git 同步提交教学代码、笔记、配置和依赖清单；普通提交即可，不自动强制推送、不覆盖用户修改。
 - 用户明确要求所有学习过程同步 GitHub：每个教学回合结束前，把新回答、讲解、反馈、练习、实际实验结果和下一步记录在项目并提交推送。问答记录放 learning_log.md；详细讲解放 docs/。忠实记录用户回答，不替用户编造答案。
 - 用户指定仅在聊天解释的第 1 章背景梳理不保存、不同步；此要求针对那次背景讲解。后续教材实践沿用同步要求。
-- 当前统一数据操作入口为 lessons/ch02/01_data_operations.py，综合练习为 exercises/ch02/01_data_operations.py。旧的 tensor 与 reshape 小文件保留历史，不要求逐项补做，也不再作为默认教学入口。
+- 当前统一数据操作入口为 lessons/ch02/01_data_operations.py，综合练习为 exercises/ch02/01_data_operations.py。用户明确要求删除之前保留的旧代码，单独的 tensor 与 reshape 示例、练习和旧讲义已清理；不要重新生成这些重复文件。
 - 需要保留的实验指标、曲线和观察整理到可提交的 reports/。下载的数据、完整模型、原教材、环境和缓存继续留在本地。不要创建定时任务；同步随当前教学回合完成。
 - 用户明确要求复用已有深度学习环境，不额外安装依赖。本机已确认 D:/Anaconda/envs/openmmlab/python.exe，Python 3.8.20、PyTorch 2.4.1+cu121，GPU 可用。新增依赖前先确认已有能力，不能擅自安装或升级。
 - 本机解释器路径保存在 environment.local.json，并通过 VS Code 的解释器设置使用。scripts/use_environment.ps1 只选择和验证已有环境，不安装任何包。
