@@ -8,7 +8,7 @@ w = 2  # TODO：试着调整参数，使这个样本上的损失降低
 b = 1
 
 y_pred = w * x + b
-loss = None  # TODO：替换为平方误差的计算式，不要直接填写结果
+loss = (y_pred - y_true) ** 2  # TODO：替换为平方误差的计算式，不要直接填写结果
 
 print("预测值：", y_pred)
 if loss is None:
