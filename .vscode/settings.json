@@ -23,5 +23,12 @@
                                             "IPYTHONDIR":  "${workspaceFolder}/.cache/ipython",
                                             "TEMP":  "${workspaceFolder}/.cache/tmp",
                                             "TMP":  "${workspaceFolder}/.cache/tmp"
-                                        }
+                                        },
+                                        "python-envs.pythonProjects": [
+                                            {
+                                                "path": ".",
+                                                "envManager": "ms-python.python:conda",
+                                                "packageManager": "ms-python.python:conda"
+                                            }
+                                        ]
 }

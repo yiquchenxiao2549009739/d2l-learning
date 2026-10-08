@@ -1,0 +1,22 @@
+{
+  "purpose": "environment validation, not learner completion",
+  "seed": 42,
+  "device": "cpu",
+  "torch": "2.4.1+cu121",
+  "samples": 256,
+  "epochs": 300,
+  "learning_rate": 0.05,
+  "initial_mse": 30.053020477294922,
+  "final_mse": 0.00010870391270145774,
+  "true_weight": [
+    2.0,
+    -3.4
+  ],
+  "learned_weight": [
+    1.9987316131591797,
+    -3.3996622562408447
+  ],
+  "true_bias": 4.2,
+  "learned_bias": 4.200405597686768,
+  "passed": true
+}

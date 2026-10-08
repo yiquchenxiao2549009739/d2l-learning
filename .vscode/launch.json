@@ -2,6 +2,15 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "第 1 章：模型与损失",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/ch01/01_learning_components.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
       "name": "第 00 课：Python 入门",
       "type": "debugpy",
       "request": "launch",

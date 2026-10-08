@@ -2,12 +2,21 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "第 1 章：模型与损失",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": ["${workspaceFolder}/lessons/ch01/01_learning_components.py"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"PYTHONUTF8": "1"}},
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": []
+    },
+    {
       "label": "第 00 课：运行示例",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": ["${workspaceFolder}/lessons/00_python_basics.py"],
       "options": {"cwd": "${workspaceFolder}", "env": {"PYTHONUTF8": "1"}},
-      "group": {"kind": "build", "isDefault": true},
+      "group": {"kind": "build", "isDefault": false},
       "problemMatcher": []
     },
     {

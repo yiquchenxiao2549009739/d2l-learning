@@ -2,14 +2,14 @@
 
 从“看懂简单代码”开始，逐步做到自己实现、训练和解释模型。
 
-当前从 **第 00 课：Python 变量、计算与输出** 开始。先看 [开始学习](docs/00_start.md)，在聊天里预测结果，再亲手修改代码。每次只推进一个小概念。
+当前进入 **教材第 1 章：1.1–1.2，机器学习的基本过程与四个组件**。先看 [本次讲解](docs/ch01/01_learning_components.md)。基础四则运算和打印已通过快速问答，按用户要求继续教材；需要的 Python 语法结合实践补充。
 
 ## 在 VS Code 中开始
 
 1. 用 VS Code 打开本目录中的 `d2l-learning.code-workspace`。
-2. 打开 `lessons/00_python_basics.py`。
-3. 按 **F5**，选择“第 00 课：Python 入门”，在终端查看输出。也可以点编辑器右上角“运行 Python 文件”。
-4. 做 `exercises/00_python_practice.py`，将预测和解释写进 `notes/00_my_answers.md`。
+2. 打开 `lessons/ch01/01_learning_components.py`。
+3. 按 **F5**，选择“第 1 章：模型与损失”，在终端查看输出。也可以点编辑器右上角“运行 Python 文件”。
+4. 先预测，再将 `w` 从 2 改为 3，运行并解释损失的变化。随后做 `exercises/ch01/01_learning_components.py`。
 
 解释器已经指定为已有的 `openmmlab` 环境：`D:/Anaconda/envs/openmmlab/python.exe`。第一次打开若提示选择解释器，选择 `openmmlab`。
 
@@ -17,12 +17,14 @@
 
 | 文件或目录 | 用途 |
 | --- | --- |
-| `docs/00_start.md` | 今天只需要看的讲解 |
+| `docs/ch01/01_learning_components.md` | 当前教材讲解 |
 | `docs/roadmap.md` | 全书路线和 PDF 页码 |
 | `lessons/` | 讲解示例 |
 | `exercises/` | 自己动手写的练习 |
 | `notes/` | 自己的答案和理解 |
 | `progress.md` | 当前进度与下一步 |
+| `learning_log.md` | 每回合的讲解位置、真实问答和反馈 |
+| `reports/` | 同步 GitHub 的实验指标、曲线与观察 |
 | `tools/` | 环境检查与训练验证，暂时不需要读懂 |
 | `scripts/` | 选择已有环境和 Git 同步 |
 | `artifacts/` | 训练生成的曲线、指标、模型，只保存在本地 |
@@ -53,7 +55,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/use_environment.ps1 
 
 代码和笔记保存到 [GitHub 私有仓库 d2l-learning](https://github.com/yiquchenxiao2549009739/d2l-learning)；工具缓存、原 PDF、数据集、模型和个人配置不会提交。
 
-每次学习结束，可在项目终端执行：
+每个教学回合，我会记录你的回答、讲解、反馈、代码练习、实际实验结果和下一步，完成 Git 提交与推送。已生成的讲解文件记录本回合内容；后续回答在下一回合补入日志。不将尚未作答的内容写成已掌握。
+
+`reports/` 保存用于学习复盘的指标、曲线和实验观察；大型原始数据、完整模型与缓存留在本地。
+
+你在 VS Code 自己修改后，也可以在项目终端执行：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/sync.ps1 -Message "learn: finish Python variable practice"
