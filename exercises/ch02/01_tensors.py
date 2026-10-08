@@ -4,7 +4,12 @@ import torch
 
 # TODO：把 None 替换为 torch.tensor(...)。
 # 里面放三个列表，每个列表两个数值，数值自己选择。
-x = None
+x = [
+    [1.0, 2.0],
+    [3.0, 4.0],
+    [5.0, 6.0]
+]
+x = torch.tensor(x)
 
 if x is None:
     print("请先创建张量，保存后运行。")
