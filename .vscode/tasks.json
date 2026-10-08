@@ -2,12 +2,21 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "第 2 章：张量入门",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": ["${workspaceFolder}/lessons/ch02/01_tensors.py"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"PYTHONUTF8": "1"}},
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": []
+    },
+    {
       "label": "第 1 章：一次梯度更新",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": ["${workspaceFolder}/lessons/ch01/02_gradient_step.py"],
       "options": {"cwd": "${workspaceFolder}", "env": {"PYTHONUTF8": "1"}},
-      "group": {"kind": "build", "isDefault": true},
+      "group": {"kind": "build", "isDefault": false},
       "problemMatcher": []
     },
     {

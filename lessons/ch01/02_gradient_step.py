@@ -6,7 +6,7 @@ import torch
 x = 3.0
 y_true = 10.0
 b = 1.0
-learning_rate = 0.01  # 学习率：控制每次更新的步长
+learning_rate = 0.2  # 学习率：控制每次更新的步长
 
 w = torch.tensor(2.0, requires_grad=True)  # 记录后续计算，以便求梯度
 
