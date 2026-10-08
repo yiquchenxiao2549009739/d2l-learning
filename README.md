@@ -2,18 +2,18 @@
 
 从“看懂简单代码”开始，逐步做到自己实现、训练和解释模型。
 
-当前一次学习 **完整的 2.1 数据操作（2.1.1–2.1.6）**。先看 [整节讲义](docs/ch02/01_data_operations.md)，运行一个完整演示，再完成一个综合练习并集中反馈。
+当前一次学习 **完整的 2.2 数据预处理（2.2.1–2.2.3）**。先看 [整节讲义](docs/ch02/02_data_preprocessing.md)，运行一个完整演示，再完成一个综合练习并集中反馈。
 
 ## 在 VS Code 中开始
 
 1. 用 VS Code 打开本目录中的 `d2l-learning.code-workspace`。
-2. 打开 `lessons/ch02/01_data_operations.py`。
-3. 按 **F5**，选择“2.1 数据操作：完整演示”，一次运行整节。也可以点编辑器右上角“运行 Python 文件”。
-4. 在 `exercises/ch02/01_data_operations.py` 集中填写八个表达式，运行后一次反馈结果和三个概念问题。
+2. 打开 `lessons/ch02/02_data_preprocessing.py`。
+3. 按 **F5**，选择“2.2 数据预处理：完整演示”，一次运行整节。也可以点编辑器右上角“运行 Python 文件”。
+4. 在 `exercises/ch02/02_data_preprocessing.py` 集中填写八个表达式，运行后一次反馈结果和三个概念问题。
 
-这块覆盖创建、形状、运算、比较、汇总、拼接、广播、索引、切片、赋值、内存共享与复制、NumPy/Python 转换，并用形状对损失的影响连接之前的程序。
+这块覆盖 CSV 读取、特征与标签划分、数值缺失填补、删除法、类别独热编码、NumPy 数值数组与张量转换，并统一使用 float32 和 (N,1) 标签。
 
-旧的 tensor、reshape 示例、练习和旧讲义已经删除，当前统一使用完整的 2.1 演示与综合练习。问答与已完成实践的记录在 `learning_log.md`。完整演示中“预期的广播错误”是已捕获的教学例子，程序会继续运行。
+完整 2.1 作为已讲的小节资料继续保留，单独的旧 tensor、reshape 示例与旧讲义已经删除。问答与已完成实践的记录在 `learning_log.md`。用户主动要求进入 2.2，未据此将未提交的 2.1 综合练习标记完成。
 
 解释器已经指定为已有的 `openmmlab` 环境：`D:/Anaconda/envs/openmmlab/python.exe`。第一次打开若提示选择解释器，选择 `openmmlab`。
 
@@ -21,9 +21,10 @@
 
 | 文件或目录 | 用途 |
 | --- | --- |
-| `docs/ch02/01_data_operations.md` | 完整的 2.1 讲义 |
-| `lessons/ch02/01_data_operations.py` | 当前统一演示入口 |
-| `exercises/ch02/01_data_operations.py` | 当前综合练习入口 |
+| `docs/ch02/02_data_preprocessing.md` | 完整的 2.2 讲义 |
+| `lessons/ch02/02_data_preprocessing.py` | 当前统一演示入口 |
+| `exercises/ch02/02_data_preprocessing.py` | 当前综合练习入口 |
+| `datasets/ch02/` | 本节的小型人工 CSV 数据 |
 | `docs/roadmap.md` | 全书路线和 PDF 页码 |
 | `lessons/` | 讲解示例 |
 | `exercises/` | 自己动手写的练习 |
@@ -35,11 +36,11 @@
 | `scripts/` | 选择已有环境和 Git 同步 |
 | `artifacts/` | 训练生成的曲线、指标、模型，只保存在本地 |
 
-后续每次以完整小节或较大的主题块推进，集中讲原理、整合程序、统一实践和反馈，不再将单个函数拆成多轮。当前综合练习完成并能解释后，下一块为 2.2 数据预处理。
+后续每次以完整小节或较大的主题块推进，集中讲原理、整合程序、统一实践和反馈，不再将单个函数拆成多轮。下一块为教材 2.3 线性代数。
 
 ## 环境和验证
 
-项目复用本机已有的 Conda `openmmlab` 环境：Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5、Matplotlib 3.7.2。GPU 为 RTX 4060 Laptop GPU。按照用户要求，不额外安装或升级软件。
+项目复用本机已有的 Conda `openmmlab` 环境：Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5、pandas 2.0.3、Matplotlib 3.7.2。GPU 为 RTX 4060 Laptop GPU。按照用户要求，不额外安装或升级软件。
 
 已经建立环境的电脑可在项目终端运行：
 

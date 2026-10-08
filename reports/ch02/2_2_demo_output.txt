@@ -1,0 +1,124 @@
+
+===== 1. 从 CSV 读取原始数据 =====
+
+原始数据:
+   NumRooms Alley   Price
+0       NaN  Pave  127500
+1       2.0   NaN  106000
+2       4.0   NaN  178100
+3       NaN   NaN  140000
+
+列的数据类型:
+NumRooms    float64
+Alley        object
+Price         int64
+dtype: object
+
+每列缺失数量:
+NumRooms    2
+Alley       3
+Price       0
+dtype: int64
+pandas 版本: 2.0.3
+原始表形状: (4, 3)
+
+===== 2. 先区分输入特征与真实标签 =====
+
+输入特征:
+   NumRooms Alley
+0       NaN  Pave
+1       2.0   NaN
+2       4.0   NaN
+3       NaN   NaN
+
+真实标签:
+0    127500
+1    106000
+2    178100
+3    140000
+Name: Price, dtype: int64
+
+===== 3. 数值缺失：用已知数据的均值填补 =====
+已知房间数量的均值: 3.0
+
+填补后的输入:
+   NumRooms Alley
+0       3.0  Pave
+1       2.0   NaN
+2       4.0   NaN
+3       3.0   NaN
+
+剩余缺失数量:
+NumRooms    0
+Alley       3
+dtype: int64
+
+===== 4. 类别特征：独热编码，缺失作为一种状态 =====
+
+编码后的特征:
+   NumRooms  Alley_Pave  Alley_nan
+0       3.0         1.0        0.0
+1       2.0         0.0        1.0
+2       4.0         0.0        1.0
+3       3.0         0.0        1.0
+特征列顺序: ['NumRooms', 'Alley_Pave', 'Alley_nan']
+
+===== 5. 转成数值数组，再转成张量 =====
+
+特征张量 X:
+tensor([[3., 1., 0.],
+        [2., 0., 1.],
+        [4., 0., 1.],
+        [3., 0., 1.]])
+
+标签张量 y:
+tensor([[127500.],
+        [106000.],
+        [178100.],
+        [140000.]])
+X / y 形状: torch.Size([4, 3]) torch.Size([4, 1])
+X / y 数据类型: torch.float32 torch.float32
+X / y 还有 NaN: False False
+已保存清洗后的特征表: reports\ch02\2_2_processed_features.csv
+
+===== 6. 对照删除法：删除行与删除列不同 =====
+
+直接删除所有含缺失值的行，当前表会清空:
+Empty DataFrame
+Columns: [NumRooms, Alley, Price]
+Index: []
+
+只按房间数量是否缺失筛选行:
+   NumRooms Alley   Price
+1       2.0   NaN  106000
+2       4.0   NaN  178100
+输入特征中缺失最多的列: Alley
+
+删除该列后的另一种方案:
+   NumRooms
+0       NaN
+1       2.0
+2       4.0
+3       NaN
+删除法是另一种选择，本演示的主流程采用填补与编码，仍保留四条样本。
+
+===== 7. 综合练习的较大数据表 =====
+
+综合练习原始数据:
+   NumRooms   Area   Alley Garage   Price
+0       2.0   60.0    Pave    NaN  106000
+1       NaN   80.0  Gravel    NaN  127500
+2       4.0    NaN    Pave    NaN  178100
+3       3.0   90.0     NaN    Yes  140000
+4       NaN   70.0  Gravel    NaN  150000
+5       5.0  100.0     NaN    NaN  200000
+
+综合练习每列缺失数量:
+NumRooms    2
+Area        1
+Alley       2
+Garage      5
+Price       0
+dtype: int64
+
+整节演示结束。完成综合练习后，一次反馈结果和三个原理问题。
