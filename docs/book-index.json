@@ -1,0 +1,4165 @@
+{
+  "pages": 797,
+  "outline": [
+    {
+      "title": "前言",
+      "pdf_page": 19,
+      "depth": 0
+    },
+    {
+      "title": "安装",
+      "pdf_page": 27,
+      "depth": 0
+    },
+    {
+      "title": "符号",
+      "pdf_page": 31,
+      "depth": 0
+    },
+    {
+      "title": "引言",
+      "pdf_page": 35,
+      "depth": 0
+    },
+    {
+      "title": "日常生活中的机器学习",
+      "pdf_page": 36,
+      "depth": 1
+    },
+    {
+      "title": "机器学习中的关键组件",
+      "pdf_page": 37,
+      "depth": 1
+    },
+    {
+      "title": "数据",
+      "pdf_page": 38,
+      "depth": 2
+    },
+    {
+      "title": "模型",
+      "pdf_page": 39,
+      "depth": 2
+    },
+    {
+      "title": "目标函数",
+      "pdf_page": 39,
+      "depth": 2
+    },
+    {
+      "title": "优化算法",
+      "pdf_page": 39,
+      "depth": 2
+    },
+    {
+      "title": "各种机器学习问题",
+      "pdf_page": 40,
+      "depth": 1
+    },
+    {
+      "title": "监督学习",
+      "pdf_page": 40,
+      "depth": 2
+    },
+    {
+      "title": "回归",
+      "pdf_page": 41,
+      "depth": 3
+    },
+    {
+      "title": "分类",
+      "pdf_page": 41,
+      "depth": 3
+    },
+    {
+      "title": "标记问题",
+      "pdf_page": 43,
+      "depth": 3
+    },
+    {
+      "title": "搜索",
+      "pdf_page": 44,
+      "depth": 3
+    },
+    {
+      "title": "推荐系统",
+      "pdf_page": 44,
+      "depth": 3
+    },
+    {
+      "title": "序列学习",
+      "pdf_page": 45,
+      "depth": 3
+    },
+    {
+      "title": "无监督学习",
+      "pdf_page": 47,
+      "depth": 2
+    },
+    {
+      "title": "与环境互动",
+      "pdf_page": 47,
+      "depth": 2
+    },
+    {
+      "title": "强化学习",
+      "pdf_page": 48,
+      "depth": 2
+    },
+    {
+      "title": "起源",
+      "pdf_page": 50,
+      "depth": 1
+    },
+    {
+      "title": "深度学习的发展",
+      "pdf_page": 51,
+      "depth": 1
+    },
+    {
+      "title": "深度学习的成功案例",
+      "pdf_page": 53,
+      "depth": 1
+    },
+    {
+      "title": "特点",
+      "pdf_page": 55,
+      "depth": 1
+    },
+    {
+      "title": "预备知识",
+      "pdf_page": 57,
+      "depth": 0
+    },
+    {
+      "title": "数据操作",
+      "pdf_page": 58,
+      "depth": 1
+    },
+    {
+      "title": "入门",
+      "pdf_page": 58,
+      "depth": 2
+    },
+    {
+      "title": "运算符",
+      "pdf_page": 60,
+      "depth": 2
+    },
+    {
+      "title": "广播机制",
+      "pdf_page": 62,
+      "depth": 2
+    },
+    {
+      "title": "索引和切片",
+      "pdf_page": 63,
+      "depth": 2
+    },
+    {
+      "title": "节省内存",
+      "pdf_page": 64,
+      "depth": 2
+    },
+    {
+      "title": "转换为其他Python对象",
+      "pdf_page": 65,
+      "depth": 2
+    },
+    {
+      "title": "数据预处理",
+      "pdf_page": 65,
+      "depth": 1
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 66,
+      "depth": 2
+    },
+    {
+      "title": "处理缺失值",
+      "pdf_page": 66,
+      "depth": 2
+    },
+    {
+      "title": "转换为张量格式",
+      "pdf_page": 67,
+      "depth": 2
+    },
+    {
+      "title": "线性代数",
+      "pdf_page": 68,
+      "depth": 1
+    },
+    {
+      "title": "标量",
+      "pdf_page": 68,
+      "depth": 2
+    },
+    {
+      "title": "向量",
+      "pdf_page": 69,
+      "depth": 2
+    },
+    {
+      "title": "长度、维度和形状",
+      "pdf_page": 70,
+      "depth": 3
+    },
+    {
+      "title": "矩阵",
+      "pdf_page": 70,
+      "depth": 2
+    },
+    {
+      "title": "张量",
+      "pdf_page": 72,
+      "depth": 2
+    },
+    {
+      "title": "张量算法的基本性质",
+      "pdf_page": 72,
+      "depth": 2
+    },
+    {
+      "title": "降维",
+      "pdf_page": 74,
+      "depth": 2
+    },
+    {
+      "title": "非降维求和",
+      "pdf_page": 75,
+      "depth": 3
+    },
+    {
+      "title": "点积（Dot Product）",
+      "pdf_page": 76,
+      "depth": 2
+    },
+    {
+      "title": "矩阵-向量积",
+      "pdf_page": 77,
+      "depth": 2
+    },
+    {
+      "title": "矩阵-矩阵乘法",
+      "pdf_page": 77,
+      "depth": 2
+    },
+    {
+      "title": "范数",
+      "pdf_page": 78,
+      "depth": 2
+    },
+    {
+      "title": "范数和目标",
+      "pdf_page": 80,
+      "depth": 3
+    },
+    {
+      "title": "关于线性代数的更多信息",
+      "pdf_page": 80,
+      "depth": 2
+    },
+    {
+      "title": "微积分",
+      "pdf_page": 81,
+      "depth": 1
+    },
+    {
+      "title": "导数和微分",
+      "pdf_page": 82,
+      "depth": 2
+    },
+    {
+      "title": "偏导数",
+      "pdf_page": 86,
+      "depth": 2
+    },
+    {
+      "title": "梯度",
+      "pdf_page": 86,
+      "depth": 2
+    },
+    {
+      "title": "链式法则",
+      "pdf_page": 86,
+      "depth": 2
+    },
+    {
+      "title": "自动微分",
+      "pdf_page": 87,
+      "depth": 1
+    },
+    {
+      "title": "一个简单的例子",
+      "pdf_page": 88,
+      "depth": 2
+    },
+    {
+      "title": "非标量变量的反向传播",
+      "pdf_page": 89,
+      "depth": 2
+    },
+    {
+      "title": "分离计算",
+      "pdf_page": 89,
+      "depth": 2
+    },
+    {
+      "title": "Python控制流的梯度计算",
+      "pdf_page": 90,
+      "depth": 2
+    },
+    {
+      "title": "概率",
+      "pdf_page": 91,
+      "depth": 1
+    },
+    {
+      "title": "基本概率论",
+      "pdf_page": 92,
+      "depth": 2
+    },
+    {
+      "title": "概率论公理",
+      "pdf_page": 94,
+      "depth": 3
+    },
+    {
+      "title": "随机变量",
+      "pdf_page": 95,
+      "depth": 3
+    },
+    {
+      "title": "处理多个随机变量",
+      "pdf_page": 95,
+      "depth": 2
+    },
+    {
+      "title": "联合概率",
+      "pdf_page": 96,
+      "depth": 3
+    },
+    {
+      "title": "条件概率",
+      "pdf_page": 96,
+      "depth": 3
+    },
+    {
+      "title": "贝叶斯定理",
+      "pdf_page": 96,
+      "depth": 3
+    },
+    {
+      "title": "边际化",
+      "pdf_page": 96,
+      "depth": 3
+    },
+    {
+      "title": "独立性",
+      "pdf_page": 96,
+      "depth": 3
+    },
+    {
+      "title": "应用",
+      "pdf_page": 97,
+      "depth": 3
+    },
+    {
+      "title": "期望和方差",
+      "pdf_page": 98,
+      "depth": 2
+    },
+    {
+      "title": "查阅文档",
+      "pdf_page": 99,
+      "depth": 1
+    },
+    {
+      "title": "查找模块中的所有函数和类",
+      "pdf_page": 99,
+      "depth": 2
+    },
+    {
+      "title": "查找特定函数和类的用法",
+      "pdf_page": 100,
+      "depth": 2
+    },
+    {
+      "title": "线性神经网络",
+      "pdf_page": 103,
+      "depth": 0
+    },
+    {
+      "title": "线性回归",
+      "pdf_page": 103,
+      "depth": 1
+    },
+    {
+      "title": "线性回归的基本元素",
+      "pdf_page": 104,
+      "depth": 2
+    },
+    {
+      "title": "线性模型",
+      "pdf_page": 104,
+      "depth": 3
+    },
+    {
+      "title": "损失函数",
+      "pdf_page": 105,
+      "depth": 3
+    },
+    {
+      "title": "解析解",
+      "pdf_page": 106,
+      "depth": 3
+    },
+    {
+      "title": "随机梯度下降",
+      "pdf_page": 106,
+      "depth": 3
+    },
+    {
+      "title": "用模型进行预测",
+      "pdf_page": 107,
+      "depth": 3
+    },
+    {
+      "title": "矢量化加速",
+      "pdf_page": 107,
+      "depth": 2
+    },
+    {
+      "title": "正态分布与平方损失",
+      "pdf_page": 109,
+      "depth": 2
+    },
+    {
+      "title": "从线性回归到深度网络",
+      "pdf_page": 110,
+      "depth": 2
+    },
+    {
+      "title": "神经网络图",
+      "pdf_page": 111,
+      "depth": 3
+    },
+    {
+      "title": "生物学",
+      "pdf_page": 111,
+      "depth": 3
+    },
+    {
+      "title": "线性回归的从零开始实现",
+      "pdf_page": 113,
+      "depth": 1
+    },
+    {
+      "title": "生成数据集",
+      "pdf_page": 113,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 114,
+      "depth": 2
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 116,
+      "depth": 2
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 116,
+      "depth": 2
+    },
+    {
+      "title": "定义损失函数",
+      "pdf_page": 116,
+      "depth": 2
+    },
+    {
+      "title": "定义优化算法",
+      "pdf_page": 116,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 117,
+      "depth": 2
+    },
+    {
+      "title": "线性回归的简洁实现",
+      "pdf_page": 119,
+      "depth": 1
+    },
+    {
+      "title": "生成数据集",
+      "pdf_page": 119,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 119,
+      "depth": 2
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 120,
+      "depth": 2
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 121,
+      "depth": 2
+    },
+    {
+      "title": "定义损失函数",
+      "pdf_page": 121,
+      "depth": 2
+    },
+    {
+      "title": "定义优化算法",
+      "pdf_page": 121,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 122,
+      "depth": 2
+    },
+    {
+      "title": "softmax回归",
+      "pdf_page": 123,
+      "depth": 1
+    },
+    {
+      "title": "分类问题",
+      "pdf_page": 124,
+      "depth": 2
+    },
+    {
+      "title": "网络架构",
+      "pdf_page": 124,
+      "depth": 2
+    },
+    {
+      "title": "全连接层的参数开销",
+      "pdf_page": 125,
+      "depth": 2
+    },
+    {
+      "title": "softmax运算",
+      "pdf_page": 125,
+      "depth": 2
+    },
+    {
+      "title": "小批量样本的矢量化",
+      "pdf_page": 126,
+      "depth": 2
+    },
+    {
+      "title": "损失函数",
+      "pdf_page": 126,
+      "depth": 2
+    },
+    {
+      "title": "对数似然",
+      "pdf_page": 126,
+      "depth": 3
+    },
+    {
+      "title": "softmax及其导数",
+      "pdf_page": 127,
+      "depth": 3
+    },
+    {
+      "title": "交叉熵损失",
+      "pdf_page": 127,
+      "depth": 3
+    },
+    {
+      "title": "信息论基础",
+      "pdf_page": 127,
+      "depth": 2
+    },
+    {
+      "title": "熵",
+      "pdf_page": 127,
+      "depth": 3
+    },
+    {
+      "title": "信息量",
+      "pdf_page": 128,
+      "depth": 3
+    },
+    {
+      "title": "重新审视交叉熵",
+      "pdf_page": 128,
+      "depth": 3
+    },
+    {
+      "title": "模型预测和评估",
+      "pdf_page": 128,
+      "depth": 2
+    },
+    {
+      "title": "图像分类数据集",
+      "pdf_page": 129,
+      "depth": 1
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 129,
+      "depth": 2
+    },
+    {
+      "title": "读取小批量",
+      "pdf_page": 131,
+      "depth": 2
+    },
+    {
+      "title": "整合所有组件",
+      "pdf_page": 132,
+      "depth": 2
+    },
+    {
+      "title": "softmax回归的从零开始实现",
+      "pdf_page": 133,
+      "depth": 1
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 133,
+      "depth": 2
+    },
+    {
+      "title": "定义softmax操作",
+      "pdf_page": 134,
+      "depth": 2
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 135,
+      "depth": 2
+    },
+    {
+      "title": "定义损失函数",
+      "pdf_page": 135,
+      "depth": 2
+    },
+    {
+      "title": "分类精度",
+      "pdf_page": 136,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 137,
+      "depth": 2
+    },
+    {
+      "title": "预测",
+      "pdf_page": 140,
+      "depth": 2
+    },
+    {
+      "title": "softmax回归的简洁实现",
+      "pdf_page": 141,
+      "depth": 1
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 142,
+      "depth": 2
+    },
+    {
+      "title": "重新审视Softmax的实现",
+      "pdf_page": 142,
+      "depth": 2
+    },
+    {
+      "title": "优化算法",
+      "pdf_page": 143,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 143,
+      "depth": 2
+    },
+    {
+      "title": "多层感知机",
+      "pdf_page": 145,
+      "depth": 0
+    },
+    {
+      "title": "多层感知机",
+      "pdf_page": 145,
+      "depth": 1
+    },
+    {
+      "title": "隐藏层",
+      "pdf_page": 146,
+      "depth": 2
+    },
+    {
+      "title": "线性模型可能会出错",
+      "pdf_page": 146,
+      "depth": 3
+    },
+    {
+      "title": "在网络中加入隐藏层",
+      "pdf_page": 146,
+      "depth": 3
+    },
+    {
+      "title": "从线性到非线性",
+      "pdf_page": 147,
+      "depth": 3
+    },
+    {
+      "title": "通用近似定理",
+      "pdf_page": 148,
+      "depth": 3
+    },
+    {
+      "title": "激活函数",
+      "pdf_page": 148,
+      "depth": 2
+    },
+    {
+      "title": "ReLU函数",
+      "pdf_page": 148,
+      "depth": 3
+    },
+    {
+      "title": "sigmoid函数",
+      "pdf_page": 150,
+      "depth": 3
+    },
+    {
+      "title": "tanh函数",
+      "pdf_page": 151,
+      "depth": 3
+    },
+    {
+      "title": "多层感知机的从零开始实现",
+      "pdf_page": 153,
+      "depth": 1
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 153,
+      "depth": 2
+    },
+    {
+      "title": "激活函数",
+      "pdf_page": 154,
+      "depth": 2
+    },
+    {
+      "title": "模型",
+      "pdf_page": 154,
+      "depth": 2
+    },
+    {
+      "title": "损失函数",
+      "pdf_page": 154,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 154,
+      "depth": 2
+    },
+    {
+      "title": "多层感知机的简洁实现",
+      "pdf_page": 156,
+      "depth": 1
+    },
+    {
+      "title": "模型",
+      "pdf_page": 156,
+      "depth": 2
+    },
+    {
+      "title": "模型选择、欠拟合和过拟合",
+      "pdf_page": 157,
+      "depth": 1
+    },
+    {
+      "title": "训练误差和泛化误差",
+      "pdf_page": 158,
+      "depth": 2
+    },
+    {
+      "title": "统计学习理论",
+      "pdf_page": 159,
+      "depth": 3
+    },
+    {
+      "title": "模型复杂性",
+      "pdf_page": 159,
+      "depth": 3
+    },
+    {
+      "title": "模型选择",
+      "pdf_page": 160,
+      "depth": 2
+    },
+    {
+      "title": "验证集",
+      "pdf_page": 160,
+      "depth": 3
+    },
+    {
+      "title": "K折交叉验证",
+      "pdf_page": 161,
+      "depth": 3
+    },
+    {
+      "title": "欠拟合还是过拟合？",
+      "pdf_page": 161,
+      "depth": 2
+    },
+    {
+      "title": "模型复杂性",
+      "pdf_page": 161,
+      "depth": 3
+    },
+    {
+      "title": "数据集大小",
+      "pdf_page": 162,
+      "depth": 3
+    },
+    {
+      "title": "多项式回归",
+      "pdf_page": 162,
+      "depth": 2
+    },
+    {
+      "title": "生成数据集",
+      "pdf_page": 162,
+      "depth": 3
+    },
+    {
+      "title": "对模型进行训练和测试",
+      "pdf_page": 164,
+      "depth": 3
+    },
+    {
+      "title": "三阶多项式函数拟合(正常)",
+      "pdf_page": 165,
+      "depth": 3
+    },
+    {
+      "title": "线性函数拟合(欠拟合)",
+      "pdf_page": 165,
+      "depth": 3
+    },
+    {
+      "title": "高阶多项式函数拟合(过拟合)",
+      "pdf_page": 166,
+      "depth": 3
+    },
+    {
+      "title": "权重衰减",
+      "pdf_page": 167,
+      "depth": 1
+    },
+    {
+      "title": "高维线性回归",
+      "pdf_page": 169,
+      "depth": 2
+    },
+    {
+      "title": "从零开始实现",
+      "pdf_page": 169,
+      "depth": 2
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 169,
+      "depth": 3
+    },
+    {
+      "title": "定义L2范数惩罚",
+      "pdf_page": 170,
+      "depth": 3
+    },
+    {
+      "title": "定义训练代码实现",
+      "pdf_page": 170,
+      "depth": 3
+    },
+    {
+      "title": "忽略正则化直接训练",
+      "pdf_page": 170,
+      "depth": 3
+    },
+    {
+      "title": "使用权重衰减",
+      "pdf_page": 171,
+      "depth": 3
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 171,
+      "depth": 2
+    },
+    {
+      "title": "暂退法（Dropout）",
+      "pdf_page": 174,
+      "depth": 1
+    },
+    {
+      "title": "重新审视过拟合",
+      "pdf_page": 174,
+      "depth": 2
+    },
+    {
+      "title": "扰动的稳健性",
+      "pdf_page": 175,
+      "depth": 2
+    },
+    {
+      "title": "实践中的暂退法",
+      "pdf_page": 175,
+      "depth": 2
+    },
+    {
+      "title": "从零开始实现",
+      "pdf_page": 176,
+      "depth": 2
+    },
+    {
+      "title": "定义模型参数",
+      "pdf_page": 177,
+      "depth": 3
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 177,
+      "depth": 3
+    },
+    {
+      "title": "训练和测试",
+      "pdf_page": 178,
+      "depth": 3
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 179,
+      "depth": 2
+    },
+    {
+      "title": "前向传播、反向传播和计算图",
+      "pdf_page": 180,
+      "depth": 1
+    },
+    {
+      "title": "前向传播",
+      "pdf_page": 181,
+      "depth": 2
+    },
+    {
+      "title": "前向传播计算图",
+      "pdf_page": 181,
+      "depth": 2
+    },
+    {
+      "title": "反向传播",
+      "pdf_page": 182,
+      "depth": 2
+    },
+    {
+      "title": "训练神经网络",
+      "pdf_page": 183,
+      "depth": 2
+    },
+    {
+      "title": "数值稳定性和模型初始化",
+      "pdf_page": 184,
+      "depth": 1
+    },
+    {
+      "title": "梯度消失和梯度爆炸",
+      "pdf_page": 184,
+      "depth": 2
+    },
+    {
+      "title": "梯度消失",
+      "pdf_page": 184,
+      "depth": 3
+    },
+    {
+      "title": "梯度爆炸",
+      "pdf_page": 185,
+      "depth": 3
+    },
+    {
+      "title": "打破对称性",
+      "pdf_page": 186,
+      "depth": 3
+    },
+    {
+      "title": "参数初始化",
+      "pdf_page": 186,
+      "depth": 2
+    },
+    {
+      "title": "默认初始化",
+      "pdf_page": 186,
+      "depth": 3
+    },
+    {
+      "title": "Xavier初始化",
+      "pdf_page": 186,
+      "depth": 3
+    },
+    {
+      "title": "额外阅读",
+      "pdf_page": 187,
+      "depth": 3
+    },
+    {
+      "title": "环境和分布偏移",
+      "pdf_page": 188,
+      "depth": 1
+    },
+    {
+      "title": "分布偏移的类型",
+      "pdf_page": 189,
+      "depth": 2
+    },
+    {
+      "title": "协变量偏移",
+      "pdf_page": 189,
+      "depth": 3
+    },
+    {
+      "title": "标签偏移",
+      "pdf_page": 190,
+      "depth": 3
+    },
+    {
+      "title": "概念偏移",
+      "pdf_page": 190,
+      "depth": 3
+    },
+    {
+      "title": "分布偏移示例",
+      "pdf_page": 191,
+      "depth": 2
+    },
+    {
+      "title": "医学诊断",
+      "pdf_page": 191,
+      "depth": 3
+    },
+    {
+      "title": "自动驾驶汽车",
+      "pdf_page": 192,
+      "depth": 3
+    },
+    {
+      "title": "非平稳分布",
+      "pdf_page": 192,
+      "depth": 3
+    },
+    {
+      "title": "更多轶事",
+      "pdf_page": 192,
+      "depth": 3
+    },
+    {
+      "title": "分布偏移纠正",
+      "pdf_page": 192,
+      "depth": 2
+    },
+    {
+      "title": "经验风险与实际风险",
+      "pdf_page": 193,
+      "depth": 3
+    },
+    {
+      "title": "协变量偏移纠正",
+      "pdf_page": 193,
+      "depth": 3
+    },
+    {
+      "title": "标签偏移纠正",
+      "pdf_page": 194,
+      "depth": 3
+    },
+    {
+      "title": "概念偏移纠正",
+      "pdf_page": 195,
+      "depth": 3
+    },
+    {
+      "title": "学习问题的分类法",
+      "pdf_page": 195,
+      "depth": 2
+    },
+    {
+      "title": "批量学习",
+      "pdf_page": 195,
+      "depth": 3
+    },
+    {
+      "title": "在线学习",
+      "pdf_page": 196,
+      "depth": 3
+    },
+    {
+      "title": "老虎机",
+      "pdf_page": 196,
+      "depth": 3
+    },
+    {
+      "title": "控制",
+      "pdf_page": 196,
+      "depth": 3
+    },
+    {
+      "title": "强化学习",
+      "pdf_page": 196,
+      "depth": 3
+    },
+    {
+      "title": "考虑到环境",
+      "pdf_page": 196,
+      "depth": 3
+    },
+    {
+      "title": "机器学习中的公平、责任和透明度",
+      "pdf_page": 197,
+      "depth": 2
+    },
+    {
+      "title": "实战Kaggle比赛：预测房价",
+      "pdf_page": 198,
+      "depth": 1
+    },
+    {
+      "title": "下载和缓存数据集",
+      "pdf_page": 198,
+      "depth": 2
+    },
+    {
+      "title": "Kaggle",
+      "pdf_page": 200,
+      "depth": 2
+    },
+    {
+      "title": "访问和读取数据集",
+      "pdf_page": 201,
+      "depth": 2
+    },
+    {
+      "title": "数据预处理",
+      "pdf_page": 202,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 203,
+      "depth": 2
+    },
+    {
+      "title": "K折交叉验证",
+      "pdf_page": 204,
+      "depth": 2
+    },
+    {
+      "title": "模型选择",
+      "pdf_page": 205,
+      "depth": 2
+    },
+    {
+      "title": "提交Kaggle预测",
+      "pdf_page": 206,
+      "depth": 2
+    },
+    {
+      "title": "深度学习计算",
+      "pdf_page": 209,
+      "depth": 0
+    },
+    {
+      "title": "层和块",
+      "pdf_page": 209,
+      "depth": 1
+    },
+    {
+      "title": "自定义块",
+      "pdf_page": 211,
+      "depth": 2
+    },
+    {
+      "title": "顺序块",
+      "pdf_page": 212,
+      "depth": 2
+    },
+    {
+      "title": "在前向传播函数中执行代码",
+      "pdf_page": 213,
+      "depth": 2
+    },
+    {
+      "title": "效率",
+      "pdf_page": 215,
+      "depth": 2
+    },
+    {
+      "title": "参数管理",
+      "pdf_page": 215,
+      "depth": 1
+    },
+    {
+      "title": "参数访问",
+      "pdf_page": 216,
+      "depth": 2
+    },
+    {
+      "title": "目标参数",
+      "pdf_page": 216,
+      "depth": 3
+    },
+    {
+      "title": "一次性访问所有参数",
+      "pdf_page": 217,
+      "depth": 3
+    },
+    {
+      "title": "从嵌套块收集参数",
+      "pdf_page": 217,
+      "depth": 3
+    },
+    {
+      "title": "参数初始化",
+      "pdf_page": 219,
+      "depth": 2
+    },
+    {
+      "title": "内置初始化",
+      "pdf_page": 219,
+      "depth": 3
+    },
+    {
+      "title": "自定义初始化",
+      "pdf_page": 220,
+      "depth": 3
+    },
+    {
+      "title": "参数绑定",
+      "pdf_page": 221,
+      "depth": 2
+    },
+    {
+      "title": "延后初始化",
+      "pdf_page": 222,
+      "depth": 1
+    },
+    {
+      "title": "实例化网络",
+      "pdf_page": 223,
+      "depth": 2
+    },
+    {
+      "title": "自定义层",
+      "pdf_page": 223,
+      "depth": 1
+    },
+    {
+      "title": "不带参数的层",
+      "pdf_page": 224,
+      "depth": 2
+    },
+    {
+      "title": "带参数的层",
+      "pdf_page": 225,
+      "depth": 2
+    },
+    {
+      "title": "读写文件",
+      "pdf_page": 226,
+      "depth": 1
+    },
+    {
+      "title": "加载和保存张量",
+      "pdf_page": 226,
+      "depth": 2
+    },
+    {
+      "title": "加载和保存模型参数",
+      "pdf_page": 227,
+      "depth": 2
+    },
+    {
+      "title": "GPU",
+      "pdf_page": 229,
+      "depth": 1
+    },
+    {
+      "title": "计算设备",
+      "pdf_page": 230,
+      "depth": 2
+    },
+    {
+      "title": "张量与GPU",
+      "pdf_page": 231,
+      "depth": 2
+    },
+    {
+      "title": "存储在GPU上",
+      "pdf_page": 232,
+      "depth": 3
+    },
+    {
+      "title": "复制",
+      "pdf_page": 232,
+      "depth": 3
+    },
+    {
+      "title": "旁注",
+      "pdf_page": 233,
+      "depth": 3
+    },
+    {
+      "title": "神经网络与GPU",
+      "pdf_page": 233,
+      "depth": 2
+    },
+    {
+      "title": "卷积神经网络",
+      "pdf_page": 235,
+      "depth": 0
+    },
+    {
+      "title": "从全连接层到卷积",
+      "pdf_page": 236,
+      "depth": 1
+    },
+    {
+      "title": "不变性",
+      "pdf_page": 236,
+      "depth": 2
+    },
+    {
+      "title": "多层感知机的限制",
+      "pdf_page": 237,
+      "depth": 2
+    },
+    {
+      "title": "平移不变性",
+      "pdf_page": 238,
+      "depth": 3
+    },
+    {
+      "title": "局部性",
+      "pdf_page": 238,
+      "depth": 3
+    },
+    {
+      "title": "卷积",
+      "pdf_page": 238,
+      "depth": 2
+    },
+    {
+      "title": "“沃尔多在哪里”回顾",
+      "pdf_page": 239,
+      "depth": 2
+    },
+    {
+      "title": "通道",
+      "pdf_page": 239,
+      "depth": 3
+    },
+    {
+      "title": "图像卷积",
+      "pdf_page": 240,
+      "depth": 1
+    },
+    {
+      "title": "互相关运算",
+      "pdf_page": 241,
+      "depth": 2
+    },
+    {
+      "title": "卷积层",
+      "pdf_page": 242,
+      "depth": 2
+    },
+    {
+      "title": "图像中目标的边缘检测",
+      "pdf_page": 243,
+      "depth": 2
+    },
+    {
+      "title": "学习卷积核",
+      "pdf_page": 244,
+      "depth": 2
+    },
+    {
+      "title": "互相关和卷积",
+      "pdf_page": 245,
+      "depth": 2
+    },
+    {
+      "title": "特征映射和感受野",
+      "pdf_page": 245,
+      "depth": 2
+    },
+    {
+      "title": "填充和步幅",
+      "pdf_page": 246,
+      "depth": 1
+    },
+    {
+      "title": "填充",
+      "pdf_page": 246,
+      "depth": 2
+    },
+    {
+      "title": "步幅",
+      "pdf_page": 248,
+      "depth": 2
+    },
+    {
+      "title": "多输入多输出通道",
+      "pdf_page": 250,
+      "depth": 1
+    },
+    {
+      "title": "多输入通道",
+      "pdf_page": 250,
+      "depth": 2
+    },
+    {
+      "title": "多输出通道",
+      "pdf_page": 251,
+      "depth": 2
+    },
+    {
+      "title": "11 卷积层",
+      "pdf_page": 252,
+      "depth": 2
+    },
+    {
+      "title": "汇聚层",
+      "pdf_page": 254,
+      "depth": 1
+    },
+    {
+      "title": "最大汇聚层和平均汇聚层",
+      "pdf_page": 254,
+      "depth": 2
+    },
+    {
+      "title": "填充和步幅",
+      "pdf_page": 256,
+      "depth": 2
+    },
+    {
+      "title": "多个通道",
+      "pdf_page": 257,
+      "depth": 2
+    },
+    {
+      "title": "卷积神经网络（LeNet）",
+      "pdf_page": 258,
+      "depth": 1
+    },
+    {
+      "title": "LeNet",
+      "pdf_page": 259,
+      "depth": 2
+    },
+    {
+      "title": "模型训练",
+      "pdf_page": 261,
+      "depth": 2
+    },
+    {
+      "title": "现代卷积神经网络",
+      "pdf_page": 265,
+      "depth": 0
+    },
+    {
+      "title": "深度卷积神经网络（AlexNet）",
+      "pdf_page": 266,
+      "depth": 1
+    },
+    {
+      "title": "学习表征",
+      "pdf_page": 266,
+      "depth": 2
+    },
+    {
+      "title": "缺少的成分：数据",
+      "pdf_page": 267,
+      "depth": 3
+    },
+    {
+      "title": "缺少的成分：硬件",
+      "pdf_page": 268,
+      "depth": 3
+    },
+    {
+      "title": "AlexNet",
+      "pdf_page": 268,
+      "depth": 2
+    },
+    {
+      "title": "模型设计",
+      "pdf_page": 269,
+      "depth": 3
+    },
+    {
+      "title": "激活函数",
+      "pdf_page": 270,
+      "depth": 3
+    },
+    {
+      "title": "容量控制和预处理",
+      "pdf_page": 270,
+      "depth": 3
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 271,
+      "depth": 2
+    },
+    {
+      "title": "训练AlexNet",
+      "pdf_page": 272,
+      "depth": 2
+    },
+    {
+      "title": "使用块的网络（VGG）",
+      "pdf_page": 273,
+      "depth": 1
+    },
+    {
+      "title": "VGG块",
+      "pdf_page": 273,
+      "depth": 2
+    },
+    {
+      "title": "VGG网络",
+      "pdf_page": 274,
+      "depth": 2
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 276,
+      "depth": 2
+    },
+    {
+      "title": "网络中的网络（NiN）",
+      "pdf_page": 277,
+      "depth": 1
+    },
+    {
+      "title": "NiN块",
+      "pdf_page": 277,
+      "depth": 2
+    },
+    {
+      "title": "NiN模型",
+      "pdf_page": 279,
+      "depth": 2
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 280,
+      "depth": 2
+    },
+    {
+      "title": "含并行连结的网络（GoogLeNet）",
+      "pdf_page": 281,
+      "depth": 1
+    },
+    {
+      "title": "Inception块",
+      "pdf_page": 281,
+      "depth": 2
+    },
+    {
+      "title": "GoogLeNet模型",
+      "pdf_page": 282,
+      "depth": 2
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 285,
+      "depth": 2
+    },
+    {
+      "title": "批量规范化",
+      "pdf_page": 286,
+      "depth": 1
+    },
+    {
+      "title": "训练深层网络",
+      "pdf_page": 286,
+      "depth": 2
+    },
+    {
+      "title": "批量规范化层",
+      "pdf_page": 287,
+      "depth": 2
+    },
+    {
+      "title": "全连接层",
+      "pdf_page": 288,
+      "depth": 3
+    },
+    {
+      "title": "卷积层",
+      "pdf_page": 288,
+      "depth": 3
+    },
+    {
+      "title": "预测过程中的批量规范化",
+      "pdf_page": 288,
+      "depth": 3
+    },
+    {
+      "title": "从零实现",
+      "pdf_page": 288,
+      "depth": 2
+    },
+    {
+      "title": "使用批量规范化层的 LeNet",
+      "pdf_page": 290,
+      "depth": 2
+    },
+    {
+      "title": "简明实现",
+      "pdf_page": 291,
+      "depth": 2
+    },
+    {
+      "title": "争议",
+      "pdf_page": 292,
+      "depth": 2
+    },
+    {
+      "title": "残差网络（ResNet）",
+      "pdf_page": 293,
+      "depth": 1
+    },
+    {
+      "title": "函数类",
+      "pdf_page": 294,
+      "depth": 2
+    },
+    {
+      "title": "残差块",
+      "pdf_page": 295,
+      "depth": 2
+    },
+    {
+      "title": "ResNet模型",
+      "pdf_page": 297,
+      "depth": 2
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 300,
+      "depth": 2
+    },
+    {
+      "title": "稠密连接网络（DenseNet）",
+      "pdf_page": 301,
+      "depth": 1
+    },
+    {
+      "title": "从ResNet到DenseNet",
+      "pdf_page": 301,
+      "depth": 2
+    },
+    {
+      "title": "稠密块体",
+      "pdf_page": 302,
+      "depth": 2
+    },
+    {
+      "title": "过渡层",
+      "pdf_page": 303,
+      "depth": 2
+    },
+    {
+      "title": "DenseNet模型",
+      "pdf_page": 304,
+      "depth": 2
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 305,
+      "depth": 2
+    },
+    {
+      "title": "循环神经网络",
+      "pdf_page": 307,
+      "depth": 0
+    },
+    {
+      "title": "序列模型",
+      "pdf_page": 308,
+      "depth": 1
+    },
+    {
+      "title": "统计工具",
+      "pdf_page": 308,
+      "depth": 2
+    },
+    {
+      "title": "自回归模型",
+      "pdf_page": 309,
+      "depth": 3
+    },
+    {
+      "title": "马尔可夫模型",
+      "pdf_page": 310,
+      "depth": 3
+    },
+    {
+      "title": "因果关系",
+      "pdf_page": 310,
+      "depth": 3
+    },
+    {
+      "title": "训练",
+      "pdf_page": 311,
+      "depth": 2
+    },
+    {
+      "title": "预测",
+      "pdf_page": 313,
+      "depth": 2
+    },
+    {
+      "title": "文本预处理",
+      "pdf_page": 316,
+      "depth": 1
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 317,
+      "depth": 2
+    },
+    {
+      "title": "词元化",
+      "pdf_page": 317,
+      "depth": 2
+    },
+    {
+      "title": "词表",
+      "pdf_page": 318,
+      "depth": 2
+    },
+    {
+      "title": "整合所有功能",
+      "pdf_page": 320,
+      "depth": 2
+    },
+    {
+      "title": "语言模型和数据集",
+      "pdf_page": 321,
+      "depth": 1
+    },
+    {
+      "title": "学习语言模型",
+      "pdf_page": 321,
+      "depth": 2
+    },
+    {
+      "title": "马尔可夫模型与n元语法",
+      "pdf_page": 323,
+      "depth": 2
+    },
+    {
+      "title": "自然语言统计",
+      "pdf_page": 323,
+      "depth": 2
+    },
+    {
+      "title": "读取长序列数据",
+      "pdf_page": 326,
+      "depth": 2
+    },
+    {
+      "title": "随机采样",
+      "pdf_page": 327,
+      "depth": 3
+    },
+    {
+      "title": "顺序分区",
+      "pdf_page": 328,
+      "depth": 3
+    },
+    {
+      "title": "循环神经网络",
+      "pdf_page": 330,
+      "depth": 1
+    },
+    {
+      "title": "无隐状态的神经网络",
+      "pdf_page": 331,
+      "depth": 2
+    },
+    {
+      "title": "有隐状态的循环神经网络",
+      "pdf_page": 331,
+      "depth": 2
+    },
+    {
+      "title": "基于循环神经网络的字符级语言模型",
+      "pdf_page": 333,
+      "depth": 2
+    },
+    {
+      "title": "困惑度（Perplexity）",
+      "pdf_page": 333,
+      "depth": 2
+    },
+    {
+      "title": "循环神经网络的从零开始实现",
+      "pdf_page": 335,
+      "depth": 1
+    },
+    {
+      "title": "独热编码",
+      "pdf_page": 335,
+      "depth": 2
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 336,
+      "depth": 2
+    },
+    {
+      "title": "循环神经网络模型",
+      "pdf_page": 337,
+      "depth": 2
+    },
+    {
+      "title": "预测",
+      "pdf_page": 338,
+      "depth": 2
+    },
+    {
+      "title": "梯度裁剪",
+      "pdf_page": 339,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 340,
+      "depth": 2
+    },
+    {
+      "title": "循环神经网络的简洁实现",
+      "pdf_page": 343,
+      "depth": 1
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 344,
+      "depth": 2
+    },
+    {
+      "title": "训练与预测",
+      "pdf_page": 346,
+      "depth": 2
+    },
+    {
+      "title": "通过时间反向传播",
+      "pdf_page": 347,
+      "depth": 1
+    },
+    {
+      "title": "循环神经网络的梯度分析",
+      "pdf_page": 348,
+      "depth": 2
+    },
+    {
+      "title": "完全计算",
+      "pdf_page": 349,
+      "depth": 3
+    },
+    {
+      "title": "截断时间步",
+      "pdf_page": 349,
+      "depth": 3
+    },
+    {
+      "title": "随机截断",
+      "pdf_page": 349,
+      "depth": 3
+    },
+    {
+      "title": "比较策略",
+      "pdf_page": 350,
+      "depth": 3
+    },
+    {
+      "title": "通过时间反向传播的细节",
+      "pdf_page": 350,
+      "depth": 2
+    },
+    {
+      "title": "现代循环神经网络",
+      "pdf_page": 353,
+      "depth": 0
+    },
+    {
+      "title": "门控循环单元（GRU）",
+      "pdf_page": 353,
+      "depth": 1
+    },
+    {
+      "title": "门控隐状态",
+      "pdf_page": 354,
+      "depth": 2
+    },
+    {
+      "title": "重置门和更新门",
+      "pdf_page": 354,
+      "depth": 3
+    },
+    {
+      "title": "候选隐状态",
+      "pdf_page": 355,
+      "depth": 3
+    },
+    {
+      "title": "隐状态",
+      "pdf_page": 356,
+      "depth": 3
+    },
+    {
+      "title": "从零开始实现",
+      "pdf_page": 356,
+      "depth": 2
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 357,
+      "depth": 3
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 357,
+      "depth": 3
+    },
+    {
+      "title": "训练与预测",
+      "pdf_page": 358,
+      "depth": 3
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 359,
+      "depth": 2
+    },
+    {
+      "title": "长短期记忆网络（LSTM）",
+      "pdf_page": 360,
+      "depth": 1
+    },
+    {
+      "title": "门控记忆元",
+      "pdf_page": 360,
+      "depth": 2
+    },
+    {
+      "title": "输入门、忘记门和输出门",
+      "pdf_page": 360,
+      "depth": 3
+    },
+    {
+      "title": "候选记忆元",
+      "pdf_page": 361,
+      "depth": 3
+    },
+    {
+      "title": "记忆元",
+      "pdf_page": 362,
+      "depth": 3
+    },
+    {
+      "title": "隐状态",
+      "pdf_page": 363,
+      "depth": 3
+    },
+    {
+      "title": "从零开始实现",
+      "pdf_page": 363,
+      "depth": 2
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 364,
+      "depth": 3
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 364,
+      "depth": 3
+    },
+    {
+      "title": "训练和预测",
+      "pdf_page": 365,
+      "depth": 3
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 366,
+      "depth": 2
+    },
+    {
+      "title": "深度循环神经网络",
+      "pdf_page": 367,
+      "depth": 1
+    },
+    {
+      "title": "函数依赖关系",
+      "pdf_page": 368,
+      "depth": 2
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 368,
+      "depth": 2
+    },
+    {
+      "title": "训练与预测",
+      "pdf_page": 369,
+      "depth": 2
+    },
+    {
+      "title": "双向循环神经网络",
+      "pdf_page": 370,
+      "depth": 1
+    },
+    {
+      "title": "隐马尔可夫模型中的动态规划",
+      "pdf_page": 370,
+      "depth": 2
+    },
+    {
+      "title": "双向模型",
+      "pdf_page": 372,
+      "depth": 2
+    },
+    {
+      "title": "定义",
+      "pdf_page": 373,
+      "depth": 3
+    },
+    {
+      "title": "模型的计算代价及其应用",
+      "pdf_page": 373,
+      "depth": 3
+    },
+    {
+      "title": "双向循环神经网络的错误应用",
+      "pdf_page": 374,
+      "depth": 2
+    },
+    {
+      "title": "机器翻译与数据集",
+      "pdf_page": 375,
+      "depth": 1
+    },
+    {
+      "title": "下载和预处理数据集",
+      "pdf_page": 376,
+      "depth": 2
+    },
+    {
+      "title": "词元化",
+      "pdf_page": 377,
+      "depth": 2
+    },
+    {
+      "title": "词表",
+      "pdf_page": 379,
+      "depth": 2
+    },
+    {
+      "title": "加载数据集",
+      "pdf_page": 379,
+      "depth": 2
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 380,
+      "depth": 2
+    },
+    {
+      "title": "编码器-解码器架构",
+      "pdf_page": 382,
+      "depth": 1
+    },
+    {
+      "title": "编码器",
+      "pdf_page": 382,
+      "depth": 2
+    },
+    {
+      "title": "解码器",
+      "pdf_page": 383,
+      "depth": 2
+    },
+    {
+      "title": "合并编码器和解码器",
+      "pdf_page": 383,
+      "depth": 2
+    },
+    {
+      "title": "序列到序列学习（seq2seq）",
+      "pdf_page": 384,
+      "depth": 1
+    },
+    {
+      "title": "编码器",
+      "pdf_page": 385,
+      "depth": 2
+    },
+    {
+      "title": "解码器",
+      "pdf_page": 387,
+      "depth": 2
+    },
+    {
+      "title": "损失函数",
+      "pdf_page": 388,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 390,
+      "depth": 2
+    },
+    {
+      "title": "预测",
+      "pdf_page": 392,
+      "depth": 2
+    },
+    {
+      "title": "预测序列的评估",
+      "pdf_page": 393,
+      "depth": 2
+    },
+    {
+      "title": "束搜索",
+      "pdf_page": 395,
+      "depth": 1
+    },
+    {
+      "title": "贪心搜索",
+      "pdf_page": 395,
+      "depth": 2
+    },
+    {
+      "title": "穷举搜索",
+      "pdf_page": 396,
+      "depth": 2
+    },
+    {
+      "title": "束搜索",
+      "pdf_page": 396,
+      "depth": 2
+    },
+    {
+      "title": "注意力机制",
+      "pdf_page": 399,
+      "depth": 0
+    },
+    {
+      "title": "注意力提示",
+      "pdf_page": 400,
+      "depth": 1
+    },
+    {
+      "title": "生物学中的注意力提示",
+      "pdf_page": 400,
+      "depth": 2
+    },
+    {
+      "title": "查询、键和值",
+      "pdf_page": 401,
+      "depth": 2
+    },
+    {
+      "title": "注意力的可视化",
+      "pdf_page": 402,
+      "depth": 2
+    },
+    {
+      "title": "注意力汇聚：Nadaraya-Watson 核回归",
+      "pdf_page": 404,
+      "depth": 1
+    },
+    {
+      "title": "生成数据集",
+      "pdf_page": 404,
+      "depth": 2
+    },
+    {
+      "title": "平均汇聚",
+      "pdf_page": 405,
+      "depth": 2
+    },
+    {
+      "title": "非参数注意力汇聚",
+      "pdf_page": 406,
+      "depth": 2
+    },
+    {
+      "title": "带参数注意力汇聚",
+      "pdf_page": 407,
+      "depth": 2
+    },
+    {
+      "title": "批量矩阵乘法",
+      "pdf_page": 408,
+      "depth": 3
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 408,
+      "depth": 3
+    },
+    {
+      "title": "训练",
+      "pdf_page": 409,
+      "depth": 3
+    },
+    {
+      "title": "注意力评分函数",
+      "pdf_page": 411,
+      "depth": 1
+    },
+    {
+      "title": "掩蔽softmax操作",
+      "pdf_page": 412,
+      "depth": 2
+    },
+    {
+      "title": "加性注意力",
+      "pdf_page": 413,
+      "depth": 2
+    },
+    {
+      "title": "缩放点积注意力",
+      "pdf_page": 415,
+      "depth": 2
+    },
+    {
+      "title": "Bahdanau 注意力",
+      "pdf_page": 417,
+      "depth": 1
+    },
+    {
+      "title": "模型",
+      "pdf_page": 417,
+      "depth": 2
+    },
+    {
+      "title": "定义注意力解码器",
+      "pdf_page": 418,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 420,
+      "depth": 2
+    },
+    {
+      "title": "多头注意力",
+      "pdf_page": 422,
+      "depth": 1
+    },
+    {
+      "title": "模型",
+      "pdf_page": 422,
+      "depth": 2
+    },
+    {
+      "title": "实现",
+      "pdf_page": 423,
+      "depth": 2
+    },
+    {
+      "title": "自注意力和位置编码",
+      "pdf_page": 426,
+      "depth": 1
+    },
+    {
+      "title": "自注意力",
+      "pdf_page": 426,
+      "depth": 2
+    },
+    {
+      "title": "比较卷积神经网络、循环神经网络和自注意力",
+      "pdf_page": 427,
+      "depth": 2
+    },
+    {
+      "title": "位置编码",
+      "pdf_page": 428,
+      "depth": 2
+    },
+    {
+      "title": "绝对位置信息",
+      "pdf_page": 429,
+      "depth": 3
+    },
+    {
+      "title": "相对位置信息",
+      "pdf_page": 430,
+      "depth": 3
+    },
+    {
+      "title": "Transformer",
+      "pdf_page": 431,
+      "depth": 1
+    },
+    {
+      "title": "模型",
+      "pdf_page": 431,
+      "depth": 2
+    },
+    {
+      "title": "基于位置的前馈网络",
+      "pdf_page": 433,
+      "depth": 2
+    },
+    {
+      "title": "残差连接和层规范化",
+      "pdf_page": 434,
+      "depth": 2
+    },
+    {
+      "title": "编码器",
+      "pdf_page": 435,
+      "depth": 2
+    },
+    {
+      "title": "解码器",
+      "pdf_page": 437,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 439,
+      "depth": 2
+    },
+    {
+      "title": "优化算法",
+      "pdf_page": 445,
+      "depth": 0
+    },
+    {
+      "title": "优化和深度学习",
+      "pdf_page": 445,
+      "depth": 1
+    },
+    {
+      "title": "优化的目标",
+      "pdf_page": 446,
+      "depth": 2
+    },
+    {
+      "title": "深度学习中的优化挑战",
+      "pdf_page": 447,
+      "depth": 2
+    },
+    {
+      "title": "局部最小值",
+      "pdf_page": 447,
+      "depth": 3
+    },
+    {
+      "title": "鞍点",
+      "pdf_page": 448,
+      "depth": 3
+    },
+    {
+      "title": "梯度消失",
+      "pdf_page": 449,
+      "depth": 3
+    },
+    {
+      "title": "凸性",
+      "pdf_page": 451,
+      "depth": 1
+    },
+    {
+      "title": "定义",
+      "pdf_page": 451,
+      "depth": 2
+    },
+    {
+      "title": "凸集",
+      "pdf_page": 451,
+      "depth": 3
+    },
+    {
+      "title": "凸函数",
+      "pdf_page": 452,
+      "depth": 3
+    },
+    {
+      "title": "詹森不等式",
+      "pdf_page": 453,
+      "depth": 3
+    },
+    {
+      "title": "性质",
+      "pdf_page": 454,
+      "depth": 2
+    },
+    {
+      "title": "局部极小值是全局极小值",
+      "pdf_page": 454,
+      "depth": 3
+    },
+    {
+      "title": "凸函数的下水平集是凸的",
+      "pdf_page": 455,
+      "depth": 3
+    },
+    {
+      "title": "凸性和二阶导数",
+      "pdf_page": 455,
+      "depth": 3
+    },
+    {
+      "title": "约束",
+      "pdf_page": 456,
+      "depth": 2
+    },
+    {
+      "title": "拉格朗日函数",
+      "pdf_page": 456,
+      "depth": 3
+    },
+    {
+      "title": "惩罚",
+      "pdf_page": 457,
+      "depth": 3
+    },
+    {
+      "title": "投影",
+      "pdf_page": 457,
+      "depth": 3
+    },
+    {
+      "title": "梯度下降",
+      "pdf_page": 458,
+      "depth": 1
+    },
+    {
+      "title": "一维梯度下降",
+      "pdf_page": 459,
+      "depth": 2
+    },
+    {
+      "title": "学习率",
+      "pdf_page": 460,
+      "depth": 3
+    },
+    {
+      "title": "局部最小值",
+      "pdf_page": 461,
+      "depth": 3
+    },
+    {
+      "title": "多元梯度下降",
+      "pdf_page": 462,
+      "depth": 2
+    },
+    {
+      "title": "自适应方法",
+      "pdf_page": 464,
+      "depth": 2
+    },
+    {
+      "title": "牛顿法",
+      "pdf_page": 464,
+      "depth": 3
+    },
+    {
+      "title": "收敛性分析",
+      "pdf_page": 467,
+      "depth": 3
+    },
+    {
+      "title": "预处理",
+      "pdf_page": 467,
+      "depth": 3
+    },
+    {
+      "title": "梯度下降和线搜索",
+      "pdf_page": 468,
+      "depth": 3
+    },
+    {
+      "title": "随机梯度下降",
+      "pdf_page": 469,
+      "depth": 1
+    },
+    {
+      "title": "随机梯度更新",
+      "pdf_page": 469,
+      "depth": 2
+    },
+    {
+      "title": "动态学习率",
+      "pdf_page": 471,
+      "depth": 2
+    },
+    {
+      "title": "凸目标的收敛性分析",
+      "pdf_page": 472,
+      "depth": 2
+    },
+    {
+      "title": "随机梯度和有限样本",
+      "pdf_page": 474,
+      "depth": 2
+    },
+    {
+      "title": "小批量随机梯度下降",
+      "pdf_page": 475,
+      "depth": 1
+    },
+    {
+      "title": "向量化和缓存",
+      "pdf_page": 475,
+      "depth": 2
+    },
+    {
+      "title": "小批量",
+      "pdf_page": 477,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 478,
+      "depth": 2
+    },
+    {
+      "title": "从零开始实现",
+      "pdf_page": 479,
+      "depth": 2
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 482,
+      "depth": 2
+    },
+    {
+      "title": "动量法",
+      "pdf_page": 484,
+      "depth": 1
+    },
+    {
+      "title": "基础",
+      "pdf_page": 484,
+      "depth": 2
+    },
+    {
+      "title": "泄漏平均值",
+      "pdf_page": 484,
+      "depth": 3
+    },
+    {
+      "title": "条件不佳的问题",
+      "pdf_page": 485,
+      "depth": 3
+    },
+    {
+      "title": "动量法",
+      "pdf_page": 486,
+      "depth": 3
+    },
+    {
+      "title": "有效样本权重",
+      "pdf_page": 488,
+      "depth": 3
+    },
+    {
+      "title": "实际实验",
+      "pdf_page": 489,
+      "depth": 2
+    },
+    {
+      "title": "从零开始实现",
+      "pdf_page": 489,
+      "depth": 3
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 491,
+      "depth": 3
+    },
+    {
+      "title": "理论分析",
+      "pdf_page": 492,
+      "depth": 2
+    },
+    {
+      "title": "二次凸函数",
+      "pdf_page": 492,
+      "depth": 3
+    },
+    {
+      "title": "标量函数",
+      "pdf_page": 492,
+      "depth": 3
+    },
+    {
+      "title": "AdaGrad算法",
+      "pdf_page": 494,
+      "depth": 1
+    },
+    {
+      "title": "稀疏特征和学习率",
+      "pdf_page": 494,
+      "depth": 2
+    },
+    {
+      "title": "预处理",
+      "pdf_page": 495,
+      "depth": 2
+    },
+    {
+      "title": "算法",
+      "pdf_page": 496,
+      "depth": 2
+    },
+    {
+      "title": "从零开始实现",
+      "pdf_page": 497,
+      "depth": 2
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 498,
+      "depth": 2
+    },
+    {
+      "title": "RMSProp算法",
+      "pdf_page": 500,
+      "depth": 1
+    },
+    {
+      "title": "算法",
+      "pdf_page": 500,
+      "depth": 2
+    },
+    {
+      "title": "从零开始实现",
+      "pdf_page": 501,
+      "depth": 2
+    },
+    {
+      "title": "简洁实现",
+      "pdf_page": 503,
+      "depth": 2
+    },
+    {
+      "title": "Adadelta",
+      "pdf_page": 504,
+      "depth": 1
+    },
+    {
+      "title": "Adadelta算法",
+      "pdf_page": 504,
+      "depth": 2
+    },
+    {
+      "title": "代码实现",
+      "pdf_page": 504,
+      "depth": 2
+    },
+    {
+      "title": "Adam算法",
+      "pdf_page": 506,
+      "depth": 1
+    },
+    {
+      "title": "算法",
+      "pdf_page": 507,
+      "depth": 2
+    },
+    {
+      "title": "实现",
+      "pdf_page": 507,
+      "depth": 2
+    },
+    {
+      "title": "Yogi",
+      "pdf_page": 509,
+      "depth": 2
+    },
+    {
+      "title": "学习率调度器",
+      "pdf_page": 511,
+      "depth": 1
+    },
+    {
+      "title": "一个简单的问题",
+      "pdf_page": 511,
+      "depth": 2
+    },
+    {
+      "title": "学习率调度器",
+      "pdf_page": 513,
+      "depth": 2
+    },
+    {
+      "title": "策略",
+      "pdf_page": 515,
+      "depth": 2
+    },
+    {
+      "title": "单因子调度器",
+      "pdf_page": 515,
+      "depth": 3
+    },
+    {
+      "title": "多因子调度器",
+      "pdf_page": 516,
+      "depth": 3
+    },
+    {
+      "title": "余弦调度器",
+      "pdf_page": 517,
+      "depth": 3
+    },
+    {
+      "title": "预热",
+      "pdf_page": 519,
+      "depth": 3
+    },
+    {
+      "title": "计算性能",
+      "pdf_page": 521,
+      "depth": 0
+    },
+    {
+      "title": "编译器和解释器",
+      "pdf_page": 521,
+      "depth": 1
+    },
+    {
+      "title": "符号式编程",
+      "pdf_page": 522,
+      "depth": 2
+    },
+    {
+      "title": "混合式编程",
+      "pdf_page": 524,
+      "depth": 2
+    },
+    {
+      "title": "Sequential的混合式编程",
+      "pdf_page": 524,
+      "depth": 2
+    },
+    {
+      "title": "通过混合式编程加速",
+      "pdf_page": 525,
+      "depth": 3
+    },
+    {
+      "title": "序列化",
+      "pdf_page": 526,
+      "depth": 3
+    },
+    {
+      "title": "异步计算",
+      "pdf_page": 526,
+      "depth": 1
+    },
+    {
+      "title": "通过后端异步处理",
+      "pdf_page": 527,
+      "depth": 2
+    },
+    {
+      "title": "障碍器与阻塞器",
+      "pdf_page": 529,
+      "depth": 2
+    },
+    {
+      "title": "改进计算",
+      "pdf_page": 529,
+      "depth": 2
+    },
+    {
+      "title": "自动并行",
+      "pdf_page": 530,
+      "depth": 1
+    },
+    {
+      "title": "基于GPU的并行计算",
+      "pdf_page": 530,
+      "depth": 2
+    },
+    {
+      "title": "并行计算与通信",
+      "pdf_page": 531,
+      "depth": 2
+    },
+    {
+      "title": "硬件",
+      "pdf_page": 534,
+      "depth": 1
+    },
+    {
+      "title": "计算机",
+      "pdf_page": 535,
+      "depth": 2
+    },
+    {
+      "title": "内存",
+      "pdf_page": 535,
+      "depth": 2
+    },
+    {
+      "title": "存储器",
+      "pdf_page": 536,
+      "depth": 2
+    },
+    {
+      "title": "硬盘驱动器",
+      "pdf_page": 536,
+      "depth": 3
+    },
+    {
+      "title": "固态驱动器",
+      "pdf_page": 537,
+      "depth": 3
+    },
+    {
+      "title": "云存储",
+      "pdf_page": 537,
+      "depth": 3
+    },
+    {
+      "title": "CPU",
+      "pdf_page": 537,
+      "depth": 2
+    },
+    {
+      "title": "微体系结构",
+      "pdf_page": 538,
+      "depth": 3
+    },
+    {
+      "title": "矢量化",
+      "pdf_page": 539,
+      "depth": 3
+    },
+    {
+      "title": "缓存",
+      "pdf_page": 539,
+      "depth": 3
+    },
+    {
+      "title": "GPU和其他加速卡",
+      "pdf_page": 540,
+      "depth": 2
+    },
+    {
+      "title": "网络和总线",
+      "pdf_page": 543,
+      "depth": 2
+    },
+    {
+      "title": "更多延迟",
+      "pdf_page": 543,
+      "depth": 2
+    },
+    {
+      "title": "多GPU训练",
+      "pdf_page": 546,
+      "depth": 1
+    },
+    {
+      "title": "问题拆分",
+      "pdf_page": 546,
+      "depth": 2
+    },
+    {
+      "title": "数据并行性",
+      "pdf_page": 548,
+      "depth": 2
+    },
+    {
+      "title": "简单网络",
+      "pdf_page": 549,
+      "depth": 2
+    },
+    {
+      "title": "数据同步",
+      "pdf_page": 549,
+      "depth": 2
+    },
+    {
+      "title": "数据分发",
+      "pdf_page": 551,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 551,
+      "depth": 2
+    },
+    {
+      "title": "多GPU的简洁实现",
+      "pdf_page": 554,
+      "depth": 1
+    },
+    {
+      "title": "简单网络",
+      "pdf_page": 554,
+      "depth": 2
+    },
+    {
+      "title": "网络初始化",
+      "pdf_page": 555,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 555,
+      "depth": 2
+    },
+    {
+      "title": "参数服务器",
+      "pdf_page": 558,
+      "depth": 1
+    },
+    {
+      "title": "数据并行训练",
+      "pdf_page": 558,
+      "depth": 2
+    },
+    {
+      "title": "环同步（Ring Synchronization）",
+      "pdf_page": 560,
+      "depth": 2
+    },
+    {
+      "title": "多机训练",
+      "pdf_page": 563,
+      "depth": 2
+    },
+    {
+      "title": "键值存储",
+      "pdf_page": 565,
+      "depth": 2
+    },
+    {
+      "title": "计算机视觉",
+      "pdf_page": 567,
+      "depth": 0
+    },
+    {
+      "title": "图像增广",
+      "pdf_page": 567,
+      "depth": 1
+    },
+    {
+      "title": "常用的图像增广方法",
+      "pdf_page": 568,
+      "depth": 2
+    },
+    {
+      "title": "翻转和裁剪",
+      "pdf_page": 568,
+      "depth": 3
+    },
+    {
+      "title": "改变颜色",
+      "pdf_page": 570,
+      "depth": 3
+    },
+    {
+      "title": "结合多种图像增广方法",
+      "pdf_page": 571,
+      "depth": 3
+    },
+    {
+      "title": "使用图像增广进行训练",
+      "pdf_page": 572,
+      "depth": 2
+    },
+    {
+      "title": "多GPU训练",
+      "pdf_page": 573,
+      "depth": 3
+    },
+    {
+      "title": "微调",
+      "pdf_page": 575,
+      "depth": 1
+    },
+    {
+      "title": "步骤",
+      "pdf_page": 576,
+      "depth": 2
+    },
+    {
+      "title": "热狗识别",
+      "pdf_page": 577,
+      "depth": 2
+    },
+    {
+      "title": "获取数据集",
+      "pdf_page": 577,
+      "depth": 3
+    },
+    {
+      "title": "定义和初始化模型",
+      "pdf_page": 578,
+      "depth": 3
+    },
+    {
+      "title": "微调模型",
+      "pdf_page": 579,
+      "depth": 3
+    },
+    {
+      "title": "目标检测和边界框",
+      "pdf_page": 582,
+      "depth": 1
+    },
+    {
+      "title": "边界框",
+      "pdf_page": 583,
+      "depth": 2
+    },
+    {
+      "title": "锚框",
+      "pdf_page": 585,
+      "depth": 1
+    },
+    {
+      "title": "生成多个锚框",
+      "pdf_page": 585,
+      "depth": 2
+    },
+    {
+      "title": "交并比（IoU）",
+      "pdf_page": 588,
+      "depth": 2
+    },
+    {
+      "title": "在训练数据中标注锚框",
+      "pdf_page": 589,
+      "depth": 2
+    },
+    {
+      "title": "将真实边界框分配给锚框",
+      "pdf_page": 590,
+      "depth": 3
+    },
+    {
+      "title": "标记类别和偏移量",
+      "pdf_page": 591,
+      "depth": 3
+    },
+    {
+      "title": "一个例子",
+      "pdf_page": 593,
+      "depth": 3
+    },
+    {
+      "title": "使用非极大值抑制预测边界框",
+      "pdf_page": 594,
+      "depth": 2
+    },
+    {
+      "title": "多尺度目标检测",
+      "pdf_page": 599,
+      "depth": 1
+    },
+    {
+      "title": "多尺度锚框",
+      "pdf_page": 599,
+      "depth": 2
+    },
+    {
+      "title": "多尺度检测",
+      "pdf_page": 601,
+      "depth": 2
+    },
+    {
+      "title": "目标检测数据集",
+      "pdf_page": 602,
+      "depth": 1
+    },
+    {
+      "title": "下载数据集",
+      "pdf_page": 602,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 603,
+      "depth": 2
+    },
+    {
+      "title": "演示",
+      "pdf_page": 605,
+      "depth": 2
+    },
+    {
+      "title": "单发多框检测（SSD）",
+      "pdf_page": 606,
+      "depth": 1
+    },
+    {
+      "title": "模型",
+      "pdf_page": 606,
+      "depth": 2
+    },
+    {
+      "title": "类别预测层",
+      "pdf_page": 607,
+      "depth": 3
+    },
+    {
+      "title": "边界框预测层",
+      "pdf_page": 607,
+      "depth": 3
+    },
+    {
+      "title": "连结多尺度的预测",
+      "pdf_page": 607,
+      "depth": 3
+    },
+    {
+      "title": "高和宽减半块",
+      "pdf_page": 608,
+      "depth": 3
+    },
+    {
+      "title": "基本网络块",
+      "pdf_page": 609,
+      "depth": 3
+    },
+    {
+      "title": "完整的模型",
+      "pdf_page": 610,
+      "depth": 3
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 612,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集和初始化",
+      "pdf_page": 612,
+      "depth": 3
+    },
+    {
+      "title": "定义损失函数和评价函数",
+      "pdf_page": 612,
+      "depth": 3
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 613,
+      "depth": 3
+    },
+    {
+      "title": "预测目标",
+      "pdf_page": 614,
+      "depth": 2
+    },
+    {
+      "title": "区域卷积神经网络（R-CNN）系列",
+      "pdf_page": 617,
+      "depth": 1
+    },
+    {
+      "title": "R-CNN",
+      "pdf_page": 618,
+      "depth": 2
+    },
+    {
+      "title": "Fast R-CNN",
+      "pdf_page": 619,
+      "depth": 2
+    },
+    {
+      "title": "Faster R-CNN",
+      "pdf_page": 621,
+      "depth": 2
+    },
+    {
+      "title": "Mask R-CNN",
+      "pdf_page": 622,
+      "depth": 2
+    },
+    {
+      "title": "语义分割和数据集",
+      "pdf_page": 623,
+      "depth": 1
+    },
+    {
+      "title": "图像分割和实例分割",
+      "pdf_page": 623,
+      "depth": 2
+    },
+    {
+      "title": "Pascal VOC2012 语义分割数据集",
+      "pdf_page": 624,
+      "depth": 2
+    },
+    {
+      "title": "预处理数据",
+      "pdf_page": 626,
+      "depth": 3
+    },
+    {
+      "title": "自定义语义分割数据集类",
+      "pdf_page": 627,
+      "depth": 3
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 628,
+      "depth": 3
+    },
+    {
+      "title": "整合所有组件",
+      "pdf_page": 629,
+      "depth": 3
+    },
+    {
+      "title": "转置卷积",
+      "pdf_page": 630,
+      "depth": 1
+    },
+    {
+      "title": "基本操作",
+      "pdf_page": 630,
+      "depth": 2
+    },
+    {
+      "title": "填充、步幅和多通道",
+      "pdf_page": 632,
+      "depth": 2
+    },
+    {
+      "title": "与矩阵变换的联系",
+      "pdf_page": 633,
+      "depth": 2
+    },
+    {
+      "title": "全卷积网络",
+      "pdf_page": 635,
+      "depth": 1
+    },
+    {
+      "title": "构造模型",
+      "pdf_page": 635,
+      "depth": 2
+    },
+    {
+      "title": "初始化转置卷积层",
+      "pdf_page": 637,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 639,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 639,
+      "depth": 2
+    },
+    {
+      "title": "预测",
+      "pdf_page": 640,
+      "depth": 2
+    },
+    {
+      "title": "风格迁移",
+      "pdf_page": 642,
+      "depth": 1
+    },
+    {
+      "title": "方法",
+      "pdf_page": 643,
+      "depth": 2
+    },
+    {
+      "title": "阅读内容和风格图像",
+      "pdf_page": 643,
+      "depth": 2
+    },
+    {
+      "title": "预处理和后处理",
+      "pdf_page": 644,
+      "depth": 2
+    },
+    {
+      "title": "抽取图像特征",
+      "pdf_page": 645,
+      "depth": 2
+    },
+    {
+      "title": "定义损失函数",
+      "pdf_page": 646,
+      "depth": 2
+    },
+    {
+      "title": "内容损失",
+      "pdf_page": 646,
+      "depth": 3
+    },
+    {
+      "title": "风格损失",
+      "pdf_page": 647,
+      "depth": 3
+    },
+    {
+      "title": "全变分损失",
+      "pdf_page": 647,
+      "depth": 3
+    },
+    {
+      "title": "损失函数",
+      "pdf_page": 648,
+      "depth": 3
+    },
+    {
+      "title": "初始化合成图像",
+      "pdf_page": 648,
+      "depth": 2
+    },
+    {
+      "title": "训练模型",
+      "pdf_page": 649,
+      "depth": 2
+    },
+    {
+      "title": "实战 Kaggle 比赛：图像分类 (CIFAR-10)",
+      "pdf_page": 650,
+      "depth": 1
+    },
+    {
+      "title": "获取并组织数据集",
+      "pdf_page": 651,
+      "depth": 2
+    },
+    {
+      "title": "下载数据集",
+      "pdf_page": 652,
+      "depth": 3
+    },
+    {
+      "title": "整理数据集",
+      "pdf_page": 652,
+      "depth": 3
+    },
+    {
+      "title": "图像增广",
+      "pdf_page": 654,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 655,
+      "depth": 2
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 656,
+      "depth": 2
+    },
+    {
+      "title": "定义训练函数",
+      "pdf_page": 656,
+      "depth": 2
+    },
+    {
+      "title": "训练和验证模型",
+      "pdf_page": 657,
+      "depth": 2
+    },
+    {
+      "title": "在 Kaggle 上对测试集进行分类并提交结果",
+      "pdf_page": 658,
+      "depth": 2
+    },
+    {
+      "title": "实战Kaggle比赛：狗的品种识别（ImageNet Dogs）",
+      "pdf_page": 659,
+      "depth": 1
+    },
+    {
+      "title": "获取和整理数据集",
+      "pdf_page": 660,
+      "depth": 2
+    },
+    {
+      "title": "下载数据集",
+      "pdf_page": 660,
+      "depth": 3
+    },
+    {
+      "title": "整理数据集",
+      "pdf_page": 661,
+      "depth": 3
+    },
+    {
+      "title": "图像增广",
+      "pdf_page": 661,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 662,
+      "depth": 2
+    },
+    {
+      "title": "微调预训练模型",
+      "pdf_page": 662,
+      "depth": 2
+    },
+    {
+      "title": "定义训练函数",
+      "pdf_page": 663,
+      "depth": 2
+    },
+    {
+      "title": "训练和验证模型",
+      "pdf_page": 664,
+      "depth": 2
+    },
+    {
+      "title": "对测试集分类并在Kaggle提交结果",
+      "pdf_page": 665,
+      "depth": 2
+    },
+    {
+      "title": "自然语言处理：预训练",
+      "pdf_page": 667,
+      "depth": 0
+    },
+    {
+      "title": "词嵌入（word2vec）",
+      "pdf_page": 668,
+      "depth": 1
+    },
+    {
+      "title": "为何独热向量是一个糟糕的选择",
+      "pdf_page": 668,
+      "depth": 2
+    },
+    {
+      "title": "自监督的word2vec",
+      "pdf_page": 669,
+      "depth": 2
+    },
+    {
+      "title": "跳元模型（Skip-Gram）",
+      "pdf_page": 669,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 670,
+      "depth": 3
+    },
+    {
+      "title": "连续词袋（CBOW）模型",
+      "pdf_page": 670,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 671,
+      "depth": 3
+    },
+    {
+      "title": "近似训练",
+      "pdf_page": 672,
+      "depth": 1
+    },
+    {
+      "title": "负采样",
+      "pdf_page": 672,
+      "depth": 2
+    },
+    {
+      "title": "层序Softmax",
+      "pdf_page": 673,
+      "depth": 2
+    },
+    {
+      "title": "用于预训练词嵌入的数据集",
+      "pdf_page": 675,
+      "depth": 1
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 675,
+      "depth": 2
+    },
+    {
+      "title": "下采样",
+      "pdf_page": 676,
+      "depth": 2
+    },
+    {
+      "title": "中心词和上下文词的提取",
+      "pdf_page": 678,
+      "depth": 2
+    },
+    {
+      "title": "负采样",
+      "pdf_page": 679,
+      "depth": 2
+    },
+    {
+      "title": "小批量加载训练实例",
+      "pdf_page": 681,
+      "depth": 2
+    },
+    {
+      "title": "整合代码",
+      "pdf_page": 682,
+      "depth": 2
+    },
+    {
+      "title": "预训练word2vec",
+      "pdf_page": 684,
+      "depth": 1
+    },
+    {
+      "title": "跳元模型",
+      "pdf_page": 684,
+      "depth": 2
+    },
+    {
+      "title": "嵌入层",
+      "pdf_page": 684,
+      "depth": 3
+    },
+    {
+      "title": "定义前向传播",
+      "pdf_page": 685,
+      "depth": 3
+    },
+    {
+      "title": "训练",
+      "pdf_page": 685,
+      "depth": 2
+    },
+    {
+      "title": "二元交叉熵损失",
+      "pdf_page": 685,
+      "depth": 3
+    },
+    {
+      "title": "初始化模型参数",
+      "pdf_page": 686,
+      "depth": 3
+    },
+    {
+      "title": "定义训练阶段代码",
+      "pdf_page": 687,
+      "depth": 3
+    },
+    {
+      "title": "应用词嵌入",
+      "pdf_page": 688,
+      "depth": 2
+    },
+    {
+      "title": "全局向量的词嵌入（GloVe）",
+      "pdf_page": 689,
+      "depth": 1
+    },
+    {
+      "title": "带全局语料统计的跳元模型",
+      "pdf_page": 689,
+      "depth": 2
+    },
+    {
+      "title": "GloVe模型",
+      "pdf_page": 690,
+      "depth": 2
+    },
+    {
+      "title": "从条件概率比值理解GloVe模型",
+      "pdf_page": 690,
+      "depth": 2
+    },
+    {
+      "title": "子词嵌入",
+      "pdf_page": 692,
+      "depth": 1
+    },
+    {
+      "title": "fastText模型",
+      "pdf_page": 692,
+      "depth": 2
+    },
+    {
+      "title": "字节对编码（Byte Pair Encoding）",
+      "pdf_page": 693,
+      "depth": 2
+    },
+    {
+      "title": "词的相似性和类比任务",
+      "pdf_page": 696,
+      "depth": 1
+    },
+    {
+      "title": "加载预训练词向量",
+      "pdf_page": 697,
+      "depth": 2
+    },
+    {
+      "title": "应用预训练词向量",
+      "pdf_page": 699,
+      "depth": 2
+    },
+    {
+      "title": "词相似度",
+      "pdf_page": 699,
+      "depth": 3
+    },
+    {
+      "title": "词类比",
+      "pdf_page": 700,
+      "depth": 3
+    },
+    {
+      "title": "来自Transformers的双向编码器表示（BERT）",
+      "pdf_page": 701,
+      "depth": 1
+    },
+    {
+      "title": "从上下文无关到上下文敏感",
+      "pdf_page": 701,
+      "depth": 2
+    },
+    {
+      "title": "从特定于任务到不可知任务",
+      "pdf_page": 702,
+      "depth": 2
+    },
+    {
+      "title": "BERT：把两个最好的结合起来",
+      "pdf_page": 702,
+      "depth": 2
+    },
+    {
+      "title": "输入表示",
+      "pdf_page": 703,
+      "depth": 2
+    },
+    {
+      "title": "预训练任务",
+      "pdf_page": 706,
+      "depth": 2
+    },
+    {
+      "title": "掩蔽语言模型（Masked Language Modeling）",
+      "pdf_page": 706,
+      "depth": 3
+    },
+    {
+      "title": "下一句预测（Next Sentence Prediction）",
+      "pdf_page": 707,
+      "depth": 3
+    },
+    {
+      "title": "整合代码",
+      "pdf_page": 708,
+      "depth": 2
+    },
+    {
+      "title": "用于预训练BERT的数据集",
+      "pdf_page": 710,
+      "depth": 1
+    },
+    {
+      "title": "为预训练任务定义辅助函数",
+      "pdf_page": 711,
+      "depth": 2
+    },
+    {
+      "title": "生成下一句预测任务的数据",
+      "pdf_page": 711,
+      "depth": 3
+    },
+    {
+      "title": "生成遮蔽语言模型任务的数据",
+      "pdf_page": 712,
+      "depth": 3
+    },
+    {
+      "title": "将文本转换为预训练数据集",
+      "pdf_page": 713,
+      "depth": 2
+    },
+    {
+      "title": "预训练BERT",
+      "pdf_page": 716,
+      "depth": 1
+    },
+    {
+      "title": "预训练BERT",
+      "pdf_page": 717,
+      "depth": 2
+    },
+    {
+      "title": "用BERT表示文本",
+      "pdf_page": 719,
+      "depth": 2
+    },
+    {
+      "title": "自然语言处理：应用",
+      "pdf_page": 721,
+      "depth": 0
+    },
+    {
+      "title": "情感分析及数据集",
+      "pdf_page": 722,
+      "depth": 1
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 722,
+      "depth": 2
+    },
+    {
+      "title": "预处理数据集",
+      "pdf_page": 723,
+      "depth": 2
+    },
+    {
+      "title": "创建数据迭代器",
+      "pdf_page": 724,
+      "depth": 2
+    },
+    {
+      "title": "整合代码",
+      "pdf_page": 725,
+      "depth": 2
+    },
+    {
+      "title": "情感分析：使用循环神经网络",
+      "pdf_page": 726,
+      "depth": 1
+    },
+    {
+      "title": "使用循环神经网络表示单个文本",
+      "pdf_page": 726,
+      "depth": 2
+    },
+    {
+      "title": "加载预训练的词向量",
+      "pdf_page": 728,
+      "depth": 2
+    },
+    {
+      "title": "训练和评估模型",
+      "pdf_page": 728,
+      "depth": 2
+    },
+    {
+      "title": "情感分析：使用卷积神经网络",
+      "pdf_page": 730,
+      "depth": 1
+    },
+    {
+      "title": "一维卷积",
+      "pdf_page": 730,
+      "depth": 2
+    },
+    {
+      "title": "最大时间汇聚层",
+      "pdf_page": 732,
+      "depth": 2
+    },
+    {
+      "title": "textCNN模型",
+      "pdf_page": 733,
+      "depth": 2
+    },
+    {
+      "title": "定义模型",
+      "pdf_page": 734,
+      "depth": 3
+    },
+    {
+      "title": "加载预训练词向量",
+      "pdf_page": 735,
+      "depth": 3
+    },
+    {
+      "title": "训练和评估模型",
+      "pdf_page": 735,
+      "depth": 3
+    },
+    {
+      "title": "自然语言推断与数据集",
+      "pdf_page": 737,
+      "depth": 1
+    },
+    {
+      "title": "自然语言推断",
+      "pdf_page": 737,
+      "depth": 2
+    },
+    {
+      "title": "斯坦福自然语言推断（SNLI）数据集",
+      "pdf_page": 737,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 738,
+      "depth": 3
+    },
+    {
+      "title": "定义用于加载数据集的类",
+      "pdf_page": 739,
+      "depth": 3
+    },
+    {
+      "title": "整合代码",
+      "pdf_page": 740,
+      "depth": 3
+    },
+    {
+      "title": "自然语言推断：使用注意力",
+      "pdf_page": 742,
+      "depth": 1
+    },
+    {
+      "title": "模型",
+      "pdf_page": 742,
+      "depth": 2
+    },
+    {
+      "title": "注意（Attending）",
+      "pdf_page": 743,
+      "depth": 3
+    },
+    {
+      "title": "比较",
+      "pdf_page": 744,
+      "depth": 3
+    },
+    {
+      "title": "聚合",
+      "pdf_page": 745,
+      "depth": 3
+    },
+    {
+      "title": "整合代码",
+      "pdf_page": 746,
+      "depth": 3
+    },
+    {
+      "title": "训练和评估模型",
+      "pdf_page": 746,
+      "depth": 2
+    },
+    {
+      "title": "读取数据集",
+      "pdf_page": 746,
+      "depth": 3
+    },
+    {
+      "title": "创建模型",
+      "pdf_page": 747,
+      "depth": 3
+    },
+    {
+      "title": "训练和评估模型",
+      "pdf_page": 747,
+      "depth": 3
+    },
+    {
+      "title": "使用模型",
+      "pdf_page": 748,
+      "depth": 3
+    },
+    {
+      "title": "针对序列级和词元级应用微调BERT",
+      "pdf_page": 749,
+      "depth": 1
+    },
+    {
+      "title": "单文本分类",
+      "pdf_page": 749,
+      "depth": 2
+    },
+    {
+      "title": "文本对分类或回归",
+      "pdf_page": 750,
+      "depth": 2
+    },
+    {
+      "title": "文本标注",
+      "pdf_page": 750,
+      "depth": 2
+    },
+    {
+      "title": "问答",
+      "pdf_page": 751,
+      "depth": 2
+    },
+    {
+      "title": "自然语言推断：微调BERT",
+      "pdf_page": 752,
+      "depth": 1
+    },
+    {
+      "title": "加载预训练的BERT",
+      "pdf_page": 753,
+      "depth": 2
+    },
+    {
+      "title": "微调BERT的数据集",
+      "pdf_page": 754,
+      "depth": 2
+    },
+    {
+      "title": "微调BERT",
+      "pdf_page": 756,
+      "depth": 2
+    },
+    {
+      "title": "附录：深度学习工具",
+      "pdf_page": 759,
+      "depth": 0
+    },
+    {
+      "title": "使用Jupyter Notebook",
+      "pdf_page": 759,
+      "depth": 1
+    },
+    {
+      "title": "在本地编辑和运行代码",
+      "pdf_page": 759,
+      "depth": 2
+    },
+    {
+      "title": "高级选项",
+      "pdf_page": 763,
+      "depth": 2
+    },
+    {
+      "title": "Jupyter中的Markdown文件",
+      "pdf_page": 763,
+      "depth": 3
+    },
+    {
+      "title": "在远程服务器上运行Jupyter Notebook",
+      "pdf_page": 764,
+      "depth": 3
+    },
+    {
+      "title": "执行时间",
+      "pdf_page": 764,
+      "depth": 3
+    },
+    {
+      "title": "使用Amazon SageMaker",
+      "pdf_page": 765,
+      "depth": 1
+    },
+    {
+      "title": "注册",
+      "pdf_page": 765,
+      "depth": 2
+    },
+    {
+      "title": "创建SageMaker实例",
+      "pdf_page": 765,
+      "depth": 2
+    },
+    {
+      "title": "运行和停止实例",
+      "pdf_page": 767,
+      "depth": 2
+    },
+    {
+      "title": "更新Notebook",
+      "pdf_page": 767,
+      "depth": 2
+    },
+    {
+      "title": "使用Amazon EC2实例",
+      "pdf_page": 768,
+      "depth": 1
+    },
+    {
+      "title": "创建和运行EC2实例",
+      "pdf_page": 768,
+      "depth": 2
+    },
+    {
+      "title": "预置位置",
+      "pdf_page": 769,
+      "depth": 3
+    },
+    {
+      "title": "增加限制",
+      "pdf_page": 770,
+      "depth": 3
+    },
+    {
+      "title": "启动实例",
+      "pdf_page": 770,
+      "depth": 3
+    },
+    {
+      "title": "连接到实例",
+      "pdf_page": 772,
+      "depth": 3
+    },
+    {
+      "title": "安装CUDA",
+      "pdf_page": 773,
+      "depth": 2
+    },
+    {
+      "title": "安装库以运行代码",
+      "pdf_page": 775,
+      "depth": 2
+    },
+    {
+      "title": "远程运行Jupyter笔记本",
+      "pdf_page": 775,
+      "depth": 2
+    },
+    {
+      "title": "关闭未使用的实例",
+      "pdf_page": 776,
+      "depth": 2
+    },
+    {
+      "title": "选择服务器和GPU",
+      "pdf_page": 776,
+      "depth": 1
+    },
+    {
+      "title": "选择服务器",
+      "pdf_page": 777,
+      "depth": 2
+    },
+    {
+      "title": "选择GPU",
+      "pdf_page": 778,
+      "depth": 2
+    },
+    {
+      "title": "为本书做贡献",
+      "pdf_page": 781,
+      "depth": 1
+    },
+    {
+      "title": "提交微小更改",
+      "pdf_page": 781,
+      "depth": 2
+    },
+    {
+      "title": "大量文本或代码修改",
+      "pdf_page": 781,
+      "depth": 2
+    },
+    {
+      "title": "提交主要更改",
+      "pdf_page": 782,
+      "depth": 2
+    },
+    {
+      "title": "安装Git",
+      "pdf_page": 782,
+      "depth": 3
+    },
+    {
+      "title": "登录GitHub",
+      "pdf_page": 782,
+      "depth": 3
+    },
+    {
+      "title": "克隆存储库",
+      "pdf_page": 783,
+      "depth": 3
+    },
+    {
+      "title": "编辑和推送",
+      "pdf_page": 783,
+      "depth": 3
+    },
+    {
+      "title": "提交Pull请求",
+      "pdf_page": 784,
+      "depth": 3
+    },
+    {
+      "title": "d2l API 文档",
+      "pdf_page": 785,
+      "depth": 1
+    },
+    {
+      "title": "模型",
+      "pdf_page": 785,
+      "depth": 2
+    },
+    {
+      "title": "数据",
+      "pdf_page": 785,
+      "depth": 2
+    },
+    {
+      "title": "训练",
+      "pdf_page": 785,
+      "depth": 2
+    },
+    {
+      "title": "公用",
+      "pdf_page": 785,
+      "depth": 2
+    },
+    {
+      "title": "Bibliography",
+      "pdf_page": 787,
+      "depth": 0
+    }
+  ]
+}

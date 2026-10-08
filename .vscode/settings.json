@@ -1,0 +1,27 @@
+{
+    "python.defaultInterpreterPath":  "D:/Anaconda/envs/openmmlab/python.exe",
+    "python.terminal.activateEnvironment":  true,
+    "python.analysis.typeCheckingMode":  "basic",
+    "files.encoding":  "utf8",
+    "editor.tabSize":  4,
+    "terminal.integrated.cwd":  "${workspaceFolder}",
+    "terminal.integrated.env.windows":  {
+                                            "PYTHONUTF8":  "1",
+                                            "PYTHONIOENCODING":  "utf-8",
+                                            "PYTHONDONTWRITEBYTECODE":  "1",
+                                            "TORCH_HOME":  "${workspaceFolder}/.cache/torch",
+                                            "CUDA_CACHE_PATH":  "${workspaceFolder}/.cache/cuda",
+                                            "HF_HOME":  "${workspaceFolder}/.cache/huggingface",
+                                            "UV_CACHE_DIR":  "${workspaceFolder}/.cache/uv",
+                                            "UV_PYTHON_INSTALL_DIR":  "${workspaceFolder}/.tools/python",
+                                            "UV_PYTHON_BIN_DIR":  "${workspaceFolder}/.tools/bin",
+                                            "PIP_CACHE_DIR":  "${workspaceFolder}/.cache/pip",
+                                            "MPLCONFIGDIR":  "${workspaceFolder}/.cache/matplotlib",
+                                            "JUPYTER_CONFIG_DIR":  "${workspaceFolder}/.cache/jupyter/config",
+                                            "JUPYTER_DATA_DIR":  "${workspaceFolder}/.cache/jupyter/data",
+                                            "JUPYTER_RUNTIME_DIR":  "${workspaceFolder}/.cache/jupyter/runtime",
+                                            "IPYTHONDIR":  "${workspaceFolder}/.cache/ipython",
+                                            "TEMP":  "${workspaceFolder}/.cache/tmp",
+                                            "TMP":  "${workspaceFolder}/.cache/tmp"
+                                        }
+}

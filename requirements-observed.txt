@@ -1,0 +1,8 @@
+# Observed versions in the existing openmmlab environment.
+# Reference only; no installation is required.
+# PyTorch wheel source: https://download.pytorch.org/whl/cu121
+torch==2.4.1+cu121
+torchvision==0.19.1+cu121
+numpy==1.23.5
+matplotlib==3.7.2
+ipykernel==6.29.5

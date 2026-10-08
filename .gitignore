@@ -1,0 +1,25 @@
+# Local environments and tool caches
+.venv/
+.tools/
+.cache/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local configuration, credentials, and source books
+*.local.json
+.env
+.env.*
+*.pdf
+
+# Downloaded data and generated training output
+data/
+artifacts/
+*.pt
+*.pth
+*.ckpt
+
+# Operating-system files
+Thumbs.db
+Desktop.ini
+.DS_Store
