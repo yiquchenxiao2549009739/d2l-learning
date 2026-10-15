@@ -17,6 +17,7 @@
 - 用户指定仅在聊天解释的第 1 章背景梳理不保存、不同步；此要求针对那次背景讲解。后续教材实践沿用同步要求。
 - 当前统一数据操作入口为 lessons/ch02/01_data_operations.py，综合练习为 exercises/ch02/01_data_operations.py。用户明确要求删除之前保留的旧代码，单独的 tensor 与 reshape 示例、练习和旧讲义已清理；不要重新生成这些重复文件。
 - 2.2 数据预处理使用完整的小节演示与综合练习（02_data_preprocessing.py），已有 pandas 2.0.3。用户主动要求前进时继续教学，不以旧练习未提交阻挡，但不虚构完成记录。小型人工 CSV 放 datasets/ 并同步 GitHub。
+- 2026-10-15：当前为完整 2.3 线性代数，统一演示与综合练习均为 03_linear_algebra.py；学习 PDF 和原理配图一起同步。按整节讲解并集中反馈，用户未作答前不标记掌握。当前 VS Code 默认入口随这一节更新，前两节完整材料保留。
 - 需要保留的实验指标、曲线和观察整理到可提交的 reports/。下载的数据、完整模型、原教材、环境和缓存继续留在本地。不要创建定时任务；同步随当前教学回合完成。
 - 用户明确要求复用已有深度学习环境，不额外安装依赖。本机已确认 D:/Anaconda/envs/openmmlab/python.exe，Python 3.8.20、PyTorch 2.4.1+cu121，GPU 可用。新增依赖前先确认已有能力，不能擅自安装或升级。
 - 本机解释器路径保存在 environment.local.json，并通过 VS Code 的解释器设置使用。scripts/use_environment.ps1 只选择和验证已有环境，不安装任何包。

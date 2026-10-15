@@ -1,9 +1,10 @@
-"""Build the two Chinese study booklets from the existing section notes.
+"""Build Chinese study booklets from the section notes.
 
 Uses the existing PDF runtime (ReportLab / pypdf) and Windows fonts.
 All generated output remains inside this project. No package installation.
 """
 
+import argparse
 import csv
 import re
 from pathlib import Path
@@ -17,8 +18,8 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
-    BaseDocTemplate, Flowable, Frame, KeepTogether,
-    PageTemplate, Paragraph, Spacer, Table, TableStyle,
+    BaseDocTemplate, Flowable, Frame, Image, KeepTogether,
+    PageBreak, PageTemplate, Paragraph, Spacer, Table, TableStyle,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,6 +56,7 @@ for name, settings in {
     "Lead": dict(fontSize=10.6, leading=17.8, spaceAfter=8, keepWithNext=True),
     "Cell": dict(fontSize=9.1, leading=14.5, spaceAfter=0),
     "CellHead": dict(fontName="CN-Bold", fontSize=9.1, leading=14.5, spaceAfter=0, textColor=colors.white),
+    "Equation": dict(fontSize=12, leading=23, spaceBefore=5, spaceAfter=10, textColor=TEAL),
 }.items():
     options = dict(fontName="CN", textColor=INK, alignment=TA_LEFT, wordWrap="CJK", allowWidows=0, allowOrphans=0)
     options.update(settings)
@@ -199,13 +201,37 @@ def table(rows):
     return result
 
 
-def markdown_blocks(text):
+def markdown_blocks(text, source_dir=None):
     lines = text.splitlines()
     result = []
     index = 0
     while index < len(lines):
         line = lines[index].strip()
         if not line:
+            index += 1
+            continue
+        if line == "<!-- pagebreak -->":
+            result.append(PageBreak())
+            index += 1
+            continue
+        if line.startswith('<div class="equation">'):
+            formula = line[len('<div class="equation">'):-len('</div>')]
+            result.append(Paragraph(formula, STYLES["Equation"]))
+            index += 1
+            continue
+        figure = re.fullmatch(r"!\[([^]]+)\]\(([^)]+)\)", line)
+        if figure:
+            if source_dir is None:
+                raise ValueError("Image requires a document source directory")
+            path = (source_dir / figure.group(2)).resolve()
+            if ROOT.resolve() not in path.parents:
+                raise ValueError("Figure must remain inside the project")
+            item = Image(str(path))
+            scale = min(WIDTH / item.imageWidth, 178 / item.imageHeight)
+            item.drawWidth = item.imageWidth * scale
+            item.drawHeight = item.imageHeight * scale
+            item.hAlign = "CENTER"
+            result.append(KeepTogether([item, Spacer(1, 5), p(figure.group(1), "Caption")]))
             index += 1
             continue
         if line.startswith("```"):
@@ -451,6 +477,12 @@ SPECS = [
          route=["读取表格", "处理缺失", "编码类别", "转换与核对"],
          goals="读完后，能够分开特征与标签，解释填补或删除的选择，将类别特征编码成数值，并按同一套规则转换成无缺失的张量。",
          filename="2.2-数据预处理-学习讲义.pdf"),
+    dict(section="2.3", title="线性代数", subtitle="从一条样本的加权和，到一批预测与误差的大小。",
+         source="docs/ch02/03_linear_algebra.md", start="## 这节到底解决什么问题",
+         end=None, pages="PDF 第 68-81 页 / 正文第 50-63 页（含节末练习）",
+         route=["对象与形状", "求和与点积", "矩阵乘法", "范数与误差"],
+         goals="能够解释按元素乘、点积和矩阵乘法的区别，判断汇总与乘法的输出形状，理解范数，并独立写出一次小批量预测和误差计算。",
+         filename="2.3-线性代数-学习讲义.pdf"),
 ]
 
 
@@ -468,14 +500,15 @@ def story(spec):
     ]
     raw = (ROOT / spec['source']).read_text(encoding="utf-8")
     body = raw[raw.index(spec['start']):]
-    body = body[:body.index(spec['end'])]
+    if spec['end'] is not None:
+        body = body[:body.index(spec['end'])]
     body = body.replace("沿用你已经成功创建的三条样本、每条两个特征：", "本节统一使用三条样本、每条两个特征：")
     if spec['section'] == "2.2":
         body = body.replace("data = pd.read_csv(data_file)", 'data_file = "datasets/ch02/house_tiny.csv"\ndata = pd.read_csv(data_file)')
-    result.extend(markdown_blocks(body))
+    result.extend(markdown_blocks(body, (ROOT / spec['source']).parent))
     if spec['section'] == "2.1":
         result.extend(markdown_blocks(EXERCISE_21))
-    else:
+    elif spec['section'] == "2.2":
         result.extend(markdown_blocks(END_TO_END_22))
         result.extend(markdown_blocks(exercise_22()))
     result.extend([
@@ -486,9 +519,15 @@ def story(spec):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--section", choices=[spec['section'] for spec in SPECS],
+                        help="Build only one booklet; leave older PDFs unchanged")
+    args = parser.parse_args()
     OUTPUT.mkdir(parents=True, exist_ok=True)
     TEMP.mkdir(parents=True, exist_ok=True)
     for spec in SPECS:
+        if args.section and spec['section'] != args.section:
+            continue
         draft = TEMP / (spec['section'].replace('.', '_') + "_layout.pdf")
         StudyDoc(draft, spec).build(story(spec))
         total = len(PdfReader(draft).pages)
