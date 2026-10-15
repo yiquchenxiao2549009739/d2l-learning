@@ -1,0 +1,504 @@
+"""Build the two Chinese study booklets from the existing section notes.
+
+Uses the existing PDF runtime (ReportLab / pypdf) and Windows fonts.
+All generated output remains inside this project. No package installation.
+"""
+
+import csv
+import re
+from pathlib import Path
+from xml.sax.saxutils import escape
+
+from pypdf import PdfReader
+from reportlab.lib import colors
+from reportlab.lib.enums import TA_LEFT
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.platypus import (
+    BaseDocTemplate, Flowable, Frame, KeepTogether,
+    PageTemplate, Paragraph, Spacer, Table, TableStyle,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT = ROOT / "output" / "pdf"
+TEMP = ROOT / "tmp" / "pdfs"
+DATE = "2026-10-15"
+PAGE_W, PAGE_H = A4
+LEFT = RIGHT = 46
+TOP = 63
+BOTTOM = 49
+WIDTH = PAGE_W - LEFT - RIGHT
+NAVY = colors.HexColor("#173448")
+TEAL = colors.HexColor("#147E83")
+INK = colors.HexColor("#233746")
+MUTED = colors.HexColor("#657987")
+LINE = colors.HexColor("#D7E2E9")
+PALE = colors.HexColor("#F1F7F8")
+
+pdfmetrics.registerFont(TTFont("CN", r"C:\Windows\Fonts\msyh.ttc", subfontIndex=0))
+pdfmetrics.registerFont(TTFont("CN-Bold", r"C:\Windows\Fonts\msyhbd.ttc", subfontIndex=0))
+pdfmetrics.registerFont(TTFont("Mono", r"C:\Windows\Fonts\consola.ttf"))
+pdfmetrics.registerFontFamily("CN", normal="CN", bold="CN-Bold", italic="CN", boldItalic="CN-Bold")
+
+STYLES = {}
+for name, settings in {
+    "Body": dict(fontSize=10.6, leading=17.8, spaceAfter=8),
+    "H2": dict(fontName="CN-Bold", fontSize=14, leading=21, spaceBefore=14, spaceAfter=8, keepWithNext=True, textColor=NAVY),
+    "H3": dict(fontName="CN-Bold", fontSize=11.4, leading=18, spaceBefore=10, spaceAfter=6, keepWithNext=True),
+    "Title": dict(fontName="CN-Bold", fontSize=28, leading=39, spaceAfter=8, textColor=NAVY),
+    "Eyebrow": dict(fontName="CN-Bold", fontSize=10, leading=16, spaceAfter=9, textColor=TEAL),
+    "Subtitle": dict(fontSize=12.2, leading=20, spaceAfter=14, textColor=MUTED),
+    "Caption": dict(fontSize=8.5, leading=13.5, spaceAfter=8, textColor=MUTED),
+    "Bullet": dict(fontSize=10.6, leading=17.8, spaceAfter=5, leftIndent=13, firstLineIndent=-10),
+    "Lead": dict(fontSize=10.6, leading=17.8, spaceAfter=8, keepWithNext=True),
+    "Cell": dict(fontSize=9.1, leading=14.5, spaceAfter=0),
+    "CellHead": dict(fontName="CN-Bold", fontSize=9.1, leading=14.5, spaceAfter=0, textColor=colors.white),
+}.items():
+    options = dict(fontName="CN", textColor=INK, alignment=TA_LEFT, wordWrap="CJK", allowWidows=0, allowOrphans=0)
+    options.update(settings)
+    STYLES[name] = ParagraphStyle(name, **options)
+
+
+def normalize(text):
+    return text.replace("\u2011", "-").replace("\u2013", "-").replace("\u2014", "-")
+
+
+def code_runs(text):
+    """Keep ASCII code monospaced while embedding Chinese comment glyphs."""
+    runs = []
+    for character in text:
+        font = "Mono" if ord(character) < 128 else "CN"
+        if runs and runs[-1][0] == font:
+            runs[-1] = (font, runs[-1][1] + character)
+        else:
+            runs.append((font, character))
+    return runs
+
+
+def inline(text):
+    pieces = re.split(r"(`[^`]+`|\*\*[^*]+\*\*)", normalize(text))
+    formatted = []
+    for piece in pieces:
+        if piece.startswith("`") and piece.endswith("`"):
+            formatted.append("".join(
+                f'<font name="{font}" size="9.1" color="#185A67">{escape(value)}</font>'
+                for font, value in code_runs(piece[1:-1])
+            ))
+        elif piece.startswith("**") and piece.endswith("**"):
+            formatted.append("<b>" + inline(piece[2:-2]) + "</b>")
+        else:
+            formatted.append(escape(piece))
+    return "".join(formatted)
+
+
+def p(text, style="Body"):
+    return Paragraph(inline(text), STYLES[style])
+
+
+class CodeBlock(Flowable):
+    def __init__(self, text, language="python", continued=False):
+        super().__init__()
+        self.lines = normalize(text).expandtabs(4).splitlines() or [""]
+        self.language = language
+        self.continued = continued
+        self.spaceBefore = 3
+        self.spaceAfter = 11
+        self.font_size = 8.6
+        self.line_height = 13.1
+
+    def wrap(self, available_width, available_height):
+        self.width = available_width
+        max_width = available_width - 24
+        for line in self.lines:
+            line_width = sum(pdfmetrics.stringWidth(value, font, self.font_size) for font, value in code_runs(line))
+            if line_width > max_width + 0.1:
+                raise ValueError(f"Code line too wide ({line_width:.1f} > {max_width:.1f}): {line}")
+        self.height = 35 + len(self.lines) * self.line_height
+        return self.width, self.height
+
+    def split(self, available_width, available_height):
+        count = int((available_height - 35) // self.line_height)
+        if count < 3 or len(self.lines) - count < 2:
+            return []
+        first = CodeBlock("\n".join(self.lines[:count]), self.language, self.continued)
+        second = CodeBlock("\n".join(self.lines[count:]), self.language, True)
+        return [first, second]
+
+    def draw(self):
+        canvas = self.canv
+        canvas.setFillColor(colors.HexColor("#F5F7FA"))
+        canvas.setStrokeColor(LINE)
+        canvas.roundRect(0, 0, self.width, self.height, 5, fill=1, stroke=1)
+        canvas.setFillColor(MUTED)
+        canvas.setFont("CN", 7.6)
+        label = "PYTHON" if self.language == "python" else "结果 / 结构"
+        canvas.drawString(12, self.height - 15, label + ("  /  续" if self.continued else ""))
+        y = self.height - 31
+        for line in self.lines:
+            x = 12
+            for font, value in code_runs(line):
+                canvas.setFont(font, self.font_size)
+                canvas.setFillColor(colors.HexColor("#396C5B") if line.lstrip().startswith("#") else INK)
+                canvas.drawString(x, y, value)
+                x += pdfmetrics.stringWidth(value, font, self.font_size)
+            y -= self.line_height
+
+
+class Route(Flowable):
+    def __init__(self, labels):
+        super().__init__()
+        self.labels = labels
+        self.spaceBefore = 5
+        self.spaceAfter = 15
+
+    def wrap(self, width, height):
+        self.width = width
+        self.height = 49
+        return width, self.height
+
+    def draw(self):
+        canvas = self.canv
+        count = len(self.labels)
+        gap = 11
+        box_w = (self.width - gap * (count - 1)) / count
+        for index, label in enumerate(self.labels):
+            x = index * (box_w + gap)
+            canvas.setFillColor(PALE)
+            canvas.setStrokeColor(LINE)
+            canvas.roundRect(x, 4, box_w, 39, 5, stroke=1, fill=1)
+            canvas.setFillColor(TEAL)
+            canvas.setFont("CN-Bold", 9)
+            canvas.drawCentredString(x + box_w / 2, 19, label)
+            if index < count - 1:
+                canvas.setStrokeColor(TEAL)
+                canvas.line(x + box_w + 2, 23, x + box_w + gap - 2, 23)
+                canvas.line(x + box_w + gap - 5, 26, x + box_w + gap - 2, 23)
+                canvas.line(x + box_w + gap - 5, 20, x + box_w + gap - 2, 23)
+
+
+def table(rows):
+    count = len(rows[0])
+    widths = [WIDTH * 0.40, WIDTH * 0.60] if count == 2 else [WIDTH / count] * count
+    cells = [[p(cell, "CellHead" if row_i == 0 else "Cell") for cell in row] for row_i, row in enumerate(rows)]
+    result = Table(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
+    result.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), NAVY),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, PALE]),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 7),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
+        ("LINEBELOW", (0, 0), (-1, 0), 0.5, NAVY),
+        ("LINEBELOW", (0, 1), (-1, -1), 0.3, LINE),
+    ]))
+    result.spaceBefore = 4
+    result.spaceAfter = 12
+    return result
+
+
+def markdown_blocks(text):
+    lines = text.splitlines()
+    result = []
+    index = 0
+    while index < len(lines):
+        line = lines[index].strip()
+        if not line:
+            index += 1
+            continue
+        if line.startswith("```"):
+            language = line[3:].strip()
+            index += 1
+            code = []
+            while index < len(lines) and not lines[index].strip().startswith("```"):
+                code.append(lines[index])
+                index += 1
+            result.append(CodeBlock("\n".join(code), language))
+            index += 1
+            continue
+        if line.startswith("|"):
+            rows = []
+            while index < len(lines) and lines[index].strip().startswith("|"):
+                row = [cell.strip() for cell in lines[index].strip().strip("|").split("|")]
+                if not all(re.fullmatch(r":?-+:?", cell.replace(" ", "")) for cell in row):
+                    rows.append(row)
+                index += 1
+            grouped = []
+            cursor = len(result) - 1
+            while cursor >= 0 and len(grouped) < 3:
+                previous = result[cursor]
+                if not isinstance(previous, Paragraph):
+                    break
+                grouped.insert(0, previous)
+                if previous.style.name == "H2":
+                    del result[cursor:]
+                    break
+                cursor -= 1
+            else:
+                grouped = []
+            if not grouped or grouped[0].style.name != "H2":
+                grouped = []
+            result.append(KeepTogether(grouped + [table(rows)]))
+            continue
+        if line.startswith("## "):
+            result.append(p(line[3:], "H2"))
+        elif line.startswith("### "):
+            result.append(p(line[4:], "H3"))
+        elif line.startswith("- ") or re.match(r"\d+\. ", line):
+            items = []
+            while index < len(lines):
+                item = lines[index].strip()
+                if not (item.startswith("- ") or re.match(r"\d+\. ", item)):
+                    break
+                items.append(p(item, "Bullet"))
+                index += 1
+            result.append(KeepTogether(items))
+            continue
+        else:
+            paragraph = [line]
+            while index + 1 < len(lines):
+                following = lines[index + 1].strip()
+                if not following or following.startswith(("#", "```", "|", "- ")) or re.match(r"\d+\. ", following):
+                    break
+                index += 1
+                paragraph.append(following)
+            text = " ".join(paragraph)
+            result.append(p(text, "Lead" if text.endswith((":", "：")) else "Body"))
+        index += 1
+    return result
+
+
+class StudyDoc(BaseDocTemplate):
+    def __init__(self, path, spec, total_pages=None):
+        super().__init__(str(path), pagesize=A4, leftMargin=LEFT, rightMargin=RIGHT,
+                         topMargin=TOP, bottomMargin=BOTTOM, pageCompression=1,
+                         title=f"{spec['section']} {spec['title']} - 学习讲义",
+                         author="深度学习学习项目")
+        self.spec = spec
+        self.total_pages = total_pages
+        self.outline_index = 0
+        frame = Frame(LEFT, BOTTOM, WIDTH, PAGE_H - TOP - BOTTOM,
+                      leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
+        self.addPageTemplates(PageTemplate(id="study", frames=[frame], onPage=self.decorate))
+
+    def decorate(self, canvas, doc):
+        canvas.saveState()
+        canvas.setFillColor(TEAL)
+        canvas.rect(LEFT, PAGE_H - 35, 20, 3, fill=1, stroke=0)
+        canvas.setFont("CN-Bold", 8.4)
+        canvas.setFillColor(NAVY)
+        canvas.drawString(LEFT + 28, PAGE_H - 36, "动手学深度学习 / 学习讲义")
+        canvas.setFont("CN", 8.2)
+        canvas.setFillColor(MUTED)
+        canvas.drawRightString(PAGE_W - RIGHT, PAGE_H - 36, self.spec['section'] + " " + self.spec['title'])
+        canvas.setStrokeColor(LINE)
+        canvas.line(LEFT, 37, PAGE_W - RIGHT, 37)
+        canvas.setFont("CN", 7.8)
+        canvas.drawString(LEFT, 23, "阅读 · 运行 · 解释    |    " + DATE)
+        page_label = f"{doc.page}" + (f" / {self.total_pages}" if self.total_pages else "")
+        canvas.drawRightString(PAGE_W - RIGHT, 23, page_label)
+        canvas.restoreState()
+
+    def afterFlowable(self, flowable):
+        if isinstance(flowable, Paragraph) and flowable.style.name == "H2":
+            self.outline_index += 1
+            key = f"section-{self.outline_index}"
+            self.canv.bookmarkPage(key)
+            self.canv.addOutlineEntry(flowable.getPlainText(), key, level=0, closed=False)
+
+
+EXERCISE_21 = """
+## 综合练习：把操作放在同一个任务中
+
+使用本讲义开头的 X（三条样本、每条两个特征），集中完成以下操作。先预测形状，再写表达式和运行。
+
+| 任务 | 目标与约束 |
+| --- | --- |
+| 1. 重新组织 | 将 X 变为两行三列 |
+| 2. 转置 | 交换二维 X 的行与列 |
+| 3. 按列中心化 | 每个元素减去所在列的均值，保留 (3,2) |
+| 4. 每行总和 | 将两个特征求和，保留 (3,1) |
+| 5. 添加新特征 | 将每行总和拼到 X 后，得到 (3,3) |
+| 6. 索引与切片 | 取最后两条样本的全部特征 |
+| 7. 条件比较 | 标记 X 中大于 3 的位置，保留布尔矩阵 |
+| 8. 三维广播 | 计算下面 a+b，解释结果形状 |
+
+```python
+a = torch.arange(6).reshape(2, 1, 3)
+b = torch.arange(4).reshape(1, 4, 1)
+```
+
+集中解释三个问题：
+
+1. reshape 与转置形状相同，为什么元素排列不同？
+2. (3,1) 的预测减去 (3,) 的标签会发生什么？如何逐样本对齐？
+3. alias、基本切片、clone、from_numpy 与 torch.tensor(array)，哪些共享原数据，哪些独立？用修改一个元素的实验说明。
+
+配套练习文件：`exercises/ch02/01_data_operations.py`。记录操作结果、预期与实际的差异，以及自己的解释；无需背诵全部 API。
+
+## 阅读后的速查表
+
+| 需要做什么 | 首先想到的工具 |
+| --- | --- |
+| 检查结构 | shape、ndim、numel、dtype、device |
+| 调整排列 | reshape；二维交换轴用 .T |
+| 批量计算 | 按元素运算和广播 |
+| 汇总或增加数据 | sum/mean；cat |
+| 取样本或特征 | 索引、切片、布尔筛选 |
+| 保留独立副本 | clone；NumPy 数组用 copy |
+| 导出普通对象 | numpy、from_numpy、item |
+
+配套完整演示：`lessons/ch02/01_data_operations.py`。程序包含故意捕获的广播错误，用来说明不兼容形状；它不是需要修复的运行失败。
+"""
+
+
+END_TO_END_22 = """
+## 完整流程：对照原理再运行一次
+
+下面程序在项目根目录运行，读取本节配套 CSV。它将整个主流程放在一起，方便离线阅读时查对。
+
+```python
+import numpy as np
+import pandas as pd
+import torch
+
+data = pd.read_csv("datasets/ch02/house_tiny.csv")
+inputs = data.iloc[:, :2].copy()
+targets = data.iloc[:, 2].copy()
+
+mean_rooms = inputs["NumRooms"].mean()
+inputs["NumRooms"] = inputs["NumRooms"].fillna(mean_rooms)
+encoded = pd.get_dummies(
+    inputs, columns=["Alley"],
+    dummy_na=True, dtype=np.float32,
+)
+
+X = torch.tensor(
+    encoded.to_numpy(dtype=np.float32),
+    dtype=torch.float32,
+)
+y = torch.tensor(
+    targets.to_numpy(dtype=np.float32),
+    dtype=torch.float32,
+).reshape(-1, 1)
+
+print(encoded)
+print(X.shape, y.shape)
+print(torch.isnan(X).any(), torch.isnan(y).any())
+```
+
+自检：X 为四行三列，y 为四行一列，均为 float32，不含 NaN。输入和标签保持同一行顺序。程序能运行只是第一步，还需解释每个转换的原因。
+"""
+
+
+def exercise_22():
+    with (ROOT / "datasets/ch02/house_practice.csv").open(encoding="utf-8", newline="") as handle:
+        reader = csv.reader(handle)
+        rows = list(reader)
+    md = "\n## 综合练习：更多行和列的原始数据\n\n"
+    md += "下面是配套的完整人工数据，可以直接在纸上分析缺失数量，也可以运行 CSV 练习。NA 表示缺失。\n\n"
+    md += "| " + " | ".join(rows[0]) + " |\n"
+    md += "| " + " | ".join(["---"] * len(rows[0])) + " |\n"
+    md += "\n".join("| " + " | ".join(row) + " |" for row in rows[1:])
+    md += """
+
+一次完成以下处理：
+
+1. 取出 Price 作为标签，其余列作为输入。
+2. 计算输入各列的缺失数量，找出并删除缺失最多的列。
+3. 数值列按各自已知数值的均值填补，不硬编码均值。
+4. 对无序类别独热编码，同时表示缺失状态。
+5. 创建 float32 的 X 与 (N,1) 形式的 y，检查行数和 NaN。
+
+注意练习表的输入列数多于示例，不能只复制“取前两列”而忽略其他输入。配套文件：`exercises/ch02/02_data_preprocessing.py`。
+
+集中记录：删除了哪列、填补均值、编码后的列名、X/y 的形状，以及下面三个解释。
+
+- A：未知房间数为什么不能默认填 0？均值填补做了什么假设？
+- B：把无序类别直接作为 0、1、2 的数值输入，会引入什么关系？独热编码如何表达？
+- C：训练集与测试集应各自计算填补均值吗？同一特征的编码列顺序为什么要一致？
+
+## 阅读后的速查表
+
+| 环节 | 方法与关注点 |
+| --- | --- |
+| 读取文件 | read_csv；确认列名、行数和 dtype |
+| 分开输入与目标 | iloc 或按列名选择；Price 不放入输入 |
+| 识别缺失 | isna().sum()；缺失不等于零 |
+| 数值填补 | mean + fillna；按列计算 |
+| 删除数据 | dropna 删除行；drop(columns=...) 删除列 |
+| 编码类别 | get_dummies；保留缺失状态和特征列名 |
+| 转成张量 | to_numpy(dtype=...) + torch.tensor |
+| 检查计算约定 | X 行数与 y 行数一致；标签形状对齐 |
+
+配套完整演示：`lessons/ch02/02_data_preprocessing.py`。下一节为 2.3 线性代数。
+"""
+    return md
+
+
+SPECS = [
+    dict(section="2.1", title="数据操作", subtitle="用形状、运算和存储关系，把一组数值组织成正确的计算。",
+         source="docs/ch02/01_data_operations.md", start="## 统一的数据",
+         end="## 一次完成综合练习", pages="PDF 第 58-65 页 / 正文第 40-47 页",
+         route=["创建与形状", "运算与广播", "索引与修改", "共享与转换"],
+         goals="读完后，能够判断张量形状和广播结果，按样本与特征取数据，区分共享存储与独立复制，并发现损失计算中的形状错配。",
+         filename="2.1-数据操作-学习讲义.pdf"),
+    dict(section="2.2", title="数据预处理", subtitle="从含有缺失值与文字的原始表格，得到模型可计算的张量。",
+         source="docs/ch02/02_data_preprocessing.md", start="## 为什么需要预处理",
+         end="## 一次完成综合练习", pages="PDF 第 65-68 页 / 正文第 47-50 页",
+         route=["读取表格", "处理缺失", "编码类别", "转换与核对"],
+         goals="读完后，能够分开特征与标签，解释填补或删除的选择，将类别特征编码成数值，并按同一套规则转换成无缺失的张量。",
+         filename="2.2-数据预处理-学习讲义.pdf"),
+]
+
+
+def story(spec):
+    result = [
+        p("第 2 章 · 预备知识 / " + spec['section'], "Eyebrow"),
+        p(spec['section'] + " " + spec['title'], "Title"),
+        p(spec['subtitle'], "Subtitle"),
+        Route(spec['route']),
+        p("本节目标", "H2"),
+        p(spec['goals']),
+        p("建议先连续阅读完整知识链，再运行示例，最后集中完成章末练习。已会的内容可快速通过，重点追踪自己无法解释的结果。"),
+        p("教材定位：" + spec['pages'] + "。", "Caption"),
+        p("参考《动手学深度学习》Release 2.0.0（2023-08-18）及本项目已验证讲义整理。此 PDF 为独立学习读本，配套程序与练习均在项目内。", "Caption"),
+    ]
+    raw = (ROOT / spec['source']).read_text(encoding="utf-8")
+    body = raw[raw.index(spec['start']):]
+    body = body[:body.index(spec['end'])]
+    body = body.replace("沿用你已经成功创建的三条样本、每条两个特征：", "本节统一使用三条样本、每条两个特征：")
+    if spec['section'] == "2.2":
+        body = body.replace("data = pd.read_csv(data_file)", 'data_file = "datasets/ch02/house_tiny.csv"\ndata = pd.read_csv(data_file)')
+    result.extend(markdown_blocks(body))
+    if spec['section'] == "2.1":
+        result.extend(markdown_blocks(EXERCISE_21))
+    else:
+        result.extend(markdown_blocks(END_TO_END_22))
+        result.extend(markdown_blocks(exercise_22()))
+    result.extend([
+        Spacer(1, 9),
+        p("资料说明：教材作者为 Aston Zhang、Zachary C. Lipton、Mu Li、Alexander J. Smola；页码基于用户提供的中文 PDF。文中相对路径均从“李沐-深度学习”项目根目录计算。已验证环境：Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5、pandas 2.0.3。整理日期：" + DATE + "。", "Caption"),
+    ])
+    return result
+
+
+def main():
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    TEMP.mkdir(parents=True, exist_ok=True)
+    for spec in SPECS:
+        draft = TEMP / (spec['section'].replace('.', '_') + "_layout.pdf")
+        StudyDoc(draft, spec).build(story(spec))
+        total = len(PdfReader(draft).pages)
+        target = OUTPUT / spec['filename']
+        StudyDoc(target, spec, total_pages=total).build(story(spec))
+        reader = PdfReader(target)
+        assert len(reader.pages) == total
+        assert reader.outline, "Section bookmarks missing"
+        print(f"{target.name}: {total} pages, {target.stat().st_size:,} bytes")
+
+
+if __name__ == "__main__":
+    main()

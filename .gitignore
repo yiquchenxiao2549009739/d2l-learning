@@ -2,6 +2,7 @@
 .venv/
 .tools/
 .cache/
+tmp/pdfs/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
@@ -11,6 +12,8 @@ __pycache__/
 .env
 .env.*
 *.pdf
+!output/pdf/2.1-数据操作-学习讲义.pdf
+!output/pdf/2.2-数据预处理-学习讲义.pdf
 
 # Downloaded data and generated training output
 data/
