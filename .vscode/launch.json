@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "2.3 线性代数：完整演示",
+      "name": "2.4 微积分：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch02/03_linear_algebra.py",
+      "program": "${workspaceFolder}/lessons/ch02/04_calculus.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "2.3 线性代数：综合练习",
+      "name": "2.4 微积分：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch02/03_linear_algebra.py",
+      "program": "${workspaceFolder}/exercises/ch02/04_calculus.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

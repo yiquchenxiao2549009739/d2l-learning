@@ -41,6 +41,7 @@ PALE = colors.HexColor("#F1F7F8")
 pdfmetrics.registerFont(TTFont("CN", r"C:\Windows\Fonts\msyh.ttc", subfontIndex=0))
 pdfmetrics.registerFont(TTFont("CN-Bold", r"C:\Windows\Fonts\msyhbd.ttc", subfontIndex=0))
 pdfmetrics.registerFont(TTFont("Mono", r"C:\Windows\Fonts\consola.ttf"))
+pdfmetrics.registerFont(TTFont("MathSymbol", r"C:\Windows\Fonts\seguisym.ttf"))
 pdfmetrics.registerFontFamily("CN", normal="CN", bold="CN-Bold", italic="CN", boldItalic="CN-Bold")
 
 STYLES = {}
@@ -71,7 +72,7 @@ def code_runs(text):
     """Keep ASCII code monospaced while embedding Chinese comment glyphs."""
     runs = []
     for character in text:
-        font = "Mono" if ord(character) < 128 else "CN"
+        font = "MathSymbol" if character == "∇" else ("Mono" if ord(character) < 128 else "CN")
         if runs and runs[-1][0] == font:
             runs[-1] = (font, runs[-1][1] + character)
         else:
@@ -91,7 +92,7 @@ def inline(text):
         elif piece.startswith("**") and piece.endswith("**"):
             formatted.append("<b>" + inline(piece[2:-2]) + "</b>")
         else:
-            formatted.append(escape(piece))
+            formatted.append(escape(piece).replace("∇", '<font name="MathSymbol">∇</font>'))
     return "".join(formatted)
 
 
@@ -201,7 +202,7 @@ def table(rows):
     return result
 
 
-def markdown_blocks(text, source_dir=None):
+def markdown_blocks(text, source_dir=None, figure_height=178):
     lines = text.splitlines()
     result = []
     index = 0
@@ -216,6 +217,7 @@ def markdown_blocks(text, source_dir=None):
             continue
         if line.startswith('<div class="equation">'):
             formula = line[len('<div class="equation">'):-len('</div>')]
+            formula = formula.replace("∇", '<font name="MathSymbol">∇</font>')
             result.append(Paragraph(formula, STYLES["Equation"]))
             index += 1
             continue
@@ -227,7 +229,7 @@ def markdown_blocks(text, source_dir=None):
             if ROOT.resolve() not in path.parents:
                 raise ValueError("Figure must remain inside the project")
             item = Image(str(path))
-            scale = min(WIDTH / item.imageWidth, 178 / item.imageHeight)
+            scale = min(WIDTH / item.imageWidth, figure_height / item.imageHeight)
             item.drawWidth = item.imageWidth * scale
             item.drawHeight = item.imageHeight * scale
             item.hAlign = "CENTER"
@@ -483,6 +485,13 @@ SPECS = [
          route=["对象与形状", "求和与点积", "矩阵乘法", "范数与误差"],
          goals="能够解释按元素乘、点积和矩阵乘法的区别，判断汇总与乘法的输出形状，理解范数，并独立写出一次小批量预测和误差计算。",
          filename="2.3-线性代数-学习讲义.pdf"),
+    dict(section="2.4", title="微积分", subtitle="从参数的小变化，理解导数、梯度和链式法则。",
+         source="docs/ch02/04_calculus.md", start="## 本节要回答的核心问题",
+         end=None, pages="PDF 第 81-87 页 / 正文第 63-69 页（含节末练习）",
+         route=["导数与微分", "偏导与梯度", "链式法则", "一步参数更新"],
+         figure_height=235,
+         goals="能够解释局部变化率，手工求出简单损失对权重和偏置的梯度，理解多路径链式法则，并用两种学习率比较一次参数更新。",
+         filename="2.4-微积分-学习讲义.pdf"),
 ]
 
 
@@ -505,7 +514,8 @@ def story(spec):
     body = body.replace("沿用你已经成功创建的三条样本、每条两个特征：", "本节统一使用三条样本、每条两个特征：")
     if spec['section'] == "2.2":
         body = body.replace("data = pd.read_csv(data_file)", 'data_file = "datasets/ch02/house_tiny.csv"\ndata = pd.read_csv(data_file)')
-    result.extend(markdown_blocks(body, (ROOT / spec['source']).parent))
+    result.extend(markdown_blocks(body, (ROOT / spec['source']).parent,
+                                  spec.get('figure_height', 178)))
     if spec['section'] == "2.1":
         result.extend(markdown_blocks(EXERCISE_21))
     elif spec['section'] == "2.2":
