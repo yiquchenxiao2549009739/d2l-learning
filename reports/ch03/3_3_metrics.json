@@ -1,0 +1,65 @@
+{
+  "purpose": "teacher demonstration, not learner completion",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "float64",
+  "data_source": "reuse datasets/ch03/scratch_*.csv from section 3.2",
+  "init_seed": 3302,
+  "loader_seed": 3303,
+  "batch_size": 10,
+  "epochs": 3,
+  "learning_rate": 0.03,
+  "loss": "mean squared error without 1/2",
+  "updates": 300,
+  "learned_weight": [
+    [
+      2.000303521276123,
+      -3.399703686815751
+    ]
+  ],
+  "learned_bias": 4.20037654631245,
+  "final_train_mse": 9.795191867699759e-05,
+  "final_validation_mse": 0.00010049896257664922,
+  "final_test_mse": 0.00011007049448906014,
+  "equivalence_max_parameter_difference": 4.440892098500626e-16,
+  "api_checks": {
+    "weight_shape": [
+      1,
+      2
+    ],
+    "bias_shape": [
+      1
+    ],
+    "kept_batch_sizes": [
+      10,
+      10,
+      3
+    ],
+    "dropped_batch_sizes": [
+      10,
+      10
+    ],
+    "weight_gradient_before_step": [
+      [
+        -3.023518778744626,
+        8.391260217453137
+      ]
+    ],
+    "step_preserves_gradient": true,
+    "zero_grad_sets_none": true,
+    "wrong_broadcast_mse": 1.3333333333333333,
+    "correct_aligned_mse": 0.0,
+    "broadcast_warning_captured": true,
+    "smooth_l1_matches_book": true,
+    "huber_equals_beta_times_smooth_l1": true
+  },
+  "outlier_design": {
+    "training_indices": [
+      0,
+      1,
+      2
+    ],
+    "label_shift": 50.0,
+    "beta": 0.5
+  }
+}

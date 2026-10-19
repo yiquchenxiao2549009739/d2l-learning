@@ -2,7 +2,7 @@
 
 从“看懂简单代码”开始，逐步做到自己实现、训练和解释模型。
 
-当前一次学习 **完整的 3.2 线性回归的从零开始实现（3.2.1–3.2.7）**。先看 [整节讲义](docs/ch03/02_linear_regression_scratch.md)，运行一个完整演示，再完成一个综合练习并集中反馈。
+当前一次学习 **完整的 3.3 线性回归的简洁实现（3.3.1–3.3.7）**。先看 [整节讲义](docs/ch03/03_linear_regression_concise.md)，运行一个完整演示，再完成一个综合练习并集中反馈。
 
 ## 阅读版 PDF
 
@@ -10,30 +10,31 @@
 | --- | --- | --- |
 | 2.1 数据操作 | 8 页 | [GitHub 存档 PDF](https://github.com/yiquchenxiao2549009739/d2l-learning/blob/main/output/pdf/2.1-数据操作-学习讲义.pdf) |
 | 2.2 数据预处理 | 7 页 | [GitHub 存档 PDF](https://github.com/yiquchenxiao2549009739/d2l-learning/blob/main/output/pdf/2.2-数据预处理-学习讲义.pdf) |
-| 2.3 线性代数 | 13 页 | [学习讲义 PDF](output/pdf/2.3-线性代数-学习讲义.pdf) |
+| 2.3 线性代数 | 13 页 | [GitHub 存档 PDF](https://github.com/yiquchenxiao2549009739/d2l-learning/blob/main/output/pdf/2.3-线性代数-学习讲义.pdf) |
 | 2.4 微积分 | 13 页 | [学习讲义 PDF](output/pdf/2.4-微积分-学习讲义.pdf) |
 | 2.5 自动微分 | 13 页 | [学习讲义 PDF](output/pdf/2.5-自动微分-学习讲义.pdf) |
 | 2.6 概率 | 15 页 | [学习讲义 PDF](output/pdf/2.6-概率-学习讲义.pdf) |
 | 2.7 查阅文档 | 6 页 | [学习讲义 PDF](output/pdf/2.7-查阅文档-学习讲义.pdf) |
 | 3.1 线性回归 | 14 页 | [学习讲义 PDF](output/pdf/3.1-线性回归-学习讲义.pdf) |
 | 3.2 从零实现线性回归 | 11 页 | [学习讲义 PDF](output/pdf/3.2-线性回归的从零开始实现-学习讲义.pdf) |
+| 3.3 简洁实现线性回归 | 11 页 | [学习讲义 PDF](output/pdf/3.3-线性回归的简洁实现-学习讲义.pdf) |
 
-九份包含原理、代码示例、结果解释与综合练习，嵌入中文字体并提供章节书签和页码。2.2 附有预处理数据；2.3–2.5 配有原理图及模型计算；2.6 配有频率收敛、贝叶斯更新、条件独立和均值方差四张图，贯通抽样与条件判断。2.7 通过查阅工具、签名解释和最小实验贯通整节。3.1 配有训练、正态分布、损失与网络四张图，并对照最小二乘和梯度下降。3.2 配有尾批、训练与学习率三张图，逐步组织生成器和手写 SGD。3.2 整理日期：2026-10-19，旧资料日期保留。
+十份包含原理、代码示例、结果解释与综合练习，嵌入中文字体并提供章节书签和页码。2.2 附有预处理数据；2.3–2.5 配有原理图及模型计算；2.6 配有频率收敛、贝叶斯更新、条件独立和均值方差四张图，贯通抽样与条件判断。2.7 通过查阅工具、签名解释和最小实验贯通整节。3.1 配有训练、正态分布、损失与网络四张图，并对照最小二乘和梯度下降。3.2 配有尾批、训练与学习率三张图，逐步组织生成器和手写 SGD。3.3 配有训练、实现对照与离群值三张图，贯通 DataLoader、Linear、MSELoss、SGD；同批对照核对损失尺度，并说明教材 Huber 公式与 SmoothL1Loss 的关系。3.3 整理日期：2026-10-19，旧资料日期保留。
 
-PDF 由 `tools/build_study_pdfs.py` 使用现有文档工具环境生成，不需要修改 openmmlab。可用 `--section 3.2` 只重建当前讲义。原始教材仍不纳入 Git；只允许上述学习 PDF 同步。
+PDF 由 `tools/build_study_pdfs.py` 使用现有文档工具环境生成，不需要修改 openmmlab。可用 `--section 3.3` 只重建当前讲义。原始教材仍不纳入 Git；只允许上述学习 PDF 同步。
 
-2.1 PDF 保持既有本地删除状态；本轮制作期间又检测到 2.2 PDF 本地删除。GitHub 均保留，因此表中提供存档链接。本轮不恢复文件，也不把这些本地删除提交到远端。
+2.1、2.2 PDF 保持既有本地删除状态；本轮制作期间又检测到 2.3 PDF 本地删除。GitHub 均保留，因此表中提供存档链接。本轮不恢复文件，也不把这些本地删除提交到远端。
 
 ## 在 VS Code 中开始
 
 1. 用 VS Code 打开本目录中的 `d2l-learning.code-workspace`。
-2. 打开 `lessons/ch03/02_linear_regression_scratch.py`。
-3. 按 **F5**，选择“3.2 从零实现线性回归：完整演示”，一次运行整节。也可以点编辑器右上角“运行 Python 文件”。
-4. 在 `exercises/ch03/02_linear_regression_scratch.py` 集中填写六处 TODO，在 23 条样本上完成分批索引、逐样本损失、手写 SGD、预测、求导与调用优化器，再统一解释 yield、尾批和梯度尺度。
+2. 打开 `lessons/ch03/03_linear_regression_concise.py`。
+3. 按 **F5**，选择“3.3 线性回归简洁实现：完整演示”，一次运行整节。也可以点编辑器右上角“运行 Python 文件”。
+4. 在 `exercises/ch03/03_linear_regression_concise.py` 集中填写八处 TODO，在 37 条样本上组装数据集、加载器、线性层、平均 MSE 与优化器，再接通预测、求导和更新，统一解释参数形状、尾批、梯度尺度和清理。
 
-这块覆盖人工数据、打乱与配对、生成器和 yield、叶参数初始化、模型与逐样本损失、sum/mean 的配套归一化、实际尾批大小、手写 SGD、完整 epoch/step 训练、学习率与零初始化对照。核心仅使用张量和自动求导。
+这块复用 3.2 人工 CSV，覆盖 TensorDataset/DataLoader、Sequential/Linear、参数初始化与读取、MSELoss 和 SGD、梯度清理与查看、完整训练、手写/框架等价对照及 Smooth L1 离群值实验。默认批量 10、3 轮共 300 次更新；MSE 已平均，不再手动除批量。
 
-前面各节的代码、讲义和练习继续保留，2.1、2.2 PDF 的本地状态见上文；单独的旧 tensor、reshape 文件已删除且未重建。问答与已完成实践的记录在 `learning_log.md`。用户主动要求进入 3.2，未据此将未提交的旧综合练习标记完成。
+前面各节的代码、讲义和练习继续保留，2.1–2.3 PDF 的本地状态见上文；单独的旧 tensor、reshape 文件已删除且未重建。问答与已完成实践的记录在 `learning_log.md`。用户主动要求进入 3.3，未据此将未提交的旧综合练习标记完成。
 
 解释器已经指定为已有的 `openmmlab` 环境：`D:/Anaconda/envs/openmmlab/python.exe`。第一次打开若提示选择解释器，选择 `openmmlab`。
 
@@ -41,9 +42,9 @@ PDF 由 `tools/build_study_pdfs.py` 使用现有文档工具环境生成，不�
 
 | 文件或目录 | 用途 |
 | --- | --- |
-| `docs/ch03/02_linear_regression_scratch.md` | 完整的 3.2 讲义 |
-| `lessons/ch03/02_linear_regression_scratch.py` | 当前统一演示入口 |
-| `exercises/ch03/02_linear_regression_scratch.py` | 当前综合练习入口 |
+| `docs/ch03/03_linear_regression_concise.md` | 完整的 3.3 讲义 |
+| `lessons/ch03/03_linear_regression_concise.py` | 当前统一演示入口 |
+| `exercises/ch03/03_linear_regression_concise.py` | 当前综合练习入口 |
 | `datasets/ch02/`、`datasets/ch03/` | 预处理样例与线性回归人工训练/验证/测试 CSV |
 | `reports/ch02/figures/`、`reports/ch03/figures/` | 已讲章节的原理图和实验曲线 |
 | `docs/roadmap.md` | 全书路线和 PDF 页码 |
@@ -57,7 +58,7 @@ PDF 由 `tools/build_study_pdfs.py` 使用现有文档工具环境生成，不�
 | `scripts/` | 选择已有环境和 Git 同步 |
 | `artifacts/` | 训练生成的曲线、指标、模型，只保存在本地 |
 
-后续每次以完整小节或较大的主题块推进，集中讲原理、整合程序、统一实践和反馈，不再将单个函数拆成多轮。下一块为 3.3 线性回归的简洁实现，使用框架提供的数据工具、层、损失与优化器组织同一流程。
+后续每次以完整小节或较大的主题块推进，集中讲原理、整合程序、统一实践和反馈，不再将单个函数拆成多轮。下一块为 3.4 softmax 回归，从连续值预测进入多类别分类。旧练习的未验证状态保留，教师运行不记作用户掌握。
 
 ## 环境和验证
 

@@ -1,0 +1,17 @@
+3.3 线性回归的简洁实现 | 2.4.1+cu121 | CPU / float64
+复用 3.2 数据；Linear.weight 形状: (1, 2)
+{'epoch': 0, 'steps': 0, 'train_mse': 33.36642650416406, 'validation_mse': 33.96138693649054}
+{'epoch': 1, 'steps': 100, 'train_mse': 0.00024162593593116772, 'validation_mse': 0.0002255799919957667}
+{'epoch': 2, 'steps': 200, 'train_mse': 9.978933644282105e-05, 'validation_mse': 0.00010263502231521383}
+{'epoch': 3, 'steps': 300, 'train_mse': 9.795191867699759e-05, 'validation_mse': 0.00010049896257664922}
+学到 weight、bias: tensor([[ 2.00030352, -3.39970369]], dtype=torch.float64) tensor([4.20037655], dtype=torch.float64)
+最终测试 MSE: 0.00011007049448906014
+
+手写/框架对齐后的最大参数差: 4.440892098500626e-16
+API、尾批、梯度和形状检查: {'weight_shape': [1, 2], 'bias_shape': [1], 'kept_batch_sizes': [10, 10, 3], 'dropped_batch_sizes': [10, 10], 'weight_gradient_before_step': [[-3.023518778744626, 8.391260217453137]], 'step_preserves_gradient': True, 'zero_grad_sets_none': True, 'wrong_broadcast_mse': 1.3333333333333333, 'correct_aligned_mse': 0.0, 'broadcast_warning_captured': True, 'smooth_l1_matches_book': True, 'huber_equals_beta_times_smooth_l1': True}
+
+离群值对照，使用统一的干净验证集 MSE:
+{'training_loss': 'MSELoss', 'epochs': 6, 'clean_validation_mse': 0.00034605047074100876, 'w1': 2.0009163166105473, 'w2': -3.3937529305994967, 'b': 4.214552945650861}
+{'training_loss': 'SmoothL1Loss(beta=0.5)', 'epochs': 6, 'clean_validation_mse': 0.00010274713185052735, 'w1': 1.9998601695951317, 'w2': -3.4004739494090335, 'b': 4.200243577947692}
+
+结果与三张图已保存在 reports/ch03；原有数据没有重写。

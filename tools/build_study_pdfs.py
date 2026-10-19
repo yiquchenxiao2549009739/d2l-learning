@@ -529,6 +529,14 @@ SPECS = [
          date="2026-10-19", figure_height=200,
          goals="能够使用生成器保持特征与标签配对，正确处理尾批，区分求和与平均的梯度尺度，并用张量和自动求导独立接成小批量训练循环。",
          filename="3.2-线性回归的从零开始实现-学习讲义.pdf"),
+    dict(section="3.3", title="线性回归的简洁实现", subtitle="把手写部件对应到框架组件，保留清晰的训练逻辑。",
+         chapter="第 3 章 · 线性神经网络",
+         source="docs/ch03/03_linear_regression_concise.md", start="## 从五个手写部件到框架组件",
+         end=None, pages="PDF 第 119-123 页 / 正文第 101-105 页（含节末练习）",
+         route=["数据加载", "层与参数", "损失与优化", "对照与实践"],
+         date="2026-10-19", figure_height=200,
+         goals="能够用 TensorDataset、DataLoader、Linear、MSELoss 和 SGD 完成训练，正确读取参数与梯度，并核对损失尺度、尾批及教材 Huber 公式。",
+         filename="3.3-线性回归的简洁实现-学习讲义.pdf"),
 ]
 
 
