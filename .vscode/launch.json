@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "3.1 线性回归：完整演示",
+      "name": "3.2 从零实现线性回归：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch03/01_linear_regression.py",
+      "program": "${workspaceFolder}/lessons/ch03/02_linear_regression_scratch.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "3.1 线性回归：综合练习",
+      "name": "3.2 从零实现线性回归：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch03/01_linear_regression.py",
+      "program": "${workspaceFolder}/exercises/ch03/02_linear_regression_scratch.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

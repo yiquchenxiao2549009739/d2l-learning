@@ -521,6 +521,14 @@ SPECS = [
          date="2026-10-19", figure_height=195,
          goals="能够解释线性回归的四个要素，区分参数与超参数，对照最小二乘与梯度下降，并理解平方损失的高斯噪声解释及单层网络表示。",
          filename="3.1-线性回归-学习讲义.pdf"),
+    dict(section="3.2", title="线性回归的从零开始实现", subtitle="自己组织批次、前向、损失与 SGD，读懂每一次参数更新。",
+         chapter="第 3 章 · 线性神经网络",
+         source="docs/ch03/02_linear_regression_scratch.md", start="## 把一轮学习组织成可运行的程序",
+         end=None, pages="PDF 第 113-118 页 / 正文第 95-100 页（含节末练习）",
+         route=["生成与读取", "模型与损失", "手写小批量 SGD", "训练与核对"],
+         date="2026-10-19", figure_height=200,
+         goals="能够使用生成器保持特征与标签配对，正确处理尾批，区分求和与平均的梯度尺度，并用张量和自动求导独立接成小批量训练循环。",
+         filename="3.2-线性回归的从零开始实现-学习讲义.pdf"),
 ]
 
 
@@ -534,7 +542,7 @@ def story(spec):
         p(spec['goals']),
         p("建议先连续阅读完整知识链，再运行示例，最后集中完成章末练习。已会的内容可快速通过，重点追踪自己无法解释的结果。"),
         p("教材定位：" + spec['pages'] + "。", "Caption"),
-        p("参考《动手学深度学习》Release 2.0.0（2023-08-18）及本项目已验证讲义整理。此 PDF 为独立学习读本，配套程序与练习均在项目内。", "Caption"),
+        p("依据用户提供的《动手学深度学习》Release 2.0.0 独立整理，配套程序与练习在项目内。", "Caption"),
     ]
     raw = (ROOT / spec['source']).read_text(encoding="utf-8")
     body = raw[raw.index(spec['start']):]

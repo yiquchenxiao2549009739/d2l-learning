@@ -1,0 +1,65 @@
+{
+  "purpose": "teacher demonstration, not learner completion",
+  "torch": "2.4.1+cu121",
+  "seeds": {
+    "data": 3201,
+    "init": 3202,
+    "shuffle": 3203
+  },
+  "device": "cpu",
+  "dtype": "float64",
+  "noise_std": 0.01,
+  "samples": {
+    "train": 1000,
+    "validation": 200,
+    "test": 200
+  },
+  "batch_size": 10,
+  "learning_rate": 0.03,
+  "epochs": 3,
+  "updates": 300,
+  "learned_w": [
+    2.0004043598467183,
+    -3.399731222616055
+  ],
+  "learned_b": 4.2003512626537045,
+  "final_train_half_mse": 4.8993742514972084e-05,
+  "final_validation_half_mse": 5.028108953284356e-05,
+  "final_test_half_mse": 5.502692465103678e-05,
+  "tail_check": {
+    "sizes": [
+      10,
+      10,
+      3
+    ],
+    "order": [
+      0,
+      21,
+      15,
+      2,
+      4,
+      13,
+      11,
+      1,
+      10,
+      5,
+      17,
+      12,
+      8,
+      20,
+      14,
+      18,
+      7,
+      9,
+      3,
+      22,
+      19,
+      6,
+      16
+    ],
+    "each_sample_once": true,
+    "feature_label_alignment": true,
+    "sum_mean_max_difference": 5.551115123125783e-17,
+    "wrong_divisor_update_ratio": 0.3
+  }
+}

@@ -1,0 +1,28 @@
+3.2 从零实现线性回归 | 2.4.1+cu121 | CPU / float64
+训练数据形状: (1000, 2) (1000, 1) | 噪声标准差 0.01
+第一批形状: (10, 2) (10, 1)
+第一批前两条:
+ tensor([[ 1.2416320,  0.8008090],
+        [ 1.3524842, -0.5828651]], dtype=torch.float64)
+ tensor([[3.9499410],
+        [8.8830637]], dtype=torch.float64)
+
+默认设置：batch_size=10，lr=0.03，epochs=3
+{'epoch': 0, 'steps': 0, 'train_half_mse': 16.699034140418508, 'validation_half_mse': 16.985807832702147}
+{'epoch': 1, 'steps': 100, 'train_half_mse': 0.03726168979997647, 'validation_half_mse': 0.039419845386494005}
+{'epoch': 2, 'steps': 200, 'train_half_mse': 0.00014093149866614384, 'validation_half_mse': 0.00013201538233541222}
+{'epoch': 3, 'steps': 300, 'train_half_mse': 4.8993742514972084e-05, 'validation_half_mse': 5.028108953284356e-05}
+学到 w,b: tensor([ 2.0004044, -3.3997312], dtype=torch.float64) 4.2003512626537045
+与生成参数的差（真实-估计）: tensor([-0.0004044, -0.0002688], dtype=torch.float64) -0.00035126265370433174
+
+尾批检查: {'sizes': [10, 10, 3], 'order': [0, 21, 15, 2, 4, 13, 11, 1, 10, 5, 17, 12, 8, 20, 14, 18, 7, 9, 3, 22, 19, 6, 16], 'each_sample_once': True, 'feature_label_alignment': True, 'sum_mean_max_difference': 5.551115123125783e-17, 'wrong_divisor_update_ratio': 0.3}
+
+学习率与初始化对照（每次重新开始）:
+{'learning_rate': 0.003, 'init': 'random', 'status': 'complete', 'updates': 300, 'train_half_mse': 2.721082737259528, 'validation_half_mse': 2.804387228998122, 'w1': 1.2910189900346407, 'w2': -1.9575547802223157, 'b': 2.509356059198161}
+{'learning_rate': 0.03, 'init': 'random', 'status': 'complete', 'updates': 300, 'train_half_mse': 4.8993742514972084e-05, 'validation_half_mse': 5.028108953284356e-05, 'w1': 2.0004043598467183, 'w2': -3.399731222616055, 'b': 4.2003512626537045}
+{'learning_rate': 0.3, 'init': 'random', 'status': 'complete', 'updates': 300, 'train_half_mse': 5.002805419842522e-05, 'validation_half_mse': 5.538694946449689e-05, 'w1': 2.000304924709015, 'w2': -3.4016804066285573, 'b': 4.201559689329254}
+{'learning_rate': 3.0, 'init': 'random', 'status': 'stopped_divergence_guard', 'updates': 13, 'train_half_mse': 890051982559.4495, 'validation_half_mse': 846273409977.9973, 'w1': 1108584.083329709, 'w2': -531052.3491140737, 'b': 451782.1880749365}
+{'learning_rate': 0.03, 'init': 'zero', 'status': 'complete', 'updates': 300, 'train_half_mse': 4.899431303809235e-05, 'validation_half_mse': 5.028064577280448e-05, 'w1': 2.000404949738443, 'w2': -3.3997307420946066, 'b': 4.200350867335061}
+默认模型最终测试半均方误差: 5.502692465103678e-05
+
+数据、实际结果、对照与三张图已保存到项目中。
