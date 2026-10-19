@@ -324,7 +324,7 @@ class StudyDoc(BaseDocTemplate):
         canvas.setStrokeColor(LINE)
         canvas.line(LEFT, 37, PAGE_W - RIGHT, 37)
         canvas.setFont("CN", 7.8)
-        canvas.drawString(LEFT, 23, "阅读 · 运行 · 解释    |    " + DATE)
+        canvas.drawString(LEFT, 23, "阅读 · 运行 · 解释    |    " + self.spec.get('date', DATE))
         page_label = f"{doc.page}" + (f" / {self.total_pages}" if self.total_pages else "")
         canvas.drawRightString(PAGE_W - RIGHT, 23, page_label)
         canvas.restoreState()
@@ -492,6 +492,13 @@ SPECS = [
          figure_height=235,
          goals="能够解释局部变化率，手工求出简单损失对权重和偏置的梯度，理解多路径链式法则，并用两种学习率比较一次参数更新。",
          filename="2.4-微积分-学习讲义.pdf"),
+    dict(section="2.5", title="自动微分", subtitle="沿计算图求梯度，把手写求导接成一轮参数更新。",
+         source="docs/ch02/05_autograd.md", start="## 本节的主线：记录、求导、清理、更新",
+         end=None, pages="PDF 第 87-91 页 / 正文第 69-73 页（含节末练习）",
+         route=["记录与求导", "梯度与图", "分离与控制流", "一轮参数更新"],
+         date="2026-10-19", figure_height=210,
+         goals="能够使用 backward 获取梯度，分清梯度累积和图缓存寿命，解释多元素输出、detach 和控制流的求导，并完成一次自动微分更新。",
+         filename="2.5-自动微分-学习讲义.pdf"),
 ]
 
 
@@ -523,7 +530,7 @@ def story(spec):
         result.extend(markdown_blocks(exercise_22()))
     result.extend([
         Spacer(1, 9),
-        p("资料说明：教材作者为 Aston Zhang、Zachary C. Lipton、Mu Li、Alexander J. Smola；页码基于用户提供的中文 PDF。文中相对路径均从“李沐-深度学习”项目根目录计算。已验证环境：Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5、pandas 2.0.3。整理日期：" + DATE + "。", "Caption"),
+        p("资料说明：教材作者为 Aston Zhang、Zachary C. Lipton、Mu Li、Alexander J. Smola；页码基于用户提供的中文 PDF。文中相对路径均从“李沐-深度学习”项目根目录计算。已验证环境：Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5、pandas 2.0.3。整理日期：" + spec.get('date', DATE) + "。", "Caption"),
     ])
     return result
 

@@ -1,0 +1,62 @@
+===== 1. 从上一节的手算导数开始 =====
+x: tensor([0., 1., 2., 3.], dtype=torch.float64, requires_grad=True)
+反向前 x.grad: None
+y=2*x点积x: 28.0 ; x.is_leaf: True
+y.requires_grad / y.is_leaf: True False
+y 的反向操作: MulBackward0
+自动梯度: tensor([ 0.,  4.,  8., 12.], dtype=torch.float64) ; 手算 4*x: tensor([ 0.,  4.,  8., 12.], dtype=torch.float64)
+backward 后 x 的数值仍是: tensor([0., 1., 2., 3.], dtype=torch.float64)
+
+===== 2. 新前向仍会累加梯度；清理后只保留本次贡献 =====
+第一次 2*x: tensor([0., 2., 4., 6.], dtype=torch.float64)
+两次相加 4*x: tensor([ 0.,  4.,  8., 12.], dtype=torch.float64)
+清零后对 sum(x) 求导: tensor([1., 1., 1., 1.], dtype=torch.float64)
+另一种清理方式 x.grad=None: None
+
+===== 3. 同一张图重复反向，与梯度累加是两回事 =====
+预期错误：a*a 的中间缓存已释放；重新前向计算再 backward。
+重新前向后的梯度: 4.0
+
+===== 4. 多元素输出需要先说明怎样汇总 =====
+sum 的梯度: tensor([2., 4., 6.], dtype=torch.float64)
+mean 的梯度: tensor([0.666667, 1.333333, 2.000000], dtype=torch.float64)
+权重 [1,2,3] 的加权和梯度: tensor([ 2.,  8., 18.], dtype=torch.float64)
+backward(seed) 得到 Jacobian.T@seed 对应的梯度，不是完整 Jacobian。
+耦合输出 [x0+x1,x0*x1] 加权 [2,3] 的梯度: tensor([8., 5.], dtype=torch.float64)
+
+===== 5. detach：保持数值，切断一条求导路径 =====
+分离 y=x*x 后，z=y.detach()*x 的梯度: tensor([1., 4., 9.], dtype=torch.float64)
+原来的 y=x*x 仍可单独求导: tensor([2., 4., 6.], dtype=torch.float64)
+未分离 x*x*x 的梯度: tensor([ 3., 12., 27.], dtype=torch.float64)
+detach 与原 y 共享存储: True
+detach().clone() 获得独立存储: True
+
+===== 6. 控制流：记录本次实际执行的张量计算 =====
+a=1.25，循环=9，系数=1024，结果=1280，梯度=1024
+a=-1.25，循环=9，系数=102400，结果=-128000，梯度=102400
+矩阵输入先对输出求和，梯度:
+ tensor([[512., 512.],
+        [512., 512.]], dtype=torch.float64)
+全部等于本路径系数: True
+含零元素时 result/a 会出现 0/0，不能用比值普遍验证。
+自定义正分支 a²、非正分支 3a，在 2/-2 的梯度: [(2.0, 4.0), (-2.0, 3.0)]
+
+===== 7. 二阶导数：让一阶导数的计算也进入图 =====
+q^4 在 q=2 的一阶/二阶导数: 32.0 48.0
+autograd.grad 返回导数；q.grad 仍为: None
+
+===== 8. 回到上一节：自动求导完成同一次小批量更新 =====
+自动 / 手算 dw:
+tensor([[-29.333333],
+        [-37.333333]], dtype=torch.float64)
+tensor([[-29.333333],
+        [-37.333333]], dtype=torch.float64)
+自动 / 手算 db: -8.0 -8.0
+更新前/后损失: 18.666666666666668 2.6884740740740742
+更新后的参数仍是可求导叶张量: True True True
+为下一轮清理梯度: None None
+配图: 2_5_sin_autograd.png
+配图: 2_5_detach_paths.png
+配图: 2_5_update_cycle.png
+
+整节结束：去综合练习填写八处 TODO，再一次反馈结果与三个解释。
