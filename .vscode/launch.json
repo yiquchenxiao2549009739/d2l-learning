@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "2.6 概率：完整演示",
+      "name": "2.7 查阅文档：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch02/06_probability.py",
+      "program": "${workspaceFolder}/lessons/ch02/07_documentation.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "2.6 概率：综合练习",
+      "name": "2.7 查阅文档：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch02/06_probability.py",
+      "program": "${workspaceFolder}/exercises/ch02/07_documentation.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
