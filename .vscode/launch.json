@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "2.5 自动微分：完整演示",
+      "name": "2.6 概率：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch02/05_autograd.py",
+      "program": "${workspaceFolder}/lessons/ch02/06_probability.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "2.5 自动微分：综合练习",
+      "name": "2.6 概率：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch02/05_autograd.py",
+      "program": "${workspaceFolder}/exercises/ch02/06_probability.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

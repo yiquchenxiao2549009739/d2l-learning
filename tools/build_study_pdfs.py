@@ -499,6 +499,13 @@ SPECS = [
          date="2026-10-19", figure_height=210,
          goals="能够使用 backward 获取梯度，分清梯度累积和图缓存寿命，解释多元素输出、detach 和控制流的求导，并完成一次自动微分更新。",
          filename="2.5-自动微分-学习讲义.pdf"),
+    dict(section="2.6", title="概率", subtitle="从随机抽样到条件判断，用分布、证据与波动理解预测。",
+         source="docs/ch02/06_probability.md", start="## 概率为什么出现在深度学习里",
+         end=None, pages="PDF 第 91-99 页 / 正文第 73-81 页（含节末练习）",
+         route=["分布与抽样", "联合与条件", "贝叶斯与独立", "期望与方差"],
+         date="2026-10-19", figure_height=185,
+         goals="能够区分概率与频率，从联合表计算边际和条件概率，说明贝叶斯公式及独立性假设，并通过模拟计算期望和方差。",
+         filename="2.6-概率-学习讲义.pdf"),
 ]
 
 
