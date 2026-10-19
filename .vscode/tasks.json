@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "2.7 查阅文档：完整演示",
+      "label": "3.1 线性回归：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch02/07_documentation.py"
+        "${workspaceFolder}/lessons/ch03/01_linear_regression.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "2.7 查阅文档：综合练习",
+      "label": "3.1 线性回归：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch02/07_documentation.py"
+        "${workspaceFolder}/exercises/ch03/01_linear_regression.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",

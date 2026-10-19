@@ -513,12 +513,20 @@ SPECS = [
          date="2026-10-19",
          goals="能够用 dir 和 help 查找工具，读懂基本签名、参数和返回值，核对版本，并通过最小实验完成一个陌生函数的调用。",
          filename="2.7-查阅文档-学习讲义.pdf"),
+    dict(section="3.1", title="线性回归", subtitle="把数据、模型、损失与优化连接成一个完整学习问题。",
+         chapter="第 3 章 · 线性神经网络",
+         source="docs/ch03/01_linear_regression.md", start="## 先说清楚：我们要预测什么",
+         end=None, pages="PDF 第 103-112 页 / 正文第 85-94 页（含节末练习）",
+         route=["模型与损失", "最小二乘与优化", "矢量化与概率", "网络与实践"],
+         date="2026-10-19", figure_height=195,
+         goals="能够解释线性回归的四个要素，区分参数与超参数，对照最小二乘与梯度下降，并理解平方损失的高斯噪声解释及单层网络表示。",
+         filename="3.1-线性回归-学习讲义.pdf"),
 ]
 
 
 def story(spec):
     result = [
-        p("第 2 章 · 预备知识 / " + spec['section'], "Eyebrow"),
+        p(spec.get('chapter', "第 2 章 · 预备知识") + " / " + spec['section'], "Eyebrow"),
         p(spec['section'] + " " + spec['title'], "Title"),
         p(spec['subtitle'], "Subtitle"),
         Route(spec['route']),

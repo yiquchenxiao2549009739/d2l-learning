@@ -1,0 +1,38 @@
+{
+  "purpose": "teacher demonstration, not learner completion",
+  "torch": "2.4.1+cu121",
+  "seed": 3101,
+  "device": "cpu",
+  "dtype": "float64",
+  "noise_std": 0.2,
+  "learning_rate": 0.1,
+  "updates": 200,
+  "samples": {
+    "train": 128,
+    "validation": 64,
+    "test": 64
+  },
+  "true_w": [
+    2.0,
+    -3.4
+  ],
+  "true_b": 4.2,
+  "learned_w": [
+    1.9634034018585325,
+    -3.365795640584255
+  ],
+  "learned_b": 4.22702574279499,
+  "least_squares_theta": [
+    1.9634038458393799,
+    -3.3657974881180133,
+    4.227026037555327
+  ],
+  "initial_train_half_mse": 14.02808730538236,
+  "final_train_half_mse": 0.021086334179956603,
+  "final_validation_half_mse": 0.02322952392465894,
+  "final_test_half_mse": 0.026617042556777798,
+  "new_prediction": 9.556224785237777,
+  "gaussian_nll": -20.907651165505612,
+  "loop_median_seconds": 0.0560248000000001,
+  "vector_median_seconds": 2.319999999999878e-06
+}
