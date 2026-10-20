@@ -2,7 +2,7 @@
 
 从“看懂简单代码”开始，逐步做到自己实现、训练和解释模型。
 
-当前一次学习 **完整的 3.4 softmax 回归（3.4.1–3.4.8）**。先看 [整节讲义](docs/ch03/04_softmax_regression.md)，运行一个完整演示，再完成一个综合练习并集中反馈。
+当前一次学习 **完整的 3.5 图像分类数据集（3.5.1–3.5.3）**。先看 [整节讲义](docs/ch03/05_image_classification_dataset.md)，运行一个完整演示，再完成一个综合练习并集中反馈。
 
 ## 阅读版 PDF
 
@@ -19,34 +19,40 @@
 | 3.2 从零实现线性回归 | 11 页 | [学习讲义 PDF](output/pdf/3.2-线性回归的从零开始实现-学习讲义.pdf) |
 | 3.3 简洁实现线性回归 | 11 页 | [学习讲义 PDF](output/pdf/3.3-线性回归的简洁实现-学习讲义.pdf) |
 | 3.4 softmax 回归 | 15 页 | [学习讲义 PDF](output/pdf/3.4-softmax回归-学习讲义.pdf) |
+| 3.5 图像分类数据集 | 11 页 | [学习讲义 PDF](output/pdf/3.5-图像分类数据集-学习讲义.pdf) |
 
-十一份包含原理、代码示例、结果解释与综合练习，嵌入中文字体并提供章节书签和页码。2.2 附有预处理数据；2.3–2.5 配有原理图及模型计算；2.6 配有频率收敛、贝叶斯更新、条件独立和均值方差四张图，贯通抽样与条件判断。2.7 通过查阅工具、签名解释和最小实验贯通整节。3.1 配有训练、正态分布、损失与网络四张图，并对照最小二乘和梯度下降。3.2 配有尾批、训练与学习率三张图，逐步组织生成器和手写 SGD。3.3 配有训练、实现对照与离群值三张图，贯通 DataLoader、Linear、MSELoss、SGD；同批对照核对损失尺度，并说明教材 Huber 公式与 SmoothL1Loss 的关系。3.4 配有得分与概率、交叉熵与温度、训练、分类区域与测试计数四张图，覆盖标签、梯度、信息论及全部节末拓展。3.4 整理日期：2026-10-20，旧资料日期保留。
+十二份包含原理、代码示例、结果解释与综合练习，嵌入中文字体并提供章节书签和页码。2.2 附有预处理数据；2.3–2.5 配有原理图及模型计算；2.6 配有频率收敛、贝叶斯更新、条件独立和均值方差四张图，贯通抽样与条件判断。2.7 通过查阅工具、签名解释和最小实验贯通整节。3.1 配有训练、正态分布、损失与网络四张图，并对照最小二乘和梯度下降。3.2 配有尾批、训练与学习率三张图，逐步组织生成器和手写 SGD。3.3 配有训练、实现对照与离群值三张图，贯通 DataLoader、Linear、MSELoss、SGD；同批对照核对损失尺度，并说明教材 Huber 公式与 SmoothL1Loss 的关系。3.4 配有得分与概率、交叉熵与温度、训练、分类区域与测试计数四张图，覆盖标签、梯度、信息论及全部节末拓展。3.5 配有十类样本、像素与 Resize、批次形状及性能对照四张图，使用本机已有 Fashion-MNIST 完成真实读取。3.5 整理日期：2026-10-20，旧资料日期保留。
 
-PDF 由 `tools/build_study_pdfs.py` 使用现有文档工具环境生成，不需要修改 openmmlab。可用 `--section 3.4` 只重建当前讲义。原始教材仍不纳入 Git；只允许上述学习 PDF 同步。
+PDF 由 `tools/build_study_pdfs.py` 使用现有文档工具环境生成，不需要修改 openmmlab。可用 `--section 3.5` 只重建当前讲义。原始教材仍不纳入 Git；只允许上述学习 PDF 同步。
 
 2.1–2.3 PDF 保持既有本地删除状态。GitHub 均保留，因此表中提供存档链接。本轮不恢复文件，也不把这些本地删除提交到远端。
 
 ## 在 VS Code 中开始
 
 1. 用 VS Code 打开本目录中的 `d2l-learning.code-workspace`。
-2. 打开 `lessons/ch03/04_softmax_regression.py`。
-3. 按 **F5**，选择“3.4 softmax 回归：完整演示”，一次运行整节。也可以点编辑器右上角“运行 Python 文件”。
-4. 在 `exercises/ch03/04_softmax_regression.py` 集中填写八处 TODO，在六条样本上接通独热标签、类别得分、概率、真实类交叉熵、平均损失、反向传播、预测与准确率，并观察一次参数更新。
+2. 打开 `lessons/ch03/05_image_classification_dataset.py`。
+3. 按 **F5**，选择“3.5 图像分类数据集：完整演示”，一次运行整节。也可以点编辑器右上角“运行 Python 文件”。
+4. 在 `exercises/ch03/05_image_classification_dataset.py` 集中填写八处 TODO，用真实训练集前 37 条样本完成 Resize/ToTensor、读取、分批、展平、名称映射与单图预览，再集中解释形状、值域和数据划分。
 
-这块覆盖分类标签、全连接得分、softmax、稳定计算、交叉熵与似然、p−y 梯度、熵与编码、准确率及校准。教师演示使用二维三类人工 CSV，训练/验证/测试为 240/90/90 条，40 轮共 400 次更新；没有下载图像数据。教材二阶导数、分组编码及 log-sum-exp 三道拓展均已整理。
+这块覆盖 Fashion-MNIST 十类标签、像素与 CHW/NCHW、ToTensor、Compose/Resize、批次/尾批、可视化和性能比较。教师已完整读取训练 60,000 张、测试 10,000 张，核对类计数与数据类型；每批 256 时分别为 235/40 批、尾批 96/16。当前完成数据准备，不训练模型。
 
-前面各节的代码、讲义和练习继续保留，2.1–2.3 PDF 的本地状态见上文；单独的旧 tensor、reshape 文件已删除且未重建。问答与已完成实践的记录在 `learning_log.md`。用户主动要求进入 3.4，未据此将未提交的旧综合练习标记完成。
+前面各节的代码、讲义和练习继续保留，2.1–2.3 PDF 的本地状态见上文；单独的旧 tensor、reshape 文件已删除且未重建。问答与已完成实践的记录在 `learning_log.md`。用户主动要求进入 3.5，未据此将未提交的旧综合练习标记完成。
 
 解释器已经指定为已有的 `openmmlab` 环境：`D:/Anaconda/envs/openmmlab/python.exe`。第一次打开若提示选择解释器，选择 `openmmlab`。
+
+本机 Fashion-MNIST 原始文件已核对官方归档 MD5、解压内容 SHA-256 和 IDX 头。项目 `data/` 中的硬链接与已有文件共享存储，不额外复制约 52.4 MiB 原始像素文件；这些文件只用于读取。机器相关来源保存在被忽略的本地记录中，数据不会提交 GitHub。其他电脑需要先准备自己的数据；`tools/prepare_fashion_mnist.py --source <已有数据根目录>` 可校验并在同一文件系统建立硬链接。
+
+默认读取使用 `num_workers=0`。完整演示另测 0/2/4 个加载进程与批量大小，Windows 入口已加 main 保护。重复运行可用 `--skip-worker-benchmark` 略过多进程对照。图像示例来自 Fashion-MNIST，许可保存在 `docs/references/fashion_mnist_LICENSE.txt`。
 
 ## 文件各自做什么
 
 | 文件或目录 | 用途 |
 | --- | --- |
-| `docs/ch03/04_softmax_regression.md` | 完整的 3.4 讲义 |
-| `lessons/ch03/04_softmax_regression.py` | 当前统一演示入口 |
-| `exercises/ch03/04_softmax_regression.py` | 当前综合练习入口 |
+| `docs/ch03/05_image_classification_dataset.md` | 完整的 3.5 讲义 |
+| `lessons/ch03/05_image_classification_dataset.py` | 当前统一演示入口 |
+| `exercises/ch03/05_image_classification_dataset.py` | 当前综合练习入口 |
 | `datasets/ch02/`、`datasets/ch03/` | 预处理样例、回归与分类人工训练/验证/测试 CSV |
+| `data/FashionMNIST/raw/` | 本地官方图像数据，已排除 Git；四个硬链接复用现有存储 |
 | `reports/ch02/figures/`、`reports/ch03/figures/` | 已讲章节的原理图和实验曲线 |
 | `docs/roadmap.md` | 全书路线和 PDF 页码 |
 | `lessons/` | 讲解示例 |
@@ -59,7 +65,7 @@ PDF 由 `tools/build_study_pdfs.py` 使用现有文档工具环境生成，不�
 | `scripts/` | 选择已有环境和 Git 同步 |
 | `artifacts/` | 训练生成的曲线、指标、模型，只保存在本地 |
 
-后续每次以完整小节或较大的主题块推进，集中讲原理、整合程序、统一实践和反馈，不再将单个函数拆成多轮。下一块为 3.5 图像分类数据集，正式认识 Fashion-MNIST 的样本、标签与读取。旧练习的未验证状态保留，教师运行不记作用户掌握。
+后续每次以完整小节或较大的主题块推进，集中讲原理、整合程序、统一实践和反馈，不再将单个函数拆成多轮。下一块为 3.6 softmax 回归的从零开始实现，在默认 28×28 图像上训练十类分类器。旧练习的未验证状态保留，教师运行不记作用户掌握。
 
 ## 环境和验证
 

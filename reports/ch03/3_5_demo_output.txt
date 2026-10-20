@@ -1,0 +1,19 @@
+性能对照: PIL_ToTensor batch 1 workers 0
+性能对照: PIL_ToTensor batch 32 workers 0
+性能对照: PIL_ToTensor batch 256 workers 0
+性能对照: PIL_ToTensor batch 256 workers 2
+性能对照: PIL_ToTensor batch 256 workers 4
+性能对照: vectorized_fixed_transform batch 256 workers 0
+3.5 图像分类数据集 | 2.4.1+cu121 0.19.1+cu121
+已有数据，无下载；训练/测试数量: 60000 10000
+首张: torch.Size([1, 28, 28]) torch.float32 标签: 9 短靴 值域: (0.0, 1.0)
+一批: torch.Size([256, 1, 28, 28]) torch.float32 标签: torch.Size([256]) torch.int64
+Resize=64: torch.Size([32, 1, 64, 64])
+完整遍历: {'train': {'samples': 60000, 'batches': 235, 'last_batch': 96, 'class_counts': [6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000], 'seconds_with_count_checks': 3.031594}, 'test': {'samples': 10000, 'batches': 40, 'last_batch': 16, 'class_counts': [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000], 'seconds_with_count_checks': 0.4868136999999999}}
+{'method': 'PIL_ToTensor', 'batch_size': 1, 'num_workers': 0, 'samples': 4096, 'repeats': 2, 'median_total_seconds': 0.4272214999999999}
+{'method': 'PIL_ToTensor', 'batch_size': 32, 'num_workers': 0, 'samples': 4096, 'repeats': 2, 'median_total_seconds': 0.22832830000000026}
+{'method': 'PIL_ToTensor', 'batch_size': 256, 'num_workers': 0, 'samples': 4096, 'repeats': 2, 'median_total_seconds': 0.19977590000000012}
+{'method': 'PIL_ToTensor', 'batch_size': 256, 'num_workers': 2, 'samples': 4096, 'repeats': 2, 'median_total_seconds': 3.0955226999999996}
+{'method': 'PIL_ToTensor', 'batch_size': 256, 'num_workers': 4, 'samples': 4096, 'repeats': 2, 'median_total_seconds': 3.404906499999999}
+{'method': 'vectorized_fixed_transform', 'batch_size': 256, 'num_workers': 0, 'samples': 4096, 'repeats': 2, 'median_total_seconds': 0.02411295000000102}
+本节完成读取与检查，没有训练模型。报告和四张图在 reports/ch03。

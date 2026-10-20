@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "3.4 softmax 回归：完整演示",
+      "name": "3.5 图像分类数据集：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch03/04_softmax_regression.py",
+      "program": "${workspaceFolder}/lessons/ch03/05_image_classification_dataset.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "3.4 softmax 回归：综合练习",
+      "name": "3.5 图像分类数据集：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch03/04_softmax_regression.py",
+      "program": "${workspaceFolder}/exercises/ch03/05_image_classification_dataset.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

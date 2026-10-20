@@ -545,6 +545,14 @@ SPECS = [
          date="2026-10-20", figure_height=195,
          goals="能够区分类别编号、独热标签、得分与概率，按行计算 softmax，解释交叉熵及其梯度，并用准确率评估一次完整分类训练。",
          filename="3.4-softmax回归-学习讲义.pdf"),
+    dict(section="3.5", title="图像分类数据集", subtitle="把真实图像读成张量，检查标签、批次与数据流水线。",
+         chapter="第 3 章 · 线性神经网络",
+         source="docs/ch03/05_image_classification_dataset.md", start="## 这节把真实图像接入学习流程",
+         end=None, pages="PDF 第 129-133 页 / 正文第 111-115 页（含节末练习）",
+         route=["样本与标签", "图像与张量", "批次与变换", "性能与实践"],
+         date="2026-10-20", figure_height=210,
+         goals="能够读取 Fashion-MNIST，解释通道和批量形状、像素缩放与 Resize，正确组织训练和测试加载器，并用实际计时判断数据读取方案。",
+         filename="3.5-图像分类数据集-学习讲义.pdf"),
 ]
 
 

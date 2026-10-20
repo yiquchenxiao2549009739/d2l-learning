@@ -1,0 +1,160 @@
+{
+  "purpose": "teacher demonstration, not learner completion",
+  "date": "2026-10-20",
+  "torch": "2.4.1+cu121",
+  "torchvision": "0.19.1+cu121",
+  "device": "cpu",
+  "dataset_root": "data/FashionMNIST/raw",
+  "download": false,
+  "source": "verified existing local data, hard links; source content untouched",
+  "class_names": [
+    "T恤/上衣",
+    "长裤",
+    "套衫",
+    "连衣裙",
+    "外套",
+    "凉鞋",
+    "衬衫",
+    "运动鞋",
+    "包",
+    "短靴"
+  ],
+  "train_size": 60000,
+  "test_size": 10000,
+  "raw_image_shape": [
+    28,
+    28
+  ],
+  "raw_image_dtype": "torch.uint8",
+  "first_image_shape": [
+    1,
+    28,
+    28
+  ],
+  "first_image_dtype": "torch.float32",
+  "first_label": 9,
+  "first_image_min": 0.0,
+  "first_image_max": 1.0,
+  "batch_shape": [
+    256,
+    1,
+    28,
+    28
+  ],
+  "batch_dtype": "torch.float32",
+  "labels_shape": [
+    256
+  ],
+  "labels_dtype": "torch.int64",
+  "resized_batch_shape": [
+    32,
+    1,
+    64,
+    64
+  ],
+  "loader_seed": 3501,
+  "full_passes": {
+    "train": {
+      "samples": 60000,
+      "batches": 235,
+      "last_batch": 96,
+      "class_counts": [
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000
+      ],
+      "seconds_with_count_checks": 3.031594
+    },
+    "test": {
+      "samples": 10000,
+      "batches": 40,
+      "last_batch": 16,
+      "class_counts": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "seconds_with_count_checks": 0.4868136999999999
+    }
+  },
+  "example_indices_by_class": [
+    1,
+    16,
+    5,
+    3,
+    19,
+    8,
+    18,
+    6,
+    23,
+    0
+  ],
+  "benchmark_subset": "first 4096 training samples, ordered, no model/GPU",
+  "benchmark_repeats": 2,
+  "worker_startup_included": true,
+  "benchmark_summary": [
+    {
+      "method": "PIL_ToTensor",
+      "batch_size": 1,
+      "num_workers": 0,
+      "samples": 4096,
+      "repeats": 2,
+      "median_total_seconds": 0.4272214999999999
+    },
+    {
+      "method": "PIL_ToTensor",
+      "batch_size": 32,
+      "num_workers": 0,
+      "samples": 4096,
+      "repeats": 2,
+      "median_total_seconds": 0.22832830000000026
+    },
+    {
+      "method": "PIL_ToTensor",
+      "batch_size": 256,
+      "num_workers": 0,
+      "samples": 4096,
+      "repeats": 2,
+      "median_total_seconds": 0.19977590000000012
+    },
+    {
+      "method": "PIL_ToTensor",
+      "batch_size": 256,
+      "num_workers": 2,
+      "samples": 4096,
+      "repeats": 2,
+      "median_total_seconds": 3.0955226999999996
+    },
+    {
+      "method": "PIL_ToTensor",
+      "batch_size": 256,
+      "num_workers": 4,
+      "samples": 4096,
+      "repeats": 2,
+      "median_total_seconds": 3.404906499999999
+    },
+    {
+      "method": "vectorized_fixed_transform",
+      "batch_size": 256,
+      "num_workers": 0,
+      "samples": 4096,
+      "repeats": 2,
+      "median_total_seconds": 0.02411295000000102
+    }
+  ],
+  "no_model_training": true
+}
