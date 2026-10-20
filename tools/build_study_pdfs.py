@@ -561,6 +561,14 @@ SPECS = [
          date="2026-10-20", figure_height=320,
          goals="能够用张量和自动求导训练十类图像分类器，解释逐样本交叉熵、正确数量与加权统计，正确处理尾批，并核对数值稳定性与决策代价。",
          filename="3.6-softmax回归的从零开始实现-学习讲义.pdf"),
+    dict(section="3.7", title="softmax 回归的简洁实现", subtitle="用框架部件接通分类训练，并核对它与手写实现的关系。",
+         chapter="第 3 章 · 线性神经网络",
+         source="docs/ch03/07_softmax_concise.md", start="## 一张图看清本节替换了什么",
+         end=None, pages="PDF 第 141-144 页 / 正文第 123-126 页（含节末练习）",
+         route=["模型与初始化", "稳定损失", "优化与训练", "调参与实践"],
+         date="2026-10-20", figure_height=240, start_on_new_page=True,
+         goals="能够对应手写与框架实现，正确使用原始得分、平均交叉熵和SGD，并通过训练/验证实验理解超参数和训练轮数的影响。",
+         filename="3.7-softmax回归的简洁实现-学习讲义.pdf"),
 ]
 
 
@@ -583,6 +591,8 @@ def story(spec):
     body = body.replace("沿用你已经成功创建的三条样本、每条两个特征：", "本节统一使用三条样本、每条两个特征：")
     if spec['section'] == "2.2":
         body = body.replace("data = pd.read_csv(data_file)", 'data_file = "datasets/ch02/house_tiny.csv"\ndata = pd.read_csv(data_file)')
+    if spec.get('start_on_new_page'):
+        result.append(PageBreak())
     result.extend(markdown_blocks(body, (ROOT / spec['source']).parent,
                                   spec.get('figure_height', 178)))
     if spec['section'] == "2.1":

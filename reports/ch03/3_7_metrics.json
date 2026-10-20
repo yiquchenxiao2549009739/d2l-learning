@@ -1,0 +1,156 @@
+{
+  "purpose": "teacher demonstration, not learner completion",
+  "date": "2026-10-20",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "float32",
+  "download": false,
+  "split_sizes": {
+    "train": 54000,
+    "validation": 6000,
+    "test": 10000
+  },
+  "split_seed": 3601,
+  "loader_seed": 3603,
+  "model_seed": 3700,
+  "split_index_sha256": {
+    "train": "0e80aeb90dbd6e15d5b7dd6bafc1fd8676572ad733ef231f42a39f443d0e5503",
+    "validation": "65d9aca93416d8234d9a47b5cb19d13a21f2809c1d8661ad3977f8975a75979f"
+  },
+  "epochs": 10,
+  "learning_rate": 0.1,
+  "batch_size": 256,
+  "updates": 2110,
+  "training_tail": 240,
+  "weight_shape": [
+    10,
+    784
+  ],
+  "bias_shape": [
+    10
+  ],
+  "parameter_count": 7850,
+  "bias_initialization": "explicit zeros; textbook leaves default bias unchanged",
+  "initialization_vs_3_6": "different random starting parameters; equivalence audit uses identical parameters",
+  "loss_reduction": "none then mean backward; sum only for reporting",
+  "final": {
+    "epoch": 10,
+    "updates": 2110,
+    "online_train_ce": 0.4509712580928096,
+    "online_train_accuracy": 0.8475555555555555,
+    "train_ce": 0.4459036313869335,
+    "train_accuracy": 0.8493518518518518,
+    "validation_ce": 0.4550553995768229,
+    "validation_accuracy": 0.8435
+  },
+  "test": {
+    "ce": 0.48104784111976623,
+    "accuracy": 0.8343,
+    "correct": 8343,
+    "samples": 10000
+  },
+  "test_evaluations": 1,
+  "training_and_epoch_eval_seconds": 90.2251498,
+  "equivalence_audit": {
+    "dtype": "float64",
+    "updates": 9,
+    "batch_sizes": [
+      8,
+      8,
+      7,
+      8,
+      8,
+      7,
+      8,
+      8,
+      7
+    ],
+    "maximum_absolute_errors": {
+      "logits": 3.552713678800501e-15,
+      "loss": 3.9968028886505635e-15,
+      "gradient": 2.220446049250313e-16,
+      "parameter": 2.949029909160572e-17
+    },
+    "extreme_stable_ce": 2000.0,
+    "correct_logits_ce": 0.00035210233338995526,
+    "wrong_softmax_then_ce": 0.5516685893048225,
+    "zero_grad_set_to_none": true
+  },
+  "tuning": {
+    "train_samples": 500,
+    "validation_samples": 1000,
+    "per_class": {
+      "train": 50,
+      "validation": 100
+    },
+    "subset_seeds": [
+      3701,
+      3702
+    ],
+    "subset_index_sha256": {
+      "train": "f3868287e1edc66fdd94d95f1ea830419bd39d91e52ad877a24964e6b2a1e315",
+      "validation": "d35e68f7a2c47b885fbcec01c71d7612c4c983d626837fa6e92afb25b517a396"
+    },
+    "model_seed": 3700,
+    "test_evaluations": 0,
+    "summaries": [
+      {
+        "case": "baseline",
+        "lr": 0.1,
+        "batch_size": 256,
+        "epoch": 10,
+        "updates": 20,
+        "train_ce": 1.0493995971679688,
+        "train_accuracy": 0.668,
+        "validation_ce": 1.0997780303955078,
+        "validation_accuracy": 0.633
+      },
+      {
+        "case": "baseline",
+        "lr": 0.1,
+        "batch_size": 256,
+        "epoch": 60,
+        "updates": 120,
+        "train_ce": 0.5628878784179687,
+        "train_accuracy": 0.854,
+        "validation_ce": 0.7391810073852539,
+        "validation_accuracy": 0.772
+      },
+      {
+        "case": "small_lr",
+        "lr": 0.01,
+        "batch_size": 256,
+        "epoch": 10,
+        "updates": 20,
+        "train_ce": 1.9393302001953125,
+        "train_accuracy": 0.544,
+        "validation_ce": 1.9461436157226562,
+        "validation_accuracy": 0.555
+      },
+      {
+        "case": "large_lr",
+        "lr": 1.0,
+        "batch_size": 256,
+        "epoch": 10,
+        "updates": 20,
+        "train_ce": 3.103340255737305,
+        "train_accuracy": 0.7,
+        "validation_ce": 3.631241439819336,
+        "validation_accuracy": 0.642
+      },
+      {
+        "case": "small_batch",
+        "lr": 0.1,
+        "batch_size": 64,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 0.6512257480621337,
+        "train_accuracy": 0.802,
+        "validation_ce": 0.7853122606277466,
+        "validation_accuracy": 0.764
+      }
+    ]
+  },
+  "checkpoint_local_only": "artifacts/ch03/3_7_softmax_concise.pt",
+  "checkpoint_sha256": "3d9d4e079dd6b2fffa5107d011a8e1bc75056683587851fac26ab0dfa282cd1d"
+}
