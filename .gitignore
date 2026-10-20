@@ -22,6 +22,7 @@ __pycache__/
 !output/pdf/3.1-线性回归-学习讲义.pdf
 !output/pdf/3.2-线性回归的从零开始实现-学习讲义.pdf
 !output/pdf/3.3-线性回归的简洁实现-学习讲义.pdf
+!output/pdf/3.4-softmax回归-学习讲义.pdf
 
 # Downloaded data and generated training output
 data/

@@ -537,6 +537,14 @@ SPECS = [
          date="2026-10-19", figure_height=200,
          goals="能够用 TensorDataset、DataLoader、Linear、MSELoss 和 SGD 完成训练，正确读取参数与梯度，并核对损失尺度、尾批及教材 Huber 公式。",
          filename="3.3-线性回归的简洁实现-学习讲义.pdf"),
+    dict(section="3.4", title="softmax 回归", subtitle="从类别得分到概率，用交叉熵连接预测、信息与梯度。",
+         chapter="第 3 章 · 线性神经网络",
+         source="docs/ch03/04_softmax_regression.md", start="## 从预测数值到选择类别",
+         end=None, pages="PDF 第 123-129 页 / 正文第 105-111 页（含节末练习）",
+         route=["标签与得分", "概率与损失", "梯度与信息", "分类与实践"],
+         date="2026-10-20", figure_height=195,
+         goals="能够区分类别编号、独热标签、得分与概率，按行计算 softmax，解释交叉熵及其梯度，并用准确率评估一次完整分类训练。",
+         filename="3.4-softmax回归-学习讲义.pdf"),
 ]
 
 

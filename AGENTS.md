@@ -24,7 +24,8 @@
 - 2026-10-19：已准备完整 2.7 查阅文档，统一演示与综合练习为 07_documentation.py，6 页 PDF 与本机帮助快照已准备。按短整节推进，dir/help、签名与返回值、最小验证、版本核对贯通一次实践；三处 TODO 留空，未收到用户作答。下一节为第 3 章 3.1 线性回归。
 - 2026-10-19：已准备完整 3.1 线性回归，统一演示与综合练习为 ch03/01_linear_regression.py；14 页 PDF、四张图、人工数据三分集及真实指标已准备。以全批量更新贯通原理，核对最小二乘、秩条件和似然；六处 TODO 留空，不能据教师运行记为掌握。下一节 3.2 再组织从零小批量流水线。
 - 2026-10-19：已准备完整 3.2 从零实现线性回归，统一入口为 ch03/02_linear_regression_scratch.py；11 页 PDF、三张图、小型数据与真实实验已准备。1000 条训练样本、每批 10 条、3 轮共 300 次更新；sum 反传后在 SGD 中除实际 len(X)，覆盖不整除尾批、学习率和零初始化对照。练习六处留空，下一节 3.3 简洁实现。
-- 2026-10-19：当前为完整 3.3 线性回归的简洁实现，统一入口为 ch03/03_linear_regression_concise.py；11 页 PDF、三张图和真实指标已准备。复用 3.2 CSV，使用 DataLoader、Linear、MSELoss 和 SGD。默认均方误差没有 1/2；等价对照用 MSE/lr=0.015 对齐手写半平方损失/lr=0.03。教材分段 Huber 公式对应 SmoothL1Loss(beta=σ)，与 HuberLoss 有 σ 倍尺度差。练习八处留空，下一节 3.4 softmax 回归。
+- 2026-10-19：已准备完整 3.3 线性回归的简洁实现，统一入口为 ch03/03_linear_regression_concise.py；11 页 PDF、三张图和真实指标已准备。复用 3.2 CSV，使用 DataLoader、Linear、MSELoss 和 SGD。默认均方误差没有 1/2；等价对照用 MSE/lr=0.015 对齐手写半平方损失/lr=0.03。教材分段 Huber 公式对应 SmoothL1Loss(beta=σ)，与 HuberLoss 有 σ 倍尺度差。练习八处留空，下一节 3.4 softmax 回归。
+- 2026-10-20：当前为完整 3.4 softmax 回归，统一入口 ch03/04_softmax_regression.py；15 页 PDF、四张图与 240/90/90 条人工三类数据已准备。覆盖标签、logits/概率、稳定交叉熵、p−y 与批量平均、信息论、准确率/校准及全部教材拓展。默认 CPU/float64、lr=0.1、40 轮共 400 次更新；CrossEntropyLoss 接原始得分，类别索引为 long/(n,)。练习八处留空，下一节 3.5 图像分类数据集；当前未下载 Fashion-MNIST。
 - 3.3 制作期间检测到 output/pdf/2.3-线性代数-学习讲义.pdf 新增本地删除，与 2.1、2.2 一起保留、不恢复、不提交；GitHub 存档仍在，README 提供存档链接。
 - 3.2 制作期间检测到 output/pdf/2.2-数据预处理-学习讲义.pdf 新增本地删除状态。保留删除，不恢复、不纳入提交；GitHub 存档仍保留，README 提供存档链接。
 - 本轮开始时 lessons/ch02/02_whole_process.py 已是用户的未跟踪文件；保留内容和未跟踪状态，不纳入新课提交。

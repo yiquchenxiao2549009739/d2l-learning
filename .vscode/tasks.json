@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "3.3 线性回归简洁实现：完整演示",
+      "label": "3.4 softmax 回归：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch03/03_linear_regression_concise.py"
+        "${workspaceFolder}/lessons/ch03/04_softmax_regression.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "3.3 线性回归简洁实现：综合练习",
+      "label": "3.4 softmax 回归：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch03/03_linear_regression_concise.py"
+        "${workspaceFolder}/exercises/ch03/04_softmax_regression.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",

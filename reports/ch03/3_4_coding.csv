@@ -1,0 +1,7 @@
+block_length,fixed_bits_per_block,bits_per_symbol
+1,2,2.0
+2,4,2.0
+3,5,1.6666666666666667
+5,8,1.6
+10,16,1.6
+100,159,1.59
