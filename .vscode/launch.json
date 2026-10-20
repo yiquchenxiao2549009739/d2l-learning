@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "3.5 图像分类数据集：完整演示",
+      "name": "3.6 softmax 从零实现：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch03/05_image_classification_dataset.py",
+      "program": "${workspaceFolder}/lessons/ch03/06_softmax_scratch.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "3.5 图像分类数据集：综合练习",
+      "name": "3.6 softmax 从零实现：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch03/05_image_classification_dataset.py",
+      "program": "${workspaceFolder}/exercises/ch03/06_softmax_scratch.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

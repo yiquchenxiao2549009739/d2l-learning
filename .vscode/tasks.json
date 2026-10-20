@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "3.5 图像分类数据集：完整演示",
+      "label": "3.6 softmax 从零实现：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch03/05_image_classification_dataset.py"
+        "${workspaceFolder}/lessons/ch03/06_softmax_scratch.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "3.5 图像分类数据集：综合练习",
+      "label": "3.6 softmax 从零实现：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch03/05_image_classification_dataset.py"
+        "${workspaceFolder}/exercises/ch03/06_softmax_scratch.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",

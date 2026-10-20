@@ -1,0 +1,230 @@
+{
+  "purpose": "teacher demonstration, not learner completion",
+  "date": "2026-10-20",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "float32",
+  "download": false,
+  "split_sizes": {
+    "train": 54000,
+    "validation": 6000,
+    "test": 10000
+  },
+  "split_seed": 3601,
+  "init_seed": 3602,
+  "loader_seed": 3603,
+  "split_index_sha256": {
+    "train": "0e80aeb90dbd6e15d5b7dd6bafc1fd8676572ad733ef231f42a39f443d0e5503",
+    "validation": "65d9aca93416d8234d9a47b5cb19d13a21f2809c1d8661ad3977f8975a75979f"
+  },
+  "validation_per_class": 600,
+  "training_per_class": 5400,
+  "batch_size": 256,
+  "epochs": 10,
+  "learning_rate": 0.1,
+  "updates": 2110,
+  "training_tail": 240,
+  "weight_shape": [
+    784,
+    10
+  ],
+  "bias_shape": [
+    10
+  ],
+  "parameter_count": 7850,
+  "train_ce": 0.44587254598405623,
+  "train_accuracy": 0.849462962962963,
+  "validation_ce": 0.4551059970855713,
+  "validation_accuracy": 0.8428333333333333,
+  "test": {
+    "ce": 0.48116093945503235,
+    "accuracy": 0.8346,
+    "correct": 8346,
+    "samples": 10000
+  },
+  "test_evaluations": 1,
+  "training_and_epoch_eval_seconds": 78.67819589999999,
+  "weight_norm": 7.692940711975098,
+  "bias_norm": 2.3231215476989746,
+  "prediction_example_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    12,
+    17,
+    20,
+    21,
+    23,
+    25
+  ],
+  "confusion_true_rows": [
+    [
+      840,
+      5,
+      10,
+      42,
+      6,
+      0,
+      78,
+      0,
+      19,
+      0
+    ],
+    [
+      5,
+      954,
+      5,
+      26,
+      5,
+      0,
+      3,
+      0,
+      2,
+      0
+    ],
+    [
+      28,
+      6,
+      682,
+      8,
+      156,
+      1,
+      105,
+      0,
+      14,
+      0
+    ],
+    [
+      40,
+      15,
+      10,
+      851,
+      30,
+      1,
+      48,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      3,
+      79,
+      40,
+      765,
+      1,
+      103,
+      0,
+      9,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      2,
+      0,
+      887,
+      0,
+      63,
+      5,
+      42
+    ],
+    [
+      172,
+      3,
+      110,
+      28,
+      100,
+      1,
+      555,
+      0,
+      31,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      917,
+      0,
+      47
+    ],
+    [
+      1,
+      1,
+      5,
+      8,
+      2,
+      3,
+      24,
+      6,
+      950,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      8,
+      1,
+      45,
+      1,
+      945
+    ]
+  ],
+  "audit": {
+    "book_example_losses": [
+      2.3025850929940455,
+      0.6931471805599453
+    ],
+    "book_example_correct_count": 1,
+    "book_example_accuracy": 0.5,
+    "gradient_matches_p_minus_y_over_batch": true,
+    "mean_ce": 0.28872599200033305,
+    "stable_extreme_ce": 2000.0,
+    "direct_log_of_zero_is_nonfinite": true,
+    "exp50_float32": 5.184705457665547e+21,
+    "exp50_float32_finite": true,
+    "exp50_float16_finite": false,
+    "exp100_float32_finite": false,
+    "weighted_accuracy": 0.75,
+    "wrong_batch_average_accuracy": 0.5,
+    "cost_matrix_true_rows_action_columns": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        10.0,
+        0.0
+      ]
+    ],
+    "posterior": [
+      0.6,
+      0.4
+    ],
+    "action_risks": [
+      4.0,
+      0.6
+    ],
+    "argmax_class": 0,
+    "minimum_risk_action": 1,
+    "large_vocabulary_example": {
+      "classes": 100000,
+      "weight_float32_mib": 299.072265625,
+      "batch256_logits_float32_mib": 97.65625
+    }
+  },
+  "checkpoint_local_only": "artifacts/ch03/3_6_softmax_scratch.pt",
+  "checkpoint_sha256": "93c60df93e6b1ea46e92ded5932a56c7c3202b2ab2a444ff2ea90ba9ee754afe"
+}

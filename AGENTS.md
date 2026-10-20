@@ -26,7 +26,9 @@
 - 2026-10-19：已准备完整 3.2 从零实现线性回归，统一入口为 ch03/02_linear_regression_scratch.py；11 页 PDF、三张图、小型数据与真实实验已准备。1000 条训练样本、每批 10 条、3 轮共 300 次更新；sum 反传后在 SGD 中除实际 len(X)，覆盖不整除尾批、学习率和零初始化对照。练习六处留空，下一节 3.3 简洁实现。
 - 2026-10-19：已准备完整 3.3 线性回归的简洁实现，统一入口为 ch03/03_linear_regression_concise.py；11 页 PDF、三张图和真实指标已准备。复用 3.2 CSV，使用 DataLoader、Linear、MSELoss 和 SGD。默认均方误差没有 1/2；等价对照用 MSE/lr=0.015 对齐手写半平方损失/lr=0.03。教材分段 Huber 公式对应 SmoothL1Loss(beta=σ)，与 HuberLoss 有 σ 倍尺度差。练习八处留空，下一节 3.4 softmax 回归。
 - 2026-10-20：已准备完整 3.4 softmax 回归，统一入口 ch03/04_softmax_regression.py；15 页 PDF、四张图与 240/90/90 条人工三类数据已准备。覆盖标签、logits/概率、稳定交叉熵、p−y 与批量平均、信息论、准确率/校准及全部教材拓展。默认 CPU/float64、lr=0.1、40 轮共 400 次更新；CrossEntropyLoss 接原始得分，类别索引为 long/(n,)。练习八处留空，下一节 3.5 图像分类数据集；当前未下载 Fashion-MNIST。
-- 2026-10-20：当前为完整 3.5 图像分类数据集，统一入口 ch03/05_image_classification_dataset.py；11 页 PDF、四张图与真实读取/性能记录已准备。本机既有 Fashion-MNIST 已核对官方 MD5 与解压 SHA-256；data/FashionMNIST/raw 四个硬链接共享已有原始文件，禁止改写，数据和本地来源配置不提交。复用 torchvision 0.19.1，无下载、无安装。默认 num_workers=0，Windows 多进程代码保留 main 保护。train=False 为官方测试集，后续调参另从训练集划验证集。练习八处留空，下一节 3.6 从零实现 softmax 回归。
+- 2026-10-20：已准备完整 3.5 图像分类数据集，统一入口 ch03/05_image_classification_dataset.py；11 页 PDF、四张图与真实读取/性能记录已准备。本机既有 Fashion-MNIST 已核对官方 MD5 与解压 SHA-256；data/FashionMNIST/raw 四个硬链接共享已有原始文件，禁止改写，数据和本地来源配置不提交。复用 torchvision 0.19.1，无下载、无安装。默认 num_workers=0，Windows 多进程代码保留 main 保护。train=False 为官方测试集，后续调参另从训练集划验证集。练习八处留空，下一节 3.6 从零实现 softmax 回归。
+- 2026-10-20：当前为完整 3.6 softmax 从零实现，统一入口 ch03/06_softmax_scratch.py；15 页 PDF、四张图与真实十轮实验已准备。核心仅张量、自动求导和手写 SGD，稳定对数概率避免 log(0)。分层随机划分官方训练集为 54,000/6,000，种子3601/3602/3603；测试10,000只在固定方案结束后评估。默认CPU/float32、lr=.1、batch256，共2110次更新，尾批240；sum反传后除实际批量，按总样本统计指标。检查点仅保存在被忽略的 artifacts。练习八处留空，下一节3.7简洁实现。
+- 3.6 本轮开始检测到 output/pdf/2.4-微积分-学习讲义.pdf 本地删除，与2.1–2.3一起保留，不恢复、不暂存；GitHub存档仍保留，README提供链接。
 - 3.3 制作期间检测到 output/pdf/2.3-线性代数-学习讲义.pdf 新增本地删除，与 2.1、2.2 一起保留、不恢复、不提交；GitHub 存档仍在，README 提供存档链接。
 - 3.2 制作期间检测到 output/pdf/2.2-数据预处理-学习讲义.pdf 新增本地删除状态。保留删除，不恢复、不纳入提交；GitHub 存档仍保留，README 提供存档链接。
 - 本轮开始时 lessons/ch02/02_whole_process.py 已是用户的未跟踪文件；保留内容和未跟踪状态，不纳入新课提交。

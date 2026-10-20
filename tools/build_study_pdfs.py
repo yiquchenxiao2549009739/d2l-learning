@@ -553,6 +553,14 @@ SPECS = [
          date="2026-10-20", figure_height=210,
          goals="能够读取 Fashion-MNIST，解释通道和批量形状、像素缩放与 Resize，正确组织训练和测试加载器，并用实际计时判断数据读取方案。",
          filename="3.5-图像分类数据集-学习讲义.pdf"),
+    dict(section="3.6", title="softmax 回归的从零开始实现", subtitle="用张量写出真实图像分类的训练、评估与预测。",
+         chapter="第 3 章 · 线性神经网络",
+         source="docs/ch03/06_softmax_scratch.md", start="## 把整条分类链亲手接起来",
+         end=None, pages="PDF 第 133-141 页 / 正文第 115-123 页（含节末练习）",
+         route=["参数与概率", "损失与统计", "手写更新", "训练与预测"],
+         date="2026-10-20", figure_height=320,
+         goals="能够用张量和自动求导训练十类图像分类器，解释逐样本交叉熵、正确数量与加权统计，正确处理尾批，并核对数值稳定性与决策代价。",
+         filename="3.6-softmax回归的从零开始实现-学习讲义.pdf"),
 ]
 
 
