@@ -617,6 +617,14 @@ SPECS = [
          date="2026-10-27", figure_height=310, start_on_new_page=True,
          goals="能够解释暂退概率和保留值缩放，正确切换训练/评估模式，核对手写与内置实现，并通过概率、轮数、方差和组合噪声实验理解正则化的条件。",
          filename="4.6-暂退法（Dropout）-学习讲义.pdf"),
+    dict(section="4.7", title="前向传播、反向传播和计算图", subtitle="沿依赖计算数值，沿链式法则传递梯度，再更新参数。",
+         chapter="第 4 章 · 多层感知机",
+         source="docs/ch04/07_backpropagation.md", start="## 把一次训练分成三件事",
+         end=None, pages="PDF 第 180-183 页 / 正文第 162-165 页（含五道节末练习）",
+         route=["前向与计算图", "链式法则", "三种实现核对", "内存与二阶"],
+         date="2026-10-27", figure_height=260, start_on_new_page=True,
+         goals="能够对应列向量与批量公式，推导含L2分支和偏置的梯度，区分求导与更新，并说明保存中间量、二阶求导及模型分阶段执行的代价。",
+         filename="4.7-前向传播、反向传播和计算图-学习讲义.pdf"),
 ]
 
 

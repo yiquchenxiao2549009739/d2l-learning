@@ -1,0 +1,5 @@
+batch_size,parameters,parameter_bytes,parameter_gradient_bytes,saved_logical_bytes_with_repeats,unique_saved_storage_bytes,saved_nonparameter_storage_bytes,training_payload_lower_bound_bytes,inference_named_forward_budget_bytes,no_grad_autograd_save_count
+1,203264,813056,813056,828572,817268,4212,1630324,818280,0
+8,203264,813056,813056,865476,846724,33668,1659780,854848,0
+32,203264,813056,813056,992004,947716,134660,1760772,980224,0
+256,203264,813056,813056,2172932,1890308,1077252,2703364,2150400,0
