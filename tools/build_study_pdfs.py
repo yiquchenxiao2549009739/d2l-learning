@@ -641,6 +641,14 @@ SPECS = [
          source="docs/ch04/09_distribution_shift.md", start="## 从模型是否学好，到环境是否改变", end=None,
          figure_height=245, start_on_new_page=True,
          filename="4.9-环境和分布偏移-学习讲义.pdf"),
+    dict(section="4.10", title="实战Kaggle比赛：预测房价", subtitle="从真实表格到严格验证，再生成可检查的房价预测文件。",
+         chapter="第 4 章 · 多层感知机", date="2026-10-27",
+         route=["数据与预处理", "对数目标", "五折选模型", "重训与导出"],
+         goals="完成真实房价数据的折内预处理与训练，区分原价和log目标、OOF和线上成绩，比较八个固定方案并生成1459行预测，覆盖六道教材练习。",
+         pages="PDF 第 198-208 页 / 正文第 180-190 页（含六道节末练习）",
+         source="docs/ch04/10_kaggle_house_prices.md", start="## 用一个真实项目串起第4章", end=None,
+         figure_height=235, start_on_new_page=True,
+         filename="4.10-实战Kaggle比赛：预测房价-学习讲义.pdf"),
 ]
 
 

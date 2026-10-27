@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-27",
+  "purpose": "teacher demonstration, not learner completion",
+  "device": "cpu",
+  "dtype": "float64",
+  "torch": "2.4.1+cu121",
+  "pandas": "2.0.3",
+  "data_sources": [
+    {
+      "role": "train",
+      "filename": "kaggle_house_pred_train.csv",
+      "bytes": 460676,
+      "sha1": "585e9cc93e70b39160e7921475f9bcd7d31219ce",
+      "sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41"
+    },
+    {
+      "role": "test",
+      "filename": "kaggle_house_pred_test.csv",
+      "bytes": 451405,
+      "sha1": "fa19780a7b011d9b009e8bff8e99922a8ee2eb90",
+      "sha256": "8fdd3d829d4d986b58f845c9553b225e67dd8383624d90fb6ca1d4bed5798c1e"
+    }
+  ],
+  "diagnostics": {
+    "raw_train_shape": [
+      1460,
+      81
+    ],
+    "raw_test_shape": [
+      1459,
+      80
+    ],
+    "numeric_inputs": 36,
+    "categorical_inputs": 43,
+    "textbook_combined_encoding_columns": 331,
+    "csv_na_policy": "keep_default_na=False; na_values=[NA, empty]; preserve literal None category",
+    "train_MasVnrType_literal_None": 864,
+    "train_MasVnrType_missing": 8,
+    "missingness_example": {
+      "latent_values": [
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        200.0,
+        220.0
+      ],
+      "observed_values": [
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        null,
+        null
+      ],
+      "mean_of_observed": 95.0,
+      "mean_when_missing": 210.0,
+      "imputed_values": [
+        80.0,
+        90.0,
+        100.0,
+        110.0,
+        95.0,
+        95.0
+      ],
+      "meaning": "constructed missingness depends on latent value; observed mean need not match missing cases"
+    },
+    "strict_fold_local_preprocessing": true,
+    "target_transform": "natural log, not log1p; log models centered by fold training label mean",
+    "adam": "coupled L2 on weight matrices only; biases excluded; not AdamW"
+  },
+  "experiment": {
+    "fold_seed": 41001,
+    "folds": 5,
+    "epochs": 100,
+    "batch_size": 64,
+    "selection_metric": "pooled out-of-fold natural-log RMSE on all 1460 labelled rows",
+    "constant_log_mean_oof_rmse": 0.39952072837958075,
+    "selected": {
+      "name": "E_log_mlp64",
+      "target": "log",
+      "hidden": 64,
+      "lr": 0.01,
+      "decay": 0.01,
+      "dropout": 0.0,
+      "standardize": true,
+      "missing": false,
+      "epochs": 100,
+      "oof_log_rmse": 0.14321396341730588,
+      "mean_fold_log_rmse": 0.1429978737062791,
+      "std_fold_log_rmse": 0.008792570242573542
+    },
+    "final_features": 374,
+    "final_parameters": 24065,
+    "final_train_log_rmse": 0.11785933557202431,
+    "final_updates": 2300,
+    "final_last_batch_n": 52,
+    "test_rows": 1459,
+    "prediction_min": 53612.882567128254,
+    "prediction_max": 472813.75469192304,
+    "submission": "reports/ch04/4_10_submission.csv",
+    "kaggle_uploaded": false,
+    "kaggle_score": null,
+    "checkpoint_local_only": "artifacts/ch04/4_10_states.pt",
+    "checkpoint_sha256": "1c52e7cad7af1346cdfc3a7b5c367a64346382ba53be5ca0a6b82531ab1fbfe3"
+  },
+  "candidate_scores": [
+    {
+      "name": "A_raw_linear",
+      "target": "price",
+      "hidden": 0,
+      "lr": 5.0,
+      "decay": 0.0,
+      "dropout": 0.0,
+      "standardize": true,
+      "missing": false,
+      "epochs": 100,
+      "oof_log_rmse": 0.1707323532322146,
+      "mean_fold_log_rmse": 0.17042406561937806,
+      "std_fold_log_rmse": 0.011465944028493224
+    },
+    {
+      "name": "B_log_linear",
+      "target": "log",
+      "hidden": 0,
+      "lr": 0.01,
+      "decay": 0.0,
+      "dropout": 0.0,
+      "standardize": true,
+      "missing": false,
+      "epochs": 100,
+      "oof_log_rmse": 0.17392994370766157,
+      "mean_fold_log_rmse": 0.17096706865803327,
+      "std_fold_log_rmse": 0.03574015166150098
+    },
+    {
+      "name": "C_log_decay",
+      "target": "log",
+      "hidden": 0,
+      "lr": 0.01,
+      "decay": 0.01,
+      "dropout": 0.0,
+      "standardize": true,
+      "missing": false,
+      "epochs": 100,
+      "oof_log_rmse": 0.17029666603939472,
+      "mean_fold_log_rmse": 0.16926635802066403,
+      "std_fold_log_rmse": 0.020912152763211605
+    },
+    {
+      "name": "D_log_lr03",
+      "target": "log",
+      "hidden": 0,
+      "lr": 0.03,
+      "decay": 0.01,
+      "dropout": 0.0,
+      "standardize": true,
+      "missing": false,
+      "epochs": 100,
+      "oof_log_rmse": 0.21751294834056495,
+      "mean_fold_log_rmse": 0.2170543493107417,
+      "std_fold_log_rmse": 0.015783382919061905
+    },
+    {
+      "name": "E_log_mlp64",
+      "target": "log",
+      "hidden": 64,
+      "lr": 0.01,
+      "decay": 0.01,
+      "dropout": 0.0,
+      "standardize": true,
+      "missing": false,
+      "epochs": 100,
+      "oof_log_rmse": 0.14321396341730588,
+      "mean_fold_log_rmse": 0.1429978737062791,
+      "std_fold_log_rmse": 0.008792570242573542
+    },
+    {
+      "name": "F_log_dropout",
+      "target": "log",
+      "hidden": 64,
+      "lr": 0.01,
+      "decay": 0.01,
+      "dropout": 0.2,
+      "standardize": true,
+      "missing": false,
+      "epochs": 100,
+      "oof_log_rmse": 0.16655706068156123,
+      "mean_fold_log_rmse": 0.16603214877202693,
+      "std_fold_log_rmse": 0.014772442123121987
+    },
+    {
+      "name": "G_no_scale",
+      "target": "log",
+      "hidden": 0,
+      "lr": 0.01,
+      "decay": 0.01,
+      "dropout": 0.0,
+      "standardize": false,
+      "missing": false,
+      "epochs": 100,
+      "oof_log_rmse": 4.195829803683141,
+      "mean_fold_log_rmse": 3.439006179594796,
+      "std_fold_log_rmse": 2.6875230785484705
+    },
+    {
+      "name": "H_missing_flags",
+      "target": "log",
+      "hidden": 0,
+      "lr": 0.01,
+      "decay": 0.01,
+      "dropout": 0.0,
+      "standardize": true,
+      "missing": true,
+      "epochs": 100,
+      "oof_log_rmse": 0.17037314035064516,
+      "mean_fold_log_rmse": 0.16936008439118158,
+      "std_fold_log_rmse": 0.020741527425448145
+    }
+  ]
+}
