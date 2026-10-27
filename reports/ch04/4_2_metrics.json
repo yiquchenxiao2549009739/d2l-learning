@@ -1,0 +1,266 @@
+{
+  "date": "2026-10-27",
+  "purpose": "teacher demonstration, not learner completion",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "float32",
+  "download": false,
+  "split_sizes": {
+    "train": 54000,
+    "validation": 6000,
+    "test": 10000
+  },
+  "split_seed": 3601,
+  "loader_seed": 3603,
+  "model_seed": 4200,
+  "split_index_sha256": {
+    "train": "0e80aeb90dbd6e15d5b7dd6bafc1fd8676572ad733ef231f42a39f443d0e5503",
+    "validation": "65d9aca93416d8234d9a47b5cb19d13a21f2809c1d8661ad3977f8975a75979f"
+  },
+  "hidden_sizes": [
+    256
+  ],
+  "parameter_shapes": [
+    [
+      784,
+      256
+    ],
+    [
+      256
+    ],
+    [
+      256,
+      10
+    ],
+    [
+      10
+    ]
+  ],
+  "parameter_count": 203530,
+  "all_parameters_leaf": true,
+  "epochs": 10,
+  "learning_rate": 0.1,
+  "batch_size": 256,
+  "updates": 2110,
+  "training_tail": 240,
+  "loss_reduction": "none then mean backward",
+  "first_batch_probe": {
+    "batch_size": 256,
+    "parameter_gradient_norms": [
+      0.18923069536685944,
+      0.011229580268263817,
+      0.18590298295021057,
+      0.0756860002875328
+    ]
+  },
+  "relu_audit": {
+    "book_max_gradient": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "torch_relu_gradient": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "final": {
+    "epoch": 10,
+    "updates": 2110,
+    "online_train_ce": 0.390557716510914,
+    "online_train_accuracy": 0.8622962962962963,
+    "train_ce": 0.3742395469877455,
+    "train_accuracy": 0.8681851851851852,
+    "validation_ce": 0.3883662970860799,
+    "validation_accuracy": 0.8586666666666667
+  },
+  "test": {
+    "ce": 0.4162259318828583,
+    "accuracy": 0.853,
+    "correct": 8530,
+    "samples": 10000
+  },
+  "test_evaluations": 1,
+  "training_and_epoch_eval_seconds": 18.8193791,
+  "search": {
+    "train_samples": 2000,
+    "validation_samples": 1000,
+    "batch_size": 256,
+    "subset_seeds": [
+      4201,
+      4202
+    ],
+    "subset_index_sha256": {
+      "train": "998b5a4c03fdbc8e93e2f90a32b5aaceee8460cbec87ff005f1e2f83d1500d94",
+      "validation": "a0f7e5a4a653541f4124985d1c168fcb09668d3ead19ec98e39000db74f8513e"
+    },
+    "model_seed": 4200,
+    "loader_seed": 3603,
+    "test_evaluations": 0,
+    "cases": 9,
+    "candidate_checkpoints": 18,
+    "selection_metric": "minimum validation CE, then accuracy, then parameter count",
+    "scope": "best only among these checkpoints on this fixed small subset",
+    "summaries_epoch10": [
+      {
+        "case": "A",
+        "hidden_sizes": [
+          256
+        ],
+        "lr": 0.1,
+        "parameters": 203530,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 0.9457128982543945,
+        "train_accuracy": 0.6635,
+        "validation_ce": 0.9212098236083984,
+        "validation_accuracy": 0.662
+      },
+      {
+        "case": "B",
+        "hidden_sizes": [
+          64
+        ],
+        "lr": 0.1,
+        "parameters": 50890,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 1.0798752288818358,
+        "train_accuracy": 0.617,
+        "validation_ce": 1.0528455200195312,
+        "validation_accuracy": 0.631
+      },
+      {
+        "case": "C",
+        "hidden_sizes": [
+          128
+        ],
+        "lr": 0.1,
+        "parameters": 101770,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 1.0131714096069335,
+        "train_accuracy": 0.635,
+        "validation_ce": 0.9863915100097657,
+        "validation_accuracy": 0.648
+      },
+      {
+        "case": "D",
+        "hidden_sizes": [
+          512
+        ],
+        "lr": 0.1,
+        "parameters": 407050,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 0.8912568168640137,
+        "train_accuracy": 0.6895,
+        "validation_ce": 0.8686459884643555,
+        "validation_accuracy": 0.686
+      },
+      {
+        "case": "E",
+        "hidden_sizes": [
+          256,
+          64
+        ],
+        "lr": 0.1,
+        "parameters": 218058,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 2.2964873352050783,
+        "train_accuracy": 0.117,
+        "validation_ce": 2.2964652709960935,
+        "validation_accuracy": 0.114
+      },
+      {
+        "case": "F",
+        "hidden_sizes": [
+          256
+        ],
+        "lr": 0.03,
+        "parameters": 203530,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 1.853879913330078,
+        "train_accuracy": 0.531,
+        "validation_ce": 1.8507696228027344,
+        "validation_accuracy": 0.541
+      },
+      {
+        "case": "G",
+        "hidden_sizes": [
+          256
+        ],
+        "lr": 0.3,
+        "parameters": 203530,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 0.6389770889282227,
+        "train_accuracy": 0.781,
+        "validation_ce": 0.6418550338745117,
+        "validation_accuracy": 0.781
+      },
+      {
+        "case": "H",
+        "hidden_sizes": [
+          128
+        ],
+        "lr": 0.3,
+        "parameters": 101770,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 0.6803877105712891,
+        "train_accuracy": 0.742,
+        "validation_ce": 0.6802889633178711,
+        "validation_accuracy": 0.74
+      },
+      {
+        "case": "I",
+        "hidden_sizes": [
+          128,
+          64
+        ],
+        "lr": 0.3,
+        "parameters": 109386,
+        "epoch": 10,
+        "updates": 80,
+        "train_ce": 1.4384601669311523,
+        "train_accuracy": 0.386,
+        "validation_ce": 1.4205073852539063,
+        "validation_accuracy": 0.399
+      }
+    ],
+    "best": {
+      "case": "G",
+      "hidden_sizes": [
+        256
+      ],
+      "lr": 0.3,
+      "parameters": 203530,
+      "epoch": 10,
+      "updates": 80,
+      "train_ce": 0.6389770889282227,
+      "train_accuracy": 0.781,
+      "validation_ce": 0.6418550338745117,
+      "validation_accuracy": 0.781
+    }
+  },
+  "prediction_example_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    12,
+    17,
+    21,
+    23,
+    25,
+    29
+  ],
+  "checkpoint_local_only": "artifacts/ch04/4_2_mlp_scratch.pt",
+  "checkpoint_sha256": "1b99a449dba10bfe70aa8d6af86440451d0c77076d0953fff857e02b8341580f"
+}

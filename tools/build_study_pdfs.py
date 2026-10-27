@@ -577,6 +577,14 @@ SPECS = [
          date="2026-10-27", figure_height=390, start_on_new_page=True,
          goals="能够解释线性层合并与非线性激活的作用，核对ReLU、sigmoid、tanh的梯度，通过XOR对照理解表示能力，并正确区分通用近似、优化与泛化。",
          filename="4.1-多层感知机-学习讲义.pdf"),
+    dict(section="4.2", title="多层感知机的从零开始实现", subtitle="手写两层参数与ReLU，训练真实图像分类器并进行有限调参。",
+         chapter="第 4 章 · 多层感知机",
+         source="docs/ch04/02_mlp_scratch.md", start="## 从隐藏层公式到真实图像训练",
+         end=None, pages="PDF 第 153-156 页 / 正文第 135-138 页（含六道节末练习）",
+         route=["参数与形状", "手写前向", "训练与预测", "调参与实践"],
+         date="2026-10-27", figure_height=270, start_on_new_page=True,
+         goals="能够管理两层参数、手写ReLU和前向，连接平均交叉熵与SGD完成图像训练，并在固定预算内用验证集比较超参数。",
+         filename="4.2-多层感知机的从零开始实现-学习讲义.pdf"),
 ]
 
 
