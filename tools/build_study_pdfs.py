@@ -569,6 +569,14 @@ SPECS = [
          date="2026-10-20", figure_height=240, start_on_new_page=True,
          goals="能够对应手写与框架实现，正确使用原始得分、平均交叉熵和SGD，并通过训练/验证实验理解超参数和训练轮数的影响。",
          filename="3.7-softmax回归的简洁实现-学习讲义.pdf"),
+    dict(section="4.1", title="多层感知机", subtitle="从隐藏表示与非线性出发，理解激活、梯度与模型表达能力。",
+         chapter="第 4 章 · 多层感知机",
+         source="docs/ch04/01_multilayer_perceptron.md", start="## 为什么这一章需要隐藏层",
+         end=None, pages="PDF 第 145-152 页 / 正文第 127-134 页（含四道节末练习）",
+         route=["隐藏层与形状", "非线性与激活", "梯度与表达", "XOR与实践"],
+         date="2026-10-27", figure_height=390, start_on_new_page=True,
+         goals="能够解释线性层合并与非线性激活的作用，核对ReLU、sigmoid、tanh的梯度，通过XOR对照理解表示能力，并正确区分通用近似、优化与泛化。",
+         filename="4.1-多层感知机-学习讲义.pdf"),
 ]
 
 

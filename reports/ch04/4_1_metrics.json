@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-27",
+  "purpose": "teacher demonstration, not learner completion",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "float64",
+  "download": false,
+  "dataset": "synthetic symmetric XOR; not Fashion-MNIST",
+  "epochs": 600,
+  "learning_rate": 0.1,
+  "batch": "full 480 samples",
+  "updates_per_model": 600,
+  "model_seed": 4100,
+  "test_evaluations_per_trained_model": 1,
+  "results": {
+    "linear": {
+      "train": {
+        "ce": 0.6931471805609376,
+        "correct": 240,
+        "samples": 480,
+        "accuracy": 0.5
+      },
+      "validation": {
+        "ce": 0.6931471805611082,
+        "correct": 80,
+        "samples": 160,
+        "accuracy": 0.5
+      },
+      "test": {
+        "ce": 0.6931471805609749,
+        "correct": 80,
+        "samples": 160,
+        "accuracy": 0.5
+      },
+      "parameters": 6
+    },
+    "affine_stack": {
+      "train": {
+        "ce": 0.6931471805599453,
+        "correct": 238,
+        "samples": 480,
+        "accuracy": 0.49583333333333335
+      },
+      "validation": {
+        "ce": 0.6931471805599452,
+        "correct": 80,
+        "samples": 160,
+        "accuracy": 0.5
+      },
+      "test": {
+        "ce": 0.6931471805599452,
+        "correct": 80,
+        "samples": 160,
+        "accuracy": 0.5
+      },
+      "parameters": 42
+    },
+    "relu_mlp": {
+      "train": {
+        "ce": 0.03429167012074324,
+        "correct": 480,
+        "samples": 480,
+        "accuracy": 1.0
+      },
+      "validation": {
+        "ce": 0.02912034391615067,
+        "correct": 160,
+        "samples": 160,
+        "accuracy": 1.0
+      },
+      "test": {
+        "ce": 0.03245538725066814,
+        "correct": 160,
+        "samples": 160,
+        "accuracy": 1.0
+      },
+      "parameters": 42
+    }
+  },
+  "construction": {
+    "train": {
+      "correct": 480,
+      "samples": 480,
+      "accuracy": 1.0
+    },
+    "validation": {
+      "correct": 160,
+      "samples": 160,
+      "accuracy": 1.0
+    },
+    "test": {
+      "correct": 160,
+      "samples": 160,
+      "accuracy": 1.0
+    }
+  },
+  "theory": {
+    "affine_merge_max_error": 1.7763568394002505e-15,
+    "activation_samples": {
+      "relu": {
+        "x": [
+          -8.0,
+          -1.0,
+          0.0,
+          1.0,
+          8.0
+        ],
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          8.0
+        ],
+        "dx": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "sigmoid": {
+        "x": [
+          -8.0,
+          -1.0,
+          0.0,
+          1.0,
+          8.0
+        ],
+        "values": [
+          0.0003353501304664781,
+          0.2689414213699951,
+          0.5,
+          0.7310585786300049,
+          0.9996646498695336
+        ],
+        "dx": [
+          0.00033523767075647424,
+          0.19661193324148185,
+          0.25,
+          0.19661193324148185,
+          0.00033523767075636815
+        ]
+      },
+      "tanh": {
+        "x": [
+          -8.0,
+          -1.0,
+          0.0,
+          1.0,
+          8.0
+        ],
+        "values": [
+          -0.9999997749296758,
+          -0.7615941559557649,
+          0.0,
+          0.7615941559557649,
+          0.9999997749296758
+        ],
+        "dx": [
+          4.5014059768533343e-07,
+          0.41997434161402614,
+          1.0,
+          0.41997434161402614,
+          4.5014059768533343e-07
+        ]
+      }
+    },
+    "prelu": {
+      "alpha": 0.1,
+      "x": [
+        -1.0,
+        0.0,
+        1.0
+      ],
+      "dx": [
+        0.1,
+        0.1,
+        1.0
+      ],
+      "d_alpha": -1.0,
+      "at_zero": "classically not differentiable when alpha != 1; torch chooses alpha"
+    },
+    "tanh_sigmoid_identity_max_error": 2.220446049250313e-16,
+    "batch_axis": {
+      "relu_first_unchanged": true,
+      "class_softmax_first_unchanged": true,
+      "wrong_dim0_before": [
+        0.11920292202211755,
+        0.11920292202211755
+      ],
+      "wrong_dim0_after": [
+        2.5436656473762755e-13,
+        3.1391327920480296e-17
+      ]
+    },
+    "fashion_forward_only": {
+      "input_shape": [
+        3,
+        1,
+        28,
+        28
+      ],
+      "output_shape": [
+        3,
+        10
+      ],
+      "parameter_count": 203530,
+      "training_performed": false
+    }
+  },
+  "checkpoint_local_only": "artifacts/ch04/4_1_xor_models.pt",
+  "checkpoint_sha256": "7ca8c171e604fcca5c5a4b6c6fe1612686d6a7cd92199ba9152a3acd4d101ee6"
+}

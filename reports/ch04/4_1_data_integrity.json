@@ -1,0 +1,32 @@
+[
+  {
+    "file": "datasets/ch04/01_xor_train.csv",
+    "seed": 4101,
+    "samples": 480,
+    "class_counts": [
+      240,
+      240
+    ],
+    "sha256": "0fda94b18ba88f61b07bfc949632d36ff18cc6da54572dd4f11b7332ad9992df"
+  },
+  {
+    "file": "datasets/ch04/01_xor_validation.csv",
+    "seed": 4102,
+    "samples": 160,
+    "class_counts": [
+      80,
+      80
+    ],
+    "sha256": "b8a2804c9b183a64f3f4af8ad701d4cc906c27c290a74d4abda22cef8cde6ead"
+  },
+  {
+    "file": "datasets/ch04/01_xor_test.csv",
+    "seed": 4103,
+    "samples": 160,
+    "class_counts": [
+      80,
+      80
+    ],
+    "sha256": "e054e2e5bed298fcf486bd8d6666a7ad13e23dd50fcce1afb759b72b71b26f34"
+  }
+]

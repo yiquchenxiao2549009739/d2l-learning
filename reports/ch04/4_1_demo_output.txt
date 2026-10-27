@@ -1,0 +1,7 @@
+linear {'train': {'ce': 0.6931471805609376, 'correct': 240, 'samples': 480, 'accuracy': 0.5}, 'validation': {'ce': 0.6931471805611082, 'correct': 80, 'samples': 160, 'accuracy': 0.5}, 'test': {'ce': 0.6931471805609749, 'correct': 80, 'samples': 160, 'accuracy': 0.5}, 'parameters': 6}
+affine_stack {'train': {'ce': 0.6931471805599453, 'correct': 238, 'samples': 480, 'accuracy': 0.49583333333333335}, 'validation': {'ce': 0.6931471805599452, 'correct': 80, 'samples': 160, 'accuracy': 0.5}, 'test': {'ce': 0.6931471805599452, 'correct': 80, 'samples': 160, 'accuracy': 0.5}, 'parameters': 42}
+relu_mlp {'train': {'ce': 0.03429167012074324, 'correct': 480, 'samples': 480, 'accuracy': 1.0}, 'validation': {'ce': 0.02912034391615067, 'correct': 160, 'samples': 160, 'accuracy': 1.0}, 'test': {'ce': 0.03245538725066814, 'correct': 160, 'samples': 160, 'accuracy': 1.0}, 'parameters': 42}
+手工构造 XOR: {'train': {'correct': 480, 'samples': 480, 'accuracy': 1.0}, 'validation': {'correct': 160, 'samples': 160, 'accuracy': 1.0}, 'test': {'correct': 160, 'samples': 160, 'accuracy': 1.0}}
+仿射合并最大误差: 1.7763568394002505e-15
+PReLU 导数: {'alpha': 0.1, 'x': [-1.0, 0.0, 1.0], 'dx': [0.1, 0.1, 1.0], 'd_alpha': -1.0, 'at_zero': 'classically not differentiable when alpha != 1; torch chooses alpha'}
+Fashion-MNIST 形状示意: {'input_shape': [3, 1, 28, 28], 'output_shape': [3, 10], 'parameter_count': 203530, 'training_performed': False} | 4.2 再训练真实图像

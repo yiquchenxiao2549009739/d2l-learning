@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "3.7 softmax 简洁实现：完整演示",
+      "label": "4.1 多层感知机：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch03/07_softmax_concise.py"
+        "${workspaceFolder}/lessons/ch04/01_multilayer_perceptron.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "3.7 softmax 简洁实现：综合练习",
+      "label": "4.1 多层感知机：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch03/07_softmax_concise.py"
+        "${workspaceFolder}/exercises/ch04/01_multilayer_perceptron.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",

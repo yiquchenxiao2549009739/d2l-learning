@@ -26,6 +26,7 @@ __pycache__/
 !output/pdf/3.5-图像分类数据集-学习讲义.pdf
 !output/pdf/3.6-softmax回归的从零开始实现-学习讲义.pdf
 !output/pdf/3.7-softmax回归的简洁实现-学习讲义.pdf
+!output/pdf/4.1-多层感知机-学习讲义.pdf
 
 # Downloaded data and generated training output
 data/
