@@ -633,6 +633,14 @@ SPECS = [
          source="docs/ch04/08_numerical_stability.md", start="## 从上一节的链式法则继续", end=None,
          figure_height=250, start_on_new_page=True,
          filename="4.8-数值稳定性和模型初始化-学习讲义.pdf"),
+    dict(section="4.9", title="环境和分布偏移", subtitle="识别数据来源的变化，在明确假设下纠正，并考虑决策的反馈。",
+         chapter="第 4 章 · 多层感知机", date="2026-10-27",
+         route=["三类偏移", "加权与域检测", "标签与在线", "反馈与实践"],
+         goals="区分协变量、标签和概念偏移，推导带域先验修正的密度比与标签比例估计，完成加权实验，并解释在线反馈、学习情景与分组评价。",
+         pages="PDF 第 188-198 页 / 正文第 170-180 页（含四道节末练习）",
+         source="docs/ch04/09_distribution_shift.md", start="## 从模型是否学好，到环境是否改变", end=None,
+         figure_height=245, start_on_new_page=True,
+         filename="4.9-环境和分布偏移-学习讲义.pdf"),
 ]
 
 

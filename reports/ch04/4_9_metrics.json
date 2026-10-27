@@ -1,0 +1,250 @@
+{
+  "date": "2026-10-27",
+  "purpose": "teacher demonstration, not learner completion",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "float64",
+  "download": false,
+  "covariate": {
+    "data_seed": 4901,
+    "source_mean": -0.8,
+    "target_mean": 0.8,
+    "std": 1.0,
+    "noise_std": 0.1,
+    "conditional": "y=x^2+N(0,.1^2) in both domains",
+    "regressor": "slope*x+intercept (misspecified)",
+    "domain_source_samples": 1200,
+    "domain_target_samples": 600,
+    "domain_a": 1.570294207418941,
+    "domain_b": -0.7240790616694733,
+    "bayes_domain_a": 1.6,
+    "bayes_domain_b": -0.6931471805599453,
+    "ratio_prior_multiplier": 2.0,
+    "domain_balanced_holdout_correct": 469,
+    "domain_balanced_holdout_samples": 600,
+    "cap_fixed_before_results": 20.0,
+    "raw_estimated_weight_mean": 0.848467059519688,
+    "wrong_uncorrected_odds_mean": 0.424233529759844,
+    "weighted_training_steps": 400,
+    "weighted_training_lr": 0.03,
+    "domain_steps": 800,
+    "domain_lr": 0.1,
+    "population_target_linear_optimum": [
+      1.6,
+      0.36
+    ],
+    "population_target_min_half_mse": 1.005,
+    "target_test_used_only_for_final_comparison": true,
+    "models": [
+      {
+        "method": "unweighted",
+        "slope": -1.70966525173338,
+        "intercept": 0.2562949922821503,
+        "source_train_half_mse": 0.9304690490066382,
+        "source_validation_half_mse": 0.8640122974915044,
+        "weighted_source_train_half_mse": 0.9304690490066382,
+        "target_test_half_mse": 10.844112195489792,
+        "weight_mean": 1.0,
+        "weight_max": 1.0,
+        "ess": 2000.0
+      },
+      {
+        "method": "oracle_raw",
+        "slope": 1.2717930359620138,
+        "intercept": 0.48818336578525345,
+        "source_train_half_mse": 7.854531371235646,
+        "source_validation_half_mse": 7.501275080010525,
+        "weighted_source_train_half_mse": 0.6837168299690385,
+        "target_test_half_mse": 1.1728859520090897,
+        "weight_mean": 0.8922227827766738,
+        "weight_max": 70.66371790388222,
+        "ess": 211.49243358229546
+      },
+      {
+        "method": "oracle_cap20",
+        "slope": 0.9135281879071642,
+        "intercept": 0.5579697501224457,
+        "source_train_half_mse": 6.102048381772778,
+        "source_validation_half_mse": 5.829989225904038,
+        "weighted_source_train_half_mse": 0.47229639846074856,
+        "target_test_half_mse": 1.4196444416021385,
+        "weight_mean": 0.8499363298489506,
+        "weight_max": 20.0,
+        "ess": 347.9575562326182
+      },
+      {
+        "method": "estimated_cap20",
+        "slope": 0.897360811363005,
+        "intercept": 0.578212232165546,
+        "source_train_half_mse": 5.997378805044077,
+        "source_validation_half_mse": 5.73025228394747,
+        "weighted_source_train_half_mse": 0.4704885002852641,
+        "target_test_half_mse": 1.4283309057302278,
+        "weight_mean": 0.81337723835318,
+        "weight_max": 19.999999999999996,
+        "ess": 356.8401587686853
+      }
+    ]
+  },
+  "label_shift": {
+    "source_prior": [
+      0.5,
+      0.5
+    ],
+    "true_target_prior_audit_only": [
+      0.1,
+      0.9
+    ],
+    "estimated_target_prior": [
+      0.10000000000000003,
+      0.8999999999999999
+    ],
+    "class_weights": [
+      0.20000000000000007,
+      1.7999999999999998
+    ],
+    "conditional_C": [
+      [
+        0.8,
+        0.2
+      ],
+      [
+        0.2,
+        0.8
+      ]
+    ],
+    "counts_rows_pred_columns_true": [
+      [
+        400.0,
+        100.0
+      ],
+      [
+        100.0,
+        400.0
+      ]
+    ],
+    "joint_C": [
+      [
+        0.4,
+        0.1
+      ],
+      [
+        0.1,
+        0.4
+      ]
+    ],
+    "joint_solution_is_weights": [
+      0.20000000000000007,
+      1.7999999999999998
+    ],
+    "target_prediction_proportions": [
+      0.26,
+      0.74
+    ],
+    "matrix_condition_number": 1.6666666666666672,
+    "constant_classifier_matrix_rank": 1,
+    "source_posterior_is_known_for_controlled_channel": true,
+    "target_adaptation_labels_used": false,
+    "before": {
+      "ce": 0.5004024235381879,
+      "correct": 800,
+      "samples": 1000,
+      "class0_recall": 0.8,
+      "class1_recall": 0.8
+    },
+    "after": {
+      "ce": 0.25242847979821575,
+      "correct": 900,
+      "samples": 1000,
+      "class0_recall": 0.0,
+      "class1_recall": 1.0
+    },
+    "corrected_p_y1_at_x0": 0.6923076923076923,
+    "corrected_p_y1_at_x1": 0.9729729729729729
+  },
+  "concept": {
+    "identical_feature_arrays": true,
+    "source_accuracy": 1.0,
+    "target_after_label_flip_accuracy": 0.0,
+    "best_domain_accuracy_for_exactly_paired_features": 0.5,
+    "concept_grid_points": 400,
+    "paired_feature_domain_parameters": [
+      -1.1709383462843934e-18,
+      1.6464694191364376e-16
+    ],
+    "paired_feature_domain_accuracy": 0.5,
+    "online": {
+      "seed": 4907,
+      "lr": 0.2,
+      "initial_parameters": [
+        3.0,
+        0.0
+      ],
+      "switch_time": 400,
+      "final_parameters": [
+        -4.664443427484281,
+        -0.0864632386910223
+      ],
+      "samples": 800,
+      "evaluation": "predict, reveal label, score, update",
+      "windows": [
+        {
+          "start": 0,
+          "end_exclusive": 400,
+          "online_ce": 0.13757778336400547,
+          "frozen_ce": 0.1919327412480955,
+          "online_accuracy": 0.9925,
+          "frozen_accuracy": 1.0
+        },
+        {
+          "start": 400,
+          "end_exclusive": 500,
+          "online_ce": 1.2255232976404256,
+          "frozen_ce": 2.4683231794350893,
+          "online_accuracy": 0.59,
+          "frozen_accuracy": 0.0
+        },
+        {
+          "start": 600,
+          "end_exclusive": 800,
+          "online_ce": 0.17784174018257912,
+          "frozen_ce": 2.5238860847928595,
+          "online_accuracy": 0.97,
+          "frozen_accuracy": 0.0
+        }
+      ]
+    }
+  },
+  "feedback_and_groups": {
+    "simulation": "deterministic expected clicks; allocation rule explicitly specified, not real deployment evidence",
+    "same_true_click_rate": 0.1,
+    "group_metrics": [
+      {
+        "group": "A",
+        "n": 200,
+        "tp": 90,
+        "tn": 90,
+        "fp": 10,
+        "fn": 10,
+        "accuracy": 0.9,
+        "tpr": 0.9,
+        "fpr": 0.1,
+        "cost_fp1_fn5_per_sample": 0.3
+      },
+      {
+        "group": "B",
+        "n": 20,
+        "tp": 0,
+        "tn": 10,
+        "fp": 0,
+        "fn": 10,
+        "accuracy": 0.5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "cost_fp1_fn5_per_sample": 2.5
+      }
+    ],
+    "overall_accuracy": 0.8636363636363636,
+    "overall_cost_fp1_fn5_per_sample": 0.5
+  }
+}
