@@ -593,6 +593,14 @@ SPECS = [
          date="2026-10-27", figure_height=260, start_on_new_page=True,
          goals="能够对应手写与模块化MLP，正确初始化和训练网络，并在固定条件下比较隐藏层、激活及初始化，说明结果的适用范围。",
          filename="4.3-多层感知机的简洁实现-学习讲义.pdf"),
+    dict(section="4.4", title="模型选择、欠拟合和过拟合", subtitle="区分容量、优化与泛化，用验证数据选择合适的模型。",
+         chapter="第 4 章 · 多层感知机",
+         source="docs/ch04/04_model_selection.md", start="## 从拟合已有样本，到预测未见样本",
+         end=None, pages="PDF 第 157-167 页 / 正文第 139-149 页（含四道节末练习）",
+         route=["泛化与数据划分", "拟合与直接解", "模型选择实验", "数值与实践"],
+         date="2026-10-27", figure_height=245, start_on_new_page=True,
+         goals="能够区分训练误差与泛化误差，正确使用验证及K折选择模型，通过多项式实验判断容量、优化和数值问题，并解释噪声导致的误差下限。",
+         filename="4.4-模型选择、欠拟合和过拟合-学习讲义.pdf"),
 ]
 
 
