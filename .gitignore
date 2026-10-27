@@ -28,6 +28,7 @@ __pycache__/
 !output/pdf/3.7-softmax回归的简洁实现-学习讲义.pdf
 !output/pdf/4.1-多层感知机-学习讲义.pdf
 !output/pdf/4.2-多层感知机的从零开始实现-学习讲义.pdf
+!output/pdf/4.3-多层感知机的简洁实现-学习讲义.pdf
 
 # Downloaded data and generated training output
 data/

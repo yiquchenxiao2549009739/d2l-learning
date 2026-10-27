@@ -585,6 +585,14 @@ SPECS = [
          date="2026-10-27", figure_height=270, start_on_new_page=True,
          goals="能够管理两层参数、手写ReLU和前向，连接平均交叉熵与SGD完成图像训练，并在固定预算内用验证集比较超参数。",
          filename="4.2-多层感知机的从零开始实现-学习讲义.pdf"),
+    dict(section="4.3", title="多层感知机的简洁实现", subtitle="用模块组织同一条训练链，比较深度、激活与初始化。",
+         chapter="第 4 章 · 多层感知机",
+         source="docs/ch04/03_mlp_concise.md", start="## 同一个模型，交给模块管理",
+         end=None, pages="PDF 第 156-157 页 / 正文第 138-139 页（含三道节末练习）",
+         route=["模块与参数", "训练与核对", "三类实验", "综合实践"],
+         date="2026-10-27", figure_height=260, start_on_new_page=True,
+         goals="能够对应手写与模块化MLP，正确初始化和训练网络，并在固定条件下比较隐藏层、激活及初始化，说明结果的适用范围。",
+         filename="4.3-多层感知机的简洁实现-学习讲义.pdf"),
 ]
 
 

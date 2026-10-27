@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "4.2 MLP从零实现：完整演示",
+      "name": "4.3 MLP简洁实现：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch04/02_mlp_scratch.py",
+      "program": "${workspaceFolder}/lessons/ch04/03_mlp_concise.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "4.2 MLP从零实现：综合练习",
+      "name": "4.3 MLP简洁实现：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch04/02_mlp_scratch.py",
+      "program": "${workspaceFolder}/exercises/ch04/03_mlp_concise.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
