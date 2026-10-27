@@ -625,6 +625,14 @@ SPECS = [
          date="2026-10-27", figure_height=260, start_on_new_page=True,
          goals="能够对应列向量与批量公式，推导含L2分支和偏置的梯度，区分求导与更新，并说明保存中间量、二阶求导及模型分阶段执行的代价。",
          filename="4.7-前向传播、反向传播和计算图-学习讲义.pdf"),
+    dict(section="4.8", title="数值稳定性和模型初始化", subtitle="理解多层连乘的尺度，选择合适的起点，再观察真实训练。",
+         chapter="第 4 章 · 多层感知机", date="2026-10-27",
+         route=["梯度连乘", "对称与方差", "初始化诊断", "训练与拓展"],
+         goals="理解梯度消失与爆炸、隐藏单元对称性，推导Xavier并区分ReLU的二阶矩；用逐层诊断和同任务训练检查初始化，覆盖四道教材练习。",
+         pages="PDF 第 184-188 页 / 正文第 166-170 页（含全部节末练习）",
+         source="docs/ch04/08_numerical_stability.md", start="## 从上一节的链式法则继续", end=None,
+         figure_height=250, start_on_new_page=True,
+         filename="4.8-数值稳定性和模型初始化-学习讲义.pdf"),
 ]
 
 

@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "4.7 计算图与反向传播：完整演示",
+      "label": "4.8 数值稳定性与初始化：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch04/07_backpropagation.py"
+        "${workspaceFolder}/lessons/ch04/08_numerical_stability.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "4.7 计算图与反向传播：综合练习",
+      "label": "4.8 数值稳定性与初始化：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch04/07_backpropagation.py"
+        "${workspaceFolder}/exercises/ch04/08_numerical_stability.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
