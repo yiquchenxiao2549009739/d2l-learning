@@ -609,6 +609,14 @@ SPECS = [
          date="2026-10-27", figure_height=235, start_on_new_page=True,
          goals="能够推导L2惩罚的衰减更新，对齐手写与框架实现的损失尺度，通过验证选择强度，并解释偏置分组、L1/Frobenius及贝叶斯先验。",
          filename="4.5-权重衰减-学习讲义.pdf"),
+    dict(section="4.6", title="暂退法（Dropout）", subtitle="用随机掩码扰动隐藏激活，区分训练、预测与统计期望。",
+         chapter="第 4 章 · 多层感知机",
+         source="docs/ch04/06_dropout.md", start="## 从惩罚权重到扰动隐藏表示",
+         end=None, pages="PDF 第 174-180 页 / 正文第 156-162 页（含七道节末练习）",
+         route=["掩码与期望", "手写与框架", "训练与预测", "受控实验"],
+         date="2026-10-27", figure_height=310, start_on_new_page=True,
+         goals="能够解释暂退概率和保留值缩放，正确切换训练/评估模式，核对手写与内置实现，并通过概率、轮数、方差和组合噪声实验理解正则化的条件。",
+         filename="4.6-暂退法（Dropout）-学习讲义.pdf"),
 ]
 
 

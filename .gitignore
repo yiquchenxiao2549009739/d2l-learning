@@ -31,6 +31,7 @@ __pycache__/
 !output/pdf/4.3-多层感知机的简洁实现-学习讲义.pdf
 !output/pdf/4.4-模型选择、欠拟合和过拟合-学习讲义.pdf
 !output/pdf/4.5-权重衰减-学习讲义.pdf
+!output/pdf/4.6-暂退法（Dropout）-学习讲义.pdf
 
 # Downloaded data and generated training output
 data/
