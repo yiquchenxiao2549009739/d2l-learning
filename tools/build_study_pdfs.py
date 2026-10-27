@@ -601,6 +601,14 @@ SPECS = [
          date="2026-10-27", figure_height=245, start_on_new_page=True,
          goals="能够区分训练误差与泛化误差，正确使用验证及K折选择模型，通过多项式实验判断容量、优化和数值问题，并解释噪声导致的误差下限。",
          filename="4.4-模型选择、欠拟合和过拟合-学习讲义.pdf"),
+    dict(section="4.5", title="权重衰减", subtitle="在拟合数据与限制权重之间作权衡，理解正则化的作用。",
+         chapter="第 4 章 · 多层感知机",
+         source="docs/ch04/05_weight_decay.md", start="## 用惩罚限制权重的大小",
+         end=None, pages="PDF 第 167-174 页 / 正文第 149-156 页（含六道节末练习）",
+         route=["目标与梯度", "两种实现", "验证选择", "范数与先验"],
+         date="2026-10-27", figure_height=235, start_on_new_page=True,
+         goals="能够推导L2惩罚的衰减更新，对齐手写与框架实现的损失尺度，通过验证选择强度，并解释偏置分组、L1/Frobenius及贝叶斯先验。",
+         filename="4.5-权重衰减-学习讲义.pdf"),
 ]
 
 

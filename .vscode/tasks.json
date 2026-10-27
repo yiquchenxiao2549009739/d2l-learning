@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "4.4 模型选择：完整演示",
+      "label": "4.5 权重衰减：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch04/04_model_selection.py"
+        "${workspaceFolder}/lessons/ch04/05_weight_decay.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "4.4 模型选择：综合练习",
+      "label": "4.5 权重衰减：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch04/04_model_selection.py"
+        "${workspaceFolder}/exercises/ch04/05_weight_decay.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
