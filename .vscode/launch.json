@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "5.1 层和块：完整演示",
+      "name": "5.2 参数管理：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch05/01_layers_and_blocks.py",
+      "program": "${workspaceFolder}/lessons/ch05/02_parameter_management.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "5.1 层和块：综合练习",
+      "name": "5.2 参数管理：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch05/01_layers_and_blocks.py",
+      "program": "${workspaceFolder}/exercises/ch05/02_parameter_management.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

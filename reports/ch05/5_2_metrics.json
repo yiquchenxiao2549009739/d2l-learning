@@ -1,0 +1,86 @@
+{
+  "section": "5.2",
+  "date": "2026-10-29",
+  "torch_version": "2.4.1+cu121",
+  "dtype": "torch.float64",
+  "device": "cpu",
+  "access": {
+    "parameter_count": 49,
+    "output_shape": [
+      2,
+      1
+    ],
+    "parameter_type": "Parameter",
+    "before_backward_grad_is_none": true,
+    "accumulated_gradient_max_error": 0.0,
+    "after_zero_grad_is_none": true,
+    "detach_tracks_changed_value": true,
+    "clone_preserves_old_value": true,
+    "state_dict_tracks_changed_value": true,
+    "deep_snapshot_preserves_old_value": true,
+    "no_grad_edit_preserves_parameter_identity": true,
+    "edited_first_value": 42.0,
+    "nested_parameter_count": 309,
+    "nested_bias_path": "0.block1.0.bias",
+    "nested_path_matches_index": true,
+    "previous_fixed_parameter_names": [
+      "linear.weight",
+      "linear.bias"
+    ],
+    "previous_fixed_buffer_names": [
+      "rand_weight"
+    ],
+    "previous_fixed_state_names": [
+      "rand_weight",
+      "linear.weight",
+      "linear.bias"
+    ]
+  },
+  "initialization": {
+    "methods": [
+      "default",
+      "normal_0.01",
+      "ones",
+      "mixed",
+      "custom"
+    ],
+    "default_hidden_bound": 0.5,
+    "default_output_bound": 0.35355339059327373,
+    "custom_sample_count": 20000,
+    "custom_empirical_probabilities": {
+      "negative": 0.2481,
+      "zero": 0.5012,
+      "positive": 0.2507
+    },
+    "custom_theoretical_probabilities": {
+      "negative": 0.25,
+      "zero": 0.5,
+      "positive": 0.25
+    },
+    "custom_sample_variance": 29.310515258905273,
+    "custom_theoretical_variance": 29.166666666666668
+  },
+  "sharing_and_training": {
+    "shared_parameter_count": 121,
+    "untied_parameter_count": 193,
+    "unique_parameter_tensors": 6,
+    "named_paths_without_dedup": 8,
+    "state_dict_key_count": 8,
+    "parameter_identity": true,
+    "initial_output_max_error": 0.0,
+    "shared_weight_gradient_sum_max_error": 0.0,
+    "shared_bias_gradient_sum_max_error": 1.3877787807814457e-17,
+    "state_alias_storage": true,
+    "updates": 300,
+    "learning_rate": 0.02,
+    "train_count": 64,
+    "validation_count": 32,
+    "test_count": 32,
+    "initial_train_mse": 0.8729869602139885,
+    "final_train_mse": 0.0809231649254494,
+    "final_validation_mse": 0.21672456679462065,
+    "test_mse": 0.18432852410800235,
+    "final_parameter_identity": true,
+    "shared_parameter_change": 0.6901839440050657
+  }
+}

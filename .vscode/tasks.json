@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "5.1 层和块：完整演示",
+      "label": "5.2 参数管理：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch05/01_layers_and_blocks.py"
+        "${workspaceFolder}/lessons/ch05/02_parameter_management.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "5.1 层和块：综合练习",
+      "label": "5.2 参数管理：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch05/01_layers_and_blocks.py"
+        "${workspaceFolder}/exercises/ch05/02_parameter_management.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",

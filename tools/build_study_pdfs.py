@@ -658,6 +658,15 @@ SPECS = [
          source="docs/ch05/01_layers_and_blocks.md", start="## 从会调用模型，到会组织模型", end=None,
          figure_height=230, start_on_new_page=True,
          filename="5.1-层和块-学习讲义.pdf"),
+    dict(section="5.2", title="参数管理", subtitle="找到参数、控制初值，理解存储与梯度，再训练真正共享权重的网络。",
+         chapter="第 5 章 · 深度学习计算", date="2026-10-29",
+         environment="Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5",
+         route=["参数与梯度", "快照与初始化", "绑定与贡献", "训练与实践"],
+         goals="能够访问嵌套参数，区分值、梯度与独立快照，使用内置及自定义初始化，核对参数绑定和梯度相加，并训练共享MLP、覆盖四道教材练习。",
+         pages="PDF 第 215-222 页 / 正文第 197-204 页（含四道节末练习）",
+         source="docs/ch05/02_parameter_management.md", start="## 从搭建网络，到管理其中的参数", end=None,
+         figure_height=230, start_on_new_page=True,
+         filename="5.2-参数管理-学习讲义.pdf"),
 ]
 
 
