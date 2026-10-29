@@ -1,0 +1,7 @@
+5.1 层和块：完整演示（CPU/float64，无下载/安装）
+三种20→256→10写法：7946参数、9次更新，输出/梯度/参数最大差：
+[0.0, 0.0, 0.0]
+普通list与ModuleList：[{"container": "list", "parameter_count": 0, "state_keys": [], "hidden_weight_has_gradient": true, "child_dropout_training": true, "child_weight_dtype": "torch.float32", "optimizer_error": "optimizer got an empty parameter list"}, {"container": "ModuleList", "parameter_count": 13, "state_keys": ["blocks.0.weight", "blocks.0.bias", "blocks.3.weight", "blocks.3.bias"], "hidden_weight_has_gradient": true, "child_dropout_training": false, "child_weight_dtype": "torch.float64", "optimizer_error": null}]
+固定/共享/嵌套：{"output": 0.018055632779514802, "output_shape": [], "halvings": 5, "parameter_count": 420, "buffer_count": 400, "buffer_unchanged": true, "buffer_has_gradient": false, "weight_update_norm": 0.012488749380569394, "nested_parameter_count": 4712, "nested_output_shape": [], "nested_all_parameter_gradients_finite": true, "independent_repeat_parameters": 216, "shared_repeat_parameters": 72, "independent_objects": 3, "shared_positions_same_object": true}
+双分支训练：{"parameter_count": 49, "input_shape": [64, 2], "branch_widths": [8, 4], "concatenated_shape": [64, 12], "output_shape": [64, 1], "updates": 300, "learning_rate": 0.03, "train_count": 64, "validation_count": 32, "test_count": 32, "initial_train_mse": 2.8518628998195115, "final_train_mse": 0.04182372541146386, "final_validation_mse": 0.07869337999482419, "test_mse": 0.04120408771867626}
+接下来完成exercises/ch05/01_layers_and_blocks.py，八处TODO仍留空。

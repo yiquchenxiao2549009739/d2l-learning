@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "4.10 Kaggle房价：完整演示",
+      "label": "5.1 层和块：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch04/10_kaggle_house_prices.py"
+        "${workspaceFolder}/lessons/ch05/01_layers_and_blocks.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "4.10 Kaggle房价：综合练习",
+      "label": "5.1 层和块：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch04/10_kaggle_house_prices.py"
+        "${workspaceFolder}/exercises/ch05/01_layers_and_blocks.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",

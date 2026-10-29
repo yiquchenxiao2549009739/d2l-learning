@@ -649,6 +649,15 @@ SPECS = [
          source="docs/ch04/10_kaggle_house_prices.md", start="## 用一个真实项目串起第4章", end=None,
          figure_height=235, start_on_new_page=True,
          filename="4.10-实战Kaggle比赛：预测房价-学习讲义.pdf"),
+    dict(section="5.1", title="层和块", subtitle="自己定义可训练组件，理解注册，再组合顺序、分支与动态计算。",
+         chapter="第 5 章 · 深度学习计算", date="2026-10-29",
+         environment="Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5",
+         route=["自定义与注册", "顺序与平行", "嵌套与共享", "训练与实践"],
+         goals="能够定义Module和forward，解释模块注册、固定buffer及共享参数，用顺序/平行/嵌套组织计算，完成双分支训练并覆盖三道教材练习。",
+         pages="PDF 第 209-215 页 / 正文第 191-197 页（含三道节末练习）",
+         source="docs/ch05/01_layers_and_blocks.md", start="## 从会调用模型，到会组织模型", end=None,
+         figure_height=230, start_on_new_page=True,
+         filename="5.1-层和块-学习讲义.pdf"),
 ]
 
 
@@ -682,7 +691,7 @@ def story(spec):
         result.extend(markdown_blocks(exercise_22()))
     result.extend([
         Spacer(1, 9),
-        p("资料说明：教材作者为 Aston Zhang、Zachary C. Lipton、Mu Li、Alexander J. Smola；页码基于用户提供的中文 PDF。文中相对路径均从“李沐-深度学习”项目根目录计算。已验证环境：Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5、pandas 2.0.3。整理日期：" + spec.get('date', DATE) + "。", "Caption"),
+        p("资料说明：教材作者为 Aston Zhang、Zachary C. Lipton、Mu Li、Alexander J. Smola；页码基于用户提供的中文 PDF。文中相对路径均从“李沐-深度学习”项目根目录计算。已验证环境：" + spec.get('environment', "Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5、pandas 2.0.3") + "。整理日期：" + spec.get('date', DATE) + "。", "Caption"),
     ])
     return result
 
