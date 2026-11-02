@@ -667,6 +667,15 @@ SPECS = [
          source="docs/ch05/02_parameter_management.md", start="## 从搭建网络，到管理其中的参数", end=None,
          figure_height=230, start_on_new_page=True,
          filename="5.2-参数管理-学习讲义.pdf"),
+    dict(section="5.3", title="延后初始化", subtitle="等待输入确定参数形状，再设置初值并开始训练。",
+         chapter="第 5 章 · 深度学习计算", date="2026-11-02",
+         environment="Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5",
+         route=["形状与占位", "首次前向", "尺寸与复用", "训练与实践"],
+         goals="区分Linear和LazyLinear，观察部分及全部延后初始化，正确安排试运行、初始化和优化器，解释输入宽度变化并完成三道教材练习。",
+         pages="PDF 第 222-223 页 / 正文第 204-205 页（含三道节末练习）",
+         source="docs/ch05/03_deferred_initialization.md", start="## 为什么还需要等到第一次输入", end=None,
+         figure_height=220, start_on_new_page=True,
+         filename="5.3-延后初始化-学习讲义.pdf"),
 ]
 
 

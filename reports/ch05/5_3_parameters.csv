@@ -1,0 +1,33 @@
+model,stage,name,type,shape,elements,dtype,device,requires_grad
+eager,constructed,0.weight,Parameter,"[256, 20]",5120,torch.float64,cpu,True
+eager,constructed,0.bias,Parameter,[256],256,torch.float64,cpu,True
+eager,constructed,2.weight,Parameter,"[10, 256]",2560,torch.float64,cpu,True
+eager,constructed,2.bias,Parameter,[10],10,torch.float64,cpu,True
+eager,after_forward,0.weight,Parameter,"[256, 20]",5120,torch.float64,cpu,True
+eager,after_forward,0.bias,Parameter,[256],256,torch.float64,cpu,True
+eager,after_forward,2.weight,Parameter,"[10, 256]",2560,torch.float64,cpu,True
+eager,after_forward,2.bias,Parameter,[10],10,torch.float64,cpu,True
+mixed,constructed,0.weight,UninitializedParameter,unknown,,torch.float64,cpu,True
+mixed,constructed,0.bias,UninitializedParameter,unknown,,torch.float64,cpu,True
+mixed,constructed,2.weight,Parameter,"[10, 256]",2560,torch.float64,cpu,True
+mixed,constructed,2.bias,Parameter,[10],10,torch.float64,cpu,True
+mixed,after_forward,0.weight,Parameter,"[256, 20]",5120,torch.float64,cpu,True
+mixed,after_forward,0.bias,Parameter,[256],256,torch.float64,cpu,True
+mixed,after_forward,2.weight,Parameter,"[10, 256]",2560,torch.float64,cpu,True
+mixed,after_forward,2.bias,Parameter,[10],10,torch.float64,cpu,True
+all_lazy,constructed,0.weight,UninitializedParameter,unknown,,torch.float64,cpu,True
+all_lazy,constructed,0.bias,UninitializedParameter,unknown,,torch.float64,cpu,True
+all_lazy,constructed,2.weight,UninitializedParameter,unknown,,torch.float64,cpu,True
+all_lazy,constructed,2.bias,UninitializedParameter,unknown,,torch.float64,cpu,True
+all_lazy,after_layer_0,0.weight,Parameter,"[256, 20]",5120,torch.float64,cpu,True
+all_lazy,after_layer_0,0.bias,Parameter,[256],256,torch.float64,cpu,True
+all_lazy,after_layer_0,2.weight,UninitializedParameter,unknown,,torch.float64,cpu,True
+all_lazy,after_layer_0,2.bias,UninitializedParameter,unknown,,torch.float64,cpu,True
+all_lazy,after_layer_2,0.weight,Parameter,"[256, 20]",5120,torch.float64,cpu,True
+all_lazy,after_layer_2,0.bias,Parameter,[256],256,torch.float64,cpu,True
+all_lazy,after_layer_2,2.weight,Parameter,"[10, 256]",2560,torch.float64,cpu,True
+all_lazy,after_layer_2,2.bias,Parameter,[10],10,torch.float64,cpu,True
+all_lazy,after_forward,0.weight,Parameter,"[256, 20]",5120,torch.float64,cpu,True
+all_lazy,after_forward,0.bias,Parameter,[256],256,torch.float64,cpu,True
+all_lazy,after_forward,2.weight,Parameter,"[10, 256]",2560,torch.float64,cpu,True
+all_lazy,after_forward,2.bias,Parameter,[10],10,torch.float64,cpu,True

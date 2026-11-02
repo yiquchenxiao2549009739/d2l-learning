@@ -1,0 +1,6 @@
+case,error_type,message
+shape_before_materialization,RuntimeError,Can't access the shape of an uninitialized parameter or buffer. This error usually happens in `load_state_dict` when trying to load an uninitialized parameter into an initialized one. Call `forward` to initialize the par
+numel_before_materialization,ValueError,Attempted to use an uninitialized parameter in <method 'numel' of 'torch._C.TensorBase' objects>. This error happens when you are using a `LazyModule` or explicitly manipulating `torch.nn.parameter.UninitializedParameter
+normal_init_too_early,ValueError,Attempted to use an uninitialized parameter in <function normal_ at 0x000002324E1AE820>. This error happens when you are using a `LazyModule` or explicitly manipulating `torch.nn.parameter.UninitializedParameter` objects
+changed_feature_width,RuntimeError,mat1 and mat2 shapes cannot be multiplied (2x21 and 20x8)
+explicit_layer_mismatch,RuntimeError,mat1 and mat2 shapes cannot be multiplied (2x8 and 7x1)
