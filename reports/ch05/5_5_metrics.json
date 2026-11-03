@@ -1,0 +1,66 @@
+{
+  "section": "5.5",
+  "date": "2026-11-03",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "torch.float64",
+  "tensors": {
+    "tensor_equal": true,
+    "tensor_dtype": "torch.int64",
+    "list_equal": true,
+    "dictionary_equal": true,
+    "dictionary_keys": [
+      "x",
+      "y"
+    ],
+    "floating_tensor_dtype": "torch.float64"
+  },
+  "model": {
+    "parameter_count": 105,
+    "architecture": {
+      "kind": "two_hidden_mlp",
+      "in_features": 2,
+      "hidden_features": [
+        8,
+        8
+      ],
+      "out_features": 1
+    },
+    "weight_keys": [
+      "features.0.weight",
+      "features.0.bias",
+      "features.2.weight",
+      "features.2.bias",
+      "head.weight",
+      "head.bias"
+    ],
+    "initial_train_mse": 0.4800288561176047,
+    "checkpoint_train_mse": 0.0029994818335440103,
+    "final_train_mse": 0.0008171779980063219,
+    "final_validation_mse": 0.001136633808307839,
+    "weights_restore_parameter_error": 0.0,
+    "weights_restore_prediction_error": 0.0,
+    "restored_training_mode_before_eval": true,
+    "checkpoint_step": 60,
+    "resume_loss_error": 0.0,
+    "resume_parameter_error": 0.0,
+    "resume_momentum_error": 0.0,
+    "resume_prediction_error": 0.0,
+    "cold_optimizer_one_step_parameter_difference": 0.00394827453017188,
+    "warm_first_step_loss_error": 0.0,
+    "transfer_feature_error": 0.0,
+    "transfer_new_head_weight_preserved": true,
+    "transfer_output_shape": [
+      32,
+      2
+    ],
+    "strict_false_detected_size_mismatch": true
+  },
+  "local_files": {
+    "tensor.pt": 1180,
+    "list.pt": 1432,
+    "dictionary.pt": 1432,
+    "weights.pt": 3208,
+    "checkpoint_step60.pt": 5874
+  }
+}

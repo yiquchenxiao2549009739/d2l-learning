@@ -685,6 +685,15 @@ SPECS = [
          source="docs/ch05/04_custom_layers.md", start="## 用 forward 表达一个没有参数的变换", end=None,
          figure_height=220, start_on_new_page=True,
          filename="5.4-自定义层-学习讲义.pdf"),
+    dict(section="5.5", title="读写文件", subtitle="保存张量和模型状态，恢复预测并从检查点继续训练。",
+         chapter="第 5 章 · 深度学习计算", date="2026-11-03",
+         environment="Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5",
+         route=["保存张量", "恢复预测", "继续训练", "部分复用"],
+         goals="完成张量和容器的文件往返，使用state_dict恢复预测，了解检查点与结构配置，并验证部分层复用。",
+         pages="PDF 第 226-229 页 / 正文第 208-211 页（含三道节末练习）",
+         source="docs/ch05/05_file_io.md", start="## 张量、列表与字典可以一起保存", end=None,
+         figure_height=205, start_on_new_page=True,
+         filename="5.5-读写文件-学习讲义.pdf"),
 ]
 
 

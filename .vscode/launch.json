@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "5.4 自定义层：完整演示",
+      "name": "5.5 读写文件：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch05/04_custom_layers.py",
+      "program": "${workspaceFolder}/lessons/ch05/05_file_io.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "5.4 自定义层：综合练习",
+      "name": "5.5 读写文件：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch05/04_custom_layers.py",
+      "program": "${workspaceFolder}/exercises/ch05/05_file_io.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
