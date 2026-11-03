@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "5.3 延后初始化：完整演示",
+      "name": "5.4 自定义层：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch05/03_deferred_initialization.py",
+      "program": "${workspaceFolder}/lessons/ch05/04_custom_layers.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "5.3 延后初始化：综合练习",
+      "name": "5.4 自定义层：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch05/03_deferred_initialization.py",
+      "program": "${workspaceFolder}/exercises/ch05/04_custom_layers.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

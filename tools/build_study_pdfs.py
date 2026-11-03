@@ -676,6 +676,15 @@ SPECS = [
          source="docs/ch05/03_deferred_initialization.md", start="## 为什么还需要等到第一次输入", end=None,
          figure_height=220, start_on_new_page=True,
          filename="5.3-延后初始化-学习讲义.pdf"),
+    dict(section="5.4", title="自定义层", subtitle="把张量计算封装成层，并验证参数注册与梯度路径。",
+         chapter="第 5 章 · 深度学习计算", date="2026-11-03",
+         environment="Python 3.8.20、PyTorch 2.4.1+cu121、NumPy 1.23.5",
+         route=["中心化", "参数与反传", "二次特征", "频谱与练习"],
+         goals="实现带参数与不带参数的层，理解教材.data写法对梯度的影响，训练二次层并核对实信号单边频谱。",
+         pages="PDF 第 223-226 页 / 正文第 205-208 页（含两道节末练习）",
+         source="docs/ch05/04_custom_layers.md", start="## 用 forward 表达一个没有参数的变换", end=None,
+         figure_height=220, start_on_new_page=True,
+         filename="5.4-自定义层-学习讲义.pdf"),
 ]
 
 

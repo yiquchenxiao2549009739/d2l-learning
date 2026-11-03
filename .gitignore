@@ -39,6 +39,7 @@ __pycache__/
 !output/pdf/5.1-层和块-学习讲义.pdf
 !output/pdf/5.2-参数管理-学习讲义.pdf
 !output/pdf/5.3-延后初始化-学习讲义.pdf
+!output/pdf/5.4-自定义层-学习讲义.pdf
 
 # Downloaded data and generated training output
 data/
