@@ -13,12 +13,12 @@ from xml.sax.saxutils import escape, quoteattr
 from pypdf import PdfReader
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
-    BaseDocTemplate, Flowable, Frame, Image, KeepTogether,
+    BaseDocTemplate, Flowable, Frame, FrameBreak, Image, KeepTogether,
     PageBreak, PageTemplate, Paragraph, Spacer, Table, TableStyle,
 )
 
@@ -187,9 +187,9 @@ class Route(Flowable):
                 canvas.line(x + box_w + gap - 5, 20, x + box_w + gap - 2, 23)
 
 
-def table(rows):
+def table(rows, width=WIDTH):
     count = len(rows[0])
-    widths = [WIDTH * 0.40, WIDTH * 0.60] if count == 2 else [WIDTH / count] * count
+    widths = [width * 0.40, width * 0.60] if count == 2 else [width / count] * count
     cells = [[p(cell, "CellHead" if row_i == 0 else "Cell") for cell in row] for row_i, row in enumerate(rows)]
     result = Table(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
     result.setStyle(TableStyle([
@@ -208,7 +208,7 @@ def table(rows):
     return result
 
 
-def markdown_blocks(text, source_dir=None, figure_height=178):
+def markdown_blocks(text, source_dir=None, figure_height=178, width=WIDTH):
     lines = text.splitlines()
     result = []
     index = 0
@@ -235,7 +235,7 @@ def markdown_blocks(text, source_dir=None, figure_height=178):
             if ROOT.resolve() not in path.parents:
                 raise ValueError("Figure must remain inside the project")
             item = Image(str(path))
-            scale = min(WIDTH / item.imageWidth, figure_height / item.imageHeight)
+            scale = min(width / item.imageWidth, figure_height / item.imageHeight)
             item.drawWidth = item.imageWidth * scale
             item.drawHeight = item.imageHeight * scale
             item.hAlign = "CENTER"
@@ -274,7 +274,7 @@ def markdown_blocks(text, source_dir=None, figure_height=178):
                 grouped = []
             if not grouped or grouped[0].style.name != "H2":
                 grouped = []
-            result.append(KeepTogether(grouped + [table(rows)]))
+            result.append(KeepTogether(grouped + [table(rows, width)]))
             continue
         if line.startswith("## "):
             result.append(p(line[3:], "H2"))
@@ -341,6 +341,70 @@ class StudyDoc(BaseDocTemplate):
             key = f"section-{self.outline_index}"
             self.canv.bookmarkPage(key)
             self.canv.addOutlineEntry(flowable.getPlainText(), key, level=0, closed=False)
+
+
+class WorkbookDoc(StudyDoc):
+    margin = 36
+    main_width = 416
+    gap = 48
+    page_width, page_height = landscape(A4)
+    side_width = page_width - 2 * margin - main_width - gap
+
+    def __init__(self, path, spec, total_pages=None):
+        BaseDocTemplate.__init__(
+            self, str(path), pagesize=landscape(A4), pageCompression=1,
+            title=f"{spec['section']} {spec['title']} - 实验手册", author="深度学习学习项目",
+        )
+        self.spec = spec
+        self.total_pages = total_pages
+        self.outline_index = 0
+        side_x = self.margin + self.main_width + self.gap
+        frames = [
+            Frame(x, 51, width, self.page_height - 163,
+                  leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
+            for x, width in [(self.margin, self.main_width), (side_x, self.side_width)]
+        ]
+        self.addPageTemplates(PageTemplate(id="workbook", frames=frames, onPage=self.decorate))
+
+    def decorate(self, canvas, doc):
+        canvas.saveState()
+        m = self.margin
+        w, h = self.page_width, self.page_height
+        canvas.setFillColor(NAVY)
+        canvas.rect(0, h - 93, w, 93, fill=1, stroke=0)
+        canvas.setFillColor(colors.HexColor("#F3C278"))
+        canvas.setFont("CN-Bold", 10)
+        canvas.drawString(m, h - 30, f"动手学深度学习   /   {self.spec['chapter']}实验手册")
+        canvas.setFillColor(colors.white)
+        canvas.setFont("CN-Bold", 24)
+        canvas.drawString(m, h - 65, self.spec["section"] + "  " + self.spec["title"])
+        canvas.setFont("CN", 10)
+        canvas.drawRightString(w - m, h - 63, self.spec["pages"])
+        canvas.setFillColor(colors.HexColor("#F4F7F7"))
+        side_x = m + self.main_width + self.gap
+        canvas.roundRect(side_x - 15, 46, self.side_width + 28, h - 151, 8, fill=1, stroke=0)
+        canvas.setStrokeColor(LINE)
+        canvas.line(m, 37, w - m, 37)
+        canvas.setFillColor(MUTED)
+        canvas.setFont("CN", 8.5)
+        canvas.drawString(m, 21, f"{self.spec['title']}实验手册    |    {self.spec['date']}")
+        canvas.drawRightString(w - m, 21, f"{doc.page} / {self.total_pages or '?'}")
+        canvas.restoreState()
+
+
+def workbook_story(spec):
+    path = ROOT / spec["source"]
+    body = path.read_text(encoding="utf8")
+    body = body[body.index(spec["start"]):].strip()
+    result = []
+    for index, page in enumerate(body.split("<!-- pagebreak -->")):
+        left, right = page.split("<!-- side -->")
+        if index:
+            result.append(PageBreak())
+        result.extend(markdown_blocks(left, path.parent, 253, WorkbookDoc.main_width))
+        result.append(FrameBreak())
+        result.extend(markdown_blocks(right, path.parent, 253, WorkbookDoc.side_width))
+    return result
 
 
 EXERCISE_21 = """
@@ -718,6 +782,10 @@ SPECS = [
          source="docs/ch06/01_from_dense_to_conv.md", start="## 第 6 章从像素网格出发", end=None,
          figure_height=195, start_on_new_page=True,
          filename="6.1-从全连接层到卷积-学习讲义.pdf"),
+    dict(section="6.2", title="图像卷积", date="2026-11-04", chapter="第 6 章",
+         pages="教材 PDF 240-246 · 正文 222-228",
+         source="docs/ch06/02_image_convolution.md", start="## 01",
+         workbook=True, filename="6.2-图像卷积-实验手册.pdf"),
 ]
 
 
@@ -766,11 +834,12 @@ def main():
     for spec in SPECS:
         if args.section and spec['section'] != args.section:
             continue
+        doc, content = (WorkbookDoc, workbook_story) if spec.get("workbook") else (StudyDoc, story)
         draft = TEMP / (spec['section'].replace('.', '_') + "_layout.pdf")
-        StudyDoc(draft, spec).build(story(spec))
+        doc(draft, spec).build(content(spec))
         total = len(PdfReader(draft).pages)
         target = OUTPUT / spec['filename']
-        StudyDoc(target, spec, total_pages=total).build(story(spec))
+        doc(target, spec, total_pages=total).build(content(spec))
         reader = PdfReader(target)
         assert len(reader.pages) == total
         assert reader.outline, "Section bookmarks missing"
