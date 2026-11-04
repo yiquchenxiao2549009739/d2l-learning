@@ -1,4 +1,10 @@
-"""6.1 综合练习。让同一个窗口规则在两张图上寻找十字形。"""
+"""6.1 综合练习，让同一个局部规则寻找平移前后的十字形。
+
+先完成讲义的 L 形跟做，再运行本文件，按三个阶段填写八处 TODO。
+阶段一用切片和乘加手算一格，阶段二组织 NCHW 并扫描两张图，
+阶段三对齐重叠区域、比较峰值和参数量。每阶段先预测再运行。
+集中反馈响应形状、峰值坐标、重叠差和局部性/共享的解释。
+"""
 import torch
 from torch.nn import functional as F
 
@@ -10,6 +16,8 @@ def place_motif(motif, row, col):
 
 
 def main():
+    print("6.1 综合练习。先预测十字形平移后，响应最高点会怎样移动。")
+    print("先填写 TODO 1–2，再填写 3–5，最后完成 6–8。")
     motif = torch.tensor([[0., 1., 0.], [1., 1., 1.], [0., 1., 0.]])
     kernel = 2 * motif - 1
     row, col = 1, 2
@@ -21,7 +29,7 @@ def main():
         print("先完成 TODO 1，从图像中切出一个窗口。")
         return
     local_score = None  # TODO 2：patch 与 kernel 逐元素乘积后求和。
-    images = torch.stack([first, moved])
+    images = torch.stack([first, moved])  # 两张二维图先沿批量轴叠起来。
     inputs = None  # TODO 3：给 images 添加长度为 1 的通道轴，得到 NCHW。
     weights = None  # TODO 4：给 kernel 添加输出和输入通道轴，形状为 (1, 1, 3, 3)。
     if local_score is None or inputs is None or weights is None:

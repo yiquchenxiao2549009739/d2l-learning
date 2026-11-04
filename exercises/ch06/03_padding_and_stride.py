@@ -1,4 +1,10 @@
-"""6.3 综合练习。先预测输出，再实现带填充和步幅的二维互相关。"""
+"""6.3 综合练习，将填充、输出尺寸和窗口起点放进同一段程序。
+
+先按讲义复现对称填充与步幅 (2,3)，再处理本题四侧不同的填充。
+TODO 1–3 准备填充网格并计算输出尺寸，TODO 4–7 定位并计算窗口，
+TODO 8 用内置运算核对。运行前在纸上画出第一格和最后一格。
+反馈形状、第一行、核对误差，以及边界补零为何出现在这些窗口中。
+"""
 import torch
 from torch.nn import functional as F
 
@@ -34,6 +40,8 @@ def corr2d(X, K, padding, stride):
 
 
 def main():
+    print("6.3 综合练习。先写出补零后高宽，再列出所有合法窗口起点。")
+    print("按准备网格、扫描窗口、内置核对三个阶段填写八处 TODO。")
     X = torch.arange(1, 31, dtype=torch.float64).reshape(5, 6)
     K = torch.tensor([[1., 0., -1.], [1., 0., -1.]], dtype=X.dtype)
     padding, stride = (1, 2, 0, 1), (2, 3)

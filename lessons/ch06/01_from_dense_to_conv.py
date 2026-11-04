@@ -1,4 +1,14 @@
-"""6.1 从全连接层到卷积。比较空间连接、共享权重和跨位置预测。"""
+"""6.1 从全连接层到卷积。
+
+阅读顺序与讲义一致
+1. DenseMap、LocalMap、SharedMap 表达三种连接规则。
+2. spatial_demo 用同一个核寻找不同位置的 L 形。
+3. math_and_channels 核对互相关、数学卷积和通道。
+4. train_maps 只监督一个输出位置，检验共享参数的作用。
+
+加 --guided 按中文步骤展示结果，加 --record 更新实测 JSON 和配图。
+所有图像在内存中生成。坐标均按从 0 开始的行、列排列。
+"""
 import argparse
 import json
 import os
@@ -20,6 +30,7 @@ LEARNING_RATE = .08
 
 
 class DenseMap(nn.Module):
+    """36 个输出各自读取全部 64 个像素，共 36×65 个参数。"""
     def __init__(self):
         super().__init__()
         self.layer = nn.Linear(SIDE * SIDE, OUT * OUT, dtype=DTYPE)
@@ -29,6 +40,7 @@ class DenseMap(nn.Module):
 
 
 class LocalMap(nn.Module):
+    """每个输出读取自己的 3×3 窗口，36 组权重分别学习。"""
     def __init__(self):
         super().__init__()
         self.weight = nn.Parameter(torch.zeros(OUT * OUT, WINDOW**2, dtype=DTYPE))
@@ -42,6 +54,7 @@ class LocalMap(nn.Module):
 
 
 class SharedMap(nn.Module):
+    """全部输出共用 9 个核权重和一个偏置。"""
     def __init__(self):
         super().__init__()
         self.layer = nn.Conv2d(1, 1, WINDOW, dtype=DTYPE)
@@ -58,6 +71,7 @@ def make_image(position, motif):
 
 
 def spatial_demo(kernel, bias):
+    """先手算匹配分数，再比较平移前后的响应及边界。"""
     motif = (kernel > 0).to(DTYPE)
     positions = [(1, 1), (3, 2)]
     X = torch.stack([make_image(position, motif) for position in positions])
@@ -128,6 +142,7 @@ def math_and_channels(generator):
 
 
 def train_maps(kernel, bias, generator):
+    """固定目标生成规则，仅在 (2,2) 计算损失，再评估全部位置。"""
     X = torch.randn(160, 1, SIDE, SIDE, generator=generator, dtype=DTYPE)
     test = torch.randn(64, 1, SIDE, SIDE, generator=generator, dtype=DTYPE)
     targets = F.conv2d(X, kernel[None, None], bias).squeeze(1)
@@ -144,6 +159,7 @@ def train_maps(kernel, bias, generator):
         initial_mse = targets[:, row, col].square().mean().item()
         for _ in range(STEPS):
             optimizer.zero_grad(set_to_none=True)
+            # 切片决定哪些输出提供监督。其余位置能否改变取决于参数是否共享。
             error = model(X)[:, row, col] - targets[:, row, col]
             loss = error.square().mean()
             loss.backward()
@@ -209,9 +225,40 @@ def record(metrics, images, responses, error_maps):
     plt.close(fig)
 
 
+def print_guided(metrics):
+    """直接使用已核对的结果，按原理、观察、解释的顺序阅读。"""
+    spatial = metrics["spatial"]
+    math = metrics["math_and_channels"]
+    training = metrics["training"]
+    print("\n6.1 从全连接层到卷积\n")
+    print("步骤 1 先观察同一组核怎样找到不同位置的图案")
+    print("输入与输出形状", spatial["input_shape"], spatial["response_shape"])
+    print("图案位置", spatial["motif_positions"])
+    print("响应峰值位置", spatial["peak_positions"])
+    print("峰值", spatial["peak_values"])
+    print("平移重叠区域最大差", spatial["overlap_max_error"])
+    print("同一个局部规则在新位置继续使用，响应位置随图案移动。\n")
+    print("步骤 2 将边界条件与卷积约定一起核对")
+    print("边界两条计算路径", spatial["edge_after_move_input_vs_after_move_output"])
+    print("互相关与翻核后的左上输出", math["correlation_valid"][0][0], math["convolution_flipped_valid"][0][0])
+    print("完整卷积交换输入顺序的最大差", math["full_convolution_swap_max_error"])
+    print("步骤 3 读懂批量、输入通道和输出通道")
+    print("输入、权重、输出形状", math["input_nchw"], math["weights_oihw"], math["output_nchw"])
+    print("三输入两输出通道的参数量", math["multi_channel_parameters"])
+    print("1×1 卷积与逐像素线性层最大差", math["pointwise_max_error"], "\n")
+    print("步骤 4 只教一个位置，检查其余位置")
+    print("训练图、测试图、监督位置", training["training_images"], training["test_images"], training["supervised_position"])
+    print("模型          参数数       训练 MSE       其余位置测试 MSE")
+    for name, values in training["models"].items():
+        print(f"{name:8s} {values['parameters']:9d} {values['train_mse']:14.6g} {values['test_unseen_positions_mse']:18.6g}")
+    print("目标由同一共享核生成。共享结构把监督位置学到的规则用于其余位置。")
+    print("接着按讲义修改图案位置，再打开 exercises/ch06/01_from_dense_to_conv.py。")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--record", action="store_true", help="更新仓库中的实测 JSON 和图")
+    parser.add_argument("--guided", action="store_true", help="按讲义步骤显示中文结果和解释")
     args = parser.parse_args()
     torch.set_num_threads(1)
     torch.manual_seed(6100)
@@ -233,7 +280,10 @@ def main():
     }
     if args.record:
         record(metrics, images, responses, error_maps)
-    print(json.dumps(metrics, ensure_ascii=False, indent=2))
+    if args.guided:
+        print_guided(metrics)
+    else:
+        print(json.dumps(metrics, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

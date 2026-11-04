@@ -1,4 +1,12 @@
-"""6.3 填充和步幅。核对窗口起点、输出形状、梯度和抽样混叠。"""
+"""6.3 填充和步幅。
+
+接着 6.2 的窗口乘加，先用 output_shape 推导能放下多少个完整窗口。
+corr2d 先显式补零，再将输出索引乘以步幅来定位窗口。
+padding_demo、stride_demo 和 shape_demo 核对边界、对齐及尺寸。
+gradient_demo 检查可训练性，audio_demo 解释跨步抽样与混叠。
+
+加 --guided 阅读分阶段中文结果，加 --record 更新实测 JSON 和四张图。
+"""
 import argparse
 import json
 import os
@@ -32,13 +40,15 @@ def corr2d(X, K, padding=(0, 0, 0, 0), stride=(1, 1)):
     padded = F.pad(X, padding)
     kh, kw = K.shape
     sh, sw = stride
-    return torch.stack([
-        torch.stack([
-            (padded[i * sh:i * sh + kh, j * sw:j * sw + kw] * K).sum()
-            for j in range(cols)
-        ])
-        for i in range(rows)
-    ])
+    outputs = []
+    for i in range(rows):
+        line = []
+        for j in range(cols):
+            row, col = i * sh, j * sw
+            patch = padded[row:row + kh, col:col + kw]
+            line.append((patch * K).sum())
+        outputs.append(torch.stack(line))
+    return torch.stack(outputs)
 
 
 def shape_demo():
@@ -221,9 +231,38 @@ def record(metrics, padding_images, stride_images, audio_images):
     plt.close(fig)
 
 
+def print_guided(metrics):
+    """按边界、尺寸、位置、可训练性和采样的顺序连接结果。"""
+    print("\n6.3 填充和步幅\n")
+    print("步骤 1 看清补零如何增加可用窗口")
+    print("3×3 输入每侧补 1 后，用 2×2 核得到")
+    print(metrics["padding"]["padded_response"])
+    print("2×2 核保尺寸的两种对齐")
+    print("上/左多补", metrics["padding"]["even_kernel_more_before"])
+    print("下/右多补", metrics["padding"]["even_kernel_more_after"], "\n")
+    print("步骤 2 用完整窗口条件核对输出形状")
+    for case in metrics["shapes"]:
+        print(case["name"], "核", case["kernel"], "单侧填充", case["padding_per_side_hw"],
+              "步幅", case["stride_hw"], "输出", case["output_shape"])
+    print("教材总填充量等于两侧之和。起点从 0 开始，所以整除后还要加 1。\n")
+    print("步骤 3 把输出索引换成输入窗口起点")
+    print("填充网格中的窗口起点", metrics["stride"]["padded_window_starts"])
+    print("步幅 (2,3) 的响应", metrics["stride"]["strided_response"])
+    print("每个窗口内部仍用同一核逐元素乘加。\n")
+    print("步骤 4 核对梯度并理解跨步抽样")
+    print("前向和梯度误差", metrics["gradient_errors"])
+    audio = metrics["audio"]
+    print("输出采样率", audio["output_sample_rate_hz"], "Hz")
+    print("1/3 kHz 隔点采样后最大差", audio["downsampled_max_difference"])
+    print("三点平滑后高频/低频 RMS 比", audio["three_tap_filtered_high_to_low_rms_ratio"])
+    print("步幅 1/2 的理论乘加次数", audio["macs_8x8_k3_stride1"], audio["macs_8x8_k3_stride2"])
+    print("接着按讲义逐项改参数，再打开 exercises/ch06/03_padding_and_stride.py。")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--record", action="store_true", help="保存实测 JSON 和四幅图")
+    parser.add_argument("--guided", action="store_true", help="按讲义步骤显示中文结果和解释")
     args = parser.parse_args()
     torch.set_num_threads(1)
     padding, padding_images = padding_demo()
@@ -236,7 +275,10 @@ def main():
     }
     if args.record:
         record(metrics, padding_images, stride_images, audio_images)
-    print(json.dumps(metrics, ensure_ascii=False, indent=2))
+    if args.guided:
+        print_guided(metrics)
+    else:
+        print(json.dumps(metrics, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

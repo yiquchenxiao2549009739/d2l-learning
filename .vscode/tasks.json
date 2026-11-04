@@ -2,11 +2,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "6.3 填充和步幅：完整演示",
+      "label": "6.1 从全连接层到卷积：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch06/03_padding_and_stride.py"
+        "${workspaceFolder}/lessons/ch06/01_from_dense_to_conv.py",
+        "--guided"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -19,6 +20,68 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "label": "6.1 从全连接层到卷积：综合练习",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "${workspaceFolder}/exercises/ch06/01_from_dense_to_conv.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "6.2 图像卷积：完整演示",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "${workspaceFolder}/lessons/ch06/02_image_convolution.py",
+        "--guided"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "6.2 图像卷积：综合练习",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "${workspaceFolder}/exercises/ch06/02_image_convolution.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "6.3 填充和步幅：完整演示",
+      "type": "process",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "${workspaceFolder}/lessons/ch06/03_padding_and_stride.py",
+        "--guided"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "problemMatcher": []
     },
     {
       "label": "6.3 填充和步幅：综合练习",

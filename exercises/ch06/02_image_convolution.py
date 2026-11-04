@@ -1,4 +1,10 @@
-"""6.2 综合练习。自己实现滑窗，并学出一个上下做差的卷积核。"""
+"""6.2 综合练习，串起滑窗、目标响应和卷积核训练。
+
+先按讲义复现教师的左右差分，再在本文件处理上下亮度变化。
+TODO 1–4 实现完整窗口，TODO 5 构造目标核，TODO 6–8 接通训练。
+先预测输出形状和第一列，运行后记录初始/最终损失及核的变化。
+本练习使用平均平方误差，教师演示使用平方误差和，比较时留意尺度。
+"""
 import torch
 from torch import nn
 
@@ -25,6 +31,8 @@ def corr2d(X, K):
 
 
 def main():
+    print("6.2 综合练习。先判断上减下会在哪里产生非零响应。")
+    print("按滑窗、目标、训练三个阶段填写八处 TODO，并记录运行结果。")
     torch.manual_seed(6281)
     X = torch.ones(8, 6)
     X[2:6, :] = 0
@@ -47,7 +55,7 @@ def main():
         if loss is None:
             print("请补上 TODO 6–8，完成训练。")
             return
-        optimizer.zero_grad(set_to_none=True)
+        optimizer.zero_grad(set_to_none=True)  # 每次反传前清除上次留下的梯度。
         pass  # TODO 7：从损失反向传播。
         pass  # TODO 8：用优化器更新参数。
         if step == 0:

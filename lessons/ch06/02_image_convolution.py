@@ -1,4 +1,12 @@
-"""6.2 图像卷积。手写互相关、检测边缘、学习核并检查感受野。"""
+"""6.2 图像卷积。
+
+先在 window_demo 手算一个输出，再读 corr2d 的切片和逐元素乘加。
+Conv2D 将核注册为可学习参数，edge_demo 给出差分检测的目标。
+learn_kernel 串起前向、损失、清梯度、反传和 SGD 更新。
+receptive_field_demo 最后把一层窗口衔接到两层网络。
+
+加 --guided 阅读分阶段中文结果，加 --record 更新实测 JSON 和四张图。
+"""
 import argparse
 import json
 import os
@@ -22,16 +30,20 @@ def corr2d(X, K):
     cols = X.shape[1] - width + 1
     if not (height > 0 and width > 0 and rows > 0 and cols > 0):
         raise ValueError("核须非空且能放入图像")
-    return torch.stack([
-        torch.stack([
-            (X[row:row + height, col:col + width] * K).sum()
-            for col in range(cols)
-        ])
-        for row in range(rows)
-    ])
+    outputs = []
+    for row in range(rows):
+        line = []
+        for col in range(cols):
+            patch = X[row:row + height, col:col + width]
+            value = (patch * K).sum()
+            line.append(value)
+        outputs.append(torch.stack(line))
+    # 内层 stack 拼接一行，外层 stack 拼成整张响应图，计算图保持连通。
+    return torch.stack(outputs)
 
 
 class Conv2D(nn.Module):
+    """一个核和一个共享标量偏置，先登记参数，再在 forward 中使用。"""
     def __init__(self, kernel_size, bias=True):
         super().__init__()
         self.weight = nn.Parameter(torch.rand(kernel_size, dtype=DTYPE))
@@ -131,6 +143,7 @@ def edge_demo():
 
 
 def learn_kernel(X, K, target):
+    """两个实现复制同一初值，用同一目标和损失，逐步核对梯度与更新。"""
     hand = Conv2D((1, 2), bias=False)
     builtin = nn.Conv2d(1, 1, (1, 2), bias=False, dtype=DTYPE)
     with torch.no_grad():
@@ -150,6 +163,7 @@ def learn_kernel(X, K, target):
             break
         opt_hand.zero_grad(set_to_none=True)
         opt_builtin.zero_grad(set_to_none=True)
+        # backward 写入梯度，step 才更新参数。每步先清除上一步梯度。
         left.backward()
         right.backward()
         max_grad_error = max(max_grad_error, (hand.weight.grad - builtin.weight.grad[0, 0]).abs().max().item())
@@ -251,9 +265,37 @@ def record(metrics, windows, edges, fields):
     plt.close(fig)
 
 
+def print_guided(metrics):
+    """把手算、边缘、训练和感受野连续展示。"""
+    scan, edges = metrics["scan"], metrics["edges"]
+    learning, field = metrics["learning"], metrics["receptive_field"]
+    print("\n6.2 图像卷积\n")
+    print("步骤 1 先手算第一个窗口，再核对整张输出")
+    print("响应", scan["response"])
+    print("翻核后响应", scan["flipped_response"])
+    print("手写与内置层的前向和三路梯度差", scan["hand_vs_builtin"])
+    print("核梯度会汇总所有使用同一参数的窗口。\n")
+    print("步骤 2 用相邻像素之差寻找亮度变化")
+    print("条纹响应第一行", edges["stripe_response_first_row"])
+    print("转置输入后继续横向做差的非零数", edges["transposed_stripe_wrong_kernel_nonzero"])
+    print("水平亮度变化对应竖直延伸的边缘。\n")
+    print("步骤 3 用目标响应反过来学习核")
+    print("初始核", learning["initial_kernel"])
+    for step in (0, 10, learning["updates"]):
+        print("更新次数", step, "SSE", learning["sse_by_step"][step])
+    print("最终核", learning["learned_kernel"])
+    print("新灰度序列的最大响应误差", learning["max_new_row_error"])
+    print("前向预测后计算 SSE，再清梯度、反传、更新，共执行 36 次。\n")
+    print("步骤 4 将两个局部窗口层叠起来")
+    print("两层对原始输入的梯度", field["two_layer_input_gradient"])
+    print("3×3 区域共同影响最终输出，中心像素通过四条路径贡献。")
+    print("接着按讲义改变输入方向，再打开 exercises/ch06/02_image_convolution.py。")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--record", action="store_true", help="更新实测 JSON 和四张图")
+    parser.add_argument("--guided", action="store_true", help="按讲义步骤显示中文结果和解释")
     args = parser.parse_args()
     torch.set_num_threads(1)
     torch.manual_seed(6201)
@@ -267,7 +309,10 @@ def main():
     }
     if args.record:
         record(metrics, windows, edge_images, field_images)
-    print(json.dumps(metrics, ensure_ascii=False, indent=2))
+    if args.guided:
+        print_guided(metrics)
+    else:
+        print(json.dumps(metrics, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
