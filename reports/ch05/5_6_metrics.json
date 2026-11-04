@@ -1,0 +1,171 @@
+{
+  "section": "5.6",
+  "python": "3.8.20",
+  "torch": "2.4.1+cu121",
+  "cuda_build": "12.1",
+  "selected_device": "cuda:0",
+  "available_devices": [
+    "cuda:0"
+  ],
+  "gpu_names": [
+    "NVIDIA GeForce RTX 4060 Laptop GPU"
+  ],
+  "cpu_threads": 4,
+  "matmul_precision": "highest",
+  "try_gpu_0": "cuda:0",
+  "try_gpu_1": "cpu",
+  "tensor": {
+    "original_device": "cpu",
+    "moved_device": "cuda:0",
+    "to_same_device_returns_self": true,
+    "cross_device_add_error": "Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!",
+    "result_device": "cuda:0",
+    "result": [
+      [
+        1.0,
+        2.0,
+        3.0
+      ],
+      [
+        4.0,
+        5.0,
+        6.0
+      ]
+    ]
+  },
+  "model": {
+    "parameter_device": "cuda:0",
+    "buffer_device": "cuda:0",
+    "output_device": "cuda:0",
+    "gradient_device": "cuda:0",
+    "initial_mse": 0.8557400107383728,
+    "final_mse": 0.005061270669102669,
+    "cpu_final_mse": 0.0050612688064575195,
+    "cpu_comparison_max_loss_error": 1.1920928955078125e-07,
+    "cpu_comparison_max_prediction_error": 2.384185791015625e-07,
+    "loaded_state_device": "cpu",
+    "reload_cpu_max_prediction_error": 1.1920928955078125e-07,
+    "reload_same_device_max_prediction_error": 0.0,
+    "local_weights": "artifacts/ch05/5_6/regressor_cuda.pt"
+  },
+  "matmul": [
+    {
+      "n": 8,
+      "products_per_trial": 1000,
+      "cpu": {
+        "median_ms": 1.394200000000012,
+        "trials_ms": [
+          1.5016000000001029,
+          1.4435999999999893,
+          1.5100000000005664,
+          1.3898000000001076,
+          1.3769000000003473,
+          1.3801999999998316,
+          1.394200000000012
+        ]
+      },
+      "gpu_resident": {
+        "median_ms": 17.995999999999235,
+        "trials_ms": [
+          20.466500000000387,
+          19.814500000000734,
+          18.50039999999975,
+          16.00429999999964,
+          15.211299999999817,
+          17.995999999999235,
+          14.853800000000028
+        ]
+      },
+      "gpu_round_trip": {
+        "median_ms": 124.92599999999942,
+        "trials_ms": [
+          160.1324000000002,
+          117.34510000000054,
+          109.17400000000032,
+          105.78500000000003,
+          134.01819999999987,
+          136.2768000000001,
+          124.92599999999942
+        ]
+      },
+      "max_absolute_error": 9.5367431640625e-07
+    },
+    {
+      "n": 2048,
+      "products_per_trial": 3,
+      "cpu": {
+        "median_ms": 204.37179999999967,
+        "trials_ms": [
+          192.76029999999977,
+          251.5571000000003,
+          219.21999999999997,
+          196.6334999999999,
+          190.2550999999999,
+          226.32679999999982,
+          204.37179999999967
+        ]
+      },
+      "gpu_resident": {
+        "median_ms": 7.677000000001044,
+        "trials_ms": [
+          7.677000000001044,
+          7.622899999999433,
+          7.8835999999995465,
+          7.583300000000293,
+          8.496799999999638,
+          7.594399999998558,
+          7.768999999999693
+        ]
+      },
+      "gpu_round_trip": {
+        "median_ms": 26.352400000000387,
+        "trials_ms": [
+          25.84289999999889,
+          26.061200000000895,
+          27.47630000000001,
+          26.757500000000434,
+          28.20859999999925,
+          25.249999999999773,
+          26.352400000000387
+        ]
+      },
+      "max_absolute_error": 0.000457763671875
+    }
+  ],
+  "log": {
+    "products": 1000,
+    "n": 100,
+    "device": "cuda:0",
+    "each_scalar": {
+      "median_ms": 99.67790000000143,
+      "trials_ms": [
+        99.03180000000056,
+        99.67790000000143,
+        96.48510000000066,
+        99.5632999999998,
+        117.89519999999953,
+        107.27279999999872,
+        124.35609999999997
+      ]
+    },
+    "once": {
+      "median_ms": 87.19320000000153,
+      "trials_ms": [
+        80.93979999999945,
+        80.74690000000118,
+        84.18340000000057,
+        98.25159999999933,
+        87.19320000000153,
+        117.07330000000127,
+        88.11069999999965
+      ]
+    },
+    "max_norm_difference": 0.0,
+    "first_norm": 998.285400390625,
+    "first_norm_float64_reference": 998.2854007593517
+  },
+  "two_gpu": {
+    "status": "skipped",
+    "reason": "需要两张可见的 CUDA GPU"
+  }
+}

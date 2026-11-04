@@ -8,7 +8,7 @@ import argparse
 import csv
 import re
 from pathlib import Path
-from xml.sax.saxutils import escape
+from xml.sax.saxutils import escape, quoteattr
 
 from pypdf import PdfReader
 from reportlab.lib import colors
@@ -80,8 +80,11 @@ def code_runs(text):
     return runs
 
 
+EXTERNAL_LINK = r"\[[^\]\n]+\]\(https?://[^\s)]+\)"
+
+
 def inline(text):
-    pieces = re.split(r"(`[^`]+`|\*\*[^*]+\*\*)", normalize(text))
+    pieces = re.split(r"(`[^`]+`|\*\*[^*]+\*\*|" + EXTERNAL_LINK + ")", normalize(text))
     formatted = []
     for piece in pieces:
         if piece.startswith("`") and piece.endswith("`"):
@@ -91,6 +94,9 @@ def inline(text):
             ))
         elif piece.startswith("**") and piece.endswith("**"):
             formatted.append("<b>" + inline(piece[2:-2]) + "</b>")
+        elif re.fullmatch(EXTERNAL_LINK, piece):
+            label, url = piece[1:-1].split("](", 1)
+            formatted.append(f'<a href={quoteattr(url)} color="#147E83">{escape(label)}</a>')
         else:
             formatted.append(escape(piece).replace("∇", '<font name="MathSymbol">∇</font>'))
     return "".join(formatted)
@@ -694,6 +700,15 @@ SPECS = [
          source="docs/ch05/05_file_io.md", start="## 张量、列表与字典可以一起保存", end=None,
          figure_height=205, start_on_new_page=True,
          filename="5.5-读写文件-学习讲义.pdf"),
+    dict(section="5.6", title="GPU", subtitle="把张量、模型和日志放到合适的位置，并测量真实开销。",
+         chapter="第 5 章 · 深度学习计算", date="2026-11-04",
+         environment="PyTorch 2.4.1+cu121、RTX 4060 Laptop GPU（单卡）",
+         route=["检查设备", "迁移训练", "跨设备恢复", "同步计时"],
+         goals="读懂 device，迁移张量和模块，恢复 GPU 权重并比较计算、传输和日志的开销。",
+         pages="PDF 第 229-234 页 / 正文第 211-216 页（含四道节末练习）",
+         source="docs/ch05/06_gpu.md", start="## 设备决定张量放在哪里", end=None,
+         figure_height=205, start_on_new_page=True,
+         filename="5.6-GPU-学习讲义.pdf"),
 ]
 
 
