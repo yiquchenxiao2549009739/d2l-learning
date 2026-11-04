@@ -786,6 +786,10 @@ SPECS = [
          pages="教材 PDF 240-246 · 正文 222-228",
          source="docs/ch06/02_image_convolution.md", start="## 01",
          workbook=True, filename="6.2-图像卷积-实验手册.pdf"),
+    dict(section="6.3", title="填充和步幅", date="2026-11-04", chapter="第 6 章",
+         pages="教材 PDF 246-249 · 正文 228-231",
+         source="docs/ch06/03_padding_and_stride.md", start="## 01",
+         workbook=True, filename="6.3-填充和步幅-实验手册.pdf"),
 ]
 
 

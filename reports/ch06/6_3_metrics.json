@@ -1,0 +1,364 @@
+{
+  "section": "6.3",
+  "date": "2026-11-04",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "torch.float64",
+  "shapes": [
+    {
+      "name": "无填充",
+      "kernel": [
+        3,
+        3
+      ],
+      "padding_per_side_hw": [
+        0,
+        0
+      ],
+      "stride_hw": [
+        1,
+        1
+      ],
+      "output_shape": [
+        6,
+        6
+      ],
+      "max_error": 0.0
+    },
+    {
+      "name": "3×3 保持尺寸",
+      "kernel": [
+        3,
+        3
+      ],
+      "padding_per_side_hw": [
+        1,
+        1
+      ],
+      "stride_hw": [
+        1,
+        1
+      ],
+      "output_shape": [
+        8,
+        8
+      ],
+      "max_error": 0.0
+    },
+    {
+      "name": "5×3 保持尺寸",
+      "kernel": [
+        5,
+        3
+      ],
+      "padding_per_side_hw": [
+        2,
+        1
+      ],
+      "stride_hw": [
+        1,
+        1
+      ],
+      "output_shape": [
+        8,
+        8
+      ],
+      "max_error": 0.0
+    },
+    {
+      "name": "步幅 2",
+      "kernel": [
+        3,
+        3
+      ],
+      "padding_per_side_hw": [
+        1,
+        1
+      ],
+      "stride_hw": [
+        2,
+        2
+      ],
+      "output_shape": [
+        4,
+        4
+      ],
+      "max_error": 0.0
+    },
+    {
+      "name": "教材最后一例",
+      "kernel": [
+        3,
+        5
+      ],
+      "padding_per_side_hw": [
+        0,
+        1
+      ],
+      "stride_hw": [
+        3,
+        4
+      ],
+      "output_shape": [
+        2,
+        2
+      ],
+      "max_error": 0.0
+    },
+    {
+      "name": "有余数",
+      "kernel": [
+        3,
+        3
+      ],
+      "padding_per_side_hw": [
+        0,
+        0
+      ],
+      "stride_hw": [
+        2,
+        2
+      ],
+      "output_shape": [
+        3,
+        3
+      ],
+      "max_error": 0.0
+    }
+  ],
+  "padding": {
+    "padded_response": [
+      [
+        0.0,
+        3.0,
+        8.0,
+        4.0
+      ],
+      [
+        9.0,
+        19.0,
+        25.0,
+        10.0
+      ],
+      [
+        21.0,
+        37.0,
+        43.0,
+        16.0
+      ],
+      [
+        6.0,
+        7.0,
+        8.0,
+        0.0
+      ]
+    ],
+    "even_kernel_more_before": [
+      [
+        0.0,
+        3.0,
+        8.0
+      ],
+      [
+        9.0,
+        19.0,
+        25.0
+      ],
+      [
+        21.0,
+        37.0,
+        43.0
+      ]
+    ],
+    "even_kernel_more_after": [
+      [
+        19.0,
+        25.0,
+        10.0
+      ],
+      [
+        37.0,
+        43.0,
+        16.0
+      ],
+      [
+        7.0,
+        8.0,
+        0.0
+      ]
+    ],
+    "pytorch_same_matches_more_after": true,
+    "same_stride_2_error": "padding='same' is not supported for strided convolutions"
+  },
+  "stride": {
+    "input": [
+      [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      [
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ],
+      [
+        11.0,
+        12.0,
+        13.0,
+        14.0,
+        15.0
+      ],
+      [
+        16.0,
+        17.0,
+        18.0,
+        19.0,
+        20.0
+      ]
+    ],
+    "kernel": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        3.0,
+        4.0
+      ]
+    ],
+    "dense_response": [
+      [
+        4.0,
+        11.0,
+        18.0,
+        25.0,
+        32.0,
+        15.0
+      ],
+      [
+        26.0,
+        51.0,
+        61.0,
+        71.0,
+        81.0,
+        35.0
+      ],
+      [
+        56.0,
+        101.0,
+        111.0,
+        121.0,
+        131.0,
+        55.0
+      ],
+      [
+        86.0,
+        151.0,
+        161.0,
+        171.0,
+        181.0,
+        75.0
+      ],
+      [
+        32.0,
+        50.0,
+        53.0,
+        56.0,
+        59.0,
+        20.0
+      ]
+    ],
+    "strided_response": [
+      [
+        4.0,
+        25.0
+      ],
+      [
+        56.0,
+        121.0
+      ],
+      [
+        32.0,
+        56.0
+      ]
+    ],
+    "padded_window_starts": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "original_pixel_coverage": [
+      [
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      [
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      [
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      [
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ]
+    ]
+  },
+  "gradient_errors": {
+    "output": 2.220446049250313e-16,
+    "input_gradient": 1.1102230246251565e-16,
+    "kernel_gradient": 2.220446049250313e-16
+  },
+  "audio": {
+    "original_sample_rate_hz": 8000,
+    "output_sample_rate_hz": 4000,
+    "frequencies_hz": [
+      1000,
+      3000
+    ],
+    "downsampled_max_difference": 2.1803664869915592e-14,
+    "three_tap_filtered_high_to_low_rms_ratio": 0.1715728752538103,
+    "macs_8x8_k3_stride1": 576,
+    "macs_8x8_k3_stride2": 144
+  }
+}
