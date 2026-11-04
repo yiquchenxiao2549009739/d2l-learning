@@ -1,0 +1,135 @@
+{
+  "section": "6.1",
+  "date": "2026-11-04",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "torch.float64",
+  "spatial": {
+    "input_shape": [
+      8,
+      8
+    ],
+    "response_shape": [
+      6,
+      6
+    ],
+    "motif_positions": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "peak_positions": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "peak_values": [
+      5.25,
+      5.25
+    ],
+    "overlap_max_error": 0.0,
+    "edge_after_move_input_vs_after_move_output": [
+      3.0,
+      0.0
+    ]
+  },
+  "math_and_channels": {
+    "correlation_valid": [
+      [
+        37.0,
+        47.0
+      ],
+      [
+        67.0,
+        77.0
+      ]
+    ],
+    "convolution_flipped_valid": [
+      [
+        23.0,
+        33.0
+      ],
+      [
+        53.0,
+        63.0
+      ]
+    ],
+    "full_convolution_swap_max_error": 0.0,
+    "input_nchw": [
+      2,
+      3,
+      8,
+      8
+    ],
+    "weights_oihw": [
+      2,
+      3,
+      3,
+      3
+    ],
+    "output_nchw": [
+      2,
+      2,
+      6,
+      6
+    ],
+    "multi_channel_parameters": 56,
+    "multi_channel_one_score_error": 0.0,
+    "pointwise_output_shape": [
+      2,
+      2,
+      8,
+      8
+    ],
+    "pointwise_max_error": 0.0
+  },
+  "training": {
+    "seed": 6101,
+    "training_images": 160,
+    "test_images": 64,
+    "supervised_position": [
+      2,
+      2
+    ],
+    "unseen_position_count": 35,
+    "steps": 200,
+    "learning_rate": 0.08,
+    "models": {
+      "dense": {
+        "parameters": 2340,
+        "initial_train_mse": 9.838523792170104,
+        "train_mse": 2.0134921235300811e-07,
+        "test_seen_position_mse": 1.424076001677494e-06,
+        "test_unseen_positions_mse": 9.4978731406148,
+        "max_unseen_prediction": 0.0
+      },
+      "local": {
+        "parameters": 360,
+        "initial_train_mse": 9.838523792170104,
+        "train_mse": 1.9526815160345393e-17,
+        "test_seen_position_mse": 3.099368351109868e-17,
+        "test_unseen_positions_mse": 9.4978731406148,
+        "max_unseen_prediction": 0.0
+      },
+      "shared": {
+        "parameters": 10,
+        "initial_train_mse": 9.838523792170104,
+        "train_mse": 1.952681533419186e-17,
+        "test_seen_position_mse": 3.0993681926633697e-17,
+        "test_unseen_positions_mse": 3.345079963992806e-17,
+        "max_unseen_prediction": 12.806328069327511,
+        "kernel_max_error": 3.62990126845375e-09
+      }
+    }
+  }
+}

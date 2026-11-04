@@ -2,19 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "5.6 GPU：完整演示",
+      "name": "6.1 从全连接层到卷积：完整演示",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/lessons/ch05/06_gpu.py",
+      "program": "${workspaceFolder}/lessons/ch06/01_from_dense_to_conv.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "5.6 GPU：综合练习",
+      "name": "6.1 从全连接层到卷积：综合练习",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercises/ch05/06_gpu.py",
+      "program": "${workspaceFolder}/exercises/ch06/01_from_dense_to_conv.py",
       "python": "${command:python.interpreterPath}",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"

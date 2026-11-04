@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "5.6 GPU：完整演示",
+      "label": "6.1 从全连接层到卷积：完整演示",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/lessons/ch05/06_gpu.py"
+        "${workspaceFolder}/lessons/ch06/01_from_dense_to_conv.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -21,11 +21,11 @@
       }
     },
     {
-      "label": "5.6 GPU：综合练习",
+      "label": "6.1 从全连接层到卷积：综合练习",
       "type": "process",
       "command": "${command:python.interpreterPath}",
       "args": [
-        "${workspaceFolder}/exercises/ch05/06_gpu.py"
+        "${workspaceFolder}/exercises/ch06/01_from_dense_to_conv.py"
       ],
       "options": {
         "cwd": "${workspaceFolder}",

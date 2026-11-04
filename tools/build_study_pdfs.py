@@ -709,6 +709,15 @@ SPECS = [
          source="docs/ch05/06_gpu.md", start="## 设备决定张量放在哪里", end=None,
          figure_height=205, start_on_new_page=True,
          filename="5.6-GPU-学习讲义.pdf"),
+    dict(section="6.1", title="从全连接层到卷积", subtitle="让同一个局部规则扫描图像，观察特征怎样随图案移动。",
+         chapter="第 6 章 · 卷积神经网络", date="2026-11-04",
+         environment="Python 3.8.20、PyTorch 2.4.1+cu121、CPU float64",
+         route=["保留空间", "共享局部核", "理解通道", "验证位置迁移"],
+         goals="从全连接权重推导卷积，区分等变与不变、互相关与数学卷积，并通过训练验证权重共享。",
+         pages="PDF 第 235-240 页 / 正文第 217-222 页（含第 6 章导读及六道节末练习）",
+         source="docs/ch06/01_from_dense_to_conv.md", start="## 第 6 章从像素网格出发", end=None,
+         figure_height=195, start_on_new_page=True,
+         filename="6.1-从全连接层到卷积-学习讲义.pdf"),
 ]
 
 
