@@ -1,0 +1,61 @@
+{
+  "float64_numpy": {
+    "logits": 8.881784197001252e-16,
+    "ce": 4.440892098500626e-16,
+    "input_gradient": 2.710505431213761e-20,
+    "parameter_gradient": 8.326672684688674e-17,
+    "central_difference_10_coordinates": 2.650920108426824e-11,
+    "two_updates_with_tail1": 2.7755575615628914e-16
+  },
+  "architecture_parameters": 61706,
+  "candidate_parameters": {
+    "A": 61706,
+    "B": 61706,
+    "C": 81194,
+    "D": 88166,
+    "E": 61706,
+    "F": 61706,
+    "G": 64026,
+    "H": 63906,
+    "I": 61706
+  },
+  "documentation": {
+    "follow_blocks": 4,
+    "follow_stdout": "Conv2d (2, 6, 28, 28)\nSigmoid (2, 6, 28, 28)\nAvgPool2d (2, 6, 14, 14)\nConv2d (2, 16, 10, 10)\nSigmoid (2, 16, 10, 10)\nAvgPool2d (2, 16, 5, 5)\nFlatten (2, 400)\nLinear (2, 120)\nSigmoid (2, 120)\nLinear (2, 84)\nSigmoid (2, 84)\nLinear (2, 10)\n参数 61706\n1 3.9854802183202795 5\n2 2.4843093768970386 5\n3 2.3643805916244918 5\n验证 CE/正确数 2.3145434856414795 2 /20\nCPU 恢复 logits 最大差 1.7881393432617188e-07\n",
+    "exercise_reference_stdout": "输出形状 (8, 10) 参数 15734\nepoch 1 在线训练 CE 2.319062716252095\nepoch 2 在线训练 CE 2.308630073392713\nepoch 3 在线训练 CE 2.302548092764777\n更新次数 15 验证正确数 2 / 20\n每轮批次为 8/8/8/8/5。解释尾批为什么不用再除以 8。\n",
+    "exercise_source_unchanged": true,
+    "variant_snippet_updates": 3
+  },
+  "pdf_qa": {
+    "pages": 20,
+    "bookmarks": 20,
+    "rendered_pages": 20,
+    "boundary_violations": [],
+    "leading_body_punctuation": [],
+    "missing_headings": [],
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAD+MicrosoftYaHei-0": true,
+      "/AAAAAA+Consolas": true,
+      "/AAAAAA+SegoeUISymbol": true
+    },
+    "visual_review": "20 rendered pages inspected; feature maps and practical code pages also checked full size"
+  },
+  "preservation": {
+    "baseline_entries": 496,
+    "unrelated_unchanged": 489,
+    "unexpected_changes": []
+  },
+  "cli": {
+    "cpu_inspect_json": true,
+    "cpu_custom_default_output": true,
+    "cpu_custom_record": true,
+    "formal_not_overwritten": true,
+    "invalid_arguments_rejected": true
+  },
+  "reports_consistent": true
+}

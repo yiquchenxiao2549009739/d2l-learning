@@ -47,6 +47,7 @@ __pycache__/
 !output/pdf/6.3-填充和步幅-实验手册.pdf
 !output/pdf/6.4-多输入多输出通道-实验手册.pdf
 !output/pdf/6.5-汇聚层-实验手册.pdf
+!output/pdf/6.6-卷积神经网络（LeNet）-实验手册.pdf
 
 # Downloaded data and generated training output
 data/

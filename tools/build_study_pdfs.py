@@ -798,6 +798,10 @@ SPECS = [
          pages="教材 PDF 254-258 · 正文 236-240",
          source="docs/ch06/05_pooling.md", start="## 01",
          workbook=True, filename="6.5-汇聚层-实验手册.pdf"),
+    dict(section="6.6", title="卷积神经网络（LeNet）", date="2026-11-18", chapter="第 6 章",
+         pages="教材 PDF 258-264 · 正文 240-246",
+         source="docs/ch06/06_lenet.md", start="## 01",
+         workbook=True, filename="6.6-卷积神经网络（LeNet）-实验手册.pdf"),
 ]
 
 

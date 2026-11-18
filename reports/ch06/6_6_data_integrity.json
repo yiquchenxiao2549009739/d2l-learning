@@ -1,0 +1,61 @@
+{
+  "fashion_mnist": {
+    "strategy": "reuse existing read-only raw files",
+    "files": [
+      {
+        "filename": "train-images-idx3-ubyte",
+        "raw_bytes": 47040016,
+        "raw_sha256": "c59f468a2f672dc815687fe0f83887768d799fd8a3f3276145d20f83aa44d888"
+      },
+      {
+        "filename": "train-labels-idx1-ubyte",
+        "raw_bytes": 60008,
+        "raw_sha256": "bad3541b69d912435c50bb6ba87bec294ff4f6a2e1246121d8633921760443d9"
+      },
+      {
+        "filename": "t10k-images-idx3-ubyte",
+        "raw_bytes": 7840016,
+        "raw_sha256": "5b4141f0afbad91edebe8549f8fcffe087ea10ca49f1dbef5c9a5cd8815ce37b"
+      },
+      {
+        "filename": "t10k-labels-idx1-ubyte",
+        "raw_bytes": 10008,
+        "raw_sha256": "0402a96d92fd2663957122ceb108a494c5af83dab82d92729df917d7dec38c34"
+      }
+    ]
+  },
+  "mnist": {
+    "source": "https://ossci-datasets.s3.amazonaws.com/mnist/",
+    "archive_md5_matches_torchvision": true,
+    "files": [
+      {
+        "filename": "train-images-idx3-ubyte.gz",
+        "archive_bytes": 9912422,
+        "archive_md5": "f68b3c2dcbeaaa9fbdd348bbdeb94873",
+        "raw_bytes": 47040016,
+        "raw_sha256": "ba891046e6505d7aadcbbe25680a0738ad16aec93bde7f9b65e87a2fc25776db"
+      },
+      {
+        "filename": "train-labels-idx1-ubyte.gz",
+        "archive_bytes": 28881,
+        "archive_md5": "d53e105ee54ea40749a09fcbcd1e9432",
+        "raw_bytes": 60008,
+        "raw_sha256": "65a50cbbf4e906d70832878ad85ccda5333a97f0f4c3dd2ef09a8a9eef7101c5"
+      },
+      {
+        "filename": "t10k-images-idx3-ubyte.gz",
+        "archive_bytes": 1648877,
+        "archive_md5": "9fb629c4189551a2d022fa330f9573f3",
+        "raw_bytes": 7840016,
+        "raw_sha256": "0fa7898d509279e482958e8ce81c8e77db3f2f8254e26661ceb7762c4d494ce7"
+      },
+      {
+        "filename": "t10k-labels-idx1-ubyte.gz",
+        "archive_bytes": 4542,
+        "archive_md5": "ec29112dd5afa0611ce80d1b7f02629c",
+        "raw_bytes": 10008,
+        "raw_sha256": "ff7bcfd416de33731a308c3f266cc351222c34898ecbeaf847f06e48f7ec33f2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "config": {
+    "pool": "avg",
+    "activation": "sigmoid",
+    "kernels": [
+      5,
+      5
+    ],
+    "channels": [
+      6,
+      16
+    ],
+    "hidden": [
+      120,
+      84
+    ],
+    "extra_conv": false,
+    "initializer": "xavier",
+    "lr": 0.9
+  },
+  "model_seed": 6600,
+  "loader_seed": 3603,
+  "epochs": 1,
+  "parameters": 61706,
+  "initial_state_sha256": "7caed2ee8704f517bc12fc873e45394f91827be92064b2f6ad2d58633d4fb606",
+  "updates": 1,
+  "history": [
+    {
+      "epoch": 0,
+      "train_ce": 2.776863510544236,
+      "train_accuracy": 0.08108108108108109,
+      "train_correct": 3,
+      "train_samples": 37,
+      "validation_ce": 2.7156057357788086,
+      "validation_accuracy": 0.1,
+      "validation_correct": 2,
+      "validation_samples": 20
+    },
+    {
+      "epoch": 1,
+      "online_train_ce": 2.7768635749816895,
+      "online_train_accuracy": 0.08108108108108109,
+      "updates": 1,
+      "samples": 37,
+      "train_ce": 2.6573921409813135,
+      "train_accuracy": 0.10810810810810811,
+      "train_correct": 4,
+      "train_samples": 37,
+      "validation_ce": 2.764365577697754,
+      "validation_accuracy": 0.1,
+      "validation_correct": 2,
+      "validation_samples": 20
+    }
+  ],
+  "train_samples": 37,
+  "validation_samples": 20,
+  "batch_size": 256,
+  "last_batch_size": 37,
+  "training_and_validation_seconds": 0.35359099999999977,
+  "final_state_sha256": "e337e40d9c61726ad231c90d754fa3cfffa234755241975aee73695eba64869d",
+  "dataset": "Fashion-MNIST",
+  "split_seed": 3601,
+  "split_hashes": {
+    "train": "0e80aeb90dbd6e15d5b7dd6bafc1fd8676572ad733ef231f42a39f443d0e5503",
+    "validation": "65d9aca93416d8234d9a47b5cb19d13a21f2809c1d8661ad3977f8975a75979f"
+  },
+  "custom": true,
+  "device": "cpu",
+  "torch_version": "2.4.1+cu121",
+  "dtype": "float32",
+  "tf32": false,
+  "deterministic_algorithms": true,
+  "test_evaluated": false,
+  "train_subset_seed": 6601,
+  "validation_subset_seed": 6602,
+  "cpu_checkpoint_max_logit_difference": 0.0,
+  "runtime": {
+    "device": "cpu",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "CPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 16
+  }
+}

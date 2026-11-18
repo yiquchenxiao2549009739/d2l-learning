@@ -2,6 +2,33 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "6.6 卷积神经网络（LeNet）：完整演示",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/ch06/06_lenet.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      },
+      "args": [
+        "--guided"
+      ]
+    },
+    {
+      "name": "6.6 卷积神经网络（LeNet）：综合练习",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercises/ch06/06_lenet.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    },
+    {
       "name": "6.4 多输入多输出通道：完整演示",
       "type": "debugpy",
       "request": "launch",
