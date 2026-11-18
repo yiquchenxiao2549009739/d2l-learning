@@ -1,0 +1,325 @@
+{
+  "section": "6.5",
+  "date": "2026-11-18",
+  "torch": "2.4.1+cu121",
+  "device": "cpu",
+  "dtype": "torch.float64",
+  "textbook": {
+    "maximum": [
+      [
+        4.0,
+        5.0
+      ],
+      [
+        7.0,
+        8.0
+      ]
+    ],
+    "average": [
+      [
+        2.0,
+        3.0
+      ],
+      [
+        5.0,
+        6.0
+      ]
+    ],
+    "default_window3_output": [
+      [
+        10.0
+      ]
+    ],
+    "padding1_stride2_output": [
+      [
+        5.0,
+        7.0
+      ],
+      [
+        13.0,
+        15.0
+      ]
+    ],
+    "rectangular_output": [
+      [
+        5.0,
+        7.0
+      ],
+      [
+        13.0,
+        15.0
+      ]
+    ],
+    "multi_channel_input_shape": [
+      1,
+      2,
+      4,
+      4
+    ],
+    "multi_channel_output": [
+      [
+        [
+          [
+            5.0,
+            7.0
+          ],
+          [
+            13.0,
+            15.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            8.0
+          ],
+          [
+            14.0,
+            16.0
+          ]
+        ]
+      ]
+    ],
+    "max_pool_parameters": 0,
+    "avg_pool_parameters": 0
+  },
+  "padding": {
+    "max_implicit_padding": [
+      [
+        -1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        -1.0
+      ]
+    ],
+    "max_explicit_zero_padding": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "avg_include_pad": [
+      [
+        1.1111111111111112,
+        1.1111111111111112
+      ],
+      [
+        1.1111111111111112,
+        1.1111111111111112
+      ]
+    ],
+    "avg_exclude_pad": [
+      [
+        2.5,
+        2.5
+      ],
+      [
+        2.5,
+        2.5
+      ]
+    ]
+  },
+  "gradients": {
+    "max_input_gradient": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "avg_input_gradient": [
+      [
+        0.25,
+        0.5,
+        0.25
+      ],
+      [
+        0.5,
+        1.0,
+        0.5
+      ],
+      [
+        0.25,
+        0.5,
+        0.25
+      ]
+    ],
+    "gradient_errors": {
+      "max": 0.0,
+      "avg": 0.0
+    },
+    "tie_first_index_gradient": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "scalar_max_tie_gradient": [
+      [
+        0.25,
+        0.25
+      ],
+      [
+        0.25,
+        0.25
+      ]
+    ]
+  },
+  "shift": {
+    "impulse_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "outputs": [
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "within_cell_max_difference": 0.0,
+    "cross_cell_max_difference": 1.0
+  },
+  "alternatives": {
+    "average_vs_fixed_depthwise_conv_error": 0.0,
+    "cost_example_input_shape": [
+      2,
+      3,
+      6,
+      8
+    ],
+    "cost_example_output_shape": [
+      2,
+      3,
+      3,
+      4
+    ],
+    "cost_example_output_elements": 72,
+    "cost_example_max_comparisons": 216,
+    "minimum_max_error": 0.0,
+    "max_additivity_counterexample": [
+      2.0,
+      1.0
+    ],
+    "relu_constructed_max": 4.0,
+    "temperatures": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "log_mean_exp_values": [
+      3.986137056388801,
+      3.8613751037779425,
+      2.975554677972074,
+      2.1245754342220757,
+      2.012499572942006
+    ],
+    "patch_mean": 2.0,
+    "patch_max": 4.0
+  },
+  "pipeline": {
+    "input_shape": [
+      1,
+      1,
+      6,
+      6
+    ],
+    "convolution_shape": [
+      1,
+      2,
+      4,
+      4
+    ],
+    "pooling_shape": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "output": [
+      [
+        [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ]
+      ]
+    ],
+    "conv_parameters": 18,
+    "pool_parameters": 0,
+    "conv_gradient_l1": 18.0,
+    "input_gradient_l1": 8.0
+  }
+}

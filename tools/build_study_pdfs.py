@@ -790,6 +790,14 @@ SPECS = [
          pages="教材 PDF 246-249 · 正文 228-231",
          source="docs/ch06/03_padding_and_stride.md", start="## 01",
          workbook=True, filename="6.3-填充和步幅-实验手册.pdf"),
+    dict(section="6.4", title="多输入多输出通道", date="2026-11-18", chapter="第 6 章",
+         pages="教材 PDF 250-254 · 正文 232-236",
+         source="docs/ch06/04_channels.md", start="## 01",
+         workbook=True, filename="6.4-多输入多输出通道-实验手册.pdf"),
+    dict(section="6.5", title="汇聚层", date="2026-11-18", chapter="第 6 章",
+         pages="教材 PDF 254-258 · 正文 236-240",
+         source="docs/ch06/05_pooling.md", start="## 01",
+         workbook=True, filename="6.5-汇聚层-实验手册.pdf"),
 ]
 
 
