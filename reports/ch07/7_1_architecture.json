@@ -1,0 +1,440 @@
+{
+  "config": {
+    "architecture": "alex",
+    "channels": [
+      96,
+      256,
+      384,
+      384,
+      256
+    ],
+    "hidden": [
+      4096,
+      4096
+    ],
+    "size": 224,
+    "dropout": 0.5,
+    "activation": "relu",
+    "standardize": false,
+    "lr": 0.01,
+    "batch_size": 128
+  },
+  "layers": [
+    {
+      "index": 0,
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        1,
+        224,
+        224
+      ],
+      "output_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "parameters": 11712,
+      "weight_multiplications": 33872256,
+      "output_float32_bytes": 1119744,
+      "receptive_field": 11,
+      "jump": 4
+    },
+    {
+      "index": 1,
+      "layer": "ReLU",
+      "input_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "output_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 1119744,
+      "receptive_field": 11,
+      "jump": 4
+    },
+    {
+      "index": 2,
+      "layer": "MaxPool2d",
+      "input_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "output_shape": [
+        1,
+        96,
+        26,
+        26
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 259584,
+      "receptive_field": 19,
+      "jump": 8
+    },
+    {
+      "index": 3,
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        96,
+        26,
+        26
+      ],
+      "output_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "parameters": 614656,
+      "weight_multiplications": 415334400,
+      "output_float32_bytes": 692224,
+      "receptive_field": 51,
+      "jump": 8
+    },
+    {
+      "index": 4,
+      "layer": "ReLU",
+      "input_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "output_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 692224,
+      "receptive_field": 51,
+      "jump": 8
+    },
+    {
+      "index": 5,
+      "layer": "MaxPool2d",
+      "input_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "output_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 147456,
+      "receptive_field": 67,
+      "jump": 16
+    },
+    {
+      "index": 6,
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "parameters": 885120,
+      "weight_multiplications": 127401984,
+      "output_float32_bytes": 221184,
+      "receptive_field": 99,
+      "jump": 16
+    },
+    {
+      "index": 7,
+      "layer": "ReLU",
+      "input_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 221184,
+      "receptive_field": 99,
+      "jump": 16
+    },
+    {
+      "index": 8,
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "parameters": 1327488,
+      "weight_multiplications": 191102976,
+      "output_float32_bytes": 221184,
+      "receptive_field": 131,
+      "jump": 16
+    },
+    {
+      "index": 9,
+      "layer": "ReLU",
+      "input_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 221184,
+      "receptive_field": 131,
+      "jump": 16
+    },
+    {
+      "index": 10,
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "parameters": 884992,
+      "weight_multiplications": 127401984,
+      "output_float32_bytes": 147456,
+      "receptive_field": 163,
+      "jump": 16
+    },
+    {
+      "index": 11,
+      "layer": "ReLU",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 147456,
+      "receptive_field": 163,
+      "jump": 16
+    },
+    {
+      "index": 12,
+      "layer": "MaxPool2d",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        256,
+        5,
+        5
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 25600,
+      "receptive_field": 195,
+      "jump": 32
+    },
+    {
+      "index": 13,
+      "layer": "Flatten",
+      "input_shape": [
+        1,
+        256,
+        5,
+        5
+      ],
+      "output_shape": [
+        1,
+        6400
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 25600,
+      "receptive_field": null,
+      "jump": null
+    },
+    {
+      "index": 14,
+      "layer": "Linear",
+      "input_shape": [
+        1,
+        6400
+      ],
+      "output_shape": [
+        1,
+        4096
+      ],
+      "parameters": 26218496,
+      "weight_multiplications": 26214400,
+      "output_float32_bytes": 16384,
+      "receptive_field": null,
+      "jump": null
+    },
+    {
+      "index": 15,
+      "layer": "ReLU",
+      "input_shape": [
+        1,
+        4096
+      ],
+      "output_shape": [
+        1,
+        4096
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 16384,
+      "receptive_field": null,
+      "jump": null
+    },
+    {
+      "index": 16,
+      "layer": "Dropout",
+      "input_shape": [
+        1,
+        4096
+      ],
+      "output_shape": [
+        1,
+        4096
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 16384,
+      "receptive_field": null,
+      "jump": null
+    },
+    {
+      "index": 17,
+      "layer": "Linear",
+      "input_shape": [
+        1,
+        4096
+      ],
+      "output_shape": [
+        1,
+        4096
+      ],
+      "parameters": 16781312,
+      "weight_multiplications": 16777216,
+      "output_float32_bytes": 16384,
+      "receptive_field": null,
+      "jump": null
+    },
+    {
+      "index": 18,
+      "layer": "ReLU",
+      "input_shape": [
+        1,
+        4096
+      ],
+      "output_shape": [
+        1,
+        4096
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 16384,
+      "receptive_field": null,
+      "jump": null
+    },
+    {
+      "index": 19,
+      "layer": "Dropout",
+      "input_shape": [
+        1,
+        4096
+      ],
+      "output_shape": [
+        1,
+        4096
+      ],
+      "parameters": 0,
+      "weight_multiplications": 0,
+      "output_float32_bytes": 16384,
+      "receptive_field": null,
+      "jump": null
+    },
+    {
+      "index": 20,
+      "layer": "Linear",
+      "input_shape": [
+        1,
+        4096
+      ],
+      "output_shape": [
+        1,
+        10
+      ],
+      "parameters": 40970,
+      "weight_multiplications": 40960,
+      "output_float32_bytes": 40,
+      "receptive_field": null,
+      "jump": null
+    }
+  ],
+  "parameters": 46764746,
+  "parameter_float32_bytes": 187058984,
+  "weight_multiplications": 938146176,
+  "convolution_parameters": 3723968,
+  "linear_parameters": 43040778
+}

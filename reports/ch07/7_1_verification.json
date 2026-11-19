@@ -1,0 +1,106 @@
+{
+  "numerical": {
+    "config": {
+      "architecture": "alex",
+      "channels": [
+        2,
+        3,
+        4,
+        4,
+        3
+      ],
+      "hidden": [
+        8,
+        6
+      ],
+      "size": 224,
+      "dropout": 0.0,
+      "activation": "relu",
+      "standardize": false,
+      "lr": 0.01,
+      "batch_size": 128
+    },
+    "parameters": 1500,
+    "errors": {
+      "logits": 1.5612511283791264e-17,
+      "ce": 0.0,
+      "input_gradient": 6.505213034913027e-19,
+      "parameter_gradient": 5.551115123125783e-17,
+      "central_difference_16_coordinates": 3.5498199345285197e-10,
+      "sgd_two_updates_tail1": 2.7755575615628914e-17,
+      "resize_vs_torchvision_tensor": 0.0
+    },
+    "dropout_train_random_even_in_no_grad": true,
+    "dropout_eval_identity": true
+  },
+  "practice": {
+    "follow_blocks": 4,
+    "follow_stdout": "精简参数 679226\n1 {'online_train_ce': 2.305851917009096, 'online_train_accuracy': 0.08108108108108109, 'updates': 5, 'samples': 37}\n2 {'online_train_ce': 2.292207853214161, 'online_train_accuracy': 0.24324324324324326, 'updates': 5, 'samples': 37}\n3 {'online_train_ce': 2.2976681412877262, 'online_train_accuracy': 0.16216216216216217, 'updates': 5, 'samples': 37}\n验证 {'ce': 2.2976757049560548, 'accuracy': 0.2, 'correct': 4, 'samples': 20}\n恢复误差 0.0\n",
+    "exercise_reference_stdout": "参数 60874\nepoch 1 在线训练CE 2.3405966887602934\nepoch 2 在线训练CE 2.2915084748654753\nepoch 3 在线训练CE 2.2658581218203984\n总更新 15 验证正确数 5 / 20\n解释576的来源、尾批5、训练与评估Dropout行为，以及为何不需要放大到224。\n",
+    "exercise_source_unchanged": true,
+    "variant_snippet_updates": 3
+  },
+  "checkpoint_recovery": {
+    "7_1": {
+      "epoch": 15,
+      "validation_positions": [
+        0,
+        1
+      ],
+      "max_logit_difference": 3.337860107421875e-06,
+      "cpu_predictions": [
+        0,
+        0
+      ],
+      "device": "cuda",
+      "parameter_hash_matches": true
+    },
+    "7_1_native": {
+      "epoch": 15,
+      "validation_positions": [
+        0,
+        1
+      ],
+      "max_logit_difference": 2.6226043701171875e-06,
+      "cpu_predictions": [
+        0,
+        0
+      ],
+      "device": "cuda",
+      "parameter_hash_matches": true
+    }
+  },
+  "cli": {
+    "cpu_inspect_json": true,
+    "cpu_custom_default_output": true,
+    "cpu_custom_record": true,
+    "formal_not_overwritten": true,
+    "invalid_arguments_rejected": true,
+    "blank_exercise_prompt": true
+  },
+  "reports_consistent": true,
+  "preservation": {
+    "baseline_entries": 517,
+    "unrelated_unchanged": 510,
+    "unexpected_changes": []
+  },
+  "pdf_qa": {
+    "pages": 22,
+    "bookmarks": 22,
+    "rendered_pages": 22,
+    "boundary_violations": [],
+    "leading_punctuation": [],
+    "missing_headings": [],
+    "bad_glyph_pages": [],
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAD+MicrosoftYaHei-0": true,
+      "/AAAAAA+Consolas": true
+    },
+    "visual_review": "All22 pages reviewed; revised9/11 full-size checked"
+  }
+}

@@ -802,6 +802,10 @@ SPECS = [
          pages="教材 PDF 258-264 · 正文 240-246",
          source="docs/ch06/06_lenet.md", start="## 01",
          workbook=True, filename="6.6-卷积神经网络（LeNet）-实验手册.pdf"),
+    dict(section="7.1", title="深度卷积神经网络（AlexNet）", date="2026-11-19", chapter="第 7 章",
+         pages="教材 PDF 265-273 · 正文 247-255",
+         source="docs/ch07/01_alexnet.md", start="## 01",
+         workbook=True, filename="7.1-深度卷积神经网络（AlexNet）-实验手册.pdf"),
 ]
 
 

@@ -1,0 +1,191 @@
+{
+  "runtime": {
+    "device": "cuda",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 4
+  },
+  "synthetic_seed": 7104,
+  "warmup_steps": 2,
+  "timed_steps": 5,
+  "batches": [
+    {
+      "batch_size": 16,
+      "milliseconds_per_step": 23.57637176513672,
+      "examples_per_second": 678.645559180561,
+      "baseline_allocated_bytes": 257380352,
+      "peak_allocated_bytes": 621331968,
+      "peak_reserved_bytes": 671088640
+    },
+    {
+      "batch_size": 64,
+      "milliseconds_per_step": 114.7916259765625,
+      "examples_per_second": 557.5319580634493,
+      "baseline_allocated_bytes": 268062720,
+      "peak_allocated_bytes": 910974976,
+      "peak_reserved_bytes": 1245708288
+    },
+    {
+      "batch_size": 128,
+      "milliseconds_per_step": 205.14794921875,
+      "examples_per_second": 623.9399442570743,
+      "baseline_allocated_bytes": 280908288,
+      "peak_allocated_bytes": 1194350592,
+      "peak_reserved_bytes": 1543503872
+    }
+  ],
+  "forward_layer_batch": 8,
+  "forward_layers": [
+    {
+      "index": 0,
+      "layer": "Conv2d",
+      "milliseconds": 0.22609920501708985,
+      "idealized_logical_bytes": 10610432,
+      "logical_GB_per_second": 46.928214538383735
+    },
+    {
+      "index": 1,
+      "layer": "ReLU",
+      "milliseconds": 0.11151360273361206,
+      "idealized_logical_bytes": 17915904,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 2,
+      "layer": "MaxPool2d",
+      "milliseconds": 0.16599040031433104,
+      "idealized_logical_bytes": 11034624,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 3,
+      "layer": "Conv2d",
+      "milliseconds": 0.7755775928497315,
+      "idealized_logical_bytes": 10073088,
+      "logical_GB_per_second": 12.987853301676891
+    },
+    {
+      "index": 4,
+      "layer": "ReLU",
+      "milliseconds": 0.10956799983978271,
+      "idealized_logical_bytes": 11075584,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 5,
+      "layer": "MaxPool2d",
+      "milliseconds": 0.11571199893951416,
+      "idealized_logical_bytes": 6717440,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 6,
+      "layer": "Conv2d",
+      "milliseconds": 0.35778560638427737,
+      "idealized_logical_bytes": 6489600,
+      "logical_GB_per_second": 18.1382366540198
+    },
+    {
+      "index": 7,
+      "layer": "ReLU",
+      "milliseconds": 0.11356159448623657,
+      "idealized_logical_bytes": 3538944,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 8,
+      "layer": "Conv2d",
+      "milliseconds": 0.7213056087493896,
+      "idealized_logical_bytes": 8848896,
+      "logical_GB_per_second": 12.267887415075487
+    },
+    {
+      "index": 9,
+      "layer": "ReLU",
+      "milliseconds": 0.0605184018611908,
+      "idealized_logical_bytes": 3538944,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 10,
+      "layer": "Conv2d",
+      "milliseconds": 0.44462080001831056,
+      "idealized_logical_bytes": 6489088,
+      "logical_GB_per_second": 14.594656839564779
+    },
+    {
+      "index": 11,
+      "layer": "ReLU",
+      "milliseconds": 0.1001471996307373,
+      "idealized_logical_bytes": 2359296,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 12,
+      "layer": "MaxPool2d",
+      "milliseconds": 0.1230847954750061,
+      "idealized_logical_bytes": 1384448,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 13,
+      "layer": "Flatten",
+      "milliseconds": 0.05242879986763001,
+      "idealized_logical_bytes": 409600,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 14,
+      "layer": "Linear",
+      "milliseconds": 0.8634431838989258,
+      "idealized_logical_bytes": 105209856,
+      "logical_GB_per_second": 121.84919397350389
+    },
+    {
+      "index": 15,
+      "layer": "ReLU",
+      "milliseconds": 0.13015040159225463,
+      "idealized_logical_bytes": 262144,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 16,
+      "layer": "Dropout",
+      "milliseconds": 0.031744000315666196,
+      "idealized_logical_bytes": 262144,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 17,
+      "layer": "Linear",
+      "milliseconds": 0.49500160217285155,
+      "idealized_logical_bytes": 67387392,
+      "logical_GB_per_second": 136.13570482236284
+    },
+    {
+      "index": 18,
+      "layer": "ReLU",
+      "milliseconds": 0.11130880117416382,
+      "idealized_logical_bytes": 262144,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 19,
+      "layer": "Dropout",
+      "milliseconds": 0.07229440212249756,
+      "idealized_logical_bytes": 262144,
+      "logical_GB_per_second": null
+    },
+    {
+      "index": 20,
+      "layer": "Linear",
+      "milliseconds": 0.39393279552459715,
+      "idealized_logical_bytes": 295272,
+      "logical_GB_per_second": 0.7495491701999287
+    }
+  ],
+  "bandwidth_note": "逻辑输入/输出/参数字节除时间是算子流量代理，不是实测DRAM带宽；未计缓存/工作区/融合"
+}

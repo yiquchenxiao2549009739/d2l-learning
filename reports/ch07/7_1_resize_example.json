@@ -1,0 +1,15 @@
+{
+  "validation_position": 0,
+  "source_train_index": 30980,
+  "label": 0,
+  "original_shape": [
+    1,
+    28,
+    28
+  ],
+  "resized_shape": [
+    224,
+    224
+  ],
+  "method": "float32 /255 then bilinear, align_corners=False, antialias=True"
+}
