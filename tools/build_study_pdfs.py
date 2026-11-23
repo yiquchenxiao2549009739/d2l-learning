@@ -814,6 +814,10 @@ SPECS = [
          pages="教材 PDF 277-281 · 正文 259-263",
          source="docs/ch07/03_nin.md", start="## 01",
          workbook=True, filename="7.3-网络中的网络（NiN）-实验手册.pdf"),
+    dict(section="7.4", title="含并行连结的网络（GoogLeNet）", date="2026-11-23", chapter="第 7 章",
+         pages="教材 PDF 281-286 · 正文 263-268",
+         source="docs/ch07/04_googlenet.md", start="## 01",
+         workbook=True, filename="7.4-含并行连结的网络（GoogLeNet）-实验手册.pdf"),
 ]
 
 

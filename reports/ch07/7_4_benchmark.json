@@ -1,0 +1,97 @@
+{
+  "runtime": {
+    "device": "cuda",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 4
+  },
+  "synthetic_seed": 7404,
+  "warmup": 2,
+  "repeats": 5,
+  "results": [
+    {
+      "model": "Base96",
+      "mode": "train",
+      "batch_size": 8,
+      "size": 96,
+      "milliseconds_per_batch": 16.08581085205078,
+      "baseline_allocated_bytes": 91326976,
+      "peak_allocated_bytes": 163577344,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "model": "Base96",
+      "mode": "inference",
+      "batch_size": 8,
+      "size": 96,
+      "milliseconds_per_batch": 5.003449630737305,
+      "baseline_allocated_bytes": 91326976,
+      "peak_allocated_bytes": 120357376,
+      "peak_reserved_bytes": 130023424
+    },
+    {
+      "model": "NoReduce96",
+      "mode": "train",
+      "batch_size": 8,
+      "size": 96,
+      "milliseconds_per_batch": 29.12462158203125,
+      "baseline_allocated_bytes": 165022208,
+      "peak_allocated_bytes": 359056384,
+      "peak_reserved_bytes": 415236096
+    },
+    {
+      "model": "NoReduce96",
+      "mode": "inference",
+      "batch_size": 8,
+      "size": 96,
+      "milliseconds_per_batch": 8.886822509765626,
+      "baseline_allocated_bytes": 165022208,
+      "peak_allocated_bytes": 248134144,
+      "peak_reserved_bytes": 398458880
+    },
+    {
+      "model": "Two3x3_96",
+      "mode": "train",
+      "batch_size": 8,
+      "size": 96,
+      "milliseconds_per_batch": 18.087321472167968,
+      "baseline_allocated_bytes": 90098688,
+      "peak_allocated_bytes": 161632768,
+      "peak_reserved_bytes": 201326592
+    },
+    {
+      "model": "Two3x3_96",
+      "mode": "inference",
+      "batch_size": 8,
+      "size": 96,
+      "milliseconds_per_batch": 5.744025421142578,
+      "baseline_allocated_bytes": 90098688,
+      "peak_allocated_bytes": 119129088,
+      "peak_reserved_bytes": 130023424
+    },
+    {
+      "model": "Base224",
+      "mode": "train",
+      "batch_size": 8,
+      "size": 224,
+      "milliseconds_per_batch": 28.655206298828126,
+      "baseline_allocated_bytes": 92637696,
+      "peak_allocated_bytes": 398533632,
+      "peak_reserved_bytes": 494927872
+    },
+    {
+      "model": "Base224",
+      "mode": "inference",
+      "batch_size": 8,
+      "size": 224,
+      "milliseconds_per_batch": 6.631014251708985,
+      "baseline_allocated_bytes": 92637696,
+      "peak_allocated_bytes": 144017920,
+      "peak_reserved_bytes": 182452224
+    }
+  ],
+  "protocol": "单独顺序短测；GPU驻留输入；训练前向/CE/反传/SGD，预测eval+inference_mode；不含加载/Resize；分配不含全进程"
+}

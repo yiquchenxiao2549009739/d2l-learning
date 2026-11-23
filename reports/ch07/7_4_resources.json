@@ -1,0 +1,56 @@
+{
+  "base96": {
+    "parameters": 5977530,
+    "parameter_float32_bytes": 23910120,
+    "weight_multiplications": 276066304,
+    "conv_count": 57
+  },
+  "no_reduce96": {
+    "parameters": 24284922,
+    "parameter_float32_bytes": 97139688,
+    "weight_multiplications": 798410752,
+    "conv_count": 39
+  },
+  "two3x3_96": {
+    "parameters": 5669434,
+    "parameter_float32_bytes": 22677736,
+    "weight_multiplications": 263631616,
+    "conv_count": 66
+  },
+  "base224": {
+    "parameters": 5977530,
+    "parameter_float32_bytes": 23910120,
+    "weight_multiplications": 1502982144,
+    "conv_count": 57
+  },
+  "AlexNet": {
+    "parameters": 46764746,
+    "parameter_float32_bytes": 187058984
+  },
+  "NiN": {
+    "parameters": 1992166,
+    "parameter_float32_bytes": 7968664
+  },
+  "VGG11": {
+    "parameters": 128806154,
+    "parameter_float32_bytes": 515224616
+  },
+  "first_block": {
+    "input_shape": [
+      1,
+      192,
+      12,
+      12
+    ],
+    "output_shape": [
+      1,
+      256,
+      12,
+      12
+    ],
+    "parameters": 163696,
+    "no_reduce_parameters": 393472,
+    "weight_multiplications": 23519232,
+    "no_reduce_weight_multiplications": 56623104
+  }
+}

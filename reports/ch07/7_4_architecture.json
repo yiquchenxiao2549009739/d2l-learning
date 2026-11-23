@@ -1,0 +1,1543 @@
+{
+  "config": {
+    "size": 96,
+    "ratio": 1,
+    "reduction": true,
+    "batch_norm": false,
+    "factorized": false,
+    "residual": false,
+    "label_smoothing": 0.0,
+    "lr": 0.1,
+    "batch_size": 128
+  },
+  "outer": [
+    {
+      "name": "b1",
+      "shape": [
+        1,
+        64,
+        24,
+        24
+      ]
+    },
+    {
+      "name": "b2",
+      "shape": [
+        1,
+        192,
+        12,
+        12
+      ]
+    },
+    {
+      "name": "b3",
+      "shape": [
+        1,
+        480,
+        6,
+        6
+      ]
+    },
+    {
+      "name": "b4",
+      "shape": [
+        1,
+        832,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "b5",
+      "shape": [
+        1,
+        1024
+      ]
+    },
+    {
+      "name": "fc",
+      "shape": [
+        1,
+        10
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "b3.0",
+      "input_shape": [
+        1,
+        192,
+        12,
+        12
+      ],
+      "branch_shapes": [
+        [
+          1,
+          64,
+          12,
+          12
+        ],
+        [
+          1,
+          128,
+          12,
+          12
+        ],
+        [
+          1,
+          32,
+          12,
+          12
+        ],
+        [
+          1,
+          32,
+          12,
+          12
+        ]
+      ],
+      "output_shape": [
+        1,
+        256,
+        12,
+        12
+      ]
+    },
+    {
+      "name": "b3.1",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "branch_shapes": [
+        [
+          1,
+          128,
+          12,
+          12
+        ],
+        [
+          1,
+          192,
+          12,
+          12
+        ],
+        [
+          1,
+          96,
+          12,
+          12
+        ],
+        [
+          1,
+          64,
+          12,
+          12
+        ]
+      ],
+      "output_shape": [
+        1,
+        480,
+        12,
+        12
+      ]
+    },
+    {
+      "name": "b4.0",
+      "input_shape": [
+        1,
+        480,
+        6,
+        6
+      ],
+      "branch_shapes": [
+        [
+          1,
+          192,
+          6,
+          6
+        ],
+        [
+          1,
+          208,
+          6,
+          6
+        ],
+        [
+          1,
+          48,
+          6,
+          6
+        ],
+        [
+          1,
+          64,
+          6,
+          6
+        ]
+      ],
+      "output_shape": [
+        1,
+        512,
+        6,
+        6
+      ]
+    },
+    {
+      "name": "b4.1",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "branch_shapes": [
+        [
+          1,
+          160,
+          6,
+          6
+        ],
+        [
+          1,
+          224,
+          6,
+          6
+        ],
+        [
+          1,
+          64,
+          6,
+          6
+        ],
+        [
+          1,
+          64,
+          6,
+          6
+        ]
+      ],
+      "output_shape": [
+        1,
+        512,
+        6,
+        6
+      ]
+    },
+    {
+      "name": "b4.2",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "branch_shapes": [
+        [
+          1,
+          128,
+          6,
+          6
+        ],
+        [
+          1,
+          256,
+          6,
+          6
+        ],
+        [
+          1,
+          64,
+          6,
+          6
+        ],
+        [
+          1,
+          64,
+          6,
+          6
+        ]
+      ],
+      "output_shape": [
+        1,
+        512,
+        6,
+        6
+      ]
+    },
+    {
+      "name": "b4.3",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "branch_shapes": [
+        [
+          1,
+          112,
+          6,
+          6
+        ],
+        [
+          1,
+          288,
+          6,
+          6
+        ],
+        [
+          1,
+          64,
+          6,
+          6
+        ],
+        [
+          1,
+          64,
+          6,
+          6
+        ]
+      ],
+      "output_shape": [
+        1,
+        528,
+        6,
+        6
+      ]
+    },
+    {
+      "name": "b4.4",
+      "input_shape": [
+        1,
+        528,
+        6,
+        6
+      ],
+      "branch_shapes": [
+        [
+          1,
+          256,
+          6,
+          6
+        ],
+        [
+          1,
+          320,
+          6,
+          6
+        ],
+        [
+          1,
+          128,
+          6,
+          6
+        ],
+        [
+          1,
+          128,
+          6,
+          6
+        ]
+      ],
+      "output_shape": [
+        1,
+        832,
+        6,
+        6
+      ]
+    },
+    {
+      "name": "b5.0",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "branch_shapes": [
+        [
+          1,
+          256,
+          3,
+          3
+        ],
+        [
+          1,
+          320,
+          3,
+          3
+        ],
+        [
+          1,
+          128,
+          3,
+          3
+        ],
+        [
+          1,
+          128,
+          3,
+          3
+        ]
+      ],
+      "output_shape": [
+        1,
+        832,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "b5.1",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "branch_shapes": [
+        [
+          1,
+          384,
+          3,
+          3
+        ],
+        [
+          1,
+          384,
+          3,
+          3
+        ],
+        [
+          1,
+          128,
+          3,
+          3
+        ],
+        [
+          1,
+          128,
+          3,
+          3
+        ]
+      ],
+      "output_shape": [
+        1,
+        1024,
+        3,
+        3
+      ]
+    }
+  ],
+  "weighted_layers": [
+    {
+      "name": "b1.0.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        1,
+        96,
+        96
+      ],
+      "output_shape": [
+        1,
+        64,
+        48,
+        48
+      ],
+      "parameters": 3200,
+      "weight_multiplications": 7225344,
+      "output_float32_bytes": 589824
+    },
+    {
+      "name": "b2.0.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        64,
+        24,
+        24
+      ],
+      "output_shape": [
+        1,
+        64,
+        24,
+        24
+      ],
+      "parameters": 4160,
+      "weight_multiplications": 2359296,
+      "output_float32_bytes": 147456
+    },
+    {
+      "name": "b2.1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        64,
+        24,
+        24
+      ],
+      "output_shape": [
+        1,
+        192,
+        24,
+        24
+      ],
+      "parameters": 110784,
+      "weight_multiplications": 63700992,
+      "output_float32_bytes": 442368
+    },
+    {
+      "name": "b3.0.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        192,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        64,
+        12,
+        12
+      ],
+      "parameters": 12352,
+      "weight_multiplications": 1769472,
+      "output_float32_bytes": 36864
+    },
+    {
+      "name": "b3.0.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        192,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        96,
+        12,
+        12
+      ],
+      "parameters": 18528,
+      "weight_multiplications": 2654208,
+      "output_float32_bytes": 55296
+    },
+    {
+      "name": "b3.0.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        96,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        128,
+        12,
+        12
+      ],
+      "parameters": 110720,
+      "weight_multiplications": 15925248,
+      "output_float32_bytes": 73728
+    },
+    {
+      "name": "b3.0.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        192,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        16,
+        12,
+        12
+      ],
+      "parameters": 3088,
+      "weight_multiplications": 442368,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b3.0.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        16,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        32,
+        12,
+        12
+      ],
+      "parameters": 12832,
+      "weight_multiplications": 1843200,
+      "output_float32_bytes": 18432
+    },
+    {
+      "name": "b3.0.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        192,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        32,
+        12,
+        12
+      ],
+      "parameters": 6176,
+      "weight_multiplications": 884736,
+      "output_float32_bytes": 18432
+    },
+    {
+      "name": "b3.1.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        128,
+        12,
+        12
+      ],
+      "parameters": 32896,
+      "weight_multiplications": 4718592,
+      "output_float32_bytes": 73728
+    },
+    {
+      "name": "b3.1.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        128,
+        12,
+        12
+      ],
+      "parameters": 32896,
+      "weight_multiplications": 4718592,
+      "output_float32_bytes": 73728
+    },
+    {
+      "name": "b3.1.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        128,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        192,
+        12,
+        12
+      ],
+      "parameters": 221376,
+      "weight_multiplications": 31850496,
+      "output_float32_bytes": 110592
+    },
+    {
+      "name": "b3.1.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        32,
+        12,
+        12
+      ],
+      "parameters": 8224,
+      "weight_multiplications": 1179648,
+      "output_float32_bytes": 18432
+    },
+    {
+      "name": "b3.1.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        32,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        96,
+        12,
+        12
+      ],
+      "parameters": 76896,
+      "weight_multiplications": 11059200,
+      "output_float32_bytes": 55296
+    },
+    {
+      "name": "b3.1.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        64,
+        12,
+        12
+      ],
+      "parameters": 16448,
+      "weight_multiplications": 2359296,
+      "output_float32_bytes": 36864
+    },
+    {
+      "name": "b4.0.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        480,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        192,
+        6,
+        6
+      ],
+      "parameters": 92352,
+      "weight_multiplications": 3317760,
+      "output_float32_bytes": 27648
+    },
+    {
+      "name": "b4.0.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        480,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        96,
+        6,
+        6
+      ],
+      "parameters": 46176,
+      "weight_multiplications": 1658880,
+      "output_float32_bytes": 13824
+    },
+    {
+      "name": "b4.0.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        96,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        208,
+        6,
+        6
+      ],
+      "parameters": 179920,
+      "weight_multiplications": 6469632,
+      "output_float32_bytes": 29952
+    },
+    {
+      "name": "b4.0.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        480,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        16,
+        6,
+        6
+      ],
+      "parameters": 7696,
+      "weight_multiplications": 276480,
+      "output_float32_bytes": 2304
+    },
+    {
+      "name": "b4.0.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        16,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        48,
+        6,
+        6
+      ],
+      "parameters": 19248,
+      "weight_multiplications": 691200,
+      "output_float32_bytes": 6912
+    },
+    {
+      "name": "b4.0.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        480,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        64,
+        6,
+        6
+      ],
+      "parameters": 30784,
+      "weight_multiplications": 1105920,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b4.1.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        160,
+        6,
+        6
+      ],
+      "parameters": 82080,
+      "weight_multiplications": 2949120,
+      "output_float32_bytes": 23040
+    },
+    {
+      "name": "b4.1.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        112,
+        6,
+        6
+      ],
+      "parameters": 57456,
+      "weight_multiplications": 2064384,
+      "output_float32_bytes": 16128
+    },
+    {
+      "name": "b4.1.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        112,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        224,
+        6,
+        6
+      ],
+      "parameters": 226016,
+      "weight_multiplications": 8128512,
+      "output_float32_bytes": 32256
+    },
+    {
+      "name": "b4.1.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        24,
+        6,
+        6
+      ],
+      "parameters": 12312,
+      "weight_multiplications": 442368,
+      "output_float32_bytes": 3456
+    },
+    {
+      "name": "b4.1.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        24,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        64,
+        6,
+        6
+      ],
+      "parameters": 38464,
+      "weight_multiplications": 1382400,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b4.1.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        64,
+        6,
+        6
+      ],
+      "parameters": 32832,
+      "weight_multiplications": 1179648,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b4.2.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        128,
+        6,
+        6
+      ],
+      "parameters": 65664,
+      "weight_multiplications": 2359296,
+      "output_float32_bytes": 18432
+    },
+    {
+      "name": "b4.2.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        128,
+        6,
+        6
+      ],
+      "parameters": 65664,
+      "weight_multiplications": 2359296,
+      "output_float32_bytes": 18432
+    },
+    {
+      "name": "b4.2.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        128,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        256,
+        6,
+        6
+      ],
+      "parameters": 295168,
+      "weight_multiplications": 10616832,
+      "output_float32_bytes": 36864
+    },
+    {
+      "name": "b4.2.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        24,
+        6,
+        6
+      ],
+      "parameters": 12312,
+      "weight_multiplications": 442368,
+      "output_float32_bytes": 3456
+    },
+    {
+      "name": "b4.2.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        24,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        64,
+        6,
+        6
+      ],
+      "parameters": 38464,
+      "weight_multiplications": 1382400,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b4.2.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        64,
+        6,
+        6
+      ],
+      "parameters": 32832,
+      "weight_multiplications": 1179648,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b4.3.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        112,
+        6,
+        6
+      ],
+      "parameters": 57456,
+      "weight_multiplications": 2064384,
+      "output_float32_bytes": 16128
+    },
+    {
+      "name": "b4.3.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        144,
+        6,
+        6
+      ],
+      "parameters": 73872,
+      "weight_multiplications": 2654208,
+      "output_float32_bytes": 20736
+    },
+    {
+      "name": "b4.3.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        144,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        288,
+        6,
+        6
+      ],
+      "parameters": 373536,
+      "weight_multiplications": 13436928,
+      "output_float32_bytes": 41472
+    },
+    {
+      "name": "b4.3.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        32,
+        6,
+        6
+      ],
+      "parameters": 16416,
+      "weight_multiplications": 589824,
+      "output_float32_bytes": 4608
+    },
+    {
+      "name": "b4.3.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        32,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        64,
+        6,
+        6
+      ],
+      "parameters": 51264,
+      "weight_multiplications": 1843200,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b4.3.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        512,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        64,
+        6,
+        6
+      ],
+      "parameters": 32832,
+      "weight_multiplications": 1179648,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b4.4.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        528,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        256,
+        6,
+        6
+      ],
+      "parameters": 135424,
+      "weight_multiplications": 4866048,
+      "output_float32_bytes": 36864
+    },
+    {
+      "name": "b4.4.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        528,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        160,
+        6,
+        6
+      ],
+      "parameters": 84640,
+      "weight_multiplications": 3041280,
+      "output_float32_bytes": 23040
+    },
+    {
+      "name": "b4.4.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        160,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        320,
+        6,
+        6
+      ],
+      "parameters": 461120,
+      "weight_multiplications": 16588800,
+      "output_float32_bytes": 46080
+    },
+    {
+      "name": "b4.4.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        528,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        32,
+        6,
+        6
+      ],
+      "parameters": 16928,
+      "weight_multiplications": 608256,
+      "output_float32_bytes": 4608
+    },
+    {
+      "name": "b4.4.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        32,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        128,
+        6,
+        6
+      ],
+      "parameters": 102528,
+      "weight_multiplications": 3686400,
+      "output_float32_bytes": 18432
+    },
+    {
+      "name": "b4.4.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        528,
+        6,
+        6
+      ],
+      "output_shape": [
+        1,
+        128,
+        6,
+        6
+      ],
+      "parameters": 67712,
+      "weight_multiplications": 2433024,
+      "output_float32_bytes": 18432
+    },
+    {
+      "name": "b5.0.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        256,
+        3,
+        3
+      ],
+      "parameters": 213248,
+      "weight_multiplications": 1916928,
+      "output_float32_bytes": 9216
+    },
+    {
+      "name": "b5.0.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        160,
+        3,
+        3
+      ],
+      "parameters": 133280,
+      "weight_multiplications": 1198080,
+      "output_float32_bytes": 5760
+    },
+    {
+      "name": "b5.0.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        160,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        320,
+        3,
+        3
+      ],
+      "parameters": 461120,
+      "weight_multiplications": 4147200,
+      "output_float32_bytes": 11520
+    },
+    {
+      "name": "b5.0.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "parameters": 26656,
+      "weight_multiplications": 239616,
+      "output_float32_bytes": 1152
+    },
+    {
+      "name": "b5.0.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        128,
+        3,
+        3
+      ],
+      "parameters": 102528,
+      "weight_multiplications": 921600,
+      "output_float32_bytes": 4608
+    },
+    {
+      "name": "b5.0.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        128,
+        3,
+        3
+      ],
+      "parameters": 106624,
+      "weight_multiplications": 958464,
+      "output_float32_bytes": 4608
+    },
+    {
+      "name": "b5.1.p1.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        384,
+        3,
+        3
+      ],
+      "parameters": 319872,
+      "weight_multiplications": 2875392,
+      "output_float32_bytes": 13824
+    },
+    {
+      "name": "b5.1.p2_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        192,
+        3,
+        3
+      ],
+      "parameters": 159936,
+      "weight_multiplications": 1437696,
+      "output_float32_bytes": 6912
+    },
+    {
+      "name": "b5.1.p2_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        192,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        384,
+        3,
+        3
+      ],
+      "parameters": 663936,
+      "weight_multiplications": 5971968,
+      "output_float32_bytes": 13824
+    },
+    {
+      "name": "b5.1.p3_reduce.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        48,
+        3,
+        3
+      ],
+      "parameters": 39984,
+      "weight_multiplications": 359424,
+      "output_float32_bytes": 1728
+    },
+    {
+      "name": "b5.1.p3_spatial.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        48,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        128,
+        3,
+        3
+      ],
+      "parameters": 153728,
+      "weight_multiplications": 1382400,
+      "output_float32_bytes": 4608
+    },
+    {
+      "name": "b5.1.p4_project.conv",
+      "layer": "Conv2d",
+      "input_shape": [
+        1,
+        832,
+        3,
+        3
+      ],
+      "output_shape": [
+        1,
+        128,
+        3,
+        3
+      ],
+      "parameters": 106624,
+      "weight_multiplications": 958464,
+      "output_float32_bytes": 4608
+    },
+    {
+      "name": "fc",
+      "layer": "Linear",
+      "input_shape": [
+        1,
+        1024
+      ],
+      "output_shape": [
+        1,
+        10
+      ],
+      "parameters": 10250,
+      "weight_multiplications": 10240,
+      "output_float32_bytes": 40
+    }
+  ],
+  "parameters": 5977530,
+  "parameter_float32_bytes": 23910120,
+  "weight_multiplications": 276066304,
+  "conv_count": 57,
+  "linear_count": 1,
+  "batch_norm_count": 0,
+  "note": "meta形状与理论权重乘法；不含加法、归一化、激活、汇聚、拼接或反传，不等于实测峰值"
+}

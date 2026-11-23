@@ -2,6 +2,33 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "7.4 含并行连结的网络（GoogLeNet）：完整演示",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/ch07/04_googlenet.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      },
+      "args": [
+        "--guided"
+      ]
+    },
+    {
+      "name": "7.4 含并行连结的网络（GoogLeNet）：综合练习",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercises/ch07/04_googlenet.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    },
+    {
       "name": "7.3 网络中的网络（NiN）：完整演示",
       "type": "debugpy",
       "request": "launch",
