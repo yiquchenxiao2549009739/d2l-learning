@@ -1,0 +1,358 @@
+{
+  "numerical": {
+    "parameters": 1175,
+    "conv_count": 12,
+    "input_shape": [
+      3,
+      1,
+      224,
+      224
+    ],
+    "errors": {
+      "logits": 5.551115123125783e-17,
+      "ce": 4.440892098500626e-16,
+      "input_gradient": 1.3552527156068805e-20,
+      "parameter_gradient": 1.1102230246251565e-16,
+      "central_difference_24_coordinates": 2.711151129985989e-10,
+      "sgd_two_updates_tail1": 1.1102230246251565e-16
+    },
+    "finite_difference_step": 1e-06,
+    "numerical_probe_bias": 0.05,
+    "gap_numpy": "fixed block-diagonal 1/25 averaging matrix, no trainable averaging parameters",
+    "scope": "224 geometry; channels2/3/4 and ten-class maps; independent NumPy engine from7.1; not all full-model gradients"
+  },
+  "practice": {
+    "follow_blocks": 5,
+    "follow_stdout": "块输出 (2, 4, 8, 8)\n块参数 152\n逐位置差 1.1102230246251565e-16\nlogits [[2.0, 1.0]]\n概率 [[0.7310585786300049, 0.26894142136999516]]\nCE 0.31326168751822286 梯度 [[[[-0.13447071068499755, -0.13447071068499755]], [[0.13447071068499755, 0.13447071068499755]]]]\n梯度差 2.7755575615628914e-17\n先softmax再平均 [[0.550608356030013, 0.44939164396998693]]\n小网参数 3606\n小网输出 (8, 10)\nepoch 1 在线CE 2.3035972118377686\nepoch 2 在线CE 2.3026586029980636\nepoch 3 在线CE 2.3028603051159835\n验证 2 / 20\n更新 15 恢复差 0.0\n",
+    "exercise_reference_stdout": "参数 3606 输出 (8, 10)\nepoch 1 在线CE 2.3035972118377686\nepoch 2 在线CE 2.3026586029980636\nepoch 3 在线CE 2.3028603051159835\n更新 15 验证正确数 2 / 20\n解释空间共享、1×1的作用、全局平均与最后ReLU；不要用三轮小样本分数判断模型容量。\n",
+    "exercise_source_unchanged": true,
+    "exercise_unanswered_todos": 8
+  },
+  "checkpoint_recovery": {
+    "max_logit_difference": 4.0531158447265625e-06,
+    "predictions": [
+      0,
+      0
+    ],
+    "parameter_hash_matches": true,
+    "validation_positions": [
+      0,
+      1
+    ],
+    "diagnostics": {
+      "dataset": "validation only, no test reread",
+      "samples": 6000,
+      "confusion": [
+        [
+          540,
+          0,
+          16,
+          8,
+          0,
+          1,
+          32,
+          0,
+          3,
+          0
+        ],
+        [
+          503,
+          0,
+          13,
+          52,
+          0,
+          0,
+          27,
+          0,
+          5,
+          0
+        ],
+        [
+          11,
+          0,
+          520,
+          2,
+          0,
+          1,
+          61,
+          0,
+          5,
+          0
+        ],
+        [
+          36,
+          0,
+          5,
+          532,
+          0,
+          0,
+          24,
+          0,
+          1,
+          2
+        ],
+        [
+          15,
+          0,
+          170,
+          83,
+          0,
+          2,
+          314,
+          1,
+          15,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          578,
+          0,
+          10,
+          0,
+          12
+        ],
+        [
+          113,
+          0,
+          57,
+          15,
+          0,
+          0,
+          405,
+          0,
+          9,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          583,
+          0,
+          12
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          0,
+          0,
+          3,
+          1,
+          590,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          33,
+          0,
+          564
+        ]
+      ],
+      "map_positive_fraction": [
+        0.20608000457286835,
+        0.032413333654403687,
+        0.1575266718864441,
+        0.0917000025510788,
+        0.005673333536833525,
+        0.16687333583831787,
+        0.2203066647052765,
+        0.15014000236988068,
+        0.19913999736309052,
+        0.09781333059072495
+      ],
+      "zero_logits_samples": [
+        1523,
+        3763,
+        1231,
+        2348,
+        5589,
+        3053,
+        750,
+        3186,
+        2541,
+        3133
+      ],
+      "maximum_logit_by_class": [
+        18.49601936340332,
+        0.7458652853965759,
+        9.504079818725586,
+        10.550373077392578,
+        0.1757715940475464,
+        29.31243133544922,
+        14.662238121032715,
+        20.851261138916016,
+        27.973960876464844,
+        29.951698303222656
+      ],
+      "all_zero_response_classes": []
+    }
+  },
+  "cli": {
+    "inspect_json_matches": true,
+    "invalid_arguments": [
+      {
+        "args": [
+          "--epochs",
+          "0"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--batch-size",
+          "0"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--train-size",
+          "0"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--validation-size",
+          "-1"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--inspect",
+          "--epochs",
+          "1"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--experiments",
+          "--batch-size",
+          "2"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--inspect",
+          "--benchmark"
+        ],
+        "exit_code": 2
+      }
+    ],
+    "cpu_custom_args": [
+      "--device",
+      "cpu",
+      "--epochs",
+      "1",
+      "--batch-size",
+      "2",
+      "--train-size",
+      "11",
+      "--validation-size",
+      "10",
+      "--guided",
+      "--record"
+    ],
+    "cpu_custom_updates": 6,
+    "cpu_custom_tail": 1,
+    "test_evaluated": false,
+    "formal_report_hashes_unchanged": {
+      "7_3_metrics.json": "f945e4457a70da1f8fae9e9a1fbb396f883d9e01a612af36730dd9762aab44f9",
+      "7_3_epochs.csv": "ce9deaff434a48bfb941acf848adb55318d1664addf667482732e5afe686d763"
+    },
+    "exercise_blank_prompt": "先完成TODO 1-3：空间卷积与两个1×1卷积。",
+    "eight_todos_unanswered": true
+  },
+  "preservation": {
+    "baseline_entries": 572,
+    "unrelated_entries_unchanged": 565,
+    "changed_unrelated_paths": [],
+    "allowed_existing_paths": [
+      ".gitignore",
+      ".vscode/launch.json",
+      ".vscode/tasks.json",
+      "README.md",
+      "learning_log.md",
+      "progress.md",
+      "tools/build_study_pdfs.py"
+    ],
+    "previous_commit": "f7114969ccf978c0637dffa03cc561809ada6717"
+  },
+  "report_consistency": {
+    "epoch_csv_rows": {
+      "7_3": 11,
+      "7_3_custom": 2
+    },
+    "experiment_csv_rows": 147,
+    "selected": "E",
+    "shared_initializations": true,
+    "raw_data_hashes_unchanged": 4,
+    "heldout_protocols_consistent": true
+  },
+  "pdf_qa": {
+    "pages": 22,
+    "bookmarks": 22,
+    "missing_headings": [],
+    "bad_glyph_pages": [],
+    "boundary_violations": [],
+    "leading_punctuation": [],
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+Consolas": true,
+      "/AAAAAD+MicrosoftYaHei-0": true
+    },
+    "unused_font_resources": [
+      "/Helvetica"
+    ],
+    "sha256": "c41a05405438b5e66c01a793e6ced5033b5c5e6ae84550a5c742cf7b1dfa8b5e",
+    "rendered_pages": 22,
+    "visually_reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "embedded_figure_count": 8
+  }
+}

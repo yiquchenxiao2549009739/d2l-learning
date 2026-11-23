@@ -1,0 +1,389 @@
+{
+  "config": {
+    "size": 224,
+    "channels": [
+      96,
+      256,
+      384
+    ],
+    "pointwise": 2,
+    "last_width": 10,
+    "final_relu": true,
+    "dropout": 0.5,
+    "lr": 0.1,
+    "batch_size": 128
+  },
+  "outer": [
+    {
+      "name": "block1",
+      "layer": "Sequential",
+      "shape": [
+        1,
+        96,
+        54,
+        54
+      ]
+    },
+    {
+      "name": "pool1",
+      "layer": "MaxPool2d",
+      "shape": [
+        1,
+        96,
+        26,
+        26
+      ]
+    },
+    {
+      "name": "block2",
+      "layer": "Sequential",
+      "shape": [
+        1,
+        256,
+        26,
+        26
+      ]
+    },
+    {
+      "name": "pool2",
+      "layer": "MaxPool2d",
+      "shape": [
+        1,
+        256,
+        12,
+        12
+      ]
+    },
+    {
+      "name": "block3",
+      "layer": "Sequential",
+      "shape": [
+        1,
+        384,
+        12,
+        12
+      ]
+    },
+    {
+      "name": "pool3",
+      "layer": "MaxPool2d",
+      "shape": [
+        1,
+        384,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "dropout",
+      "layer": "Dropout",
+      "shape": [
+        1,
+        384,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "block4",
+      "layer": "Sequential",
+      "shape": [
+        1,
+        10,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "gap",
+      "layer": "AdaptiveAvgPool2d",
+      "shape": [
+        1,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "flatten",
+      "layer": "Flatten",
+      "shape": [
+        1,
+        10
+      ]
+    }
+  ],
+  "weighted_layers": [
+    {
+      "name": "block1.spatial",
+      "input_shape": [
+        1,
+        1,
+        224,
+        224
+      ],
+      "output_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "kernel": [
+        11,
+        11
+      ],
+      "parameters": 11712,
+      "weight_multiplications": 33872256,
+      "output_float32_bytes": 1119744
+    },
+    {
+      "name": "block1.point1",
+      "input_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "output_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "kernel": [
+        1,
+        1
+      ],
+      "parameters": 9312,
+      "weight_multiplications": 26873856,
+      "output_float32_bytes": 1119744
+    },
+    {
+      "name": "block1.point2",
+      "input_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "output_shape": [
+        1,
+        96,
+        54,
+        54
+      ],
+      "kernel": [
+        1,
+        1
+      ],
+      "parameters": 9312,
+      "weight_multiplications": 26873856,
+      "output_float32_bytes": 1119744
+    },
+    {
+      "name": "block2.spatial",
+      "input_shape": [
+        1,
+        96,
+        26,
+        26
+      ],
+      "output_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "kernel": [
+        5,
+        5
+      ],
+      "parameters": 614656,
+      "weight_multiplications": 415334400,
+      "output_float32_bytes": 692224
+    },
+    {
+      "name": "block2.point1",
+      "input_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "output_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "kernel": [
+        1,
+        1
+      ],
+      "parameters": 65792,
+      "weight_multiplications": 44302336,
+      "output_float32_bytes": 692224
+    },
+    {
+      "name": "block2.point2",
+      "input_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "output_shape": [
+        1,
+        256,
+        26,
+        26
+      ],
+      "kernel": [
+        1,
+        1
+      ],
+      "parameters": 65792,
+      "weight_multiplications": 44302336,
+      "output_float32_bytes": 692224
+    },
+    {
+      "name": "block3.spatial",
+      "input_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "kernel": [
+        3,
+        3
+      ],
+      "parameters": 885120,
+      "weight_multiplications": 127401984,
+      "output_float32_bytes": 221184
+    },
+    {
+      "name": "block3.point1",
+      "input_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "kernel": [
+        1,
+        1
+      ],
+      "parameters": 147840,
+      "weight_multiplications": 21233664,
+      "output_float32_bytes": 221184
+    },
+    {
+      "name": "block3.point2",
+      "input_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "output_shape": [
+        1,
+        384,
+        12,
+        12
+      ],
+      "kernel": [
+        1,
+        1
+      ],
+      "parameters": 147840,
+      "weight_multiplications": 21233664,
+      "output_float32_bytes": 221184
+    },
+    {
+      "name": "block4.spatial",
+      "input_shape": [
+        1,
+        384,
+        5,
+        5
+      ],
+      "output_shape": [
+        1,
+        10,
+        5,
+        5
+      ],
+      "kernel": [
+        3,
+        3
+      ],
+      "parameters": 34570,
+      "weight_multiplications": 864000,
+      "output_float32_bytes": 1000
+    },
+    {
+      "name": "block4.point1",
+      "input_shape": [
+        1,
+        10,
+        5,
+        5
+      ],
+      "output_shape": [
+        1,
+        10,
+        5,
+        5
+      ],
+      "kernel": [
+        1,
+        1
+      ],
+      "parameters": 110,
+      "weight_multiplications": 2500,
+      "output_float32_bytes": 1000
+    },
+    {
+      "name": "block4.point2",
+      "input_shape": [
+        1,
+        10,
+        5,
+        5
+      ],
+      "output_shape": [
+        1,
+        10,
+        5,
+        5
+      ],
+      "kernel": [
+        1,
+        1
+      ],
+      "parameters": 110,
+      "weight_multiplications": 2500,
+      "output_float32_bytes": 1000
+    }
+  ],
+  "parameters": 1992166,
+  "parameter_float32_bytes": 7968664,
+  "weight_multiplications": 762297352,
+  "conv_count": 12,
+  "linear_count": 0,
+  "global_average_additions_per_image": 240,
+  "note": "meta结构计数；权重乘法不含bias/ReLU/汇聚/反传，不是实测FLOPs或全部显存"
+}

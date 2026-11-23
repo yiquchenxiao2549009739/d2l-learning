@@ -1,0 +1,65 @@
+{
+  "runtime": {
+    "device": "cuda",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 4
+  },
+  "synthetic_seed": 7304,
+  "warmup": 2,
+  "repeats": 5,
+  "results": [
+    {
+      "mode": "train",
+      "batch_size": 1,
+      "milliseconds_per_batch": 9.516031646728516,
+      "baseline_allocated_bytes": 8172032,
+      "peak_allocated_bytes": 27018240,
+      "peak_reserved_bytes": 31457280
+    },
+    {
+      "mode": "inference",
+      "batch_size": 1,
+      "milliseconds_per_batch": 4.581977462768554,
+      "baseline_allocated_bytes": 8172032,
+      "peak_allocated_bytes": 18372608,
+      "peak_reserved_bytes": 25165824
+    },
+    {
+      "mode": "train",
+      "batch_size": 32,
+      "milliseconds_per_batch": 39.913671875,
+      "baseline_allocated_bytes": 14393856,
+      "peak_allocated_bytes": 421422592,
+      "peak_reserved_bytes": 679477248
+    },
+    {
+      "mode": "inference",
+      "batch_size": 32,
+      "milliseconds_per_batch": 7.823155212402344,
+      "baseline_allocated_bytes": 14393856,
+      "peak_allocated_bytes": 288367104,
+      "peak_reserved_bytes": 341835776
+    },
+    {
+      "mode": "train",
+      "batch_size": 128,
+      "milliseconds_per_batch": 129.257470703125,
+      "baseline_allocated_bytes": 33661952,
+      "peak_allocated_bytes": 1034396672,
+      "peak_reserved_bytes": 1258291200
+    },
+    {
+      "mode": "inference",
+      "batch_size": 128,
+      "milliseconds_per_batch": 31.899032592773438,
+      "baseline_allocated_bytes": 33661952,
+      "peak_allocated_bytes": 478815232,
+      "peak_reserved_bytes": 666894336
+    }
+  ],
+  "protocol": "单独顺序短测，随机GPU驻留float32；训练前向+CE+反传+SGD，预测eval+inference_mode；不含数据/Resize；分配值含权重输入而非全进程"
+}

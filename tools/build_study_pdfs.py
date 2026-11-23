@@ -810,6 +810,10 @@ SPECS = [
          pages="教材 PDF 273-277 · 正文 255-259",
          source="docs/ch07/02_vgg.md", start="## 01",
          workbook=True, filename="7.2-使用块的网络（VGG）-实验手册.pdf"),
+    dict(section="7.3", title="网络中的网络（NiN）", date="2026-11-23", chapter="第 7 章",
+         pages="教材 PDF 277-281 · 正文 259-263",
+         source="docs/ch07/03_nin.md", start="## 01",
+         workbook=True, filename="7.3-网络中的网络（NiN）-实验手册.pdf"),
 ]
 
 

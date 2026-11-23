@@ -1,0 +1,72 @@
+{
+  "config": {
+    "size": 224,
+    "channels": [
+      96,
+      256,
+      384
+    ],
+    "pointwise": 2,
+    "last_width": 10,
+    "final_relu": true,
+    "dropout": 0.5,
+    "lr": 0.1,
+    "batch_size": 2
+  },
+  "model_seed_base": 7300,
+  "initialization": "CPU Xavier gain1, zero bias; seed7300+10*block_index+role_index",
+  "dropout_seed": 7303,
+  "loader_seed": 3603,
+  "initial_parameter_sha256": "297e9c10a1b1be084dbad24fc63af6fe5b3134f1ddf6c442f969c48ebb153207",
+  "initial_trunk_sha256": "b987824af0a961f377ded4e24627857d5b8886bc5997e4fc4ae5acba6c955ea7",
+  "parameters": 1992166,
+  "runtime": {
+    "device": "cpu",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "CPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 4
+  },
+  "epochs": 1,
+  "train_samples": 11,
+  "validation_samples": 10,
+  "history": [
+    {
+      "epoch": 0,
+      "validation_ce": 2.3026238918304442,
+      "validation_accuracy": 0.1,
+      "validation_correct": 1,
+      "validation_samples": 10
+    },
+    {
+      "epoch": 1,
+      "online_train_ce": 2.3028940720991655,
+      "online_train_accuracy": 0.18181818181818182,
+      "updates": 6,
+      "samples": 11,
+      "validation_ce": 2.3025851249694824,
+      "validation_accuracy": 0.1,
+      "validation_correct": 1,
+      "validation_samples": 10,
+      "train_eval_ce": 2.3025851249694824,
+      "train_eval_accuracy": 0.18181818181818182,
+      "train_eval_correct": 2,
+      "train_eval_samples": 11
+    }
+  ],
+  "updates": 6,
+  "last_batch_size": 1,
+  "test_evaluated": false,
+  "final_parameter_sha256": "49ba8a6191fdb1f2c97cd84534d43a4548247f0ad276af6ee4bece7918bfbd2d",
+  "peak_cuda_allocated_bytes": null,
+  "seconds_including_evaluation_and_save": 0.7815896000000002,
+  "custom": true,
+  "split_hashes": {
+    "train": "0e80aeb90dbd6e15d5b7dd6bafc1fd8676572ad733ef231f42a39f443d0e5503",
+    "validation": "65d9aca93416d8234d9a47b5cb19d13a21f2809c1d8661ad3977f8975a75979f"
+  },
+  "split_seed": 3601,
+  "preprocessing": "float32/255 then bilinear, align_corners=False, antialias=True"
+}

@@ -1,0 +1,21 @@
+{
+  "NiN": {
+    "parameters": 1992166,
+    "parameter_float32_bytes": 7968664,
+    "weight_multiplications": 762297352,
+    "pointwise_parameters": 446108,
+    "pointwise_weight_multiplications": 184824712,
+    "sum_conv_output_bytes_per_image": 6102456,
+    "warning": "逻辑输出字节之和不是训练/预测实际峰值；权重存储不等于全进程显存"
+  },
+  "AlexNet": {
+    "parameters": 46764746,
+    "parameter_float32_bytes": 187058984,
+    "weight_multiplications": 938146176
+  },
+  "VGG11": {
+    "parameters": 128806154,
+    "parameter_float32_bytes": 515224616,
+    "weight_multiplications": 7547232256
+  }
+}

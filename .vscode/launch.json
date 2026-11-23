@@ -2,6 +2,33 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "7.3 网络中的网络（NiN）：完整演示",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/ch07/03_nin.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      },
+      "args": [
+        "--guided"
+      ]
+    },
+    {
+      "name": "7.3 网络中的网络（NiN）：综合练习",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercises/ch07/03_nin.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    },
+    {
       "name": "7.2 使用块的网络（VGG）：完整演示",
       "type": "debugpy",
       "request": "launch",

@@ -1,0 +1,42 @@
+{
+  "pointwise_vs_shared_linear_max_error": 8.881784197001252e-16,
+  "gap_logits": [
+    [
+      2.0,
+      1.0
+    ]
+  ],
+  "gap_ce": 0.31326168751822286,
+  "gap_gradient": [
+    [
+      [
+        [
+          -0.13447071068499755,
+          -0.13447071068499755
+        ]
+      ],
+      [
+        [
+          0.13447071068499755,
+          0.13447071068499755
+        ]
+      ]
+    ]
+  ],
+  "gap_gradient_max_error": 2.7755575615628914e-17,
+  "softmax_after_gap": [
+    [
+      0.7310585786300049,
+      0.26894142136999516
+    ]
+  ],
+  "mean_spatial_softmax": [
+    [
+      0.550608356030013,
+      0.44939164396998693
+    ]
+  ],
+  "projection_distinct_inputs_distance": 3.0,
+  "projection_outputs_distance": 0.0,
+  "projection_nullity": 374
+}
