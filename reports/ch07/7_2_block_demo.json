@@ -1,0 +1,22 @@
+{
+  "valid_linear_max_error": 4.440892098500626e-15,
+  "padded_two_corner": 25,
+  "padded_combined_corner": 36,
+  "relu_vs_linear_max_difference": 2.501138862245596,
+  "two3_vs_one5_equal_width_weight_coefficients": [
+    18,
+    25
+  ],
+  "three3_vs_one7_equal_width_weight_coefficients": [
+    27,
+    49
+  ],
+  "independent_block_parameters": true,
+  "two_conv_block_parameters": 808,
+  "two_conv_block_shape": [
+    2,
+    8,
+    8,
+    8
+  ]
+}

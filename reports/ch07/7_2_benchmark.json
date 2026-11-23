@@ -1,0 +1,53 @@
+{
+  "runtime": {
+    "device": "cuda",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 4
+  },
+  "synthetic_seed": 7204,
+  "warmup": 2,
+  "repeats": 5,
+  "results": [
+    {
+      "model": "AlexNet224",
+      "batch_size": 8,
+      "size": 224,
+      "milliseconds_per_step": 16.71923828125,
+      "baseline_allocated_bytes": 255774720,
+      "peak_allocated_bytes": 476004352,
+      "peak_reserved_bytes": 513802240
+    },
+    {
+      "model": "VGG11-full224",
+      "batch_size": 8,
+      "size": 224,
+      "milliseconds_per_step": 73.56866455078125,
+      "baseline_allocated_bytes": 584432128,
+      "peak_allocated_bytes": 1489917952,
+      "peak_reserved_bytes": 1600126976
+    },
+    {
+      "model": "VGG11-quarter224",
+      "batch_size": 8,
+      "size": 224,
+      "milliseconds_per_step": 23.13502655029297,
+      "baseline_allocated_bytes": 241090560,
+      "peak_allocated_bytes": 547161600,
+      "peak_reserved_bytes": 566231040
+    },
+    {
+      "model": "VGG11-quarter96",
+      "batch_size": 8,
+      "size": 96,
+      "milliseconds_per_step": 21.102386474609375,
+      "baseline_allocated_bytes": 155893760,
+      "peak_allocated_bytes": 299584000,
+      "peak_reserved_bytes": 308281344
+    }
+  ],
+  "protocol": "单独顺序运行；随机GPU驻留输入，不含加载/Resize；不能当分类精度或长程稳定吞吐量"
+}

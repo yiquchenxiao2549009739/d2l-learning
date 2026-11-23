@@ -1,0 +1,218 @@
+{
+  "numerical": {
+    "parameters": 2629,
+    "input_shape": [
+      3,
+      1,
+      224,
+      224
+    ],
+    "conv_count": 8,
+    "linear_count": 3,
+    "errors": {
+      "logits": 6.938893903907228e-18,
+      "ce": 4.440892098500626e-16,
+      "input_gradient": 2.168404344971009e-19,
+      "parameter_gradient": 5.551115123125783e-17,
+      "central_difference_22_coordinates": 3.310520971938624e-09,
+      "sgd_two_updates_tail1": 5.551115123125783e-17
+    },
+    "finite_difference_step": 1e-07,
+    "numpy_engine": "reuse independent NumPy convolution/pooling/CE from verify_alexnet.py"
+  },
+  "practice": {
+    "follow_blocks": 5,
+    "follow_stdout": "Sequential (2, 4, 48, 48)\nSequential (2, 8, 24, 24)\nSequential (2, 16, 12, 12)\nSequential (2, 32, 6, 6)\nSequential (2, 32, 3, 3)\nFlatten (2, 288)\nLinear (2, 64)\nReLU (2, 64)\nDropout (2, 64)\nLinear (2, 32)\nReLU (2, 32)\nDropout (2, 32)\nLinear (2, 10)\n参数 57114\n含权重层 11\n1 {'online_train_ce': 2.2986867685575745, 'online_train_accuracy': 0.02702702702702703, 'updates': 5, 'samples': 37}\n2 {'online_train_ce': 2.3122566261807003, 'online_train_accuracy': 0.10810810810810811, 'updates': 5, 'samples': 37}\n3 {'online_train_ce': 2.3162729160205737, 'online_train_accuracy': 0.05405405405405406, 'updates': 5, 'samples': 37}\n验证 {'ce': 2.3027944564819336, 'accuracy': 0.15, 'correct': 3, 'samples': 20}\n恢复误差 0.0\n",
+    "exercise_reference_stdout": "参数 27034 输出 (8, 10)\nepoch 1 在线CE 2.3003473990672343\nepoch 2 在线CE 2.306184961989119\nepoch 3 在线CE 2.3102429621928446\n更新 15 验证正确数 4 / 20\n解释代码复用为何没有共享权重、288从哪里来，以及train/eval怎样改变Dropout。\n",
+    "exercise_source_unchanged": true,
+    "variant_stdout": "16 (2, 10) 78662\n19 (2, 10) 99478\n"
+  },
+  "checkpoint_recovery": {
+    "7_2": {
+      "max_logit_difference": 1.9073486328125e-06,
+      "device": "cuda",
+      "parameter_hash_matches": true,
+      "validation_positions": [
+        0,
+        1
+      ],
+      "predictions": [
+        0,
+        0
+      ]
+    },
+    "7_2_96": {
+      "max_logit_difference": 2.86102294921875e-06,
+      "device": "cuda",
+      "parameter_hash_matches": true,
+      "validation_positions": [
+        0,
+        1
+      ],
+      "predictions": [
+        0,
+        0
+      ]
+    }
+  },
+  "pdf_qa": {
+    "pages": 22,
+    "bookmarks": 22,
+    "rendered_pages": 22,
+    "boundary_violations": [],
+    "leading_punctuation": [],
+    "missing_headings": [],
+    "bad_glyph_pages": [],
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+Consolas": true
+    },
+    "visually_reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "unused_font_resources": [
+      "/Helvetica"
+    ],
+    "final_revision_reviewed_pages": [
+      10,
+      12
+    ],
+    "sha256": "78374ae74a8aedc0bcf822e15b2123449f935be6b64ad38c961b39a810a8d6ae"
+  },
+  "cli": {
+    "inspect_json_matches_record": true,
+    "invalid_arguments": [
+      {
+        "args": [
+          "--epochs",
+          "0"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--batch-size",
+          "0"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--size",
+          "28"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--inspect",
+          "--epochs",
+          "1"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--experiments",
+          "--size",
+          "96"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--benchmark",
+          "--batch-size",
+          "2"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--inspect",
+          "--experiments"
+        ],
+        "exit_code": 2
+      }
+    ],
+    "cpu_custom": {
+      "args": [
+        "--size",
+        "96",
+        "--device",
+        "cpu",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "2",
+        "--train-size",
+        "11",
+        "--validation-size",
+        "10",
+        "--guided",
+        "--record"
+      ],
+      "updates": 6,
+      "last_batch_size": 1,
+      "test_evaluated": false
+    },
+    "formal_reports_unchanged": {
+      "7_2_metrics.json": "0defe7291ae4281f84372668fe73f1ed2176a1d7662f0f84df460cde595e48ef",
+      "7_2_epochs.csv": "d918d8d9a52ac3588256fd2d61b9ec5ef91c0d31e56ec17b1bf6a333a4d827b1",
+      "7_2_96_metrics.json": "6eef8037b3b47965a855f3978342f892437cac712b34e298245d4a2c62e6d53d",
+      "7_2_96_epochs.csv": "62e78adf0ea2f8e6b5bcc072e80f9d521ca04f181e0dfb37a0cbae513a71afac"
+    },
+    "exercise_blank_prompt": "先完成TODO 1-4，构造并注册块中的所有层。",
+    "exercise_eight_todos_unanswered": true
+  },
+  "report_consistency": {
+    "epoch_csv_rows": {
+      "7_2": 11,
+      "7_2_96": 11,
+      "7_2_96_custom": 2
+    },
+    "experiment_csv_rows": 84,
+    "same_conv_initialization": true,
+    "raw_data_hashes_unchanged": 4
+  },
+  "preservation": {
+    "baseline_entries": 544,
+    "allowed_existing_paths": [
+      ".gitignore",
+      ".vscode/launch.json",
+      ".vscode/tasks.json",
+      "README.md",
+      "learning_log.md",
+      "progress.md",
+      "tools/build_study_pdfs.py"
+    ],
+    "unrelated_entries_unchanged": 537,
+    "changed_unrelated_paths": [],
+    "previous_commit": "67e46d2ef542a4ea564b036333c4856658798d45"
+  }
+}

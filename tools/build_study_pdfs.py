@@ -806,6 +806,10 @@ SPECS = [
          pages="教材 PDF 265-273 · 正文 247-255",
          source="docs/ch07/01_alexnet.md", start="## 01",
          workbook=True, filename="7.1-深度卷积神经网络（AlexNet）-实验手册.pdf"),
+    dict(section="7.2", title="使用块的网络（VGG）", date="2026-11-23", chapter="第 7 章",
+         pages="教材 PDF 273-277 · 正文 255-259",
+         source="docs/ch07/02_vgg.md", start="## 01",
+         workbook=True, filename="7.2-使用块的网络（VGG）-实验手册.pdf"),
 ]
 
 

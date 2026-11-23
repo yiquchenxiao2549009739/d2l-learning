@@ -1,0 +1,72 @@
+{
+  "config": {
+    "version": "11",
+    "ratio": 4,
+    "size": 96,
+    "hidden": [
+      4096,
+      4096
+    ],
+    "dropout": 0.5,
+    "lr": 0.05,
+    "batch_size": 2
+  },
+  "model_seed_base": 7200,
+  "initialization": "Xavier gain1, per-weighted-layer seed7200+j; zero bias",
+  "dropout_seed": 7203,
+  "loader_seed": 3603,
+  "initial_parameter_sha256": "10b6e6dea2a0f8cca32c7f706fb09684c5d8da86ddf542d24f246c9f9297cd74",
+  "initial_conv_sha256": "8154fd185eef1893678e838f55ee1b6b7d9e4937178ffb3ecf268850c4b2d262",
+  "parameters": 22121802,
+  "runtime": {
+    "device": "cpu",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "CPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 4
+  },
+  "epochs": 1,
+  "train_samples": 11,
+  "validation_samples": 10,
+  "history": [
+    {
+      "epoch": 0,
+      "validation_ce": 2.3026250839233398,
+      "validation_accuracy": 0.0,
+      "validation_correct": 0,
+      "validation_samples": 10
+    },
+    {
+      "epoch": 1,
+      "online_train_ce": 2.31939773126082,
+      "online_train_accuracy": 0.09090909090909091,
+      "updates": 6,
+      "samples": 11,
+      "validation_ce": 2.3027406692504884,
+      "validation_accuracy": 0.1,
+      "validation_correct": 1,
+      "validation_samples": 10,
+      "train_eval_ce": 2.298829100348733,
+      "train_eval_accuracy": 0.09090909090909091,
+      "train_eval_correct": 1,
+      "train_eval_samples": 11
+    }
+  ],
+  "updates": 6,
+  "last_batch_size": 1,
+  "final_parameter_sha256": "017be92a1ebdcfa5bf9503bcb133980b6dd6e12577eaf549865644d3eac9794d",
+  "test_evaluated": false,
+  "peak_cuda_allocated_bytes": null,
+  "seconds_including_evaluation_and_save": 3.0955471999999995,
+  "custom": true,
+  "split_hashes": {
+    "train": "0e80aeb90dbd6e15d5b7dd6bafc1fd8676572ad733ef231f42a39f443d0e5503",
+    "validation": "65d9aca93416d8234d9a47b5cb19d13a21f2809c1d8661ad3977f8975a75979f"
+  },
+  "split_seed": 3601,
+  "train_subset_seed": 7201,
+  "validation_subset_seed": 7202,
+  "preprocessing": "float32 /255 then batched bilinear, align_corners=False, antialias=True"
+}

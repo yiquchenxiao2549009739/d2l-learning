@@ -1,0 +1,2099 @@
+{
+  "full11": {
+    "config": {
+      "version": "11",
+      "ratio": 1,
+      "size": 224,
+      "hidden": [
+        4096,
+        4096
+      ],
+      "dropout": 0.5,
+      "lr": 0.05,
+      "batch_size": 128
+    },
+    "block_architecture": [
+      [
+        1,
+        64
+      ],
+      [
+        1,
+        128
+      ],
+      [
+        2,
+        256
+      ],
+      [
+        2,
+        512
+      ],
+      [
+        2,
+        512
+      ]
+    ],
+    "outer": [
+      {
+        "name": "0",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          64,
+          112,
+          112
+        ],
+        "recursive_parameters": 640
+      },
+      {
+        "name": "1",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          128,
+          56,
+          56
+        ],
+        "recursive_parameters": 73856
+      },
+      {
+        "name": "2",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          256,
+          28,
+          28
+        ],
+        "recursive_parameters": 885248
+      },
+      {
+        "name": "3",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "recursive_parameters": 3539968
+      },
+      {
+        "name": "4",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          512,
+          7,
+          7
+        ],
+        "recursive_parameters": 4719616
+      },
+      {
+        "name": "5",
+        "layer": "Flatten",
+        "shape": [
+          1,
+          25088
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 102764544
+      },
+      {
+        "name": "7",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "8",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 16781312
+      },
+      {
+        "name": "10",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "11",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "shape": [
+          1,
+          10
+        ],
+        "recursive_parameters": 40970
+      }
+    ],
+    "weighted_layers": [
+      {
+        "name": "0.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          1,
+          224,
+          224
+        ],
+        "output_shape": [
+          1,
+          64,
+          224,
+          224
+        ],
+        "parameters": 640,
+        "weight_multiplications": 28901376,
+        "output_float32_bytes": 12845056
+      },
+      {
+        "name": "1.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          112,
+          112
+        ],
+        "output_shape": [
+          1,
+          128,
+          112,
+          112
+        ],
+        "parameters": 73856,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 6422528
+      },
+      {
+        "name": "2.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 295168,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "2.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 590080,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "3.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 1180160,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "3.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "4.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "4.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          25088
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 102764544,
+        "weight_multiplications": 102760448,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 16781312,
+        "weight_multiplications": 16777216,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          10
+        ],
+        "parameters": 40970,
+        "weight_multiplications": 40960,
+        "output_float32_bytes": 40
+      }
+    ],
+    "parameters": 128806154,
+    "parameter_float32_bytes": 515224616,
+    "weight_multiplications": 7547232256,
+    "conv_count": 8,
+    "linear_count": 3,
+    "note": "meta仅作形状和理论计数，不代表真实计算/分配峰值"
+  },
+  "quarter11": {
+    "config": {
+      "version": "11",
+      "ratio": 4,
+      "size": 224,
+      "hidden": [
+        4096,
+        4096
+      ],
+      "dropout": 0.5,
+      "lr": 0.05,
+      "batch_size": 128
+    },
+    "block_architecture": [
+      [
+        1,
+        16
+      ],
+      [
+        1,
+        32
+      ],
+      [
+        2,
+        64
+      ],
+      [
+        2,
+        128
+      ],
+      [
+        2,
+        128
+      ]
+    ],
+    "outer": [
+      {
+        "name": "0",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          16,
+          112,
+          112
+        ],
+        "recursive_parameters": 160
+      },
+      {
+        "name": "1",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          32,
+          56,
+          56
+        ],
+        "recursive_parameters": 4640
+      },
+      {
+        "name": "2",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          64,
+          28,
+          28
+        ],
+        "recursive_parameters": 55424
+      },
+      {
+        "name": "3",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          128,
+          14,
+          14
+        ],
+        "recursive_parameters": 221440
+      },
+      {
+        "name": "4",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          128,
+          7,
+          7
+        ],
+        "recursive_parameters": 295168
+      },
+      {
+        "name": "5",
+        "layer": "Flatten",
+        "shape": [
+          1,
+          6272
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 25694208
+      },
+      {
+        "name": "7",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "8",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 16781312
+      },
+      {
+        "name": "10",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "11",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "shape": [
+          1,
+          10
+        ],
+        "recursive_parameters": 40970
+      }
+    ],
+    "weighted_layers": [
+      {
+        "name": "0.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          1,
+          224,
+          224
+        ],
+        "output_shape": [
+          1,
+          16,
+          224,
+          224
+        ],
+        "parameters": 160,
+        "weight_multiplications": 7225344,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "1.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          16,
+          112,
+          112
+        ],
+        "output_shape": [
+          1,
+          32,
+          112,
+          112
+        ],
+        "parameters": 4640,
+        "weight_multiplications": 57802752,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "2.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          32,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          64,
+          56,
+          56
+        ],
+        "parameters": 18496,
+        "weight_multiplications": 57802752,
+        "output_float32_bytes": 802816
+      },
+      {
+        "name": "2.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          64,
+          56,
+          56
+        ],
+        "parameters": 36928,
+        "weight_multiplications": 115605504,
+        "output_float32_bytes": 802816
+      },
+      {
+        "name": "3.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          128,
+          28,
+          28
+        ],
+        "parameters": 73856,
+        "weight_multiplications": 57802752,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "3.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          128,
+          28,
+          28
+        ],
+        "parameters": 147584,
+        "weight_multiplications": 115605504,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "4.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          128,
+          14,
+          14
+        ],
+        "parameters": 147584,
+        "weight_multiplications": 28901376,
+        "output_float32_bytes": 100352
+      },
+      {
+        "name": "4.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          128,
+          14,
+          14
+        ],
+        "parameters": 147584,
+        "weight_multiplications": 28901376,
+        "output_float32_bytes": 100352
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          6272
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 25694208,
+        "weight_multiplications": 25690112,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 16781312,
+        "weight_multiplications": 16777216,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          10
+        ],
+        "parameters": 40970,
+        "weight_multiplications": 40960,
+        "output_float32_bytes": 40
+      }
+    ],
+    "parameters": 43093322,
+    "parameter_float32_bytes": 172373288,
+    "weight_multiplications": 512155648,
+    "conv_count": 8,
+    "linear_count": 3,
+    "note": "meta仅作形状和理论计数，不代表真实计算/分配峰值"
+  },
+  "quarter96": {
+    "config": {
+      "version": "11",
+      "ratio": 4,
+      "size": 96,
+      "hidden": [
+        4096,
+        4096
+      ],
+      "dropout": 0.5,
+      "lr": 0.05,
+      "batch_size": 128
+    },
+    "block_architecture": [
+      [
+        1,
+        16
+      ],
+      [
+        1,
+        32
+      ],
+      [
+        2,
+        64
+      ],
+      [
+        2,
+        128
+      ],
+      [
+        2,
+        128
+      ]
+    ],
+    "outer": [
+      {
+        "name": "0",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          16,
+          48,
+          48
+        ],
+        "recursive_parameters": 160
+      },
+      {
+        "name": "1",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          32,
+          24,
+          24
+        ],
+        "recursive_parameters": 4640
+      },
+      {
+        "name": "2",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          64,
+          12,
+          12
+        ],
+        "recursive_parameters": 55424
+      },
+      {
+        "name": "3",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          128,
+          6,
+          6
+        ],
+        "recursive_parameters": 221440
+      },
+      {
+        "name": "4",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          128,
+          3,
+          3
+        ],
+        "recursive_parameters": 295168
+      },
+      {
+        "name": "5",
+        "layer": "Flatten",
+        "shape": [
+          1,
+          1152
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 4722688
+      },
+      {
+        "name": "7",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "8",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 16781312
+      },
+      {
+        "name": "10",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "11",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "shape": [
+          1,
+          10
+        ],
+        "recursive_parameters": 40970
+      }
+    ],
+    "weighted_layers": [
+      {
+        "name": "0.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          1,
+          96,
+          96
+        ],
+        "output_shape": [
+          1,
+          16,
+          96,
+          96
+        ],
+        "parameters": 160,
+        "weight_multiplications": 1327104,
+        "output_float32_bytes": 589824
+      },
+      {
+        "name": "1.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          16,
+          48,
+          48
+        ],
+        "output_shape": [
+          1,
+          32,
+          48,
+          48
+        ],
+        "parameters": 4640,
+        "weight_multiplications": 10616832,
+        "output_float32_bytes": 294912
+      },
+      {
+        "name": "2.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          32,
+          24,
+          24
+        ],
+        "output_shape": [
+          1,
+          64,
+          24,
+          24
+        ],
+        "parameters": 18496,
+        "weight_multiplications": 10616832,
+        "output_float32_bytes": 147456
+      },
+      {
+        "name": "2.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          24,
+          24
+        ],
+        "output_shape": [
+          1,
+          64,
+          24,
+          24
+        ],
+        "parameters": 36928,
+        "weight_multiplications": 21233664,
+        "output_float32_bytes": 147456
+      },
+      {
+        "name": "3.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          12,
+          12
+        ],
+        "output_shape": [
+          1,
+          128,
+          12,
+          12
+        ],
+        "parameters": 73856,
+        "weight_multiplications": 10616832,
+        "output_float32_bytes": 73728
+      },
+      {
+        "name": "3.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          12,
+          12
+        ],
+        "output_shape": [
+          1,
+          128,
+          12,
+          12
+        ],
+        "parameters": 147584,
+        "weight_multiplications": 21233664,
+        "output_float32_bytes": 73728
+      },
+      {
+        "name": "4.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          6,
+          6
+        ],
+        "output_shape": [
+          1,
+          128,
+          6,
+          6
+        ],
+        "parameters": 147584,
+        "weight_multiplications": 5308416,
+        "output_float32_bytes": 18432
+      },
+      {
+        "name": "4.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          6,
+          6
+        ],
+        "output_shape": [
+          1,
+          128,
+          6,
+          6
+        ],
+        "parameters": 147584,
+        "weight_multiplications": 5308416,
+        "output_float32_bytes": 18432
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          1152
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 4722688,
+        "weight_multiplications": 4718592,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 16781312,
+        "weight_multiplications": 16777216,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          10
+        ],
+        "parameters": 40970,
+        "weight_multiplications": 40960,
+        "output_float32_bytes": 40
+      }
+    ],
+    "parameters": 22121802,
+    "parameter_float32_bytes": 88487208,
+    "weight_multiplications": 107798528,
+    "conv_count": 8,
+    "linear_count": 3,
+    "note": "meta仅作形状和理论计数，不代表真实计算/分配峰值"
+  },
+  "full16": {
+    "config": {
+      "version": "16",
+      "ratio": 1,
+      "size": 224,
+      "hidden": [
+        4096,
+        4096
+      ],
+      "dropout": 0.5,
+      "lr": 0.05,
+      "batch_size": 128
+    },
+    "block_architecture": [
+      [
+        2,
+        64
+      ],
+      [
+        2,
+        128
+      ],
+      [
+        3,
+        256
+      ],
+      [
+        3,
+        512
+      ],
+      [
+        3,
+        512
+      ]
+    ],
+    "outer": [
+      {
+        "name": "0",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          64,
+          112,
+          112
+        ],
+        "recursive_parameters": 37568
+      },
+      {
+        "name": "1",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          128,
+          56,
+          56
+        ],
+        "recursive_parameters": 221440
+      },
+      {
+        "name": "2",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          256,
+          28,
+          28
+        ],
+        "recursive_parameters": 1475328
+      },
+      {
+        "name": "3",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "recursive_parameters": 5899776
+      },
+      {
+        "name": "4",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          512,
+          7,
+          7
+        ],
+        "recursive_parameters": 7079424
+      },
+      {
+        "name": "5",
+        "layer": "Flatten",
+        "shape": [
+          1,
+          25088
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 102764544
+      },
+      {
+        "name": "7",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "8",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 16781312
+      },
+      {
+        "name": "10",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "11",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "shape": [
+          1,
+          10
+        ],
+        "recursive_parameters": 40970
+      }
+    ],
+    "weighted_layers": [
+      {
+        "name": "0.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          1,
+          224,
+          224
+        ],
+        "output_shape": [
+          1,
+          64,
+          224,
+          224
+        ],
+        "parameters": 640,
+        "weight_multiplications": 28901376,
+        "output_float32_bytes": 12845056
+      },
+      {
+        "name": "0.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          224,
+          224
+        ],
+        "output_shape": [
+          1,
+          64,
+          224,
+          224
+        ],
+        "parameters": 36928,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 12845056
+      },
+      {
+        "name": "1.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          112,
+          112
+        ],
+        "output_shape": [
+          1,
+          128,
+          112,
+          112
+        ],
+        "parameters": 73856,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 6422528
+      },
+      {
+        "name": "1.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          112,
+          112
+        ],
+        "output_shape": [
+          1,
+          128,
+          112,
+          112
+        ],
+        "parameters": 147584,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 6422528
+      },
+      {
+        "name": "2.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 295168,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "2.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 590080,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "2.4",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 590080,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "3.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 1180160,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "3.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "3.4",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "4.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "4.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "4.4",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          25088
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 102764544,
+        "weight_multiplications": 102760448,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 16781312,
+        "weight_multiplications": 16777216,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          10
+        ],
+        "parameters": 40970,
+        "weight_multiplications": 40960,
+        "output_float32_bytes": 40
+      }
+    ],
+    "parameters": 134300362,
+    "parameter_float32_bytes": 537201448,
+    "weight_multiplications": 15408406528,
+    "conv_count": 13,
+    "linear_count": 3,
+    "note": "meta仅作形状和理论计数，不代表真实计算/分配峰值"
+  },
+  "full19": {
+    "config": {
+      "version": "19",
+      "ratio": 1,
+      "size": 224,
+      "hidden": [
+        4096,
+        4096
+      ],
+      "dropout": 0.5,
+      "lr": 0.05,
+      "batch_size": 128
+    },
+    "block_architecture": [
+      [
+        2,
+        64
+      ],
+      [
+        2,
+        128
+      ],
+      [
+        4,
+        256
+      ],
+      [
+        4,
+        512
+      ],
+      [
+        4,
+        512
+      ]
+    ],
+    "outer": [
+      {
+        "name": "0",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          64,
+          112,
+          112
+        ],
+        "recursive_parameters": 37568
+      },
+      {
+        "name": "1",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          128,
+          56,
+          56
+        ],
+        "recursive_parameters": 221440
+      },
+      {
+        "name": "2",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          256,
+          28,
+          28
+        ],
+        "recursive_parameters": 2065408
+      },
+      {
+        "name": "3",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "recursive_parameters": 8259584
+      },
+      {
+        "name": "4",
+        "layer": "Sequential",
+        "shape": [
+          1,
+          512,
+          7,
+          7
+        ],
+        "recursive_parameters": 9439232
+      },
+      {
+        "name": "5",
+        "layer": "Flatten",
+        "shape": [
+          1,
+          25088
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 102764544
+      },
+      {
+        "name": "7",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "8",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 16781312
+      },
+      {
+        "name": "10",
+        "layer": "ReLU",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "11",
+        "layer": "Dropout",
+        "shape": [
+          1,
+          4096
+        ],
+        "recursive_parameters": 0
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "shape": [
+          1,
+          10
+        ],
+        "recursive_parameters": 40970
+      }
+    ],
+    "weighted_layers": [
+      {
+        "name": "0.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          1,
+          224,
+          224
+        ],
+        "output_shape": [
+          1,
+          64,
+          224,
+          224
+        ],
+        "parameters": 640,
+        "weight_multiplications": 28901376,
+        "output_float32_bytes": 12845056
+      },
+      {
+        "name": "0.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          224,
+          224
+        ],
+        "output_shape": [
+          1,
+          64,
+          224,
+          224
+        ],
+        "parameters": 36928,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 12845056
+      },
+      {
+        "name": "1.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          64,
+          112,
+          112
+        ],
+        "output_shape": [
+          1,
+          128,
+          112,
+          112
+        ],
+        "parameters": 73856,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 6422528
+      },
+      {
+        "name": "1.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          112,
+          112
+        ],
+        "output_shape": [
+          1,
+          128,
+          112,
+          112
+        ],
+        "parameters": 147584,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 6422528
+      },
+      {
+        "name": "2.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          128,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 295168,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "2.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 590080,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "2.4",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 590080,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "2.6",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "output_shape": [
+          1,
+          256,
+          56,
+          56
+        ],
+        "parameters": 590080,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 3211264
+      },
+      {
+        "name": "3.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          256,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 1180160,
+        "weight_multiplications": 924844032,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "3.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "3.4",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "3.6",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "output_shape": [
+          1,
+          512,
+          28,
+          28
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 1849688064,
+        "output_float32_bytes": 1605632
+      },
+      {
+        "name": "4.0",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "4.2",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "4.4",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "4.6",
+        "layer": "Conv2d",
+        "input_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "output_shape": [
+          1,
+          512,
+          14,
+          14
+        ],
+        "parameters": 2359808,
+        "weight_multiplications": 462422016,
+        "output_float32_bytes": 401408
+      },
+      {
+        "name": "6",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          25088
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 102764544,
+        "weight_multiplications": 102760448,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "9",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          4096
+        ],
+        "parameters": 16781312,
+        "weight_multiplications": 16777216,
+        "output_float32_bytes": 16384
+      },
+      {
+        "name": "12",
+        "layer": "Linear",
+        "input_shape": [
+          1,
+          4096
+        ],
+        "output_shape": [
+          1,
+          10
+        ],
+        "parameters": 40970,
+        "weight_multiplications": 40960,
+        "output_float32_bytes": 40
+      }
+    ],
+    "parameters": 139610058,
+    "parameter_float32_bytes": 558440232,
+    "weight_multiplications": 19570204672,
+    "conv_count": 16,
+    "linear_count": 3,
+    "note": "meta仅作形状和理论计数，不代表真实计算/分配峰值"
+  }
+}
