@@ -1,0 +1,45 @@
+{
+  "checked_date": "2026-11-25",
+  "installed_torch": "2.4.1+cu121",
+  "sources": [
+    {
+      "url": "https://pytorch.org/docs/2.4/generated/torch.nn.BatchNorm1d.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.4/generated/torch.nn.BatchNorm1d.html",
+      "bytes": 70912,
+      "sha256": "c747324e5f99de84c5bb34abb2ddcce23aaacc888362060b721be922a16e0fa6",
+      "title": "BatchNorm1d &mdash; PyTorch 2.4 documentation",
+      "checked_terms": {
+        "affine": true,
+        "momentum": true,
+        "track_running_stats": true,
+        "unbiased": true
+      }
+    },
+    {
+      "url": "https://pytorch.org/docs/2.4/generated/torch.nn.BatchNorm2d.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.4/generated/torch.nn.BatchNorm2d.html",
+      "bytes": 69657,
+      "sha256": "ab02b3e44c5b6fa5e9e0929ff44cd7bbff6c60f66ec6f643254eaa58d554c9b2",
+      "title": "BatchNorm2d &mdash; PyTorch 2.4 documentation",
+      "checked_terms": {
+        "affine": true,
+        "momentum": true,
+        "track_running_stats": true,
+        "unbiased": true
+      }
+    },
+    {
+      "url": "https://pytorch.org/docs/2.4/generated/torch.nn.BatchNorm3d.html",
+      "resolved_url": "https://docs.pytorch.org/docs/2.4/generated/torch.nn.BatchNorm3d.html",
+      "bytes": 70358,
+      "sha256": "814438f45b79d4d5e6d898c298cab193f31bbdb0abd379d1abf19754ea57ed55",
+      "title": "BatchNorm3d &mdash; PyTorch 2.4 documentation",
+      "checked_terms": {
+        "affine": true,
+        "momentum": true,
+        "track_running_stats": true,
+        "unbiased": true
+      }
+    }
+  ]
+}

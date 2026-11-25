@@ -1,0 +1,968 @@
+{
+  "manual": {
+    "config": {
+      "implementation": "manual",
+      "placement": "all",
+      "affine": true,
+      "bias": true,
+      "dropout": 0.0,
+      "lr": 1.0,
+      "batch_size": 256,
+      "momentum": 0.1,
+      "eps": 1e-05
+    },
+    "layers": [
+      {
+        "name": "conv1",
+        "layer": "Conv2d",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 156
+      },
+      {
+        "name": "bn1",
+        "layer": "ManualBatchNorm",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 12
+      },
+      {
+        "name": "act1",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "pool1",
+        "layer": "AvgPool2d",
+        "shape": [
+          2,
+          6,
+          12,
+          12
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "conv2",
+        "layer": "Conv2d",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 2416
+      },
+      {
+        "name": "bn2",
+        "layer": "ManualBatchNorm",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 32
+      },
+      {
+        "name": "act2",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "pool2",
+        "layer": "AvgPool2d",
+        "shape": [
+          2,
+          16,
+          4,
+          4
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "flatten",
+        "layer": "Flatten",
+        "shape": [
+          2,
+          256
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "fc1",
+        "layer": "Linear",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 30840
+      },
+      {
+        "name": "bn3",
+        "layer": "ManualBatchNorm",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 240
+      },
+      {
+        "name": "act3",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "drop1",
+        "layer": "Dropout",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "fc2",
+        "layer": "Linear",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 10164
+      },
+      {
+        "name": "bn4",
+        "layer": "ManualBatchNorm",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 168
+      },
+      {
+        "name": "act4",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "drop2",
+        "layer": "Dropout",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "out",
+        "layer": "Linear",
+        "shape": [
+          2,
+          10
+        ],
+        "parameters": 850
+      }
+    ],
+    "parameters": 44878,
+    "normalization_parameters": 452,
+    "buffers": [
+      {
+        "name": "bn1.running_mean",
+        "shape": [
+          6
+        ],
+        "dtype": "torch.float32",
+        "elements": 6
+      },
+      {
+        "name": "bn1.running_var",
+        "shape": [
+          6
+        ],
+        "dtype": "torch.float32",
+        "elements": 6
+      },
+      {
+        "name": "bn1.num_batches_tracked",
+        "shape": [],
+        "dtype": "torch.int64",
+        "elements": 1
+      },
+      {
+        "name": "bn2.running_mean",
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "elements": 16
+      },
+      {
+        "name": "bn2.running_var",
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "elements": 16
+      },
+      {
+        "name": "bn2.num_batches_tracked",
+        "shape": [],
+        "dtype": "torch.int64",
+        "elements": 1
+      },
+      {
+        "name": "bn3.running_mean",
+        "shape": [
+          120
+        ],
+        "dtype": "torch.float32",
+        "elements": 120
+      },
+      {
+        "name": "bn3.running_var",
+        "shape": [
+          120
+        ],
+        "dtype": "torch.float32",
+        "elements": 120
+      },
+      {
+        "name": "bn3.num_batches_tracked",
+        "shape": [],
+        "dtype": "torch.int64",
+        "elements": 1
+      },
+      {
+        "name": "bn4.running_mean",
+        "shape": [
+          84
+        ],
+        "dtype": "torch.float32",
+        "elements": 84
+      },
+      {
+        "name": "bn4.running_var",
+        "shape": [
+          84
+        ],
+        "dtype": "torch.float32",
+        "elements": 84
+      },
+      {
+        "name": "bn4.num_batches_tracked",
+        "shape": [],
+        "dtype": "torch.int64",
+        "elements": 1
+      }
+    ],
+    "note": "本节首Conv无padding：28→24→12→8→4，Flatten256；不同于6.6首层padding2"
+  },
+  "native": {
+    "config": {
+      "implementation": "native",
+      "placement": "all",
+      "affine": true,
+      "bias": true,
+      "dropout": 0.0,
+      "lr": 1.0,
+      "batch_size": 256,
+      "momentum": 0.1,
+      "eps": 1e-05
+    },
+    "layers": [
+      {
+        "name": "conv1",
+        "layer": "Conv2d",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 156
+      },
+      {
+        "name": "bn1",
+        "layer": "BatchNorm2d",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 12
+      },
+      {
+        "name": "act1",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "pool1",
+        "layer": "AvgPool2d",
+        "shape": [
+          2,
+          6,
+          12,
+          12
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "conv2",
+        "layer": "Conv2d",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 2416
+      },
+      {
+        "name": "bn2",
+        "layer": "BatchNorm2d",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 32
+      },
+      {
+        "name": "act2",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "pool2",
+        "layer": "AvgPool2d",
+        "shape": [
+          2,
+          16,
+          4,
+          4
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "flatten",
+        "layer": "Flatten",
+        "shape": [
+          2,
+          256
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "fc1",
+        "layer": "Linear",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 30840
+      },
+      {
+        "name": "bn3",
+        "layer": "BatchNorm1d",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 240
+      },
+      {
+        "name": "act3",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "drop1",
+        "layer": "Dropout",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "fc2",
+        "layer": "Linear",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 10164
+      },
+      {
+        "name": "bn4",
+        "layer": "BatchNorm1d",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 168
+      },
+      {
+        "name": "act4",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "drop2",
+        "layer": "Dropout",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "out",
+        "layer": "Linear",
+        "shape": [
+          2,
+          10
+        ],
+        "parameters": 850
+      }
+    ],
+    "parameters": 44878,
+    "normalization_parameters": 452,
+    "buffers": [
+      {
+        "name": "bn1.running_mean",
+        "shape": [
+          6
+        ],
+        "dtype": "torch.float32",
+        "elements": 6
+      },
+      {
+        "name": "bn1.running_var",
+        "shape": [
+          6
+        ],
+        "dtype": "torch.float32",
+        "elements": 6
+      },
+      {
+        "name": "bn1.num_batches_tracked",
+        "shape": [],
+        "dtype": "torch.int64",
+        "elements": 1
+      },
+      {
+        "name": "bn2.running_mean",
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "elements": 16
+      },
+      {
+        "name": "bn2.running_var",
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "elements": 16
+      },
+      {
+        "name": "bn2.num_batches_tracked",
+        "shape": [],
+        "dtype": "torch.int64",
+        "elements": 1
+      },
+      {
+        "name": "bn3.running_mean",
+        "shape": [
+          120
+        ],
+        "dtype": "torch.float32",
+        "elements": 120
+      },
+      {
+        "name": "bn3.running_var",
+        "shape": [
+          120
+        ],
+        "dtype": "torch.float32",
+        "elements": 120
+      },
+      {
+        "name": "bn3.num_batches_tracked",
+        "shape": [],
+        "dtype": "torch.int64",
+        "elements": 1
+      },
+      {
+        "name": "bn4.running_mean",
+        "shape": [
+          84
+        ],
+        "dtype": "torch.float32",
+        "elements": 84
+      },
+      {
+        "name": "bn4.running_var",
+        "shape": [
+          84
+        ],
+        "dtype": "torch.float32",
+        "elements": 84
+      },
+      {
+        "name": "bn4.num_batches_tracked",
+        "shape": [],
+        "dtype": "torch.int64",
+        "elements": 1
+      }
+    ],
+    "note": "本节首Conv无padding：28→24→12→8→4，Flatten256；不同于6.6首层padding2"
+  },
+  "plain01": {
+    "config": {
+      "implementation": "none",
+      "placement": "all",
+      "affine": true,
+      "bias": true,
+      "dropout": 0.0,
+      "lr": 0.1,
+      "batch_size": 256,
+      "momentum": 0.1,
+      "eps": 1e-05
+    },
+    "layers": [
+      {
+        "name": "conv1",
+        "layer": "Conv2d",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 156
+      },
+      {
+        "name": "bn1",
+        "layer": "Identity",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "act1",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "pool1",
+        "layer": "AvgPool2d",
+        "shape": [
+          2,
+          6,
+          12,
+          12
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "conv2",
+        "layer": "Conv2d",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 2416
+      },
+      {
+        "name": "bn2",
+        "layer": "Identity",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "act2",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "pool2",
+        "layer": "AvgPool2d",
+        "shape": [
+          2,
+          16,
+          4,
+          4
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "flatten",
+        "layer": "Flatten",
+        "shape": [
+          2,
+          256
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "fc1",
+        "layer": "Linear",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 30840
+      },
+      {
+        "name": "bn3",
+        "layer": "Identity",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "act3",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "drop1",
+        "layer": "Dropout",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "fc2",
+        "layer": "Linear",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 10164
+      },
+      {
+        "name": "bn4",
+        "layer": "Identity",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "act4",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "drop2",
+        "layer": "Dropout",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "out",
+        "layer": "Linear",
+        "shape": [
+          2,
+          10
+        ],
+        "parameters": 850
+      }
+    ],
+    "parameters": 44426,
+    "normalization_parameters": 0,
+    "buffers": [],
+    "note": "本节首Conv无padding：28→24→12→8→4，Flatten256；不同于6.6首层padding2"
+  },
+  "plain1": {
+    "config": {
+      "implementation": "none",
+      "placement": "all",
+      "affine": true,
+      "bias": true,
+      "dropout": 0.0,
+      "lr": 1.0,
+      "batch_size": 256,
+      "momentum": 0.1,
+      "eps": 1e-05
+    },
+    "layers": [
+      {
+        "name": "conv1",
+        "layer": "Conv2d",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 156
+      },
+      {
+        "name": "bn1",
+        "layer": "Identity",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "act1",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          6,
+          24,
+          24
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "pool1",
+        "layer": "AvgPool2d",
+        "shape": [
+          2,
+          6,
+          12,
+          12
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "conv2",
+        "layer": "Conv2d",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 2416
+      },
+      {
+        "name": "bn2",
+        "layer": "Identity",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "act2",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "pool2",
+        "layer": "AvgPool2d",
+        "shape": [
+          2,
+          16,
+          4,
+          4
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "flatten",
+        "layer": "Flatten",
+        "shape": [
+          2,
+          256
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "fc1",
+        "layer": "Linear",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 30840
+      },
+      {
+        "name": "bn3",
+        "layer": "Identity",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "act3",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "drop1",
+        "layer": "Dropout",
+        "shape": [
+          2,
+          120
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "fc2",
+        "layer": "Linear",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 10164
+      },
+      {
+        "name": "bn4",
+        "layer": "Identity",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "act4",
+        "layer": "Sigmoid",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "drop2",
+        "layer": "Dropout",
+        "shape": [
+          2,
+          84
+        ],
+        "parameters": 0
+      },
+      {
+        "name": "out",
+        "layer": "Linear",
+        "shape": [
+          2,
+          10
+        ],
+        "parameters": 850
+      }
+    ],
+    "parameters": 44426,
+    "normalization_parameters": 0,
+    "buffers": [],
+    "note": "本节首Conv无padding：28→24→12→8→4，Flatten256；不同于6.6首层padding2"
+  }
+}

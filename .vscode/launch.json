@@ -2,6 +2,33 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "7.5 批量规范化：完整演示",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/ch07/05_batch_norm.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      },
+      "args": [
+        "--guided"
+      ]
+    },
+    {
+      "name": "7.5 批量规范化：综合练习",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercises/ch07/05_batch_norm.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    },
+    {
       "name": "7.4 含并行连结的网络（GoogLeNet）：完整演示",
       "type": "debugpy",
       "request": "launch",

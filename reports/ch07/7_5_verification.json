@@ -1,0 +1,411 @@
+{
+  "numerical": {
+    "parameters": 44878,
+    "input_shape": [
+      5,
+      1,
+      28,
+      28
+    ],
+    "errors": {
+      "logits": 3.552713678800501e-15,
+      "ce": 1.3322676295501878e-15,
+      "input_gradient": 4.2760933682828295e-16,
+      "parameter_gradient": 2.6298407895808396e-15,
+      "three_sgd_updates_parameters": 7.618905506490137e-14,
+      "three_updates_running_states": 2.5465740627339528e-14
+    },
+    "finite_difference_coordinates": 16,
+    "finite_difference_step": 1e-06,
+    "finite_difference_error": 1.1388008314128228e-09,
+    "scope": "完整本节LeNet44878参数、独立NumPyConv/AvgPool/Sigmoid/BN/CE与移动状态；三次SGD批量5/2/3"
+  },
+  "paired": {
+    "batch4_5": {
+      "updates": 6,
+      "batches": [
+        4,
+        5,
+        4,
+        5,
+        4,
+        5
+      ],
+      "max_training_output_error": 5.5011550870176507e-14,
+      "max_gradient_error": 3.180095076160683e-14,
+      "max_state_error": 7.271960811294775e-15,
+      "eval_error": 5.551115123125783e-15,
+      "steps": [
+        {
+          "batch": 4,
+          "output_error": 3.3861802251067274e-15,
+          "gradient_error": 1.3336554083309693e-14
+        },
+        {
+          "batch": 5,
+          "output_error": 1.3863910020006642e-14,
+          "gradient_error": 1.4099832412739488e-14
+        },
+        {
+          "batch": 4,
+          "output_error": 1.9970136655445003e-14,
+          "gradient_error": 3.180095076160683e-14
+        },
+        {
+          "batch": 5,
+          "output_error": 2.5326962749261384e-14,
+          "gradient_error": 1.7860712908657206e-14
+        },
+        {
+          "batch": 4,
+          "output_error": 5.5011550870176507e-14,
+          "gradient_error": 2.8727020762175925e-14
+        },
+        {
+          "batch": 5,
+          "output_error": 2.8976820942716586e-14,
+          "gradient_error": 1.3086753902769033e-14
+        }
+      ],
+      "dtype": "float64 CPU, lr.1, same initial full state"
+    },
+    "batch2_3_sensitivity": {
+      "updates": 6,
+      "batches": [
+        2,
+        3,
+        2,
+        3,
+        2,
+        3
+      ],
+      "max_training_output_error": 2.557515288992285e-07,
+      "max_gradient_error": 1.1943312638873493e-06,
+      "max_state_error": 1.1941418304184381e-07,
+      "eval_error": 4.341803538920885e-08,
+      "steps": [
+        {
+          "batch": 2,
+          "output_error": 1.6653345369377348e-14,
+          "gradient_error": 1.4575007867279055e-12
+        },
+        {
+          "batch": 3,
+          "output_error": 3.6376457401843254e-13,
+          "gradient_error": 3.89945853385143e-11
+        },
+        {
+          "batch": 2,
+          "output_error": 7.873479646036685e-12,
+          "gradient_error": 1.0875332856485898e-09
+        },
+        {
+          "batch": 3,
+          "output_error": 2.448153346712445e-10,
+          "gradient_error": 4.350576010558882e-10
+        },
+        {
+          "batch": 2,
+          "output_error": 3.083588495655931e-09,
+          "gradient_error": 4.528544916837518e-07
+        },
+        {
+          "batch": 3,
+          "output_error": 2.557515288992285e-07,
+          "gradient_error": 1.1943312638873493e-06
+        }
+      ],
+      "dtype": "float64 CPU, lr.1, same initial full state"
+    },
+    "note": "小批量下相同数学公式的舍入差可经更新放大；记录原2/3实验，不声称长期逐位相同。4/5对齐保留1e-9严格界限"
+  },
+  "tail_merge": {
+    "samples": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "batch_sizes": [
+      2,
+      2,
+      2,
+      2,
+      3
+    ],
+    "no_drop_or_duplicate": true
+  },
+  "checkpoint_recovery": {
+    "manual": {
+      "max_logit_difference": 0.0005388259887695312,
+      "predictions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "validation_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "all_state_hash_matches": true,
+      "eval_buffers_unchanged": true,
+      "bn_batches_tracked": 2110,
+      "cpu_vs_float64": 4.971111554397112e-06,
+      "cudnn_vs_float64": 0.0005409223638435101,
+      "cudnn_disabled_vs_float64": 4.166922115800276e-06,
+      "note": "默认cuDNN差超过原1e-4后，以double及非cuDNN路径定位；默认路径界限1e-3，其余1e-4；16张验证图类别一致"
+    },
+    "native": {
+      "max_logit_difference": 0.0005500316619873047,
+      "predictions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "validation_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "all_state_hash_matches": true,
+      "eval_buffers_unchanged": true,
+      "bn_batches_tracked": 2110,
+      "cpu_vs_float64": 4.571595951574636e-06,
+      "cudnn_vs_float64": 0.0005515348883213811,
+      "cudnn_disabled_vs_float64": 2.5720543423979336e-06,
+      "note": "默认cuDNN差超过原1e-4后，以double及非cuDNN路径定位；默认路径界限1e-3，其余1e-4；16张验证图类别一致"
+    }
+  },
+  "practice": {
+    "follow_blocks": 6,
+    "follow_stdout": "数据 37 20 每轮批数 5\n参数 6850\nepoch 1 在线CE 2.380050646292197\nepoch 2 在线CE 2.164527767413371\nepoch 3 在线CE 1.996534759933884\n验证 {'ce': 2.299162673950195, 'accuracy': 0.2, 'correct': 4, 'samples': 20} 更新 15\n恢复差 0.0 BN批计数 tensor(15)\n单层train/eval差 4.440892098500626e-16 2.220446049250313e-16\ntrain加no_grad仍更新计数 2\n",
+    "exercise_reference_stdout": "参数 6850 输出 (8, 10)\nepoch 1 在线CE 2.380050665623433\nepoch 2 在线CE 2.164527731972772\nepoch 3 在线CE 1.9965342734311078\n更新 15 验证正确数 4 / 20 BN批计数 15\n解释参数/缓冲区、统计轴、有偏/无偏方差与eval/no_grad的区别。\n",
+    "exercise_source_unchanged": true,
+    "unanswered_todos": 8
+  },
+  "report_consistency": {
+    "formal_individual_csv_rows": {
+      "manual": 11,
+      "native": 11,
+      "plain01": 11,
+      "plain1": 11
+    },
+    "formal_aggregate_rows": 44,
+    "affine_rows": 452,
+    "experiment_csv_rows": 315,
+    "custom_csv_rows": 2,
+    "selected": "L",
+    "shared_initializations": true,
+    "raw_data_hashes_unchanged": 4,
+    "heldout_protocols_consistent": true
+  },
+  "pdf_qa": {
+    "pages": 30,
+    "bookmarks": 30,
+    "missing_headings": [],
+    "bad_glyph_pages": [],
+    "boundary_violations": [],
+    "leading_punctuation": [],
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAD+MicrosoftYaHei-0": true,
+      "/AAAAAA+Consolas": true
+    },
+    "unused_font_resources": [
+      "/Helvetica"
+    ],
+    "sha256": "b6c095c558ae27d4475c3ff8060b6a2f2f2f60e91447658475f55342a04f2881",
+    "rendered_pages": 30,
+    "render_dpi": 105,
+    "contact_sheets": 8,
+    "visual_review_all_pages": true,
+    "embedded_images": 10,
+    "figure_review_count": 10
+  },
+  "preservation": {
+    "baseline_entries": 629,
+    "unrelated_entries_unchanged": 621,
+    "observed_external_relocation": [
+      "output/pdf/6.1-从全连接层到卷积-学习讲义.pdf"
+    ],
+    "relocated_bytes_match_baseline": true,
+    "relocation_deletion_unstaged": true,
+    "allowed_existing_paths": [
+      ".gitignore",
+      ".vscode/launch.json",
+      ".vscode/tasks.json",
+      "README.md",
+      "learning_log.md",
+      "progress.md",
+      "tools/build_study_pdfs.py"
+    ],
+    "previous_commit": "c8a4ebdc03129a604a3207b4e7a4757e03ccd5b1"
+  },
+  "cli": {
+    "inspect_json_matches": true,
+    "invalid_arguments": [
+      {
+        "args": [
+          "--epochs",
+          "0"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--batch-size",
+          "1"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--train-size",
+          "1"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--validation-size",
+          "0"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--inspect",
+          "--epochs",
+          "1"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--experiments",
+          "--batch-size",
+          "128"
+        ],
+        "exit_code": 2
+      },
+      {
+        "args": [
+          "--inspect",
+          "--experiments"
+        ],
+        "exit_code": 2
+      }
+    ],
+    "cpu_custom_args": [
+      "--device",
+      "cpu",
+      "--epochs",
+      "1",
+      "--batch-size",
+      "2",
+      "--train-size",
+      "11",
+      "--validation-size",
+      "10",
+      "--guided",
+      "--record"
+    ],
+    "cpu_custom_updates": 5,
+    "cpu_custom_tail": 3,
+    "singleton_tail_merged": true,
+    "test_evaluated": false,
+    "formal_report_hashes_unchanged": {
+      "7_5_affine.csv": "a177dee5e57d8271df2e772d391c399866c7bfa7a9f47a807a78e8d3b30f06e1",
+      "7_5_api_reference.md": "c2817f32de42403a29671d0823628aef76fbd2b67ef71c009a820722b846502e",
+      "7_5_api_sources.json": "8b08d67e51f8de629a295041e791b630e1891ea73362c3e02db82b411949e947",
+      "7_5_architectures.json": "18e8e5fd4fc5851bcb2e10289e5411f4326e187f1ffa4976174b2eefd32cc863",
+      "7_5_data_integrity.json": "66ce365011123817db2ab9dc516a2d7ccd603121269dbe65a93d1425a20f4775",
+      "7_5_demonstrations.json": "e4c9ed3353cf15e0508c6dafe1ddab9c66c85e539bc3bc57000e86c79ddc0cbc",
+      "7_5_epochs.csv": "93cdaeb720e3ad3da561fb95793ab4a06e364345654c9abf858994fd5cd3ab4e",
+      "7_5_experiments.json": "cf7a669b52897cdae9d2e68cf7bc4716944cc543f7594f8ed0bfaade91b3ab51",
+      "7_5_experiments_epochs.csv": "63749332e3fbd1eed4b9d49f54da4d702997001f8f0579b452a31cb778fe6c44",
+      "7_5_manual_epochs.csv": "0bce5b14a71c514c3013b56b88525643f8e184d2356a2a1f4dfec5c3908cee26",
+      "7_5_manual_metrics.json": "235bc16c2af3b1a65f2ebbd7fa64afee5cd9615a7b1ec51729354b57d7f055c4",
+      "7_5_metrics.json": "4622688832948a3a837cca81d5bc09cdc88257bc7da2339a8cbbd6eabf99f7ac",
+      "7_5_native_epochs.csv": "a60ce9aec6aea3bfda06dd256d3bcb84253fb2a5c5530a8b72eafed07254fd04",
+      "7_5_native_metrics.json": "e7aa1a3f1b838294f4ae38e2c11c2ada6cbf8cf104727cc4962148879db1009f",
+      "7_5_plain01_epochs.csv": "f4c2881c92d142a589260b68db89410105017f3580ce1482736f14208c17de1d",
+      "7_5_plain01_metrics.json": "546f1d4bd06e90647d1c620c7f8a5a93aaec9305e0ef6faff185b956661b7739",
+      "7_5_plain1_epochs.csv": "a9878ca020a8a809d25e74c0aa462def5910494786a8e027398781077a0fd0a5",
+      "7_5_plain1_metrics.json": "35f88a04972db8783e53af89c21bebd0d2a3f1f5c8bcb8b2f7f8f8de0b0a789d",
+      "7_5_research.json": "3c9585a6847b11518368fd1ffab9d7f0e4248487e3e5462694de5d825d1f1a1d"
+    },
+    "exercise_blank_prompt": "先完成TODO 1：保留通道轴。",
+    "eight_todos_unanswered": true
+  },
+  "syntax": {
+    "lessons\\ch07\\05_batch_norm.py": "passed",
+    "exercises\\ch07\\05_batch_norm.py": "passed",
+    "tools\\verify_batch_norm.py": "passed",
+    "tools\\build_batch_norm_figures.py": "passed"
+  }
+}

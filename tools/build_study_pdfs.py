@@ -818,6 +818,10 @@ SPECS = [
          pages="教材 PDF 281-286 · 正文 263-268",
          source="docs/ch07/04_googlenet.md", start="## 01",
          workbook=True, filename="7.4-含并行连结的网络（GoogLeNet）-实验手册.pdf"),
+    dict(section="7.5", title="批量规范化", date="2026-11-25", chapter="第 7 章",
+         pages="教材 PDF 286-293 · 正文 268-275",
+         source="docs/ch07/05_batch_norm.md", start="## 01",
+         workbook=True, filename="7.5-批量规范化-实验手册.pdf"),
 ]
 
 
