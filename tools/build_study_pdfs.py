@@ -822,6 +822,10 @@ SPECS = [
          pages="教材 PDF 286-293 · 正文 268-275",
          source="docs/ch07/05_batch_norm.md", start="## 01",
          workbook=True, filename="7.5-批量规范化-实验手册.pdf"),
+    dict(section="7.6", title="残差网络（ResNet）", date="2026-11-25", chapter="第 7 章",
+         pages="教材 PDF 293-301 · 正文 275-283",
+         source="docs/ch07/06_resnet.md", start="## 01",
+         workbook=True, filename="7.6-残差网络（ResNet）-实验手册.pdf"),
 ]
 
 

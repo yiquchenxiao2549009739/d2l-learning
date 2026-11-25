@@ -1,0 +1,196 @@
+{
+  "numerical": {
+    "parameters": 11558,
+    "residual_blocks": 8,
+    "input_shape": [
+      3,
+      1,
+      96,
+      96
+    ],
+    "errors": {
+      "logits": 4.718447854656915e-15,
+      "ce": 4.440892098500626e-16,
+      "parameter_gradient": 1.9984014443252818e-14,
+      "input_gradient": 1.2906342661267445e-15,
+      "two_updates_parameters": 6.036837696399289e-16,
+      "two_updates_buffers": 8.881784197001252e-16
+    },
+    "probes": {
+      "identity": {
+        "parameters": 93,
+        "gradient_error": 6.938893903907228e-17,
+        "input_gradient_error": 1.734723475976807e-18,
+        "logits_error": 2.7755575615628914e-17,
+        "finite_difference_coordinates": 10,
+        "finite_difference_step": 1e-06,
+        "finite_difference_error": 1.3182878833700729e-10
+      },
+      "projection": {
+        "parameters": 174,
+        "gradient_error": 5.551115123125783e-17,
+        "input_gradient_error": 6.938893903907228e-18,
+        "logits_error": 5.551115123125783e-17,
+        "finite_difference_coordinates": 12,
+        "finite_difference_step": 1e-06,
+        "finite_difference_error": 1.1594594858874152e-10
+      },
+      "bottleneck": {
+        "parameters": 143,
+        "gradient_error": 1.5543122344752192e-15,
+        "input_gradient_error": 3.469446951953614e-17,
+        "logits_error": 1.1102230246251565e-16,
+        "finite_difference_coordinates": 16,
+        "finite_difference_step": 1e-06,
+        "finite_difference_error": 1.7801932150618427e-10
+      },
+      "preactivation": {
+        "parameters": 172,
+        "gradient_error": 2.949029909160572e-17,
+        "input_gradient_error": 6.938893903907228e-18,
+        "logits_error": 2.7755575615628914e-17,
+        "finite_difference_coordinates": 12,
+        "finite_difference_step": 1e-06,
+        "finite_difference_error": 1.6925592524752453e-10
+      }
+    },
+    "numerical_probe_bias": 0.05,
+    "scope": "完整96空间拓扑/8块缩起始通道2；独立NumPy前反向和批3/1两次SGD，非1117万全参数梯度检查"
+  },
+  "checkpoint": {
+    "errors": {
+      "cpu_cuda": 2.8848648071289062e-05,
+      "cpu_float64": 1.592389807747452e-05,
+      "cudnn_float64": 2.9037350421479147e-05,
+      "fallback_float64": 9.230514780966814e-06
+    },
+    "validation_positions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "predictions": [
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "state_hash_matches": true,
+    "eval_buffers_unchanged": true,
+    "bn_counters": [
+      2110
+    ]
+  },
+  "practice": {
+    "follow_blocks": 5,
+    "follow_stdout": "数据 37 20 每轮批数 5\n同形 (2, 4, 9, 9)\n投影 (2, 8, 5, 5)\n参数 1402 输出 (8, 10)\nepoch 1 在线CE 2.490729641269993\nepoch 2 在线CE 2.362553287196804\nepoch 3 在线CE 2.240053737485731\n验证 {'ce': 2.282222557067871, 'accuracy': 0.1, 'correct': 2, 'samples': 20} 更新 15\n恢复差 0.0 BN计数 15\n",
+    "exercise_reference_stdout": "参数 1402 输出 (8, 10)\nepoch 1 在线CE 2.490729641269993\nepoch 2 在线CE 2.362553287196804\nepoch 3 在线CE 2.240053737485731\n更新 15 验证 {'ce': 2.282222557067871, 'accuracy': 0.1, 'correct': 2, 'samples': 20} 首BN计数 15\n解释恒等支路、投影、加法与cat、末ReLU和BN状态。\n",
+    "exercise_source_unchanged": true,
+    "unanswered_todos": 8
+  },
+  "report_consistency": {
+    "formal_rows": 11,
+    "custom_rows": 2,
+    "experimental_rows": 168,
+    "weighted_layers": 21,
+    "raw_data_hashes_unchanged": 4,
+    "gpu_benchmark_rows": 8,
+    "heldout_protocols_consistent": true,
+    "main_path_hashes_match": true
+  },
+  "preservation": {
+    "baseline_entries": 668,
+    "unrelated_entries_unchanged": 661,
+    "changed_unrelated_paths": [],
+    "allowed_existing_paths": [
+      ".gitignore",
+      ".vscode/launch.json",
+      ".vscode/tasks.json",
+      "README.md",
+      "learning_log.md",
+      "progress.md",
+      "tools/build_study_pdfs.py"
+    ]
+  },
+  "pdf": {
+    "pages": 27,
+    "bookmarks": 27,
+    "images": 11,
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+Consolas": true
+    },
+    "render_dpi": 105,
+    "rendered_pages": 27,
+    "sha256": "12456c6808a69c054db6ef1cfb2139c46bf2e44c15c34fe068b08c8d9418f217",
+    "visual_review_all_pages": true,
+    "leading_punctuation_check_passed": true
+  },
+  "cli": {
+    "invalid_arguments": [
+      [
+        "--epochs",
+        "0"
+      ],
+      [
+        "--batch-size",
+        "1"
+      ],
+      [
+        "--train-size",
+        "1"
+      ],
+      [
+        "--validation-size",
+        "0"
+      ],
+      [
+        "--inspect",
+        "--epochs",
+        "1"
+      ],
+      [
+        "--experiments",
+        "--batch-size",
+        "128"
+      ],
+      [
+        "--benchmark",
+        "--inspect"
+      ]
+    ],
+    "inspect_reproduces_report": true,
+    "blank_exercise_output": "先完成TODO 1-5，接通残差块。",
+    "custom_json_stdout": true,
+    "custom_reproduces_report": true
+  }
+}

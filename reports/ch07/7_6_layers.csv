@@ -1,0 +1,22 @@
+﻿name,kind,shape,parameters,weight_multiplications
+stem.conv,Conv2d,"[1, 64, 48, 48]",3200,7225344
+stage1.block1.conv1,Conv2d,"[1, 64, 24, 24]",36928,21233664
+stage1.block1.conv2,Conv2d,"[1, 64, 24, 24]",36928,21233664
+stage1.block2.conv1,Conv2d,"[1, 64, 24, 24]",36928,21233664
+stage1.block2.conv2,Conv2d,"[1, 64, 24, 24]",36928,21233664
+stage2.block1.conv1,Conv2d,"[1, 128, 12, 12]",73856,10616832
+stage2.block1.conv2,Conv2d,"[1, 128, 12, 12]",147584,21233664
+stage2.block1.shortcut,Conv2d,"[1, 128, 12, 12]",8320,1179648
+stage2.block2.conv1,Conv2d,"[1, 128, 12, 12]",147584,21233664
+stage2.block2.conv2,Conv2d,"[1, 128, 12, 12]",147584,21233664
+stage3.block1.conv1,Conv2d,"[1, 256, 6, 6]",295168,10616832
+stage3.block1.conv2,Conv2d,"[1, 256, 6, 6]",590080,21233664
+stage3.block1.shortcut,Conv2d,"[1, 256, 6, 6]",33024,1179648
+stage3.block2.conv1,Conv2d,"[1, 256, 6, 6]",590080,21233664
+stage3.block2.conv2,Conv2d,"[1, 256, 6, 6]",590080,21233664
+stage4.block1.conv1,Conv2d,"[1, 512, 3, 3]",1180160,10616832
+stage4.block1.conv2,Conv2d,"[1, 512, 3, 3]",2359808,21233664
+stage4.block1.shortcut,Conv2d,"[1, 512, 3, 3]",131584,1179648
+stage4.block2.conv1,Conv2d,"[1, 512, 3, 3]",2359808,21233664
+stage4.block2.conv2,Conv2d,"[1, 512, 3, 3]",2359808,21233664
+classifier,Linear,"[1, 10]",5130,5120

@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-11-25",
+  "sources": [
+    {
+      "title": "Deep Residual Learning for Image Recognition",
+      "url": "https://arxiv.org/pdf/1512.03385",
+      "locator": "PDF5 Table1; PDF6 Fig5",
+      "checked": "原论文表1的基本/瓶颈结构与18/34/50/101/152重复数"
+    },
+    {
+      "title": "Identity Mappings in Deep Residual Networks",
+      "url": "https://arxiv.org/pdf/1603.05027",
+      "locator": "PDF2 Fig1; Eq3-5",
+      "checked": "预激活、加法后恒等映射与支路条件"
+    }
+  ],
+  "adaptation": "灰度十分类、所有Conv保留bias、后激活投影无BN；瓶颈stride在首1×1；预激活变体统一stem/加末BNReLU，不冒称原论文完整训练配方"
+}

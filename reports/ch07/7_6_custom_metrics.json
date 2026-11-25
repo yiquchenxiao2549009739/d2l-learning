@@ -1,0 +1,71 @@
+{
+  "config": {
+    "depth": 18,
+    "width": 64,
+    "size": 96,
+    "residual": true,
+    "preactivation": false,
+    "zero_final_bn": false,
+    "lr": 0.05,
+    "batch_size": 2
+  },
+  "model_seed_base": 7600,
+  "initialization": "按层名SHA-256角色种子7600+hash，Xavier gain1、零bias；BN1/0",
+  "loader_seed": 3603,
+  "initial_state_sha256": "ea78ba9a689d220e27ba3dc7c2560ee4f6883c4f603886638aeaa7ac231feb98",
+  "initial_main_sha256": "5def5c42435744e30655595b10d30b1070bf1cea08139703006cd8d2233b3399",
+  "parameters": 11178378,
+  "runtime": {
+    "device": "cpu",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "CPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 4
+  },
+  "epochs": 1,
+  "train_samples": 11,
+  "validation_samples": 10,
+  "history": [
+    {
+      "epoch": 0,
+      "validation_ce": 2.3042755126953125,
+      "validation_accuracy": 0.1,
+      "validation_correct": 1,
+      "validation_samples": 10
+    },
+    {
+      "epoch": 1,
+      "online_train_ce": 10.367994221774014,
+      "online_train_accuracy": 0.0,
+      "updates": 5,
+      "samples": 11,
+      "last_batch_size": 3,
+      "validation_ce": 188.1696533203125,
+      "validation_accuracy": 0.1,
+      "validation_correct": 1,
+      "validation_samples": 10,
+      "train_eval_ce": 156.2367768721147,
+      "train_eval_accuracy": 0.09090909090909091,
+      "train_eval_correct": 1,
+      "train_eval_samples": 11
+    }
+  ],
+  "updates": 5,
+  "last_batch_size": 3,
+  "test_evaluated": false,
+  "singleton_tail_merged": true,
+  "final_state_sha256": "8f70bb80ef966c2e08d0f1dd8ce5761c2941adf38f300757998c4a6f8f765b58",
+  "bn_counters": [
+    5
+  ],
+  "peak_cuda_allocated_bytes": null,
+  "seconds_including_evaluation_and_save": 0.5050397000000002,
+  "custom": true,
+  "split_hashes": {
+    "train": "0e80aeb90dbd6e15d5b7dd6bafc1fd8676572ad733ef231f42a39f443d0e5503",
+    "validation": "65d9aca93416d8234d9a47b5cb19d13a21f2809c1d8661ad3977f8975a75979f"
+  },
+  "split_seed": 3601
+}

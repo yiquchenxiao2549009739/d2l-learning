@@ -2,6 +2,33 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "7.6 残差网络（ResNet）：完整演示",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/lessons/ch07/06_resnet.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      },
+      "args": [
+        "--guided"
+      ]
+    },
+    {
+      "name": "7.6 残差网络（ResNet）：综合练习",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercises/ch07/06_resnet.py",
+      "python": "${command:python.interpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    },
+    {
       "name": "7.5 批量规范化：完整演示",
       "type": "debugpy",
       "request": "launch",
