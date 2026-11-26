@@ -830,6 +830,10 @@ SPECS = [
          pages="教材 PDF 301-306 · 正文 283-288",
          source="docs/ch07/07_densenet.md", start="## 01",
          workbook=True, filename="7.7-稠密连接网络（DenseNet）-实验手册.pdf"),
+    dict(section="8.1", title="序列模型", date="2026-11-26", chapter="第 8 章",
+         pages="教材 PDF 308-316 · 正文 290-298",
+         source="docs/ch08/01_sequence_models.md", start="## 01",
+         workbook=True, filename="8.1-序列模型-实验手册.pdf"),
 ]
 
 

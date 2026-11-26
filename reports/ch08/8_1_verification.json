@@ -1,0 +1,82 @@
+{
+  "numeric": {
+    "updates": 190,
+    "tail_batch": 8,
+    "maximum_differences": {
+      "pred": 7.771561172376096e-16,
+      "gradient": 1.1657341758564144e-14,
+      "parameters": 3.885780586188048e-16
+    },
+    "frozen_epoch_mse": [
+      0.053270088758538565,
+      0.04824166906527647,
+      0.047597454503034944,
+      0.0471090481822466,
+      0.04663708599844579
+    ],
+    "finite_difference_coordinates": 10,
+    "finite_difference_max_error": 8.643081042536416e-12
+  },
+  "alignment": {
+    "last_training_label": 604,
+    "validation_origin_range": [
+      604,
+      738
+    ],
+    "test_origin_range": [
+      802,
+      936
+    ],
+    "future_tamper_changes_rolling_but_not_closed": true,
+    "numpy_forecast_matches": true,
+    "theory_matches": true
+  },
+  "practice": {
+    "follow": "序列长度 120 最后训练时刻 84\n特征 (116, 4) 标签 (116, 1)\n训练行 80\n参数 37 更新 30\n单步 RMSE 0.25241914625855943\n闭环 RMSE 0.26867536111307655\n恢复最大差 0.0\n",
+    "reference": "训练行 80 更新 30 输出长度 36\n单步 RMSE 0.25241914625855943 闭环 RMSE 0.26867536111307655\n",
+    "remaining_todos": 8
+  },
+  "report_consistency": {
+    "series_rows": 1000,
+    "trajectory_rows": 1000,
+    "formal_epoch_rows": 5,
+    "test_horizon_rows": 16,
+    "only_validation_for_selection": true
+  },
+  "cli": {
+    "json_reproduced": true,
+    "guided_reproduced": true,
+    "no_record_no_writes": true,
+    "invalid_argument_exit": 2,
+    "exercise_prompt": "先填写 TODO 1-2，核对首行4个输入和第5个观测标签。"
+  },
+  "pdf": {
+    "pages": 23,
+    "bookmarks": 23,
+    "images": 7,
+    "rendered_dpi": 105,
+    "visually_reviewed_pages": 23,
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+Consolas": true
+    },
+    "sha256": "39e463474e9dc74129755db2e29ae4c9e318948e5d850c160a4c4bff78da9a24"
+  },
+  "preservation": {
+    "baseline_entries": 729,
+    "unrelated_unchanged": 722,
+    "allowed_paths": [
+      ".gitignore",
+      ".vscode/launch.json",
+      ".vscode/tasks.json",
+      "README.md",
+      "progress.md",
+      "learning_log.md",
+      "tools/build_study_pdfs.py"
+    ]
+  }
+}
