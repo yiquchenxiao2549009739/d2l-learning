@@ -1,0 +1,188 @@
+{
+  "numeric": {
+    "parameters": 923,
+    "input_shape": [
+      3,
+      1,
+      32,
+      32
+    ],
+    "errors": {
+      "logits": 1.1102230246251565e-15,
+      "ce": 4.440892098500626e-16,
+      "parameter_grad": 8.167078124898808e-15,
+      "input_grad": 1.0364972768961422e-15,
+      "parameters_after_two_sgd": 1.1102230246251565e-16,
+      "buffers_after_two_sgd": 2.220446049250313e-16,
+      "eval_logits": 7.155734338404329e-17
+    },
+    "probes": {
+      "False": {
+        "grad_error": 5.551115123125783e-17,
+        "input_error": 1.734723475976807e-18,
+        "finite_coordinates": 10,
+        "finite_max_error": 1.3795737642541273e-10
+      },
+      "True": {
+        "grad_error": 4.163336342344337e-17,
+        "input_error": 4.336808689942018e-19,
+        "finite_coordinates": 18,
+        "finite_max_error": 1.749290330643749e-10
+      }
+    }
+  },
+  "examples": {
+    "joined": [
+      [
+        1.0,
+        2.0,
+        2.0,
+        4.0,
+        7.0,
+        14.0
+      ]
+    ],
+    "grad": [
+      [
+        10.0,
+        10.0
+      ]
+    ],
+    "book_block": [
+      4,
+      23,
+      8,
+      8
+    ],
+    "book_transition": [
+      4,
+      10,
+      4,
+      4
+    ],
+    "min_square_eval_input": 29
+  },
+  "recompute": {
+    "batches": [
+      3,
+      2,
+      3
+    ],
+    "cases": [
+      {
+        "logits": 0.0,
+        "input_grad": 0.0,
+        "parameter_grad": 0.0,
+        "state": 0.0
+      },
+      {
+        "logits": 0.0,
+        "input_grad": 0.0,
+        "parameter_grad": 0.0,
+        "state": 0.0
+      },
+      {
+        "logits": 0.0,
+        "input_grad": 0.0,
+        "parameter_grad": 0.0,
+        "state": 0.0
+      }
+    ],
+    "bn_counters": [
+      3
+    ],
+    "buffer_objects_restored": true
+  },
+  "practice": {
+    "follow": "数据 37 20 训练批 5\n稠密块探针 (2, 10, 9, 9)\n过渡探针 (2, 5, 4, 4)\n参数 965 输出 (8, 10)\nepoch 1 在线CE 2.3873464030188485\nepoch 2 在线CE 2.344830951175174\nepoch 3 在线CE 2.3252213581188306\n更新 15 验证 {'ce': 2.3072147369384766, 'accuracy': 0.1, 'correct': 2, 'samples': 20}\n恢复得分最大差 0.0\n",
+    "exercise_reference": "epoch 1 在线CE 2.3873464030188485\nepoch 2 在线CE 2.344830951175174\nepoch 3 在线CE 2.3252213581188306\n参数 965 更新 15 验证 {'ce': 2.3072147369384766, 'accuracy': 0.1, 'correct': 2, 'samples': 20}\n",
+    "unanswered": 8
+  },
+  "recovery": {
+    "images": 16,
+    "device": "cuda",
+    "cpu_device_max_error": 5.7220458984375e-06,
+    "cpu_float64_error": 5.004982487122334e-06,
+    "device_float64_error": 3.82325941750139e-06,
+    "state_hash_matches": true,
+    "class_predictions_match": true
+  },
+  "report_consistency": {
+    "csv_rows": {
+      "formal": 11,
+      "candidates": 126,
+      "house": 10,
+      "custom": 2,
+      "weighted": 21
+    },
+    "raw_images_verified": 4,
+    "house_train_verified": true,
+    "heldout_protocols_consistent": true
+  },
+  "cli": {
+    "invalid": [
+      [
+        "--epochs",
+        "0"
+      ],
+      [
+        "--batch-size",
+        "1"
+      ],
+      [
+        "--train-size",
+        "1"
+      ],
+      [
+        "--validation-size",
+        "6001"
+      ],
+      [
+        "--benchmark",
+        "--device",
+        "cpu"
+      ],
+      [
+        "--inspect",
+        "--epochs",
+        "1"
+      ],
+      [
+        "--experiments",
+        "--inspect"
+      ]
+    ],
+    "inspect_json_matches": true,
+    "custom_reproduced": true,
+    "exercise_prompt": "先完成 TODO 1，计算各单元输入通道。"
+  },
+  "pdf": {
+    "pages": 24,
+    "bookmarks": 24,
+    "images": 8,
+    "rendered_dpi": 105,
+    "visually_reviewed_pages": 24,
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+Consolas": true
+    },
+    "sha256": "66f930282ccd97737443cc6268e3706101da5cb5be2e28e218ec63a02b9c89cc"
+  },
+  "preservation": {
+    "baseline_entries": 700,
+    "unrelated_unchanged": 693,
+    "allowed_paths": [
+      ".gitignore",
+      ".vscode/launch.json",
+      ".vscode/tasks.json",
+      "README.md",
+      "progress.md",
+      "learning_log.md",
+      "tools/build_study_pdfs.py"
+    ]
+  }
+}

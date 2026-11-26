@@ -1,0 +1,81 @@
+{
+  "results": [
+    {
+      "model": "dense",
+      "size": 96,
+      "recompute": false,
+      "mode": "train",
+      "ms": 9.950342559814453,
+      "peak_allocated_bytes": 155252736,
+      "peak_reserved_bytes": 249561088
+    },
+    {
+      "model": "dense",
+      "size": 96,
+      "recompute": false,
+      "mode": "eval",
+      "ms": 2.433228874206543,
+      "peak_allocated_bytes": 91648512,
+      "peak_reserved_bytes": 96468992
+    },
+    {
+      "model": "dense",
+      "size": 224,
+      "recompute": false,
+      "mode": "train",
+      "ms": 25.883444213867186,
+      "peak_allocated_bytes": 444856320,
+      "peak_reserved_bytes": 662700032
+    },
+    {
+      "model": "dense",
+      "size": 224,
+      "recompute": false,
+      "mode": "eval",
+      "ms": 3.9409664154052733,
+      "peak_allocated_bytes": 129710592,
+      "peak_reserved_bytes": 167772160
+    },
+    {
+      "model": "dense",
+      "size": 224,
+      "recompute": true,
+      "mode": "train",
+      "ms": 24.679014587402342,
+      "peak_allocated_bytes": 403207168,
+      "peak_reserved_bytes": 572522496
+    },
+    {
+      "model": "resnet18",
+      "size": 224,
+      "recompute": false,
+      "mode": "train",
+      "ms": 22.486630249023438,
+      "peak_allocated_bytes": 327119360,
+      "peak_reserved_bytes": 392167424
+    },
+    {
+      "model": "resnet18",
+      "size": 224,
+      "recompute": false,
+      "mode": "eval",
+      "ms": 4.672716903686523,
+      "peak_allocated_bytes": 165347328,
+      "peak_reserved_bytes": 192937984
+    }
+  ],
+  "batch_size": 8,
+  "warmup": 2,
+  "repeats": 5,
+  "seed": 7709,
+  "runtime": {
+    "device": "cuda",
+    "torch_version": "2.4.1+cu121",
+    "dtype": "float32",
+    "accelerator": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "num_threads": 4
+  },
+  "protocol": "合成CUDA驻留输入，训练含CE/反传/SGD，eval无梯度，不含读取/Resize"
+}

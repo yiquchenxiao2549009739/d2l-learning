@@ -826,6 +826,10 @@ SPECS = [
          pages="教材 PDF 293-301 · 正文 275-283",
          source="docs/ch07/06_resnet.md", start="## 01",
          workbook=True, filename="7.6-残差网络（ResNet）-实验手册.pdf"),
+    dict(section="7.7", title="稠密连接网络（DenseNet）", date="2026-11-26", chapter="第 7 章",
+         pages="教材 PDF 301-306 · 正文 283-288",
+         source="docs/ch07/07_densenet.md", start="## 01",
+         workbook=True, filename="7.7-稠密连接网络（DenseNet）-实验手册.pdf"),
 ]
 
 

@@ -1,0 +1,26 @@
+{
+  "strategy": "reuse local read-only",
+  "files": [
+    {
+      "filename": "t10k-images-idx3-ubyte",
+      "raw_bytes": 7840016,
+      "raw_sha256": "5b4141f0afbad91edebe8549f8fcffe087ea10ca49f1dbef5c9a5cd8815ce37b"
+    },
+    {
+      "filename": "t10k-labels-idx1-ubyte",
+      "raw_bytes": 10008,
+      "raw_sha256": "0402a96d92fd2663957122ceb108a494c5af83dab82d92729df917d7dec38c34"
+    },
+    {
+      "filename": "train-images-idx3-ubyte",
+      "raw_bytes": 47040016,
+      "raw_sha256": "c59f468a2f672dc815687fe0f83887768d799fd8a3f3276145d20f83aa44d888"
+    },
+    {
+      "filename": "train-labels-idx1-ubyte",
+      "raw_bytes": 60008,
+      "raw_sha256": "bad3541b69d912435c50bb6ba87bec294ff4f6a2e1246121d8633921760443d9"
+    }
+  ],
+  "house_train_sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41"
+}
