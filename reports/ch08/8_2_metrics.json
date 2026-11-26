@@ -1,0 +1,697 @@
+{
+  "source": {
+    "local": "data/timemachine.txt",
+    "url": "https://d2l-data.s3-accelerate.amazonaws.com/timemachine.txt",
+    "sha1": "090b5e7e70c295757f55df93cb0a180b9691891a",
+    "sha256": "8424dbd9532ac81f7e5f0b6add90e6952baea29158309d7d1bf3884f4e12c516",
+    "bytes": 178979
+  },
+  "book": {
+    "lines": 3221,
+    "empty_lines": 373,
+    "first_lines": {
+      "0": "the time machine by h g wells",
+      "10": "twinkled and his usually pale face was flushed and animated the"
+    },
+    "word_count": 32775,
+    "word_types": 4579,
+    "word_vocab": 4580,
+    "min_freq": 0,
+    "top_words": [
+      [
+        "the",
+        2261
+      ],
+      [
+        "i",
+        1267
+      ],
+      [
+        "and",
+        1245
+      ],
+      [
+        "of",
+        1155
+      ],
+      [
+        "a",
+        816
+      ],
+      [
+        "to",
+        695
+      ],
+      [
+        "was",
+        552
+      ],
+      [
+        "in",
+        541
+      ],
+      [
+        "that",
+        443
+      ],
+      [
+        "my",
+        440
+      ],
+      [
+        "it",
+        437
+      ],
+      [
+        "had",
+        354
+      ]
+    ],
+    "first_words": [
+      "the",
+      "time",
+      "machine",
+      "by",
+      "h",
+      "g",
+      "wells"
+    ],
+    "first_word_ids": [
+      1,
+      19,
+      50,
+      40,
+      2183,
+      2184,
+      400
+    ],
+    "line10_words": [
+      "twinkled",
+      "and",
+      "his",
+      "usually",
+      "pale",
+      "face",
+      "was",
+      "flushed",
+      "and",
+      "animated",
+      "the"
+    ],
+    "line10_word_ids": [
+      2186,
+      3,
+      25,
+      1044,
+      362,
+      113,
+      7,
+      1421,
+      3,
+      1045,
+      1
+    ],
+    "characters": 170580,
+    "characters_with_line_space": 173427,
+    "char_vocab": 28,
+    "char_tokens": [
+      "<unk>",
+      " ",
+      "e",
+      "t",
+      "a",
+      "i",
+      "n",
+      "o",
+      "s",
+      "h",
+      "r",
+      "d",
+      "l",
+      "m",
+      "u",
+      "c",
+      "f",
+      "w",
+      "g",
+      "y",
+      "p",
+      "b",
+      "v",
+      "k",
+      "x",
+      "z",
+      "j",
+      "q"
+    ],
+    "corpus_length": 170580,
+    "max_tokens": -1,
+    "corpus_head": [
+      3,
+      9,
+      2,
+      1,
+      3,
+      5,
+      13,
+      2,
+      1,
+      13,
+      4,
+      15,
+      9,
+      5,
+      6,
+      2,
+      1,
+      21,
+      19,
+      1,
+      9,
+      1,
+      18,
+      1
+    ]
+  },
+  "experiment": {
+    "train_lines": 2576,
+    "held_out_lines": 645,
+    "word_thresholds": [
+      {
+        "min_freq": 0,
+        "full_vocab": 4580,
+        "full_unk": 0,
+        "full_unk_rate": 0.0,
+        "train_vocab": 4088,
+        "held_tokens": 6392,
+        "held_unk": 555,
+        "held_unseen": 555,
+        "held_filtered": 0,
+        "held_unk_rate": 0.08682728410513141
+      },
+      {
+        "min_freq": 1,
+        "full_vocab": 4580,
+        "full_unk": 0,
+        "full_unk_rate": 0.0,
+        "train_vocab": 4088,
+        "held_tokens": 6392,
+        "held_unk": 555,
+        "held_unseen": 555,
+        "held_filtered": 0,
+        "held_unk_rate": 0.08682728410513141
+      },
+      {
+        "min_freq": 2,
+        "full_vocab": 2183,
+        "full_unk": 2397,
+        "full_unk_rate": 0.0731350114416476,
+        "train_vocab": 1869,
+        "held_tokens": 6392,
+        "held_unk": 887,
+        "held_unseen": 555,
+        "held_filtered": 332,
+        "held_unk_rate": 0.13876720901126408
+      },
+      {
+        "min_freq": 3,
+        "full_vocab": 1420,
+        "full_unk": 3923,
+        "full_unk_rate": 0.11969488939740656,
+        "train_vocab": 1195,
+        "held_tokens": 6392,
+        "held_unk": 1154,
+        "held_unseen": 555,
+        "held_filtered": 599,
+        "held_unk_rate": 0.18053817271589487
+      },
+      {
+        "min_freq": 5,
+        "full_vocab": 825,
+        "full_unk": 5927,
+        "full_unk_rate": 0.18083905415713197,
+        "train_vocab": 681,
+        "held_tokens": 6392,
+        "held_unk": 1467,
+        "held_unseen": 555,
+        "held_filtered": 912,
+        "held_unk_rate": 0.22950563204005006
+      },
+      {
+        "min_freq": 10,
+        "full_vocab": 400,
+        "full_unk": 8659,
+        "full_unk_rate": 0.2641952707856598,
+        "train_vocab": 325,
+        "held_tokens": 6392,
+        "held_unk": 1933,
+        "held_unseen": 555,
+        "held_filtered": 1378,
+        "held_unk_rate": 0.30240926157697123
+      },
+      {
+        "min_freq": 20,
+        "full_vocab": 219,
+        "full_unk": 11036,
+        "full_unk_rate": 0.33672006102212054,
+        "train_vocab": 176,
+        "held_tokens": 6392,
+        "held_unk": 2377,
+        "held_unseen": 555,
+        "held_filtered": 1822,
+        "held_unk_rate": 0.37187108886107634
+      },
+      {
+        "min_freq": 50,
+        "full_vocab": 85,
+        "full_unk": 15181,
+        "full_unk_rate": 0.46318840579710147,
+        "train_vocab": 70,
+        "held_tokens": 6392,
+        "held_unk": 3123,
+        "held_unseen": 555,
+        "held_filtered": 2568,
+        "held_unk_rate": 0.48857947434292864
+      }
+    ],
+    "bpe": {
+      "merges": [
+        [
+          "t",
+          "h"
+        ],
+        [
+          "th",
+          "e"
+        ],
+        [
+          "i",
+          "n"
+        ],
+        [
+          "a",
+          "n"
+        ],
+        [
+          "r",
+          "e"
+        ],
+        [
+          "a",
+          "t"
+        ],
+        [
+          "e",
+          "r"
+        ],
+        [
+          "o",
+          "n"
+        ],
+        [
+          "e",
+          "d"
+        ],
+        [
+          "an",
+          "d"
+        ],
+        [
+          "e",
+          "n"
+        ],
+        [
+          "o",
+          "f"
+        ],
+        [
+          "o",
+          "u"
+        ],
+        [
+          "s",
+          "t"
+        ],
+        [
+          "a",
+          "s"
+        ],
+        [
+          "in",
+          "g"
+        ],
+        [
+          "i",
+          "t"
+        ],
+        [
+          "t",
+          "o"
+        ],
+        [
+          "m",
+          "e"
+        ],
+        [
+          "o",
+          "r"
+        ],
+        [
+          "l",
+          "e"
+        ],
+        [
+          "a",
+          "l"
+        ],
+        [
+          "a",
+          "r"
+        ],
+        [
+          "h",
+          "a"
+        ],
+        [
+          "s",
+          "e"
+        ],
+        [
+          "i",
+          "s"
+        ],
+        [
+          "e",
+          "s"
+        ],
+        [
+          "l",
+          "y"
+        ],
+        [
+          "c",
+          "h"
+        ],
+        [
+          "w",
+          "as"
+        ],
+        [
+          "o",
+          "w"
+        ],
+        [
+          "m",
+          "y"
+        ],
+        [
+          "t",
+          "i"
+        ],
+        [
+          "g",
+          "h"
+        ],
+        [
+          "e",
+          "l"
+        ],
+        [
+          "th",
+          "at"
+        ],
+        [
+          "c",
+          "e"
+        ],
+        [
+          "w",
+          "h"
+        ],
+        [
+          "b",
+          "e"
+        ],
+        [
+          "w",
+          "e"
+        ],
+        [
+          "i",
+          "l"
+        ],
+        [
+          "ha",
+          "d"
+        ],
+        [
+          "v",
+          "e"
+        ],
+        [
+          "u",
+          "t"
+        ],
+        [
+          "en",
+          "t"
+        ],
+        [
+          "r",
+          "o"
+        ],
+        [
+          "v",
+          "er"
+        ],
+        [
+          "s",
+          "o"
+        ],
+        [
+          "gh",
+          "t"
+        ],
+        [
+          "i",
+          "d"
+        ],
+        [
+          "l",
+          "d"
+        ],
+        [
+          "l",
+          "a"
+        ],
+        [
+          "u",
+          "n"
+        ],
+        [
+          "l",
+          "i"
+        ],
+        [
+          "h",
+          "e"
+        ],
+        [
+          "i",
+          "on"
+        ],
+        [
+          "r",
+          "a"
+        ],
+        [
+          "n",
+          "o"
+        ],
+        [
+          "f",
+          "or"
+        ],
+        [
+          "l",
+          "o"
+        ],
+        [
+          "i",
+          "r"
+        ],
+        [
+          "c",
+          "k"
+        ],
+        [
+          "w",
+          "i"
+        ],
+        [
+          "a",
+          "y"
+        ],
+        [
+          "r",
+          "i"
+        ],
+        [
+          "m",
+          "o"
+        ],
+        [
+          "s",
+          "u"
+        ],
+        [
+          "wi",
+          "th"
+        ],
+        [
+          "al",
+          "l"
+        ],
+        [
+          "a",
+          "d"
+        ],
+        [
+          "g",
+          "e"
+        ],
+        [
+          "i",
+          "m"
+        ],
+        [
+          "a",
+          "b"
+        ],
+        [
+          "s",
+          "a"
+        ],
+        [
+          "ti",
+          "me"
+        ],
+        [
+          "p",
+          "e"
+        ],
+        [
+          "c",
+          "o"
+        ],
+        [
+          "s",
+          "h"
+        ],
+        [
+          "b",
+          "ut"
+        ],
+        [
+          "u",
+          "p"
+        ]
+      ],
+      "train_pieces": 68608,
+      "vocab_size": 107,
+      "held_words": 6392,
+      "held_pieces": 16026,
+      "held_characters": 26865,
+      "held_unk": 0,
+      "all_words_roundtrip": true,
+      "example_pieces": {
+        "time": [
+          "time"
+        ],
+        "traveller": [
+          "t",
+          "ra",
+          "v",
+          "el",
+          "l",
+          "er"
+        ],
+        "travelling": [
+          "t",
+          "ra",
+          "v",
+          "el",
+          "l",
+          "ing"
+        ],
+        "space": [
+          "s",
+          "p",
+          "a",
+          "ce"
+        ],
+        "moonlight": [
+          "mo",
+          "on",
+          "li",
+          "ght"
+        ]
+      }
+    }
+  },
+  "examples": {
+    "english_cleaned": [
+      "time",
+      "travel",
+      "isn",
+      "t"
+    ],
+    "regex": [
+      "Time",
+      "-",
+      "travel",
+      "isn't",
+      "8.2",
+      "!"
+    ],
+    "chinese_longest": [
+      "研究生",
+      "命",
+      "起源"
+    ],
+    "chinese_alternative": [
+      "研究",
+      "生命",
+      "起源"
+    ],
+    "utf8_bytes": [
+      97,
+      228,
+      184,
+      173
+    ],
+    "special_ids": [
+      2,
+      4,
+      0,
+      0,
+      3,
+      1
+    ],
+    "decoded": [
+      "<bos>",
+      "time",
+      "<unk>",
+      "<unk>",
+      "<eos>",
+      "<pad>"
+    ],
+    "special_vocab": [
+      "<unk>",
+      "<pad>",
+      "<bos>",
+      "<eos>",
+      "time"
+    ]
+  }
+}

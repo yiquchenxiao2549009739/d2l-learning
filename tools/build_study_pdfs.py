@@ -834,6 +834,10 @@ SPECS = [
          pages="教材 PDF 308-316 · 正文 290-298",
          source="docs/ch08/01_sequence_models.md", start="## 01",
          workbook=True, filename="8.1-序列模型-实验手册.pdf"),
+    dict(section="8.2", title="文本预处理", date="2026-11-26", chapter="第 8 章",
+         pages="教材 PDF 316-321 · 正文 298-303",
+         source="docs/ch08/02_text_preprocessing.md", start="## 01",
+         workbook=True, filename="8.2-文本预处理-实验手册.pdf"),
 ]
 
 

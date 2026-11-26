@@ -1,0 +1,56 @@
+{
+  "lines": 3221,
+  "characters_roundtrip": 170580,
+  "stable_word_ids": true,
+  "frequency_rows_checked": 8,
+  "bpe": {
+    "merges_checked": 80,
+    "held_words_checked": 6392,
+    "held_pieces": 16026
+  },
+  "boundaries": {
+    "stable_tie_order": true,
+    "unknown_collisions_expected": true,
+    "invalid_cases": 7
+  },
+  "practice": {
+    "follow": "lines: 5 'time time' ''\nthird: 'time travel isn t'\nword row: ['time', 'time']\nchar row: ['t', 'i', 'm', 'e', ' ', 't', 'i', 'm', 'e']\ntrain time: 3\ntotals: 12 60\nvocab: ['<unk>', '<pad>', '<bos>', '<eos>', 'time']\nids: [2, 4, 4, 0, 0, 0, 3, 1]\ndecoded: ['<bos>', 'time', 'time', '<unk>', '<unk>', '<unk>', '<eos>', '<pad>']\nvalid: 7\nX: [[1, 2, 3, 4, 5]] Y: [[2, 3, 4, 5, 1]]\nX text: 'time '\nY text: 'ime t'\nvectors: [1, 5, 2] [2.0, 3.0]\n",
+    "exercise_reference": "词表 ['<unk>', '<pad>', '<bos>', '<eos>', 'time']\n索引 [2, 4, 4, 0, 0, 0, 3, 1] 解码 ['<bos>', 'time', 'time', '<unk>', '<unk>', '<unk>', '<eos>', '<pad>']\n字符数 60\n",
+    "remaining_todos": 8,
+    "parameter_checks": [
+      "threshold1",
+      "offset2"
+    ]
+  },
+  "cli": {
+    "json_reproduced": true,
+    "guided_reproduced": true,
+    "csv_rows": 8,
+    "cutoff_100": true,
+    "frequency_2": true,
+    "no_record_no_writes": true,
+    "invalid_argument_cases": 4,
+    "interactive_examples": true,
+    "exercise_prompt": "先完成 TODO 1，把原始文本清洗成行。"
+  },
+  "pdf": {
+    "pages": 19,
+    "bookmarks": 19,
+    "images": 5,
+    "rendered_dpi": 105,
+    "visually_reviewed_pages": 19,
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAA+Consolas": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true
+    },
+    "sha256": "1071bc6aa9dd3ee1869679b834584fe9d9fdee6bfdd6353d8617f9f0f4667472"
+  },
+  "preservation": {
+    "baseline_entries": 749,
+    "unrelated_unchanged": 742
+  }
+}
