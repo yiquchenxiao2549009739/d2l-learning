@@ -1,0 +1,43 @@
+{
+  "zipf_fits": 6,
+  "validation_candidates": 20,
+  "test_scores": 5,
+  "normalized_distributions": 126,
+  "sampler_cases": 1368,
+  "coverage_positions": 34,
+  "masked_loss": 1.4051076629277042,
+  "practice": {
+    "follow": "pairs: 9 1 -> 2: 2\ntotal after 1: 3\nprobs: [0.1, 0.1, 0.5, 0.3] sum: 1.0\nloss / PPL: 0.948560 2.581989\ncandidates: [3, 8, 13, 18, 23, 28]\nrandom: [13, 28] (2, 5)\nfirst row X / Y: [13, 14, 15, 16, 17] [14, 15, 16, 17, 18]\nsequential: [[0, 17], [5, 22], [10, 27]] lane: 17\nsentence shape: (2, 3) valid: 5\nmasked loss / PPL: 1.405108 4.075966\n",
+    "parameter_checks": 4,
+    "exercise_reference": "概率 [0.1, 0.1, 0.5, 0.3] 困惑度 2.581989\n随机首批 [13, 28] 顺序第二批 [5, 22]\n",
+    "remaining_todos": 8
+  },
+  "cli": {
+    "default_json": true,
+    "guided": true,
+    "comparison_inputs": 960,
+    "no_writes_without_record": true,
+    "record_reproduced": true,
+    "rejected_arguments": 4
+  },
+  "pdf": {
+    "pages": 22,
+    "bookmarks": 22,
+    "images": 5,
+    "rendered_dpi": 105,
+    "visually_reviewed_pages": 22,
+    "embedded_fonts": {
+      "/AAAAAA+MicrosoftYaHei-0": true,
+      "/AAAAAA+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAB+MicrosoftYaHei-0": true,
+      "/AAAAAC+MicrosoftYaHei-0": true,
+      "/AAAAAB+MicrosoftYaHei-Bold-0": true,
+      "/AAAAAA+Consolas": true
+    },
+    "sha256": "cf35d9c9786f21e2c05d3269a22b350778e7c5f21576013913ceeffccee212e4"
+  },
+  "preservation": {
+    "baseline_entries": 765,
+    "unrelated_unchanged": 758
+  }
+}

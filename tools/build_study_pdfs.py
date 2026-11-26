@@ -838,6 +838,10 @@ SPECS = [
          pages="教材 PDF 316-321 · 正文 298-303",
          source="docs/ch08/02_text_preprocessing.md", start="## 01",
          workbook=True, filename="8.2-文本预处理-实验手册.pdf"),
+    dict(section="8.3", title="语言模型和数据集", date="2026-11-26", chapter="第 8 章",
+         pages="教材 PDF 321-330 · 正文 303-312",
+         source="docs/ch08/03_language_models.md", start="## 01",
+         workbook=True, filename="8.3-语言模型和数据集-实验手册.pdf"),
 ]
 
 

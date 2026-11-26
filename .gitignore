@@ -57,6 +57,7 @@ __pycache__/
 !output/pdf/7.7-稠密连接网络（DenseNet）-实验手册.pdf
 !output/pdf/8.1-序列模型-实验手册.pdf
 !output/pdf/8.2-文本预处理-实验手册.pdf
+!output/pdf/8.3-语言模型和数据集-实验手册.pdf
 
 # Downloaded data and generated training output
 data/
